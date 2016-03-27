@@ -29,12 +29,14 @@ init_gop;
 
 % Set a boundary detector by calling (before creating an OverSegmentation!):
 % gop_mex( 'setDetector', 'SketchTokens("../data/st_full_c.dat")' );
-gop_mex( 'setDetector', 'StructuredForest("../data/sf.dat")' );
-%gop_mex( 'setDetector', 'MultiScaleStructuredForest("../data/sf.dat")' );
+% gop_mex( 'setDetector', 'StructuredForest("../data/sf.dat")' );
+gop_mex( 'setDetector', 'MultiScaleStructuredForest("../data/sf.dat")' );
 
 % Setup the proposal pipeline (baseline)
 p = Proposal('max_iou', 0.8,...
-             'unary', 140, 4, 'seedUnary()', 'backgroundUnary({0,15})');
+             'unary', 130, 5, 'seedUnary()', 'backgroundUnary({0,15})',...
+             'unary', 0, 5, 'zeroUnary()', 'backgroundUnary({0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15})' ...
+             );
 % Setup the proposal pipeline (learned)
 % p = Proposal('max_iou', 0.8,...
 %              'seed', '../data/seed_final.dat',...
@@ -45,10 +47,9 @@ p = Proposal('max_iou', 0.8,...
 %              );
 
 % Load in image
-images = {'00007.png'};
-for it = 1:1
+images = {'pears.png','peppers.png'};
+for it = 1:2
     I = imread(images{it});
-    I = imresize(I,[240,NaN]);
     
     % Create an over-segmentation
     tic();
@@ -64,18 +65,18 @@ for it = 1:1
     
     % If you just want boxes
     boxes = os.maskToBox( props );
-    figure(it)
-    for i=1:30
+    figure()
+    for i=1:9
         mask = props(i,:);
         m = uint8(mask( os.s()+1 ));
         % Visualize the mask
-        subplot(5,6,i)
+        subplot(3,3,i)
         II = 1*I;
         II(:,:,1) = II(:,:,1) .* (1-m) + m*255;
         II(:,:,2) = II(:,:,2) .* (1-m);
         II(:,:,3) = II(:,:,3) .* (1-m);
         imagesc( II );
+imwrite(II,[num2str(i),'.jpg']);
         rectangle( 'Position', [boxes(i,1),boxes(i,2),boxes(i,3)-boxes(i,1)+1,boxes(i,4)-boxes(i,2)+1], 'LineWidth',2, 'EdgeColor',[0,1,0] );
     end
-    saveas(gcf,['out_their_' images{it}],'bmp');
 end

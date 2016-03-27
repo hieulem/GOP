@@ -8,16 +8,14 @@ doFrames=size(sp,3);
 colorFrame = zeros(rowSize, colSize, 3);
   if ~isempty(video_name)
 writePath1 = [video_name];
-
-k= pwd;
-cd('output');
 mkdir(writePath1);
+k= pwd;
 cd(writePath1);
   end;
 
 for i = 1:doFrames
     
-    [i length(doFrames)];
+    [i length(doFrames)]
     
     colorFrame = zeros(rowSize, colSize, 3);
     colorIDs = unique(sp(:,:,i));
@@ -40,7 +38,5 @@ end
   if ~isempty(video_name)
 cd(k);
   end
-  display('done');
 end
-
 

@@ -16,7 +16,7 @@ video_name_array = {'birdfall';'cheetah';'monkeydog';'girl';'penguin';'parachute
     'soldier';'bird_of_paradise';'frog';'worm';};
 %inp.numi=2;
 
-for j=7:7
+for j=1:14
     video_name = video_name_array{j};
     load(['flow', video_name]);
     inp.path  = ['../video/Seg/JPEGImages/' video_name '/'];
@@ -43,14 +43,14 @@ for j=7:7
     I = uint8(zeros(h,w,3,inp.numi));
     edge = single(zeros(h,w,inp.numi));
     geo_hist2d = cell(inp.numi,1);
-    parfor ii=1:3
+    for ii=1:inp.numi
         ii
         filename = [inp.path,inp.imglist(ii).name];
         
         I(:,:,:,ii) = imresize(imread(filename),[240,NaN]);
     %    os = OverSegmentation( I(:,:,:,ii) );
    %     ed2 = os.boundaryMap;
-        [ed,~,~,~]=edgesDetect(I(:,:,:,ii),model);
+        [ed,~,~,segs]=edgesDetect(I(:,:,:,ii),model);
         if ii>1
             model.opts.seed = uint32(sp(:,:,ii-1));
         end
@@ -68,8 +68,8 @@ for j=7:7
         
        
         model.opts.nms=0;model.opts.sharpen=0;model.opts.multiscale=0;
-        [ed2,~,~,~]=edgesDetect(I(:,:,:,ii),model);
-       model.opts.nms=1;model.opts.sharpen=2;model.opts.multiscale=1;
+        [ed2,~,~,segs]=edgesDetect(I(:,:,:,ii),model);
+        model.opts.nms=1;model.opts.sharpen=2;model.opts.multiscale=1;
         ed = ed + ed2 + 1e-20;
         
         edge(:,:,ii)=ed;

@@ -76,8 +76,6 @@ switch metric
     D = distEmd( X, Y );
   case 'chisq'
     D = distChiSq( X, Y );
-  case 'chisq2d'
-    D = distChiSq2D( X, Y );
   otherwise
     error(['pdist2 - unknown metric: ' metric]);
 end
@@ -119,22 +117,9 @@ mOnes = ones(1,m); D = zeros(m,n);
 for i=1:n
   yi = Y(i,:);  yiRep = yi( mOnes, : );
   s = yiRep + X;    d = yiRep - X;
-  D(:,i) = sum( abs(d) ./ (s+eps), 2 );
+  D(:,i) = sum( d.^2 ./ (s+eps), 2 );
 end
 D = D/2;
-end
-
-function D = distChiSq2D( X, Y )
-% note: supposedly it's possible to implement this without a loop!
-m = size(X,1);  n = size(Y,1);
-mOnes = ones(1,m); D = zeros(m,n);
-for i=1:n
-    yi=Y(i,:,:);
-    yirep = yi(mOnes,:,:);
-    s = yirep + X; d= yirep -X;
-    D(:,i) = sum(sum( d.^2 ./ (s+eps), 3 ),2);
-end
-    D = D/2;
 end
 
 function D = distEucSq( X, Y )

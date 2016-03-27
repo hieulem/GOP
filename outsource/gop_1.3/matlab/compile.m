@@ -33,9 +33,9 @@ function compile()
     segmentation_files = addCppFiles('../lib/segmentation');
     proposals_files = addCppFiles('../lib/proposals');
     all_files = [util_files,imgproc_files,learning_files,contour_files,segmentation_files,proposals_files];
-    EIGEN_DIR = '/usr/include/eigen3';
+    EIGEN_DIR = '/usr/local/include/eigen3';
     if ismac
-        EIGEN_DIR = '/usr/local/include/eigen3/';
+        EIGEN_DIR = '/opt/local/include/eigen3';
         cmd = ['mex -DLBFGS_FLOAT=32 -I/opt/local/include/ -DEIGEN_DONT_PARALLELIZE -DNO_IMREAD -I../lib -I',EIGEN_DIR,' -I../external/liblbfgs-1.10/include/ CFLAGS="-fPIC -O3" CXXFLAGS="-fPIC -std=c++11 -O3 -stdlib=libc++" gop_mex.cpp ',' ../external/liblbfgs-1.10/lib/lbfgs.c ', all_files];
     elseif ispc
         EIGEN_DIR = '../external/eigen';

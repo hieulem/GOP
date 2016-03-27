@@ -7,7 +7,7 @@ function [ final_dist ] = pop_dist_all( geo_hist1,geo_hist2d1,pos1,L_hist1,A_his
 phi_hist_sq=0.01;
 %hist_dist_o = pdist2(geo_hist1(:,:), geo_hist2(:,:), 'chisq' );
 hist_dist_o = pdist2(geo_hist2d1,geo_hist2d2,'chisq2d');
-hist_dist_n = exp(-hist_dist_o/0.05);
+hist_dist_n = exp(-hist_dist_o/0.1);
 % mep = mean(hist_dist_o,2);
 % varp = var(hist_dist_o,[],2);
 % hist_dist_n = (hist_dist_o - repmat(mep,[1,size(hist_dist_o,2)])) ./ repmat(varp,[1,size(hist_dist_o,2)]);
@@ -58,10 +58,10 @@ HSV_dist = HSV_dist ./ (max(max(HSV_dist)));
 
 
 %LH = hist_dist+LAB_dist;
-w1= 1;
-w2=2;
-w3=2;
-final_dist =w2*pos_dist_n + w3*LAB_dist_n + hist_dist_n*w1 + HSV_dist;
+w1= 3;
+w2=0;
+w3=0;
+final_dist =w2*pos_dist_n + w3*LAB_dist_n + hist_dist_n*w1 ;
 %final_dist = LAB_dist.*HSV_dist.*pos_dist;
 %final_dist = LAB_dist + HSV_dist +pos_dist;
 %final_dist=final_dist./ (max(max(final_dist)));

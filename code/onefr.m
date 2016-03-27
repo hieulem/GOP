@@ -39,8 +39,7 @@ vn = ['heree', video_name];
 sp2 = applymap(sp,splist,map);
 gen_cl_from_spmap(sp2,vn);
 
-
-num = evaluation_segtrackV2(['./output/',vn],gtpath)
+num = evaluation_segtrackV2(vn,gtpath)
 allnum = [allnum;num]
 %imagesc([sp2(:,:,1), sp2(:,:,2)]);
 %post_process

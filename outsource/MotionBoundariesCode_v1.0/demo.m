@@ -5,9 +5,9 @@
 % addpath(genpath(<path_to_classicnl_flow>));
 addpath(genpath('/Users/hieule/Project/GOP/outsource/flow_code_v2'));
 addpath(genpath('../toolbox-master'));
-image =  imread('im1.jpg');%I(:,:,:,2);
-next_image =  imread('im2.jpg');
-prev_image =  imread('im0.jpg');
+image = imread('im1.jpg');
+next_image = imread('im2.jpg');
+prev_image = imread('im0.jpg');
 
 % forward flow computation
 %load('flow.mat'); % 
@@ -34,7 +34,7 @@ boundaries_ColorFlowWarpingBackward = detect_motionboundaries(image, flow, next_
 % display
 hold on;
 subplot(221);
-imshow(1-boundaries_Color);
+imshow(boundaries_Color);
 title('Color');
 subplot(222);
 imshow(boundaries_ColorFlow);
