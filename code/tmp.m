@@ -16,7 +16,7 @@ video_name_array = {'birdfall';'cheetah';'monkeydog';'girl';'penguin';'parachute
     'soldier';'bird_of_paradise';'frog';'worm';};
 %inp.numi=2;
 
-for j=1:14
+for j=1:1
     video_name = video_name_array{j};
     load(['flow', video_name]);
     inp.path  = ['../video/Seg/JPEGImages/' video_name '/'];
@@ -43,7 +43,7 @@ for j=1:14
     I = uint8(zeros(h,w,3,inp.numi));
     edge = single(zeros(h,w,inp.numi));
     geo_hist2d = cell(inp.numi,1);
-    for ii=1:inp.numi
+    for ii=1:3%inp.numi
         ii
         filename = [inp.path,inp.imglist(ii).name];
         
