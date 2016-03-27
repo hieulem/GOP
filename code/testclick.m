@@ -5,7 +5,7 @@ addpath(genpath('../outsource/spDetect'));
 %ch = 250
 %ch = 400
 %ch= 242
-sf =1;
+sf =2;
 tf = 3;
 x = -1;
 figure(5);imagesc([edge(:,:,sf),edge(:,:,tf)]);
