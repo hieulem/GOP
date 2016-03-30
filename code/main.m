@@ -2,6 +2,7 @@ profile on;
 close all;
 tic
 clear;
+addpath(genpath('.'));
 addpath(genpath('../outsource/toolbox-master'));
 addpath(genpath('../outsource/gop_1.3'));
 addpath(genpath('../outsource/spDetect'));
@@ -43,7 +44,7 @@ for j=1:1
     I = uint8(zeros(h,w,3,inp.numi));
     edge = single(zeros(h,w,inp.numi));
     geo_hist2d = cell(inp.numi,1);
-    for ii=1:3%inp.numi
+    for ii=1:inp.numi
         ii
         filename = [inp.path,inp.imglist(ii).name];
         

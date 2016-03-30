@@ -1,12 +1,13 @@
 addpath(genpath('../outsource/toolbox-master'));
 addpath(genpath('../outsource/spDetect'));
+addpath(genpath('.'));
 
 %ch=401
 %ch = 250
 %ch = 400
 %ch= 242
-sf =2;
-tf = 3;
+sf =15;
+tf = 25;
 x = -1;
 figure(5);imagesc([edge(:,:,sf),edge(:,:,tf)]);
 figure(1);imshow(uint8(I(:,:,:,sf)));
