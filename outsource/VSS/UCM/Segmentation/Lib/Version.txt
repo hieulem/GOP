@@ -1,0 +1,6 @@
+BSR version April 2008
+
+Modified to include MAHIS
+
+spectralPb remodified to not use segment and to not require additional libraries
+
