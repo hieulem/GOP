@@ -15,7 +15,7 @@ cd(writePath1);
 
 for i = 1:doFrames
     
-    [i length(doFrames)]
+    [i length(doFrames)];
     
     colorFrame = zeros(rowSize, colSize, 3);
     colorIDs = unique(sp(:,:,i));
