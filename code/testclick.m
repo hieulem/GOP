@@ -6,8 +6,8 @@ addpath(genpath('.'));
 %ch = 250
 %ch = 400
 %ch= 242
-sf =15;
-tf = 25;
+sf =13;
+tf = 14;
 x = -1;
 figure(5);imagesc([edge(:,:,sf),edge(:,:,tf)]);
 figure(1);imshow(uint8(I(:,:,:,sf)));
@@ -46,6 +46,7 @@ fi = hist_dist2;
 
 [k,i] = max(hist_dist(ch,:))
 [k2,i2] = max(fi(ch,:))
+
 figure(2);imshow([visseeds(I(:,:,:,sf),sp(:,:,sf),ch ),visseeds(I(:,:,:,tf),sp(:,:,tf),[i] ),visseeds(I(:,:,:,tf),sp(:,:,tf),[i2] )],[600,1200]);set(figure(2), 'Position', [100, 100, 1000, 300]);
 
 title([num2str(k),'___',num2str(k2)]);
@@ -53,8 +54,8 @@ title([num2str(k),'___',num2str(k2)]);
 figure(3);visdistance(sp(:,:,tf),hist_dist(ch,:));
 figure(4);visdistance(sp(:,:,tf),fi(ch,:));
 
-%figure(6);imagesc(squeeze(geo_hist2d{sf}(ch,:,:)));
-%figure(7);imagesc(squeeze(geo_hist2d{tf}(i,:,:)));
+% figure(6);imagesc(squeeze(geo_hist2d{sf}(ch,:,:)));
+% figure(7);imagesc(squeeze(geo_hist2d{tf}(i,:,:)));
 %figure(7);bar( geo_hist{tf}(i,:));
 
 
