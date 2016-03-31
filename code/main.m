@@ -17,7 +17,7 @@ video_name_array = {'birdfall';'cheetah';'monkeydog';'girl';'penguin';'parachute
     'soldier';'bird_of_paradise';'frog';'worm';};
 %inp.numi=2;
 
-for j=1:1
+for j=2:2
     video_name = video_name_array{j};
     load(['flow', video_name]);
     inp.path  = ['../video/Seg/JPEGImages/' video_name '/'];
@@ -44,7 +44,9 @@ for j=1:1
     I = uint8(zeros(h,w,3,inp.numi));
     edge = single(zeros(h,w,inp.numi));
     geo_hist2d = cell(inp.numi,1);
-    for ii=1:inp.numi
+           model2 =model;
+        model2.opts.nms=0;model2.opts.sharpen=0;model2.opts.multiscale=0;
+    parfor ii=1:inp.numi
         ii
         filename = [inp.path,inp.imglist(ii).name];
         
@@ -52,9 +54,9 @@ for j=1:1
     %    os = OverSegmentation( I(:,:,:,ii) );
    %     ed2 = os.boundaryMap;
         [ed,~,~,segs]=edgesDetect(I(:,:,:,ii),model);
-        if ii>1
-            model.opts.seed = uint32(sp(:,:,ii-1));
-        end
+%         if ii>1
+%             model.opts.seed = uint32(sp(:,:,ii-1));
+%         end
         [sp(:,:,ii),~] = spDetect(I(:,:,:,ii),ed,opts);
       %  ed= ed/(max(max(ed)));
         boundaries_ColorFlow(:,:,ii) = boundaries_ColorFlow(:,:,ii) /max(max(boundaries_ColorFlow(:,:,ii)));
@@ -67,10 +69,9 @@ for j=1:1
         
         sp(:,:,ii)=sp(:,:,ii)+1;
         
-       
-        model.opts.nms=0;model.opts.sharpen=0;model.opts.multiscale=0;
-        [ed2,~,~,segs]=edgesDetect(I(:,:,:,ii),model);
-        model.opts.nms=1;model.opts.sharpen=2;model.opts.multiscale=1;
+
+        [ed2,~,~,segs]=edgesDetect(I(:,:,:,ii),model2);
+      %  model.opts.nms=1;model.opts.sharpen=2;model.opts.multiscale=1;
         ed = ed + ed2 + 1e-20;
         
         edge(:,:,ii)=ed;
@@ -107,7 +108,7 @@ for j=1:1
             pos{ii}(i,:) = computesppos(sp(:,:,ii),i);
         end;
         tic;
-         gaussiandis = pdist2(pos{ii},pos{ii},'euclidean');  gaussiandis = exp(-0.002*gaussiandis);
+         gaussiandis = pdist2(pos{ii},pos{ii},'euclidean');  gaussiandis = exp(-gaussiandis/10);
         for i=1:length(seeds{ii})
            
             geo_hist{ii}(i,:)=histwc(seeds_geo{ii}(i,:),area{ii}.*gaussiandis(i,:),geo_hist_bin,max(max(seeds_geo{ii})));
