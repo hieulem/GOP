@@ -35,11 +35,13 @@ vinterval2 = linspace(minV, maxV2, nbins2)-delta2/2.0;
 %vinterval = exp(0:log(maxV+1)/(nbins):log(maxV+1 +1e-10))-1 - 1e-20;
 histw = zeros(nbins1, nbins2);
 for i=1:length(vinterval1)-1
+    a = (vv1>vinterval1(i)).*(vv1<vinterval1(i+1));
     for j=1:length(vinterval2)-1
         
-        ind = intersect(find(vv1>vinterval1(i)),find(vv1<vinterval1(i+1)));
-        ind2 = intersect(find(vv2<vinterval2(j+1)),find(vv2>vinterval2(j)));
-        ind = intersect(ind,ind2);
+      %  b= find((vv2<vinterval2(j+1)).*(vv2>vinterval2(j)));
+        %ind = intersect(find(vv1>vinterval1(i)),find(vv1<vinterval1(i+1)));
+      %  ind2 = intersect(find(vv2<vinterval2(j+1)),find(vv2>vinterval2(j)));
+        ind = find(a.*(vv2<vinterval2(j+1)).*(vv2>vinterval2(j)));
         if ~isempty(ind)
             histw(i,j) = sum( ww(ind));
         end
