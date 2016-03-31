@@ -2,14 +2,8 @@ function [ affinity_matrix ] = compute_affinitymatrix( sp,splist,edge,img)
 %COMPUTE_AFFINITYMATRIX Summary of this function goes here
 %   Detailed explanation goes here
 numi = size(img,4);
-geo_hist2d = cell(numi,1);
-seeds=cell(numi,1);
-area=cell(numi,1);
-
-
 cumspn = [0,cumsum(splist)];
 numsp = sum(splist);
-
 h= size(img,1);w= size(img,2);
 tic
 parfor ii=1:numi
