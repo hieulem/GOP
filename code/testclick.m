@@ -6,8 +6,8 @@ addpath(genpath('.'));
 %ch = 250
 %ch = 400
 %ch= 242
-sf =13;
-tf = 14;
+sf =2;
+tf = 5;
 x = -1;
 figure(5);imagesc([edge(:,:,sf),edge(:,:,tf)]);
 figure(1);imshow(uint8(I(:,:,:,sf)));

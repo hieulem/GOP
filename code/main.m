@@ -17,7 +17,8 @@ video_name_array = {'birdfall';'cheetah';'monkeydog';'girl';'penguin';'parachute
     'soldier';'bird_of_paradise';'frog';'worm';};
 %inp.numi=2;
 
-for j=2:2
+for j=4:4
+    
     video_name = video_name_array{j};
     load(['flow', video_name]);
     inp.path  = ['../video/Seg/JPEGImages/' video_name '/'];
