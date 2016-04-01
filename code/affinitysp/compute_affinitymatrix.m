@@ -1,6 +1,9 @@
 function [ affinity_matrix ] = compute_affinitymatrix( sp,splist,edge,img)
-%COMPUTE_AFFINITYMATRIX Summary of this function goes here
-%   Detailed explanation goes here
+%COMPUTE_AFFINITYMATRIX 
+% sp: sp map 1:splist(i)
+% splist=[400,420,400...]
+% edge h*w*numi
+
 numi = size(img,4);
 cumspn = [0,cumsum(splist)];
 numsp = sum(splist);

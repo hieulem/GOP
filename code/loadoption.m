@@ -14,7 +14,7 @@ model.opts.multiscale=1; model.opts.sharpen=0;
 opts = spDetect;
 opts.nThreads = 4;  % number of computation threads
 opts.k = 512;       % controls scale of superpixels (big k -> big sp)
-opts.alpha = 0.5;    % relative importance of regularity versus data terms
+opts.alpha = 0.2;    % relative importance of regularity versus data terms
 opts.beta = .9;     % relative importance of edge versus color terms
 opts.merge = 0;     % set to small value to merge nearby superpixels at end
 opts.bounds = 0;

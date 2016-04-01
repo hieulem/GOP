@@ -4,7 +4,7 @@ tic
 clear;
 addpath(genpath('.'));
 addpath(genpath('../outsource/toolbox-master'));
-addpath(genpath('../outsource/gop_1.3'));
+%addpath(genpath('../outsource/gop_1.3'));
 addpath(genpath('../outsource/spDetect'));
 
 
@@ -17,10 +17,10 @@ video_name_array = {'birdfall';'cheetah';'monkeydog';'girl';'penguin';'parachute
     'soldier';'bird_of_paradise';'frog';'worm';};
 %inp.numi=2;
 
-for j=4:4
+for j=1:1
     
     video_name = video_name_array{j};
-    load(['flow', video_name]);
+    load(fullfile('flow_motion',['flow', video_name]));
     inp.path  = ['../video/Seg/JPEGImages/' video_name '/'];
     gtpath = ['../video/Seg/GroundTruth/' video_name '/'];
     
@@ -73,7 +73,7 @@ for j=4:4
 
         [ed2,~,~,segs]=edgesDetect(I(:,:,:,ii),model2);
       %  model.opts.nms=1;model.opts.sharpen=2;model.opts.multiscale=1;
-        ed = ed + ed2 + 1e-20;
+        ed = ed2 + 1e-20+ ed;
         
         edge(:,:,ii)=ed;
         Z = spAffinities_vu(sp(:,:,ii),ed);
@@ -103,7 +103,7 @@ for j=4:4
         
         for i=1:length(seeds{ii})
             seeds_geo{ii}(i,:) = geocompute(Z,seeds{ii}(i));
-            seeds_color{ii}(i,:) = rgb_mean(itsimage,sp(:,:,ii),i);
+            seeds_color{ii}(i) = rgb_mean(itsimage,sp(:,:,ii),i);
             [L_hist{ii}(i,:),A_hist{ii}(i,:),B_hist{ii}(i,:)] = lab_histogram(labimage,sp(:,:,ii),i);
             [H_hist{ii}(i,:),S_hist{ii}(i,:),V_hist{ii}(i,:)] = hsv_histogram(hsvimage,sp(:,:,ii),i);
             pos{ii}(i,:) = computesppos(sp(:,:,ii),i);

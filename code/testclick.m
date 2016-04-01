@@ -6,7 +6,7 @@ addpath(genpath('.'));
 %ch = 250
 %ch = 400
 %ch= 242
-sf =2;
+sf =4;
 tf = 5;
 x = -1;
 figure(5);imagesc([edge(:,:,sf),edge(:,:,tf)]);
@@ -24,7 +24,7 @@ p = pdist2([y,x],pos{sf},'euclidean');
 phi_hist_sq = 0.4;
 
 %hist_dist = pdist2(geo_hist{sf}(:,:), geo_hist{tf}(:,:), 'chisq' );
-hist_dist = pdist2(geo_hist2d{sf}(:,:,:),geo_hist2d{tf}(:,:,:),'chisq2d');
+hist_dist = mypdist2(geo_hist2d{sf}(:,:,:),geo_hist2d{tf}(:,:,:),'chisq2d');
 
 hist_dist = exp(-hist_dist);phi_pos =3;
 
