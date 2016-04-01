@@ -13,11 +13,11 @@ else
     parfor i =1:numi-1
         i;
         flow(:,:,:,i)= estimate_flow_interface(img(:,:,:,i), img(:,:,:,i+1), 'classic+nl-fast');
-        motionboundaries(:,:,i)= detect_motionboundaries(img(:,:,:,i),flow(:,:,:,i),img(:,:,:,i+1),[],[],1,0,0);
+        motionboundaries(:,:,i)= detect_motionboundaries(img(:,:,:,i),flow(:,:,:,i),img(:,:,:,i+1));
     end
     
     flow(:,:,:,numi) = estimate_flow_interface(img(:,:,:,numi), img(:,:,:,numi-1), 'classic+nl-fast');
-    motionboundaries(:,:,numi) = detect_motionboundaries(img(:,:,:,numi),[],[],flow(:,:,:,numi),img(:,:,:,numi-1),1,0,0);
+    motionboundaries(:,:,numi) = detect_motionboundaries(img(:,:,:,numi),[],[],flow(:,:,:,numi),img(:,:,:,numi-1));
     
     save(fullfile(savepath,filename),'flow','motionboundaries');
 end

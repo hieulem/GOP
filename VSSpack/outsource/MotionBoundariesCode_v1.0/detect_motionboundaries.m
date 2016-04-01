@@ -36,11 +36,11 @@ if ~isempty(flow),
     I = cat(3, single(I)/255.0, single(flow)/10.0);
     if ~isempty(next_image),
         inputs = 'Color+Flow+Warping';
-        [lab_error, hog_error] = image_warping_error(single(image), single(next_image), single(flow));
+        [lab_error, hog_error] = MBimage_warping_error(single(image), single(next_image), single(flow));
         I = cat(3, I, lab_error, hog_error);
         if ~isempty(backward_flow),
             inputs = 'Color+Flow+Warping+Backward';
-            [lab_error, hog_error] = image_warping_error(single(image), single(prev_image), single(backward_flow));
+            [lab_error, hog_error] = MBimage_warping_error(single(image), single(prev_image), single(backward_flow));
             I = cat(3, I, single(backward_flow)/10.0, lab_error, hog_error);
         end;
     end;
