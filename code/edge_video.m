@@ -24,28 +24,28 @@ for j=1:1
     gtpath = ['../video/Seg/GroundTruth/' video_name '/'];
     
     loadoption;
-    load(['flow',video_name]);
+    load(fullfile('flow_motion',['flow',video_name]));
     model.opts.nTreesEval=4; 
     parfor ii=1:inp.numi
         ii
         %   iii = input.numi+1-ii;
         % if ii==2 iii=5;end;
         filename = [inp.path,inp.imglist(ii).name];
-        % I(:,:,:,ii) = imread(filename);
-        I(:,:,:,ii) = imresize(imread(filename),[240,NaN]);
+        I(:,:,:,ii) = imread(filename);
+      %  I(:,:,:,ii) = imresize(imread(filename),[240,NaN]);
         [E,~,~,segs]=edgesDetect(I(:,:,:,ii),model);
         E(E<0) = 0;
         E= E/(max(max(E)));
         E=E+1e-20;
         E3(:,:,ii) = E;
-        E2(:,:,ii) = E + boundaries_ColorFlow(:,:,ii);
+ %       E2(:,:,ii) = E + motionboundaries(:,:,ii);
     end;
     
 end;
 
 
 
-% M =playMovie([boundaries_ColorFlow,E3,boundaries_ColorFlow+E3,],1,-3,struct('hasChn',false));
+ M =playMovie([motionboundaries,E3,motionboundaries+E3,],1,-3,struct('hasChn',false));
 % M =playMovie([boundaries_ColorFlow],1,-3,struct('hasChn',false));
 % [optimizer,metric] = imregconfig('Multimodal');
 % close all

@@ -2,6 +2,7 @@
 %
 % Piotr's Toolbox and Classic+NL flow code
 % addpath(genpath(<path_to_piotr_toolbox>));
+addpath(genpath('../toolbox-master'));
 % addpath(genpath(<path_to_classicnl_flow>));
 
 
