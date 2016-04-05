@@ -28,8 +28,11 @@ tic;
 toc
 
 figure;imshow(im1);figure;imshow(warpI2);
+figure;imshow(im2-warpI2);
 
 
+I3 = warpFLColor(im1,im2,vx,vy);
+imshow(im1-I3);
 
 % output gif
 clear volume;
