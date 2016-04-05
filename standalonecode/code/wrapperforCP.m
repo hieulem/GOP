@@ -28,7 +28,7 @@ model=model.model;
 model.opts.nms=0; model.opts.nThreads=4;
 model.opts.multiscale=0; model.opts.sharpen=0;
 sed = single(zeros(h,w,numi));
-for i=1:numi
+parfor i=1:numi
     [sed(:,:,i),~,~,~]=edgesDetect(img(:,:,:,i),model);
 end
 %%
