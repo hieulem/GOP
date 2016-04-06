@@ -1,4 +1,4 @@
-% Demo for Sticky Superpixels (please see readme.txt first).
+:q% Demo for Sticky Superpixels (please see readme.txt first).
 
 %% load pre-trained edge detection model and set opts (see edgesDemo.m)
 model=load('models/forest/modelBsds'); model=model.model;

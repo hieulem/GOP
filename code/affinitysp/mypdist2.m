@@ -1,4 +1,6 @@
-function D = pdist2( X, Y, metric )
+function D = mypdist2( X, Y, metric )
+% This function comes from Piotr's CV toolbox with addtional distance
+% metric: chisq2d.
 % Calculates the distance between sets of vectors.
 %
 % Let X be an m-by-p matrix representing m points in p-dimensional space
@@ -8,7 +10,7 @@ function D = pdist2( X, Y, metric )
 % optimized where possible, with most of the distance computations
 % requiring few or no loops.
 %
-% The metric can be one of the following:
+% The metric can be one of the folSlowing:
 %
 % 'euclidean' / 'sqeuclidean':
 %   Euclidean / SQUARED Euclidean distance.  Note that 'sqeuclidean'
@@ -60,6 +62,7 @@ function D = pdist2( X, Y, metric )
 % Piotr's Computer Vision Matlab Toolbox      Version 2.52
 % Copyright 2014 Piotr Dollar.  [pdollar-at-gmail.com]
 % Licensed under the Simplified BSD License [see external/bsd.txt]
+% chisq2d: hieu.le at stonybrook.edu
 
 if( nargin<3 || isempty(metric) ); metric=0; end;
 

@@ -7,11 +7,11 @@ addpath(genpath('../outsource/'));
 
 video_name_array = {'birdfall';'cheetah';'monkeydog';'girl';'penguin';'parachute';'bmx';'drift';'hummingbird';'monkey';
     'soldier';'bird_of_paradise';'frog';'worm';};
-for i=1:1
+for i=1:14
     video_name = video_name_array{i};
     spfile = ['../SPofCP/SP/',video_name,'/ers_300'];
     load(spfile,'labels');
-    flowpath = 'flow_motion_default';
+    flowpath = '../../flow_data/flow_motion_default/Segtrack';
     flowfile = ['flow',video_name];
     path  = ['../../video/Seg/JPEGImages/' video_name '/'];
     aff = wrapperforCP( labels,flowpath,flowfile,path );

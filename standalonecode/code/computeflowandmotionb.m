@@ -11,6 +11,7 @@ else
     [h,w,~,numi] = size(img);
     img(:,:,:,numi+1) =  img(:,:,:,numi-1);
     flow = zeros(h,w,2,numi);
+    bflow = zeros(h,w,2,numi);
     motionboundaries =zeros(h,w,numi);
     
     parfor i =1:numi

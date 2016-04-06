@@ -22,10 +22,13 @@ for j=1:1
     video_name = video_name_array{j};
     inp.path  = ['../video/Seg/JPEGImages/' video_name '/'];
     gtpath = ['../video/Seg/GroundTruth/' video_name '/'];
-    
     loadoption;
-    load(fullfile('flow_motion',['flow',video_name]));
-    model.opts.nTreesEval=4; 
+    model=load('models/forest/modelBsds'); 
+    model=model.model;
+    model.opts.nms=0; model.opts.nThreads=4;
+    model.opts.multiscale=1; model.opts.sharpen=0;
+    load(fullfile('..','flow_data','flow_motion_1_0_0','segtrack',['flow',video_name]));
+   % model.opts.nTreesEval=4; 
     parfor ii=1:inp.numi
         ii
         %   iii = input.numi+1-ii;
@@ -43,9 +46,14 @@ for j=1:1
     
 end;
 
+for i=1:inp.numi-1
+    E2(:,:,i+1) = imwarp(E3(:,:,i),flow(:,:,1,i),flow(:,:,2,i));
+end
+
+E2(:,:,1) = E2(:,:,2);
 
 
- M =playMovie([motionboundaries,E3,motionboundaries+E3,],1,-3,struct('hasChn',false));
+M =playMovie([E2,E3,E3+E2,],1,-3,struct('hasChn',false));
 % M =playMovie([boundaries_ColorFlow],1,-3,struct('hasChn',false));
 % [optimizer,metric] = imregconfig('Multimodal');
 % close all
