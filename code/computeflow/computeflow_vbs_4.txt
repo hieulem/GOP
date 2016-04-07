@@ -1,0 +1,2064 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2015 The MathWorks, Inc.
+                   R2015b (8.6.0.267246) 64-bit (glnxa64)
+                              August 20, 2015
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+
+	Academic License
+
+Starting parallel pool (parpool) using the 'local' profile ... connected to 12 workers.
+
+ans =
+
+    12
+
+
+ans =
+
+    18
+
+
+ans =
+
+     3
+
+GNC stage: 1
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   1.9782)
+--Iteration: 2   1   (norm of flow increment   0.7084)
+
+ans =
+
+    21
+
+
+ans =
+
+     6
+
+GNC stage: 1
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   2.5618)
+--Iteration: 2   1   (norm of flow increment   0.78069)
+
+ans =
+
+    15
+
+
+ans =
+
+     9
+
+
+ans =
+
+    24
+
+--Iteration: 3   1   (norm of flow increment   0.67777)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   3.8215)
+--Iteration: 2   1   (norm of flow increment   1.4631)
+--Iteration: 3   1   (norm of flow increment   1.5015)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   9.8765)
+--Iteration: 2   1   (norm of flow increment   5.2369)
+--Iteration: 3   1   (norm of flow increment   5.1132)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   31.1621)
+--Iteration: 2   1   (norm of flow increment   20.4188)
+
+ans =
+
+    27
+
+GNC stage: 1
+--Iteration: 3   1   (norm of flow increment   19.8889)
+-Pyramid level: 2
+--Iteration: 3   1   (norm of flow increment   0.69333)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   4.2858)
+--Iteration: 2   1   (norm of flow increment   1.7108)
+--Iteration: 3   1   (norm of flow increment   1.6376)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   10.2069)
+--Iteration: 2   1   (norm of flow increment   5.3183)
+--Iteration: 3   1   (norm of flow increment   5.1522)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   28.0752)
+--Iteration: 2   1   (norm of flow increment   19.3817)
+GNC stage: 1
+--Iteration: 3   1   (norm of flow increment   19.1147)
+-Pyramid level: 2
+GNC stage: 1
+
+ans =
+
+    29
+
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   5.3101)
+--Iteration: 2   1   (norm of flow increment   2.0361)
+--Iteration: 1   1   (norm of flow increment   89.0143)
+--Iteration: 1   1   (norm of flow increment   82.0346)
+GNC stage: 1
+--Iteration: 3   1   (norm of flow increment   1.6217)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   5.8174)
+--Iteration: 2   1   (norm of flow increment   3.0697)
+--Iteration: 3   1   (norm of flow increment   3.0784)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   15.5559)
+--Iteration: 2   1   (norm of flow increment   10.0517)
+--Iteration: 3   1   (norm of flow increment   9.809)
+-Pyramid level: 3
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   3.9054)
+--Iteration: 2   1   (norm of flow increment   3.4443)
+GNC stage: 1
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   4.0818)
+--Iteration: 2   1   (norm of flow increment   1.3346)
+
+ans =
+
+    31
+
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   4.1272)
+--Iteration: 2   1   (norm of flow increment   1.0357)
+--Iteration: 3   1   (norm of flow increment   1.1337)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   5.876)
+--Iteration: 2   1   (norm of flow increment   2.6102)
+--Iteration: 3   1   (norm of flow increment   2.5463)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   16.4321)
+--Iteration: 2   1   (norm of flow increment   9.4418)
+--Iteration: 3   1   (norm of flow increment   9.8234)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   42.7944)
+--Iteration: 1   1   (norm of flow increment   40.7433)
+--Iteration: 2   1   (norm of flow increment   27.7044)
+--Iteration: 3   1   (norm of flow increment   1.9117)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   7.5619)
+--Iteration: 2   1   (norm of flow increment   4.1257)
+--Iteration: 3   1   (norm of flow increment   3.8543)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   16.0976)
+--Iteration: 2   1   (norm of flow increment   10.5707)
+--Iteration: 3   1   (norm of flow increment   10.1441)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   40.0605)
+--Iteration: 2   1   (norm of flow increment   30.3995)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   6.1383)
+--Iteration: 2   1   (norm of flow increment   3.7363)
+
+ans =
+
+    33
+
+--Iteration: 3   1   (norm of flow increment   29.9368)
+--Iteration: 3   1   (norm of flow increment   0.7194)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   3.5982)
+--Iteration: 2   1   (norm of flow increment   2.4119)
+--Iteration: 3   1   (norm of flow increment   2.3269)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   13.8341)
+--Iteration: 2   1   (norm of flow increment   8.7219)
+--Iteration: 3   1   (norm of flow increment   8.6355)
+-Pyramid level: 3
+--Iteration: 2   1   (norm of flow increment   28.298)
+GNC stage: 1
+--Iteration: 3   1   (norm of flow increment   27.2281)
+-Pyramid level: 2
+--Iteration: 3   1   (norm of flow increment   2.6404)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   8.2794)
+--Iteration: 2   1   (norm of flow increment   4.5514)
+--Iteration: 3   1   (norm of flow increment   4.6189)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   18.3049)
+--Iteration: 2   1   (norm of flow increment   13.9099)
+--Iteration: 3   1   (norm of flow increment   13.7377)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   46.7728)
+--Iteration: 1   1   (norm of flow increment   38.2965)
+--Iteration: 2   1   (norm of flow increment   28.4785)
+--Iteration: 3   1   (norm of flow increment   28.2666)
+GNC stage: 1
+--Iteration: 2   1   (norm of flow increment   38.2002)
+--Iteration: 2   1   (norm of flow increment   58.3306)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   4.5699)
+--Iteration: 2   1   (norm of flow increment   1.6409)
+GNC stage: 1
+--Iteration: 1   1   (norm of flow increment   98.4891)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   100.2356)
+--Iteration: 2   1   (norm of flow increment   64.1435)
+--Iteration: 3   1   (norm of flow increment   36.4508)
+-Pyramid level: 2
+--Iteration: 3   1   (norm of flow increment   27.9329)
+-Pyramid level: 2
+--Iteration: 3   1   (norm of flow increment   1.2195)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   5.4591)
+--Iteration: 2   1   (norm of flow increment   3.5331)
+--Iteration: 3   1   (norm of flow increment   3.4146)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   15.5791)
+--Iteration: 2   1   (norm of flow increment   11.1037)
+--Iteration: 3   1   (norm of flow increment   11.201)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   42.6021)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   96.2087)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   3.3642)
+--Iteration: 2   1   (norm of flow increment   1.0109)
+--Iteration: 2   1   (norm of flow increment   31.5005)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   2.9528)
+--Iteration: 2   1   (norm of flow increment   1.1603)
+--Iteration: 1   1   (norm of flow increment   98.0374)
+--Iteration: 3   1   (norm of flow increment   0.93583)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   5.472)
+--Iteration: 2   1   (norm of flow increment   3.2529)
+--Iteration: 3   1   (norm of flow increment   3.1733)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   15.1218)
+--Iteration: 2   1   (norm of flow increment   10.0645)
+--Iteration: 3   1   (norm of flow increment   9.9831)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   113.247)
+GNC stage: 1
+--Iteration: 1   1   (norm of flow increment   41.7496)
+--Iteration: 3   1   (norm of flow increment   30.5594)
+--Iteration: 3   1   (norm of flow increment   0.9114)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   4.3006)
+--Iteration: 2   1   (norm of flow increment   2.8398)
+--Iteration: 3   1   (norm of flow increment   2.7758)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   13.9656)
+--Iteration: 2   1   (norm of flow increment   8.8455)
+--Iteration: 3   1   (norm of flow increment   8.8236)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   40.354)
+GNC stage: 1
+--Iteration: 2   1   (norm of flow increment   79.8642)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   3.2638)
+--Iteration: 2   1   (norm of flow increment   0.83328)
+--Iteration: 2   1   (norm of flow increment   31.745)
+--Iteration: 2   1   (norm of flow increment   28.1187)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   3.2378)
+--Iteration: 2   1   (norm of flow increment   0.98171)
+--Iteration: 3   1   (norm of flow increment   0.75261)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   3.5514)
+--Iteration: 2   1   (norm of flow increment   2.3561)
+--Iteration: 3   1   (norm of flow increment   2.3544)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   13.6922)
+--Iteration: 2   1   (norm of flow increment   8.7641)
+--Iteration: 3   1   (norm of flow increment   8.6011)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   38.7827)
+--Iteration: 3   1   (norm of flow increment   31.1328)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   107.5356)
+--Iteration: 3   1   (norm of flow increment   0.74127)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   3.7351)
+--Iteration: 2   1   (norm of flow increment   2.391)
+--Iteration: 3   1   (norm of flow increment   2.3531)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   13.5772)
+--Iteration: 2   1   (norm of flow increment   9.0035)
+--Iteration: 3   1   (norm of flow increment   8.9945)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   41.7416)
+--Iteration: 2   1   (norm of flow increment   75.4164)
+--Iteration: 3   1   (norm of flow increment   56.2505)
+--Iteration: 3   1   (norm of flow increment   27.6632)
+-Pyramid level: 2
+--Iteration: 2   1   (norm of flow increment   30.9021)
+--Iteration: 3   1   (norm of flow increment   61.546)
+--Iteration: 2   1   (norm of flow increment   28.2755)
+--Iteration: 2   1   (norm of flow increment   77.9359)
+--Iteration: 2   1   (norm of flow increment   75.4432)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   109.8742)
+--Iteration: 1   1   (norm of flow increment   105.883)
+--Iteration: 3   1   (norm of flow increment   27.6893)
+-Pyramid level: 2
+--Iteration: 3   1   (norm of flow increment   30.3868)
+--Iteration: 2   1   (norm of flow increment   92.894)
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   74.1444)
+--Iteration: 1   1   (norm of flow increment   102.9225)
+--Iteration: 3   1   (norm of flow increment   77.8255)
+--Iteration: 2   1   (norm of flow increment   84.3681)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   104.9217)
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   73.3483)
+--Iteration: 3   1   (norm of flow increment   76.4685)
+--Iteration: 2   1   (norm of flow increment   88.1788)
+-Pyramid level: 1
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   83.2144)
+--Iteration: 3   1   (norm of flow increment   89.1815)
+-Pyramid level: 1
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   84.0233)
+--Iteration: 3   1   (norm of flow increment   83.2975)
+--Iteration: 2   1   (norm of flow increment   81.6663)
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   86.2783)
+--Iteration: 1   1   (norm of flow increment   211.1645)
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   81.2845)
+--Iteration: 3   1   (norm of flow increment   82.1199)
+--Iteration: 1   1   (norm of flow increment   242.1709)
+--Iteration: 3   1   (norm of flow increment   79.9274)
+-Pyramid level: 1
+--Iteration: 1   1   (norm of flow increment   242.155)
+--Iteration: 1   1   (norm of flow increment   235.3654)
+--Iteration: 1   1   (norm of flow increment   231.6372)
+--Iteration: 1   1   (norm of flow increment   252.3084)
+-Pyramid level: 1
+-Pyramid level: 1
+-Pyramid level: 1
+--Iteration: 1   1   (norm of flow increment   259.7456)
+--Iteration: 1   1   (norm of flow increment   255.784)
+--Iteration: 1   1   (norm of flow increment   261.9207)
+--Iteration: 1   1   (norm of flow increment   268.0273)
+--Iteration: 1   1   (norm of flow increment   251.9272)
+--Iteration: 1   1   (norm of flow increment   249.725)
+--Iteration: 2   1   (norm of flow increment   197.3309)
+--Iteration: 2   1   (norm of flow increment   172.2023)
+--Iteration: 2   1   (norm of flow increment   202.598)
+--Iteration: 2   1   (norm of flow increment   200.6515)
+--Iteration: 2   1   (norm of flow increment   208.7467)
+--Iteration: 2   1   (norm of flow increment   220.2487)
+--Iteration: 2   1   (norm of flow increment   185.016)
+--Iteration: 2   1   (norm of flow increment   223.2863)
+--Iteration: 2   1   (norm of flow increment   217.6569)
+--Iteration: 2   1   (norm of flow increment   212.9978)
+--Iteration: 2   1   (norm of flow increment   210.0157)
+--Iteration: 2   1   (norm of flow increment   227.6362)
+--Iteration: 3   1   (norm of flow increment   191.3031)
+--Iteration: 3   1   (norm of flow increment   197.5707)
+--Iteration: 3   1   (norm of flow increment   195.3473)
+--Iteration: 3   1   (norm of flow increment   203.1359)
+--Iteration: 3   1   (norm of flow increment   212.0946)
+--Iteration: 3   1   (norm of flow increment   167.4577)
+--Iteration: 3   1   (norm of flow increment   216.1744)
+--Iteration: 3   1   (norm of flow increment   179.1351)
+--Iteration: 3   1   (norm of flow increment   208.0376)
+--Iteration: 3   1   (norm of flow increment   210.723)
+GNC stage 1 finished, 4.03 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   69.123)
+--Iteration: 3   1   (norm of flow increment   221.8325)
+--Iteration: 3   1   (norm of flow increment   204.0378)
+--Iteration: 2   1   (norm of flow increment   41.0255)
+GNC stage 1 finished, 4.27 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   64.9991)
+GNC stage 1 finished, 4.28 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   69.6441)
+GNC stage 1 finished, 4.26 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   81.6194)
+GNC stage 1 finished, 4.44 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   66.4814)
+--Iteration: 3   1   (norm of flow increment   32.1779)
+GNC stage 1 finished, 4.38 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   67.7647)
+-Pyramid level: 1
+GNC stage 1 finished, 4.69 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   53.8407)
+--Iteration: 2   1   (norm of flow increment   41.4202)
+--Iteration: 2   1   (norm of flow increment   52.9724)
+--Iteration: 2   1   (norm of flow increment   39.5687)
+GNC stage 1 finished, 4.64 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   66.8416)
+GNC stage 1 finished, 4.67 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   69.1712)
+--Iteration: 2   1   (norm of flow increment   40.1149)
+--Iteration: 1   1   (norm of flow increment   36.5526)
+--Iteration: 3   1   (norm of flow increment   40.5767)
+--Iteration: 3   1   (norm of flow increment   32.5774)
+GNC stage 1 finished, 5.04 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   64.9388)
+--Iteration: 3   1   (norm of flow increment   31.2695)
+-Pyramid level: 1
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   31.3649)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   42.8119)
+--Iteration: 2   1   (norm of flow increment   41.8995)
+GNC stage 1 finished, 4.95 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   66.4233)
+--Iteration: 2   1   (norm of flow increment   45.075)
+--Iteration: 3   1   (norm of flow increment   32.2899)
+--Iteration: 2   1   (norm of flow increment   30.9467)
+--Iteration: 2   1   (norm of flow increment   36.9841)
+--Iteration: 1   1   (norm of flow increment   47.3877)
+GNC stage 1 finished, 5.10 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   75.4943)
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   24.9871)
+--Iteration: 1   1   (norm of flow increment   40.7106)
+--Iteration: 1   1   (norm of flow increment   40.0471)
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   34.3941)
+--Iteration: 3   1   (norm of flow increment   34.5024)
+-Pyramid level: 1
+--Iteration: 1   1   (norm of flow increment   39.3746)
+--Iteration: 3   1   (norm of flow increment   28.1789)
+--Iteration: 3   1   (norm of flow increment   27.641)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   40.9709)
+--Iteration: 3   1   (norm of flow increment   35.1266)
+--Iteration: 2   1   (norm of flow increment   39.1079)
+-Pyramid level: 1
+--Iteration: 1   1   (norm of flow increment   31.0554)
+--Iteration: 2   1   (norm of flow increment   42.7744)
+--Iteration: 2   1   (norm of flow increment   32.6056)
+--Iteration: 1   1   (norm of flow increment   41.0907)
+GNC stage 2 finished, 5.75 minutes passed 	 	
+
+ans =
+
+     8
+
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   32.7914)
+--Iteration: 3   1   (norm of flow increment   34.1856)
+--Iteration: 1   1   (norm of flow increment   44.4192)
+--Iteration: 1   1   (norm of flow increment   32.0649)
+GNC stage: 1
+--Iteration: 2   1   (norm of flow increment   31.6016)
+-Pyramid level: 1
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   3.4605)
+--Iteration: 2   1   (norm of flow increment   1.3997)
+--Iteration: 3   1   (norm of flow increment   0.92157)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   5.2916)
+--Iteration: 2   1   (norm of flow increment   2.7485)
+--Iteration: 3   1   (norm of flow increment   2.763)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   17.426)
+--Iteration: 2   1   (norm of flow increment   9.0461)
+--Iteration: 3   1   (norm of flow increment   9.7006)
+--Iteration: 3   1   (norm of flow increment   33.029)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   40.01)
+--Iteration: 2   1   (norm of flow increment   27.607)
+--Iteration: 3   1   (norm of flow increment   27.301)
+-Pyramid level: 2
+--Iteration: 3   1   (norm of flow increment   34.4396)
+--Iteration: 1   1   (norm of flow increment   92.7467)
+--Iteration: 3   1   (norm of flow increment   30.0813)
+--Iteration: 2   1   (norm of flow increment   25.8445)
+-Pyramid level: 1
+--Iteration: 1   1   (norm of flow increment   41.2576)
+--Iteration: 2   1   (norm of flow increment   72.4164)
+--Iteration: 1   1   (norm of flow increment   41.8697)
+GNC stage 2 finished, 6.25 minutes passed 	 	
+
+ans =
+
+    20
+
+--Iteration: 3   1   (norm of flow increment   70.3279)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   38.9208)
+--Iteration: 2   1   (norm of flow increment   34.3553)
+--Iteration: 2   1   (norm of flow increment   27.2252)
+--Iteration: 1   1   (norm of flow increment   40.805)
+--Iteration: 3   1   (norm of flow increment   29.1685)
+--Iteration: 3   1   (norm of flow increment   31.2617)
+GNC stage: 1
+GNC stage 2 finished, 6.35 minutes passed 	 	
+
+ans =
+
+    14
+
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   4.993)
+--Iteration: 2   1   (norm of flow increment   1.9432)
+--Iteration: 3   1   (norm of flow increment   1.9653)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   5.69)
+--Iteration: 2   1   (norm of flow increment   4.3651)
+--Iteration: 3   1   (norm of flow increment   4.4326)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   17.6723)
+--Iteration: 2   1   (norm of flow increment   13.4323)
+--Iteration: 3   1   (norm of flow increment   12.7592)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   45.0187)
+--Iteration: 2   1   (norm of flow increment   36.3654)
+--Iteration: 3   1   (norm of flow increment   34.0049)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   105.2565)
+--Iteration: 3   1   (norm of flow increment   23.5267)
+GNC stage: 1
+--Iteration: 2   1   (norm of flow increment   86.2928)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   4.2921)
+--Iteration: 2   1   (norm of flow increment   1.0387)
+--Iteration: 3   1   (norm of flow increment   0.7934)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   3.7913)
+--Iteration: 2   1   (norm of flow increment   2.2389)
+--Iteration: 3   1   (norm of flow increment   2.3825)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   13.9147)
+--Iteration: 2   1   (norm of flow increment   8.9617)
+--Iteration: 3   1   (norm of flow increment   8.6939)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   37.63)
+--Iteration: 2   1   (norm of flow increment   27.1693)
+--Iteration: 1   1   (norm of flow increment   228.0787)
+--Iteration: 3   1   (norm of flow increment   84.4224)
+--Iteration: 3   1   (norm of flow increment   26.4937)
+-Pyramid level: 2
+GNC stage 2 finished, 6.66 minutes passed 	 	
+
+ans =
+
+    11
+
+--Iteration: 1   1   (norm of flow increment   102.0021)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   35.0051)
+--Iteration: 3   1   (norm of flow increment   36.6723)
+--Iteration: 3   1   (norm of flow increment   32.5283)
+--Iteration: 2   1   (norm of flow increment   34.7084)
+GNC stage 2 finished, 6.62 minutes passed 	 	
+
+ans =
+
+    17
+
+--Iteration: 3   1   (norm of flow increment   25.289)
+GNC stage: 1
+--Iteration: 2   1   (norm of flow increment   80.5976)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   4.9087)
+--Iteration: 2   1   (norm of flow increment   1.6676)
+--Iteration: 3   1   (norm of flow increment   1.5964)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   5.5683)
+--Iteration: 2   1   (norm of flow increment   3.2181)
+--Iteration: 3   1   (norm of flow increment   2.9623)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   16.9947)
+--Iteration: 2   1   (norm of flow increment   10.3071)
+--Iteration: 3   1   (norm of flow increment   10.7809)
+-Pyramid level: 3
+GNC stage 2 finished, 6.78 minutes passed 	 	
+
+ans =
+
+     5
+
+--Iteration: 1   1   (norm of flow increment   43.6513)
+--Iteration: 2   1   (norm of flow increment   31.295)
+--Iteration: 3   1   (norm of flow increment   30.774)
+-Pyramid level: 2
+GNC stage: 1
+--Iteration: 1   1   (norm of flow increment   104.9382)
+--Iteration: 2   1   (norm of flow increment   34.9224)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   3.7487)
+--Iteration: 2   1   (norm of flow increment   1.7401)
+--Iteration: 3   1   (norm of flow increment   0.79715)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   6.6551)
+--Iteration: 2   1   (norm of flow increment   3.1607)
+--Iteration: 3   1   (norm of flow increment   3.1619)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   14.6932)
+--Iteration: 2   1   (norm of flow increment   9.9491)
+--Iteration: 3   1   (norm of flow increment   9.3241)
+--Iteration: 3   1   (norm of flow increment   79.1643)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   37.4424)
+--Iteration: 2   1   (norm of flow increment   28.6887)
+--Iteration: 3   1   (norm of flow increment   28.0246)
+--Iteration: 1   1   (norm of flow increment   245.9185)
+GNC stage: 1
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   2.3376)
+--Iteration: 2   1   (norm of flow increment   1.9679)
+--Iteration: 3   1   (norm of flow increment   1.5013)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   5.1555)
+--Iteration: 2   1   (norm of flow increment   1.9361)
+--Iteration: 3   1   (norm of flow increment   1.9441)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   9.3323)
+--Iteration: 2   1   (norm of flow increment   5.1321)
+--Iteration: 3   1   (norm of flow increment   4.9463)
+--Iteration: 2   1   (norm of flow increment   82.1387)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   95.6101)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   27.2626)
+--Iteration: 2   1   (norm of flow increment   19.5155)
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   19.4828)
+GNC stage 2 finished, 6.70 minutes passed 	 	
+
+ans =
+
+    32
+
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   81.3963)
+--Iteration: 3   1   (norm of flow increment   79.8417)
+GNC stage 2 finished, 7.06 minutes passed 	 	
+
+ans =
+
+     2
+
+--Iteration: 3   1   (norm of flow increment   31.982)
+--Iteration: 2   1   (norm of flow increment   76.9065)
+GNC stage 2 finished, 6.94 minutes passed 	 	
+
+ans =
+
+    23
+
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   32.3999)
+GNC stage: 1
+--Iteration: 2   1   (norm of flow increment   58.9431)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   3.2652)
+--Iteration: 2   1   (norm of flow increment   0.86841)
+--Iteration: 3   1   (norm of flow increment   0.63971)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   3.24)
+--Iteration: 2   1   (norm of flow increment   2.3806)
+--Iteration: 3   1   (norm of flow increment   2.3336)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   14.6084)
+--Iteration: 2   1   (norm of flow increment   9.0104)
+--Iteration: 3   1   (norm of flow increment   8.7583)
+--Iteration: 3   1   (norm of flow increment   75.1395)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   38.7697)
+--Iteration: 2   1   (norm of flow increment   28.4198)
+GNC stage: 1
+--Iteration: 1   1   (norm of flow increment   266.3573)
+--Iteration: 3   1   (norm of flow increment   33.1702)
+--Iteration: 3   1   (norm of flow increment   27.9095)
+-Pyramid level: 2
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   1.8435)
+--Iteration: 2   1   (norm of flow increment   0.8073)
+--Iteration: 3   1   (norm of flow increment   0.75563)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   4.1133)
+--Iteration: 2   1   (norm of flow increment   1.6586)
+--Iteration: 3   1   (norm of flow increment   1.665)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   9.4262)
+--Iteration: 2   1   (norm of flow increment   4.766)
+--Iteration: 3   1   (norm of flow increment   4.7273)
+-Pyramid level: 1
+--Iteration: 1   1   (norm of flow increment   103.4221)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   28.1455)
+--Iteration: 2   1   (norm of flow increment   18.9834)
+--Iteration: 3   1   (norm of flow increment   57.4107)
+GNC stage: 1
+--Iteration: 3   1   (norm of flow increment   18.6068)
+-Pyramid level: 2
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   5.5908)
+--Iteration: 2   1   (norm of flow increment   1.5605)
+--Iteration: 3   1   (norm of flow increment   1.4983)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   7.3046)
+--Iteration: 2   1   (norm of flow increment   4.3341)
+--Iteration: 3   1   (norm of flow increment   3.8258)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   18.0624)
+--Iteration: 2   1   (norm of flow increment   12.2998)
+--Iteration: 3   1   (norm of flow increment   12.1765)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   84.0291)
+-Pyramid level: 1
+--Iteration: 1   1   (norm of flow increment   44.2059)
+--Iteration: 2   1   (norm of flow increment   34.6059)
+--Iteration: 3   1   (norm of flow increment   34.2008)
+-Pyramid level: 2
+--Iteration: 2   1   (norm of flow increment   81.4602)
+--Iteration: 1   1   (norm of flow increment   248.0132)
+GNC stage 2 finished, 7.12 minutes passed 	 	
+
+ans =
+
+    30
+
+--Iteration: 1   1   (norm of flow increment   112.2151)
+GNC stage 2 finished, 7.21 minutes passed 	 	
+
+ans =
+
+    26
+
+--Iteration: 2   1   (norm of flow increment   61.999)
+--Iteration: 2   1   (norm of flow increment   190.426)
+--Iteration: 3   1   (norm of flow increment   78.9731)
+--Iteration: 2   1   (norm of flow increment   92.3226)
+--Iteration: 1   1   (norm of flow increment   242.4377)
+-Pyramid level: 1
+GNC stage: 1
+GNC stage 2 finished, 7.27 minutes passed 	 	
+
+ans =
+
+    28
+
+--Iteration: 3   1   (norm of flow increment   60.4065)
+--Iteration: 1   1   (norm of flow increment   213.1759)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   3.2212)
+--Iteration: 2   1   (norm of flow increment   1.0441)
+--Iteration: 3   1   (norm of flow increment   0.98602)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   3.991)
+--Iteration: 2   1   (norm of flow increment   2.6946)
+--Iteration: 3   1   (norm of flow increment   2.656)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   13.7293)
+--Iteration: 2   1   (norm of flow increment   8.8047)
+--Iteration: 3   1   (norm of flow increment   8.5018)
+-Pyramid level: 3
+GNC stage: 1
+--Iteration: 1   1   (norm of flow increment   40.4579)
+--Iteration: 2   1   (norm of flow increment   28.0741)
+--Iteration: 3   1   (norm of flow increment   88.922)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   3.5959)
+--Iteration: 2   1   (norm of flow increment   1.2828)
+--Iteration: 3   1   (norm of flow increment   1.2065)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   4.5814)
+--Iteration: 2   1   (norm of flow increment   2.9989)
+--Iteration: 3   1   (norm of flow increment   2.9333)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   13.2757)
+--Iteration: 2   1   (norm of flow increment   8.6029)
+--Iteration: 3   1   (norm of flow increment   8.4805)
+-Pyramid level: 3
+--Iteration: 3   1   (norm of flow increment   27.6586)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   37.6417)
+--Iteration: 2   1   (norm of flow increment   28.2497)
+--Iteration: 1   1   (norm of flow increment   98.3883)
+--Iteration: 3   1   (norm of flow increment   27.8017)
+-Pyramid level: 2
+-Pyramid level: 1
+--Iteration: 1   1   (norm of flow increment   101.6671)
+-Pyramid level: 1
+GNC stage: 1
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   3.053)
+--Iteration: 2   1   (norm of flow increment   1.2525)
+--Iteration: 3   1   (norm of flow increment   0.99217)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   4.7546)
+--Iteration: 2   1   (norm of flow increment   2.8487)
+--Iteration: 3   1   (norm of flow increment   2.9152)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   13.5775)
+--Iteration: 2   1   (norm of flow increment   8.9229)
+--Iteration: 3   1   (norm of flow increment   8.8905)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   40.8813)
+--Iteration: 2   1   (norm of flow increment   28.8856)
+--Iteration: 2   1   (norm of flow increment   77.9131)
+--Iteration: 3   1   (norm of flow increment   28.4535)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   101.3136)
+--Iteration: 1   1   (norm of flow increment   246.5067)
+--Iteration: 2   1   (norm of flow increment   80.9943)
+--Iteration: 2   1   (norm of flow increment   210.8066)
+--Iteration: 3   1   (norm of flow increment   76.2729)
+--Iteration: 2   1   (norm of flow increment   79.9034)
+--Iteration: 3   1   (norm of flow increment   78.7478)
+--Iteration: 1   1   (norm of flow increment   233.5924)
+-Pyramid level: 1
+--Iteration: 1   1   (norm of flow increment   262.9009)
+--Iteration: 3   1   (norm of flow increment   78.863)
+-Pyramid level: 1
+-Pyramid level: 1
+--Iteration: 1   1   (norm of flow increment   244.5638)
+--Iteration: 3   1   (norm of flow increment   184.0137)
+--Iteration: 1   1   (norm of flow increment   250.9245)
+--Iteration: 1   1   (norm of flow increment   248.216)
+--Iteration: 2   1   (norm of flow increment   207.7635)
+--Iteration: 2   1   (norm of flow increment   223.6917)
+--Iteration: 3   1   (norm of flow increment   203.9458)
+--Iteration: 2   1   (norm of flow increment   202.1481)
+--Iteration: 2   1   (norm of flow increment   174.2568)
+--Iteration: 2   1   (norm of flow increment   209.7947)
+GNC stage 1 finished, 2.73 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   65.7361)
+--Iteration: 2   1   (norm of flow increment   225.3336)
+--Iteration: 2   1   (norm of flow increment   182.3528)
+--Iteration: 2   1   (norm of flow increment   39.1993)
+--Iteration: 2   1   (norm of flow increment   212.4678)
+--Iteration: 3   1   (norm of flow increment   201.7289)
+--Iteration: 2   1   (norm of flow increment   203.1771)
+--Iteration: 3   1   (norm of flow increment   32.0276)
+--Iteration: 2   1   (norm of flow increment   208.1579)
+GNC stage 1 finished, 2.75 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   71.1965)
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   217.5804)
+--Iteration: 1   1   (norm of flow increment   36.2958)
+--Iteration: 2   1   (norm of flow increment   45.937)
+--Iteration: 3   1   (norm of flow increment   219.9444)
+--Iteration: 3   1   (norm of flow increment   204.6501)
+--Iteration: 3   1   (norm of flow increment   196.9491)
+--Iteration: 3   1   (norm of flow increment   169.5183)
+--Iteration: 3   1   (norm of flow increment   35.8122)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   28.5478)
+GNC stage 1 finished, 3.07 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   69.1139)
+--Iteration: 3   1   (norm of flow increment   176.7621)
+--Iteration: 1   1   (norm of flow increment   41.6114)
+--Iteration: 3   1   (norm of flow increment   197.9075)
+--Iteration: 3   1   (norm of flow increment   206.4442)
+--Iteration: 2   1   (norm of flow increment   43.1691)
+--Iteration: 3   1   (norm of flow increment   202.4411)
+--Iteration: 3   1   (norm of flow increment   24.6572)
+GNC stage 1 finished, 3.13 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   79.1843)
+GNC stage 2 finished, 4.44 minutes passed 	 	
+
+ans =
+
+     7
+
+--Iteration: 3   1   (norm of flow increment   32.2042)
+GNC stage 1 finished, 3.98 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   81.1393)
+--Iteration: 2   1   (norm of flow increment   36.0978)
+-Pyramid level: 1
+GNC stage: 1
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   2.8326)
+--Iteration: 2   1   (norm of flow increment   3.4176)
+--Iteration: 3   1   (norm of flow increment   1.0905)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   7.2681)
+--Iteration: 2   1   (norm of flow increment   3.6017)
+--Iteration: 3   1   (norm of flow increment   2.8808)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   17.8425)
+--Iteration: 2   1   (norm of flow increment   8.2424)
+--Iteration: 3   1   (norm of flow increment   8.1659)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   36.9658)
+--Iteration: 2   1   (norm of flow increment   24.7044)
+GNC stage 1 finished, 3.51 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   67.3819)
+--Iteration: 3   1   (norm of flow increment   23.7352)
+--Iteration: 2   1   (norm of flow increment   48.5675)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   88.722)
+GNC stage 1 finished, 3.79 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   65.1312)
+GNC stage 1 finished, 3.77 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   54.75)
+--Iteration: 2   1   (norm of flow increment   66.6718)
+--Iteration: 1   1   (norm of flow increment   40.3547)
+--Iteration: 3   1   (norm of flow increment   65.7991)
+--Iteration: 3   1   (norm of flow increment   39.0651)
+--Iteration: 3   1   (norm of flow increment   33.6657)
+--Iteration: 2   1   (norm of flow increment   45.8914)
+-Pyramid level: 1
+-Pyramid level: 1
+GNC stage 1 finished, 3.47 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   62.3325)
+--Iteration: 2   1   (norm of flow increment   42.0493)
+--Iteration: 2   1   (norm of flow increment   38.0317)
+--Iteration: 2   1   (norm of flow increment   32.2897)
+GNC stage 1 finished, 3.50 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   64.8373)
+GNC stage 1 finished, 3.60 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   63.3206)
+GNC stage 2 finished, 4.70 minutes passed 	 	
+
+ans =
+
+    19
+
+GNC stage 1 finished, 3.99 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   68.8334)
+--Iteration: 1   1   (norm of flow increment   224.9678)
+--Iteration: 1   1   (norm of flow increment   47.3412)
+--Iteration: 3   1   (norm of flow increment   36.5227)
+--Iteration: 3   1   (norm of flow increment   33.732)
+--Iteration: 3   1   (norm of flow increment   31.4825)
+GNC stage: 1
+--Iteration: 3   1   (norm of flow increment   24.9408)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   4.6467)
+--Iteration: 2   1   (norm of flow increment   2.5098)
+--Iteration: 3   1   (norm of flow increment   1.6523)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   4.7497)
+--Iteration: 2   1   (norm of flow increment   3.1102)
+--Iteration: 3   1   (norm of flow increment   3.0415)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   16.054)
+--Iteration: 2   1   (norm of flow increment   10.8482)
+--Iteration: 3   1   (norm of flow increment   10.1854)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   41.1076)
+--Iteration: 2   1   (norm of flow increment   29.7393)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   32.5089)
+--Iteration: 3   1   (norm of flow increment   29.0914)
+-Pyramid level: 2
+-Pyramid level: 1
+-Pyramid level: 1
+--Iteration: 1   1   (norm of flow increment   103.0845)
+--Iteration: 2   1   (norm of flow increment   39.2885)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   82.8696)
+--Iteration: 2   1   (norm of flow increment   41.606)
+--Iteration: 1   1   (norm of flow increment   35.7894)
+--Iteration: 3   1   (norm of flow increment   81.187)
+--Iteration: 1   1   (norm of flow increment   29.2437)
+--Iteration: 1   1   (norm of flow increment   39.2375)
+--Iteration: 2   1   (norm of flow increment   39.1303)
+--Iteration: 3   1   (norm of flow increment   33.8406)
+--Iteration: 2   1   (norm of flow increment   38.6653)
+--Iteration: 1   1   (norm of flow increment   40.7724)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   40.7518)
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   30.0965)
+--Iteration: 3   1   (norm of flow increment   35.3579)
+--Iteration: 1   1   (norm of flow increment   250.4384)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   24.1547)
+--Iteration: 1   1   (norm of flow increment   43.6989)
+--Iteration: 3   1   (norm of flow increment   30.6534)
+--Iteration: 3   1   (norm of flow increment   30.4999)
+--Iteration: 2   1   (norm of flow increment   35.2182)
+--Iteration: 2   1   (norm of flow increment   29.0788)
+--Iteration: 3   1   (norm of flow increment   36.3707)
+-Pyramid level: 1
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   33.4644)
+--Iteration: 1   1   (norm of flow increment   40.4449)
+GNC stage 2 finished, 5.39 minutes passed 	 	
+
+ans =
+
+    10
+
+--Iteration: 2   1   (norm of flow increment   186.7333)
+GNC stage 2 finished, 5.13 minutes passed 	 	
+
+ans =
+
+    22
+
+GNC stage: 1
+--Iteration: 3   1   (norm of flow increment   22.1616)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   4.2375)
+--Iteration: 2   1   (norm of flow increment   1.2617)
+--Iteration: 3   1   (norm of flow increment   0.8276)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   4.7251)
+--Iteration: 2   1   (norm of flow increment   2.9144)
+--Iteration: 3   1   (norm of flow increment   3.0355)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   16.907)
+--Iteration: 2   1   (norm of flow increment   10.7818)
+--Iteration: 3   1   (norm of flow increment   10.9134)
+--Iteration: 1   1   (norm of flow increment   31.8182)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   43.418)
+--Iteration: 2   1   (norm of flow increment   30.1906)
+--Iteration: 1   1   (norm of flow increment   39.0519)
+--Iteration: 3   1   (norm of flow increment   25.9369)
+--Iteration: 3   1   (norm of flow increment   30.6305)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   101.694)
+GNC stage: 1
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   6.3718)
+--Iteration: 2   1   (norm of flow increment   1.962)
+--Iteration: 3   1   (norm of flow increment   1.6912)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   6.1701)
+--Iteration: 2   1   (norm of flow increment   3.8302)
+--Iteration: 3   1   (norm of flow increment   4.1059)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   18.36)
+--Iteration: 2   1   (norm of flow increment   13.0546)
+--Iteration: 3   1   (norm of flow increment   12.4591)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   46.7456)
+--Iteration: 3   1   (norm of flow increment   34.5124)
+--Iteration: 2   1   (norm of flow increment   78.2264)
+--Iteration: 2   1   (norm of flow increment   37.7555)
+--Iteration: 2   1   (norm of flow increment   36.4009)
+--Iteration: 3   1   (norm of flow increment   34.6948)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   109.7665)
+--Iteration: 3   1   (norm of flow increment   28.5714)
+--Iteration: 3   1   (norm of flow increment   76.4831)
+GNC stage 2 finished, 5.67 minutes passed 	 	
+
+ans =
+
+     4
+
+--Iteration: 2   1   (norm of flow increment   89.1662)
+GNC stage 2 finished, 5.77 minutes passed 	 	
+
+ans =
+
+    16
+
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   35.46)
+--Iteration: 3   1   (norm of flow increment   86.2636)
+-Pyramid level: 1
+GNC stage: 1
+GNC stage: 1
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   3.725)
+--Iteration: 2   1   (norm of flow increment   1.0151)
+--Iteration: 3   1   (norm of flow increment   0.75209)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   3.6486)
+--Iteration: 2   1   (norm of flow increment   2.3299)
+--Iteration: 3   1   (norm of flow increment   2.2437)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   13.4761)
+--Iteration: 2   1   (norm of flow increment   8.4284)
+--Iteration: 3   1   (norm of flow increment   8.1882)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   1.8733)
+--Iteration: 2   1   (norm of flow increment   0.8753)
+--Iteration: 3   1   (norm of flow increment   0.70517)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   3.4679)
+--Iteration: 2   1   (norm of flow increment   1.5722)
+--Iteration: 3   1   (norm of flow increment   1.6191)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   9.5237)
+--Iteration: 2   1   (norm of flow increment   5.3797)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   35.2547)
+--Iteration: 2   1   (norm of flow increment   26.9129)
+--Iteration: 3   1   (norm of flow increment   5.2493)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   30.5602)
+--Iteration: 2   1   (norm of flow increment   19.308)
+GNC stage 2 finished, 5.67 minutes passed 	 	
+--Iteration: 3   1   (norm of flow increment   26.0264)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   94.247)
+--Iteration: 3   1   (norm of flow increment   18.4569)
+-Pyramid level: 2
+GNC stage 2 finished, 6.27 minutes passed 	 	
+
+ans =
+
+    13
+
+
+ans =
+
+    35
+
+GNC stage: 1
+--Iteration: 1   1   (norm of flow increment   238.468)
+--Iteration: 2   1   (norm of flow increment   73.3324)
+--Iteration: 3   1   (norm of flow increment   71.2022)
+--Iteration: 2   1   (norm of flow increment   27.6355)
+--Iteration: 1   1   (norm of flow increment   80.4153)
+--Iteration: 2   1   (norm of flow increment   57.7263)
+--Iteration: 3   1   (norm of flow increment   34.7403)
+GNC stage: 1
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   4.72)
+--Iteration: 2   1   (norm of flow increment   1.2373)
+--Iteration: 3   1   (norm of flow increment   1.0543)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   4.9401)
+--Iteration: 2   1   (norm of flow increment   2.4754)
+--Iteration: 3   1   (norm of flow increment   2.3516)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   14.5944)
+--Iteration: 2   1   (norm of flow increment   9.2769)
+--Iteration: 3   1   (norm of flow increment   8.9531)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   40.6061)
+--Iteration: 2   1   (norm of flow increment   28.4907)
+--Iteration: 3   1   (norm of flow increment   27.623)
+--Iteration: 2   1   (norm of flow increment   32.9293)
+--Iteration: 1   1   (norm of flow increment   255.149)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   3.7732)
+--Iteration: 2   1   (norm of flow increment   1.0273)
+--Iteration: 3   1   (norm of flow increment   0.81408)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   5.1253)
+--Iteration: 2   1   (norm of flow increment   3.0495)
+--Iteration: 3   1   (norm of flow increment   2.77)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   17.3518)
+--Iteration: 2   1   (norm of flow increment   10.6853)
+--Iteration: 3   1   (norm of flow increment   10.0233)
+-Pyramid level: 3
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   100.8103)
+--Iteration: 1   1   (norm of flow increment   41.6574)
+--Iteration: 2   1   (norm of flow increment   32.2728)
+--Iteration: 3   1   (norm of flow increment   32.2077)
+--Iteration: 3   1   (norm of flow increment   32.2146)
+-Pyramid level: 1
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   105.9222)
+--Iteration: 2   1   (norm of flow increment   210.7083)
+--Iteration: 3   1   (norm of flow increment   55.6158)
+--Iteration: 2   1   (norm of flow increment   77.2554)
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   74.9086)
+--Iteration: 2   1   (norm of flow increment   85.8211)
+--Iteration: 3   1   (norm of flow increment   181.2216)
+GNC stage 2 finished, 5.79 minutes passed 	 	
+--Iteration: 3   1   (norm of flow increment   31.3293)
+-Pyramid level: 1
+--Iteration: 1   1   (norm of flow increment   235.6587)
+--Iteration: 3   1   (norm of flow increment   83.8851)
+GNC stage 2 finished, 5.77 minutes passed 	 	
+-Pyramid level: 1
+
+ans =
+
+    37
+
+GNC stage: 1
+--Iteration: 3   1   (norm of flow increment   24.7023)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   3.0233)
+--Iteration: 2   1   (norm of flow increment   0.8139)
+--Iteration: 3   1   (norm of flow increment   0.86318)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   5.4552)
+--Iteration: 2   1   (norm of flow increment   3.4588)
+--Iteration: 3   1   (norm of flow increment   3.4965)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   16.7)
+--Iteration: 2   1   (norm of flow increment   11.9192)
+--Iteration: 3   1   (norm of flow increment   11.4783)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   43.8866)
+--Iteration: 2   1   (norm of flow increment   33.5309)
+--Iteration: 1   1   (norm of flow increment   214.114)
+--Iteration: 3   1   (norm of flow increment   32.0859)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   246.623)
+GNC stage 2 finished, 6.00 minutes passed 	 	
+
+ans =
+
+    25
+
+--Iteration: 1   1   (norm of flow increment   106.5041)
+
+ans =
+
+    39
+
+GNC stage: 1
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   2.4229)
+--Iteration: 2   1   (norm of flow increment   0.72156)
+--Iteration: 3   1   (norm of flow increment   0.65539)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   4.6683)
+--Iteration: 2   1   (norm of flow increment   2.4698)
+--Iteration: 3   1   (norm of flow increment   2.4525)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   13.6271)
+--Iteration: 2   1   (norm of flow increment   9.1422)
+--Iteration: 3   1   (norm of flow increment   9.0819)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   37.9552)
+--Iteration: 2   1   (norm of flow increment   27.8069)
+--Iteration: 3   1   (norm of flow increment   27.5488)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   95.8641)
+--Iteration: 2   1   (norm of flow increment   202.0276)
+--Iteration: 2   1   (norm of flow increment   87.3518)
+GNC stage: 1
+--Iteration: 1   1   (norm of flow increment   250.1829)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   3.9381)
+--Iteration: 2   1   (norm of flow increment   1.2747)
+--Iteration: 3   1   (norm of flow increment   1.2108)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   3.839)
+--Iteration: 2   1   (norm of flow increment   2.5597)
+--Iteration: 3   1   (norm of flow increment   2.4978)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   14.3668)
+--Iteration: 2   1   (norm of flow increment   9.2815)
+--Iteration: 3   1   (norm of flow increment   9.3616)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   39.6802)
+GNC stage 2 finished, 6.50 minutes passed 	 	
+
+ans =
+
+     1
+
+--Iteration: 2   1   (norm of flow increment   29.7432)
+--Iteration: 3   1   (norm of flow increment   29.1527)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   105.297)
+--Iteration: 2   1   (norm of flow increment   78.2642)
+--Iteration: 2   1   (norm of flow increment   217.6819)
+--Iteration: 3   1   (norm of flow increment   85.7358)
+GNC stage: 1
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   84.085)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   1.6425)
+--Iteration: 2   1   (norm of flow increment   0.7701)
+--Iteration: 3   1   (norm of flow increment   0.66174)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   4.2391)
+--Iteration: 2   1   (norm of flow increment   1.7574)
+--Iteration: 3   1   (norm of flow increment   1.6889)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   9.4058)
+--Iteration: 2   1   (norm of flow increment   5.08)
+--Iteration: 3   1   (norm of flow increment   4.9935)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   28.1069)
+--Iteration: 3   1   (norm of flow increment   77.1321)
+--Iteration: 2   1   (norm of flow increment   19.9284)
+--Iteration: 3   1   (norm of flow increment   19.7858)
+-Pyramid level: 1
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   85.4323)
+--Iteration: 3   1   (norm of flow increment   82.3728)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   61.9092)
+GNC stage 1 finished, 3.37 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   65.433)
+--Iteration: 3   1   (norm of flow increment   205.4094)
+--Iteration: 1   1   (norm of flow increment   255.0917)
+--Iteration: 1   1   (norm of flow increment   238.4244)
+--Iteration: 3   1   (norm of flow increment   60.1684)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   39.0855)
+--Iteration: 1   1   (norm of flow increment   257.015)
+--Iteration: 2   1   (norm of flow increment   196.3252)
+--Iteration: 3   1   (norm of flow increment   196.5459)
+--Iteration: 1   1   (norm of flow increment   236.5766)
+--Iteration: 3   1   (norm of flow increment   28.6156)
+--Iteration: 3   1   (norm of flow increment   210.4027)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   214.7841)
+--Iteration: 2   1   (norm of flow increment   173.4978)
+--Iteration: 2   1   (norm of flow increment   205.3301)
+--Iteration: 1   1   (norm of flow increment   33.7274)
+--Iteration: 2   1   (norm of flow increment   218.5386)
+--Iteration: 2   1   (norm of flow increment   201.6383)
+GNC stage 1 finished, 3.70 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   70.6026)
+--Iteration: 2   1   (norm of flow increment   27.891)
+GNC stage 1 finished, 2.64 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   80.4598)
+GNC stage 1 finished, 2.80 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   72.9528)
+--Iteration: 2   1   (norm of flow increment   54.6115)
+--Iteration: 2   1   (norm of flow increment   219.5423)
+--Iteration: 3   1   (norm of flow increment   210.0563)
+--Iteration: 3   1   (norm of flow increment   190.1479)
+--Iteration: 2   1   (norm of flow increment   46.594)
+--Iteration: 3   1   (norm of flow increment   25.2585)
+--Iteration: 2   1   (norm of flow increment   45.4401)
+--Iteration: 2   1   (norm of flow increment   187.9258)
+--Iteration: 3   1   (norm of flow increment   198.1299)
+--Iteration: 3   1   (norm of flow increment   43.6444)
+--Iteration: 3   1   (norm of flow increment   169.0653)
+GNC stage 2 finished, 5.01 minutes passed 	 	
+--Iteration: 3   1   (norm of flow increment   34.5144)
+--Iteration: 3   1   (norm of flow increment   34.3932)
+-Pyramid level: 1
+
+ans =
+
+    40
+
+GNC stage: 1
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   2.1465)
+--Iteration: 2   1   (norm of flow increment   0.68238)
+--Iteration: 3   1   (norm of flow increment   0.63299)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   4.1266)
+--Iteration: 2   1   (norm of flow increment   2.6715)
+--Iteration: 3   1   (norm of flow increment   2.5983)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   12.7824)
+--Iteration: 2   1   (norm of flow increment   8.4422)
+--Iteration: 3   1   (norm of flow increment   8.2691)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   36.862)
+--Iteration: 2   1   (norm of flow increment   28.3889)
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   28.3424)
+-Pyramid level: 2
+-Pyramid level: 1
+--Iteration: 1   1   (norm of flow increment   93.006)
+--Iteration: 2   1   (norm of flow increment   76.6922)
+--Iteration: 3   1   (norm of flow increment   212.2921)
+--Iteration: 3   1   (norm of flow increment   196.5611)
+--Iteration: 1   1   (norm of flow increment   50.0272)
+--Iteration: 3   1   (norm of flow increment   74.9764)
+--Iteration: 1   1   (norm of flow increment   39.6477)
+-Pyramid level: 1
+--Iteration: 1   1   (norm of flow increment   40.1375)
+GNC stage 1 finished, 3.13 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   69.0516)
+--Iteration: 1   1   (norm of flow increment   234.3285)
+--Iteration: 2   1   (norm of flow increment   42.0629)
+--Iteration: 2   1   (norm of flow increment   46.0134)
+GNC stage 1 finished, 3.65 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   63.6085)
+GNC stage 1 finished, 3.44 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   65.4588)
+--Iteration: 3   1   (norm of flow increment   213.0638)
+--Iteration: 2   1   (norm of flow increment   31.4876)
+GNC stage 1 finished, 3.87 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   55.0708)
+--Iteration: 3   1   (norm of flow increment   37.9315)
+--Iteration: 3   1   (norm of flow increment   37.991)
+--Iteration: 3   1   (norm of flow increment   182.1797)
+--Iteration: 2   1   (norm of flow increment   32.6966)
+GNC stage 1 finished, 3.31 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   71.8778)
+--Iteration: 2   1   (norm of flow increment   39.8081)
+-Pyramid level: 1
+GNC stage 1 finished, 3.27 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   60.3043)
+GNC stage 2 finished, 4.35 minutes passed 	 	
+--Iteration: 3   1   (norm of flow increment   27.3408)
+--Iteration: 2   1   (norm of flow increment   37.2751)
+
+ans =
+
+    41
+
+GNC stage: 1
+--Iteration: 2   1   (norm of flow increment   32.0457)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   1.9817)
+--Iteration: 2   1   (norm of flow increment   0.65733)
+--Iteration: 3   1   (norm of flow increment   0.56107)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   3.7953)
+--Iteration: 2   1   (norm of flow increment   2.2706)
+--Iteration: 3   1   (norm of flow increment   2.2759)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   12.1697)
+--Iteration: 2   1   (norm of flow increment   9.2527)
+--Iteration: 3   1   (norm of flow increment   9.04)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   38.8705)
+--Iteration: 2   1   (norm of flow increment   28.6482)
+--Iteration: 3   1   (norm of flow increment   31.2955)
+--Iteration: 3   1   (norm of flow increment   28.9889)
+--Iteration: 1   1   (norm of flow increment   44.4914)
+--Iteration: 2   1   (norm of flow increment   47.8274)
+GNC stage 2 finished, 4.74 minutes passed 	 	
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   96.6781)
+--Iteration: 3   1   (norm of flow increment   30.7133)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   38.4762)
+
+ans =
+
+    42
+
+GNC stage: 1
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   1.8502)
+--Iteration: 2   1   (norm of flow increment   0.7066)
+--Iteration: 3   1   (norm of flow increment   0.61296)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   3.599)
+--Iteration: 2   1   (norm of flow increment   2.0964)
+--Iteration: 3   1   (norm of flow increment   2.065)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   11.591)
+--Iteration: 2   1   (norm of flow increment   8.7531)
+--Iteration: 3   1   (norm of flow increment   8.5701)
+-Pyramid level: 3
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   24.9104)
+--Iteration: 2   1   (norm of flow increment   79.4847)
+--Iteration: 1   1   (norm of flow increment   36.1951)
+--Iteration: 2   1   (norm of flow increment   27.1425)
+--Iteration: 3   1   (norm of flow increment   26.4476)
+--Iteration: 3   1   (norm of flow increment   29.9689)
+-Pyramid level: 1
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   89.6383)
+--Iteration: 3   1   (norm of flow increment   39.7189)
+--Iteration: 3   1   (norm of flow increment   78.2171)
+--Iteration: 2   1   (norm of flow increment   200.1269)
+GNC stage 1 finished, 3.70 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   72.2386)
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   32.8356)
+--Iteration: 1   1   (norm of flow increment   38.1341)
+--Iteration: 2   1   (norm of flow increment   73.351)
+-Pyramid level: 1
+-Pyramid level: 1
+--Iteration: 1   1   (norm of flow increment   36.9896)
+--Iteration: 1   1   (norm of flow increment   30.2577)
+--Iteration: 3   1   (norm of flow increment   72.2319)
+-Pyramid level: 1
+GNC stage 2 finished, 6.29 minutes passed 	 	
+--Iteration: 2   1   (norm of flow increment   37.0864)
+--Iteration: 1   1   (norm of flow increment   240.017)
+
+ans =
+
+    43
+
+GNC stage: 1
+--Iteration: 1   1   (norm of flow increment   48.6674)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   2.1275)
+--Iteration: 2   1   (norm of flow increment   0.76347)
+--Iteration: 3   1   (norm of flow increment   0.6896)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   4.158)
+--Iteration: 2   1   (norm of flow increment   2.444)
+--Iteration: 3   1   (norm of flow increment   2.443)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   13.3564)
+--Iteration: 2   1   (norm of flow increment   8.9987)
+--Iteration: 3   1   (norm of flow increment   8.9884)
+--Iteration: 1   1   (norm of flow increment   40.4057)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   37.2005)
+--Iteration: 2   1   (norm of flow increment   28.2113)
+--Iteration: 2   1   (norm of flow increment   43.757)
+--Iteration: 3   1   (norm of flow increment   27.768)
+-Pyramid level: 2
+GNC stage 1 finished, 4.01 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   65.6036)
+--Iteration: 1   1   (norm of flow increment   93.1396)
+--Iteration: 2   1   (norm of flow increment   24.689)
+--Iteration: 1   1   (norm of flow increment   227.5294)
+--Iteration: 2   1   (norm of flow increment   30.0649)
+--Iteration: 2   1   (norm of flow increment   74.1779)
+--Iteration: 3   1   (norm of flow increment   73.8524)
+--Iteration: 3   1   (norm of flow increment   34.6112)
+--Iteration: 2   1   (norm of flow increment   31.7117)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   37.8332)
+--Iteration: 3   1   (norm of flow increment   195.649)
+--Iteration: 3   1   (norm of flow increment   22.8239)
+--Iteration: 3   1   (norm of flow increment   36.1633)
+--Iteration: 2   1   (norm of flow increment   33.3582)
+--Iteration: 2   1   (norm of flow increment   41.5748)
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   26.3016)
+GNC stage 2 finished, 5.35 minutes passed 	 	
+
+ans =
+
+    34
+
+--Iteration: 1   1   (norm of flow increment   226.9096)
+GNC stage 2 finished, 5.72 minutes passed 	 	
+--Iteration: 3   1   (norm of flow increment   28.1854)
+GNC stage: 1
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   3.3606)
+--Iteration: 2   1   (norm of flow increment   1.0056)
+--Iteration: 3   1   (norm of flow increment   0.79713)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   4.0829)
+--Iteration: 2   1   (norm of flow increment   2.759)
+--Iteration: 3   1   (norm of flow increment   2.6634)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   14.3659)
+--Iteration: 2   1   (norm of flow increment   9.2785)
+--Iteration: 3   1   (norm of flow increment   9.085)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   40.0776)
+--Iteration: 2   1   (norm of flow increment   27.9601)
+--Iteration: 3   1   (norm of flow increment   28.7787)
+--Iteration: 3   1   (norm of flow increment   27.8678)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   97.3731)
+-Pyramid level: 1
+
+ans =
+
+    44
+
+GNC stage: 1
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   2.2817)
+--Iteration: 2   1   (norm of flow increment   0.7744)
+--Iteration: 3   1   (norm of flow increment   0.72344)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   3.9966)
+--Iteration: 2   1   (norm of flow increment   2.5534)
+--Iteration: 3   1   (norm of flow increment   2.539)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   14.4689)
+--Iteration: 2   1   (norm of flow increment   9.4555)
+--Iteration: 3   1   (norm of flow increment   9.1716)
+--Iteration: 1   1   (norm of flow increment   42.2953)
+GNC stage 2 finished, 5.84 minutes passed 	 	
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   40.5688)
+--Iteration: 2   1   (norm of flow increment   30.6326)
+--Iteration: 3   1   (norm of flow increment   30.3512)
+-Pyramid level: 2
+--Iteration: 2   1   (norm of flow increment   76.9308)
+--Iteration: 1   1   (norm of flow increment   103.2139)
+--Iteration: 3   1   (norm of flow increment   32.501)
+
+ans =
+
+    45
+
+GNC stage: 1
+GNC stage 2 finished, 5.83 minutes passed 	 	
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   2.1191)
+--Iteration: 2   1   (norm of flow increment   0.83093)
+--Iteration: 3   1   (norm of flow increment   0.79841)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   3.7864)
+--Iteration: 2   1   (norm of flow increment   2.7268)
+--Iteration: 3   1   (norm of flow increment   2.7093)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   13.3704)
+--Iteration: 2   1   (norm of flow increment   9.3276)
+--Iteration: 3   1   (norm of flow increment   9.3985)
+--Iteration: 3   1   (norm of flow increment   39.742)
+--Iteration: 3   1   (norm of flow increment   75.0548)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   39.0869)
+--Iteration: 2   1   (norm of flow increment   28.5345)
+--Iteration: 2   1   (norm of flow increment   84.9264)
+--Iteration: 3   1   (norm of flow increment   28.5927)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   100.0126)
+--Iteration: 2   1   (norm of flow increment   206.7484)
+-Pyramid level: 1
+--Iteration: 1   1   (norm of flow increment   32.0998)
+
+ans =
+
+    46
+
+GNC stage: 1
+--Iteration: 3   1   (norm of flow increment   82.9262)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   1.9571)
+--Iteration: 2   1   (norm of flow increment   0.85536)
+--Iteration: 3   1   (norm of flow increment   0.83972)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   4.0693)
+--Iteration: 2   1   (norm of flow increment   3.2157)
+--Iteration: 3   1   (norm of flow increment   3.2179)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   13.7021)
+--Iteration: 2   1   (norm of flow increment   8.7559)
+--Iteration: 2   1   (norm of flow increment   192.3388)
+GNC stage 2 finished, 5.48 minutes passed 	 	
+
+ans =
+
+    38
+
+--Iteration: 2   1   (norm of flow increment   79.8185)
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   8.7865)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   37.0312)
+--Iteration: 2   1   (norm of flow increment   27.7266)
+--Iteration: 3   1   (norm of flow increment   27.3058)
+GNC stage 1 finished, 3.21 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   54.4761)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   94.6802)
+GNC stage: 1
+--Iteration: 3   1   (norm of flow increment   78.3099)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   2.6543)
+--Iteration: 2   1   (norm of flow increment   0.83188)
+--Iteration: 3   1   (norm of flow increment   0.73357)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   5.5196)
+--Iteration: 2   1   (norm of flow increment   3.1931)
+--Iteration: 3   1   (norm of flow increment   3.2759)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   14.7332)
+--Iteration: 2   1   (norm of flow increment   10.584)
+--Iteration: 3   1   (norm of flow increment   10.3772)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   43.3962)
+--Iteration: 2   1   (norm of flow increment   30.2612)
+--Iteration: 3   1   (norm of flow increment   29.7422)
+-Pyramid level: 1
+GNC stage 2 finished, 5.72 minutes passed 	 	
+
+ans =
+
+    36
+
+--Iteration: 1   1   (norm of flow increment   231.6191)
+--Iteration: 2   1   (norm of flow increment   76.5273)
+--Iteration: 2   1   (norm of flow increment   37.1408)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   100.7891)
+--Iteration: 1   1   (norm of flow increment   256.6095)
+--Iteration: 3   1   (norm of flow increment   75.2806)
+--Iteration: 2   1   (norm of flow increment   81.7796)
+GNC stage: 1
+--Iteration: 2   1   (norm of flow increment   34.8816)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   3.5772)
+--Iteration: 2   1   (norm of flow increment   1.0587)
+--Iteration: 3   1   (norm of flow increment   0.9784)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   5.4533)
+--Iteration: 2   1   (norm of flow increment   2.7853)
+--Iteration: 3   1   (norm of flow increment   2.6857)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   16.1088)
+--Iteration: 2   1   (norm of flow increment   10.7493)
+--Iteration: 3   1   (norm of flow increment   10.5628)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   44.0052)
+--Iteration: 2   1   (norm of flow increment   33.1106)
+--Iteration: 3   1   (norm of flow increment   32.2684)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   195.133)
+--Iteration: 2   1   (norm of flow increment   25.9805)
+--Iteration: 3   1   (norm of flow increment   79.9157)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   104.4352)
+--Iteration: 1   1   (norm of flow increment   244.1597)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   85.7257)
+--Iteration: 3   1   (norm of flow increment   83.2932)
+--Iteration: 3   1   (norm of flow increment   28.0713)
+--Iteration: 1   1   (norm of flow increment   232.7541)
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   34.8032)
+-Pyramid level: 1
+--Iteration: 1   1   (norm of flow increment   240.6169)
+--Iteration: 3   1   (norm of flow increment   23.9605)
+--Iteration: 3   1   (norm of flow increment   188.2009)
+--Iteration: 1   1   (norm of flow increment   243.9294)
+--Iteration: 1   1   (norm of flow increment   37.1515)
+GNC stage 2 finished, 6.25 minutes passed 	 	
+--Iteration: 3   1   (norm of flow increment   202.1588)
+GNC stage 2 finished, 6.14 minutes passed 	 	
+--Iteration: 2   1   (norm of flow increment   198.6476)
+
+ans =
+
+    47
+
+GNC stage: 1
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   1.5813)
+--Iteration: 2   1   (norm of flow increment   0.59898)
+--Iteration: 3   1   (norm of flow increment   0.58122)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   3.2317)
+--Iteration: 2   1   (norm of flow increment   2.5146)
+--Iteration: 3   1   (norm of flow increment   2.5212)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   12.8166)
+--Iteration: 2   1   (norm of flow increment   8.4736)
+--Iteration: 3   1   (norm of flow increment   8.3644)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   35.4434)
+--Iteration: 2   1   (norm of flow increment   26.8003)
+--Iteration: 3   1   (norm of flow increment   26.511)
+-Pyramid level: 2
+
+ans =
+
+    48
+
+GNC stage: 1
+--Iteration: 1   1   (norm of flow increment   90.6229)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   1.629)
+--Iteration: 2   1   (norm of flow increment   0.68438)
+--Iteration: 3   1   (norm of flow increment   0.64379)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   3.3459)
+--Iteration: 2   1   (norm of flow increment   2.6858)
+--Iteration: 3   1   (norm of flow increment   2.6786)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   13.7097)
+--Iteration: 2   1   (norm of flow increment   8.5343)
+--Iteration: 3   1   (norm of flow increment   8.4202)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   36.0981)
+--Iteration: 2   1   (norm of flow increment   26.6554)
+--Iteration: 3   1   (norm of flow increment   26.0949)
+-Pyramid level: 2
+--Iteration: 3   1   (norm of flow increment   190.8003)
+--Iteration: 1   1   (norm of flow increment   87.4374)
+--Iteration: 2   1   (norm of flow increment   222.51)
+--Iteration: 2   1   (norm of flow increment   73.6656)
+--Iteration: 2   1   (norm of flow increment   70.7837)
+--Iteration: 2   1   (norm of flow increment   204.4319)
+--Iteration: 2   1   (norm of flow increment   31.2975)
+--Iteration: 3   1   (norm of flow increment   72.2901)
+--Iteration: 3   1   (norm of flow increment   69.7402)
+-Pyramid level: 1
+-Pyramid level: 1
+GNC stage 1 finished, 3.21 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   52.4579)
+--Iteration: 2   1   (norm of flow increment   200.7661)
+--Iteration: 1   1   (norm of flow increment   216.0093)
+--Iteration: 2   1   (norm of flow increment   205.9777)
+--Iteration: 1   1   (norm of flow increment   228.715)
+--Iteration: 2   1   (norm of flow increment   210.6558)
+--Iteration: 2   1   (norm of flow increment   32.5062)
+--Iteration: 3   1   (norm of flow increment   29.6641)
+GNC stage 1 finished, 3.73 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   56.7825)
+--Iteration: 3   1   (norm of flow increment   193.5037)
+GNC stage 1 finished, 3.09 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   55.9904)
+--Iteration: 3   1   (norm of flow increment   24.9634)
+GNC stage 2 finished, 5.20 minutes passed 	 	
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   217.2618)
+--Iteration: 2   1   (norm of flow increment   34.7758)
+--Iteration: 2   1   (norm of flow increment   34.8807)
+
+ans =
+
+    49
+
+GNC stage: 1
+--Iteration: 3   1   (norm of flow increment   198.746)
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   1.5554)
+--Iteration: 2   1   (norm of flow increment   0.64041)
+--Iteration: 3   1   (norm of flow increment   0.63608)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   3.0981)
+--Iteration: 2   1   (norm of flow increment   2.5502)
+--Iteration: 3   1   (norm of flow increment   2.4586)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   13.5048)
+--Iteration: 2   1   (norm of flow increment   8.2902)
+--Iteration: 3   1   (norm of flow increment   8.203)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   32.4346)
+--Iteration: 2   1   (norm of flow increment   25.0407)
+--Iteration: 3   1   (norm of flow increment   24.6379)
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   88.2211)
+--Iteration: 3   1   (norm of flow increment   196.3225)
+--Iteration: 1   1   (norm of flow increment   33.1148)
+--Iteration: 3   1   (norm of flow increment   26.8108)
+--Iteration: 2   1   (norm of flow increment   70.3093)
+--Iteration: 3   1   (norm of flow increment   28.5424)
+--Iteration: 3   1   (norm of flow increment   201.1091)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   186.0525)
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   205.1165)
+--Iteration: 3   1   (norm of flow increment   69.3024)
+GNC stage 1 finished, 2.94 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   59.1639)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   194.8136)
+--Iteration: 2   1   (norm of flow increment   27.156)
+--Iteration: 1   1   (norm of flow increment   33.9953)
+--Iteration: 1   1   (norm of flow increment   37.4783)
+GNC stage 1 finished, 3.10 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   72.3168)
+--Iteration: 1   1   (norm of flow increment   224.1758)
+--Iteration: 2   1   (norm of flow increment   38.3144)
+GNC stage 1 finished, 3.03 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   65.1112)
+GNC stage 1 finished, 2.97 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   59.5176)
+--Iteration: 3   1   (norm of flow increment   25.0678)
+--Iteration: 2   1   (norm of flow increment   28.0977)
+--Iteration: 2   1   (norm of flow increment   44.5769)
+--Iteration: 3   1   (norm of flow increment   33.1656)
+--Iteration: 2   1   (norm of flow increment   39.4159)
+GNC stage 1 finished, 2.99 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   60.5957)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   30.8234)
+GNC stage 2 finished, 4.96 minutes passed 	 	
+--Iteration: 2   1   (norm of flow increment   37.0224)
+GNC stage 1 finished, 2.91 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   68.2581)
+--Iteration: 3   1   (norm of flow increment   181.7115)
+--Iteration: 3   1   (norm of flow increment   32.8577)
+--Iteration: 3   1   (norm of flow increment   30.2128)
+--Iteration: 3   1   (norm of flow increment   26.5463)
+-Pyramid level: 1
+-Pyramid level: 1
+--Iteration: 1   1   (norm of flow increment   40.7927)
+
+ans =
+
+    50
+
+GNC stage: 1
+-Pyramid level: 6
+--Iteration: 1   1   (norm of flow increment   1.5554)
+--Iteration: 2   1   (norm of flow increment   0.56725)
+--Iteration: 3   1   (norm of flow increment   0.54151)
+-Pyramid level: 5
+--Iteration: 1   1   (norm of flow increment   3.0983)
+--Iteration: 2   1   (norm of flow increment   2.1843)
+--Iteration: 3   1   (norm of flow increment   2.1875)
+-Pyramid level: 4
+--Iteration: 1   1   (norm of flow increment   13.4452)
+--Iteration: 2   1   (norm of flow increment   8.2606)
+--Iteration: 3   1   (norm of flow increment   8.0751)
+-Pyramid level: 3
+--Iteration: 1   1   (norm of flow increment   34.1275)
+--Iteration: 2   1   (norm of flow increment   25.0617)
+--Iteration: 2   1   (norm of flow increment   40.7397)
+--Iteration: 3   1   (norm of flow increment   24.3865)
+-Pyramid level: 2
+--Iteration: 3   1   (norm of flow increment   30.919)
+--Iteration: 1   1   (norm of flow increment   88.9055)
+--Iteration: 3   1   (norm of flow increment   190.2211)
+GNC stage 2 finished, 4.72 minutes passed 	 	
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   28.8739)
+--Iteration: 2   1   (norm of flow increment   71.5613)
+--Iteration: 1   1   (norm of flow increment   38.5899)
+--Iteration: 1   1   (norm of flow increment   39.461)
+--Iteration: 2   1   (norm of flow increment   46.5007)
+--Iteration: 3   1   (norm of flow increment   35.1871)
+--Iteration: 3   1   (norm of flow increment   70.9255)
+--Iteration: 2   1   (norm of flow increment   189.7175)
+--Iteration: 2   1   (norm of flow increment   34.4166)
+-Pyramid level: 1
+--Iteration: 1   1   (norm of flow increment   38.1603)
+-Pyramid level: 1
+--Iteration: 2   1   (norm of flow increment   32.3015)
+--Iteration: 3   1   (norm of flow increment   39.7783)
+--Iteration: 2   1   (norm of flow increment   31.7346)
+GNC stage 2 finished, 5.94 minutes passed 	 	
+GNC stage 1 finished, 2.82 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   49.5839)
+--Iteration: 1   1   (norm of flow increment   226.8506)
+--Iteration: 1   1   (norm of flow increment   43.9607)
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   32.9691)
+--Iteration: 2   1   (norm of flow increment   32.039)
+--Iteration: 2   1   (norm of flow increment   31.8506)
+--Iteration: 3   1   (norm of flow increment   29.3871)
+--Iteration: 3   1   (norm of flow increment   29.7286)
+--Iteration: 1   1   (norm of flow increment   48.3613)
+GNC stage 2 finished, 4.77 minutes passed 	 	
+GNC stage 1 finished, 3.23 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   54.6548)
+--Iteration: 3   1   (norm of flow increment   28.1593)
+GNC stage 2 finished, 4.59 minutes passed 	 	
+--Iteration: 2   1   (norm of flow increment   38.8341)
+-Pyramid level: 1
+GNC stage 2 finished, 4.82 minutes passed 	 	
+--Iteration: 3   1   (norm of flow increment   30.4936)
+--Iteration: 2   1   (norm of flow increment   33.2901)
+--Iteration: 3   1   (norm of flow increment   185.2197)
+--Iteration: 1   1   (norm of flow increment   35.6607)
+--Iteration: 2   1   (norm of flow increment   40.0961)
+GNC stage 2 finished, 4.67 minutes passed 	 	
+--Iteration: 3   1   (norm of flow increment   37.2287)
+--Iteration: 2   1   (norm of flow increment   192.7188)
+--Iteration: 3   1   (norm of flow increment   27.395)
+-Pyramid level: 1
+GNC stage 2 finished, 4.72 minutes passed 	 	
+--Iteration: 2   1   (norm of flow increment   29.7018)
+--Iteration: 3   1   (norm of flow increment   39.2849)
+--Iteration: 1   1   (norm of flow increment   34.7997)
+GNC stage 2 finished, 4.79 minutes passed 	 	
+GNC stage 1 finished, 2.93 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   51.1754)
+--Iteration: 3   1   (norm of flow increment   28.3497)
+--Iteration: 3   1   (norm of flow increment   188.5047)
+--Iteration: 2   1   (norm of flow increment   31.1674)
+--Iteration: 2   1   (norm of flow increment   30.13)
+GNC stage 2 finished, 4.14 minutes passed 	 	
+--Iteration: 3   1   (norm of flow increment   27.088)
+--Iteration: 3   1   (norm of flow increment   28.508)
+-Pyramid level: 1
+GNC stage 1 finished, 2.08 minutes passed 	 	
+GNC stage: 2
+-Pyramid level: 2
+--Iteration: 1   1   (norm of flow increment   54.9988)
+GNC stage 2 finished, 4.42 minutes passed 	 	
+--Iteration: 1   1   (norm of flow increment   35.1865)
+--Iteration: 2   1   (norm of flow increment   34.1762)
+--Iteration: 2   1   (norm of flow increment   30.2005)
+--Iteration: 3   1   (norm of flow increment   29.2721)
+-Pyramid level: 1
+--Iteration: 3   1   (norm of flow increment   28.6471)
+--Iteration: 1   1   (norm of flow increment   36.8444)
+GNC stage 2 finished, 3.77 minutes passed 	 	
+--Iteration: 2   1   (norm of flow increment   30.9982)
+--Iteration: 3   1   (norm of flow increment   30.6162)
+GNC stage 2 finished, 2.93 minutes passed 	 	
