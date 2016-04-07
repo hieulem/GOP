@@ -9,9 +9,12 @@
 %     video_info{i}.name = all_path(i).name;
 % end
 % save('video_info','video_info');
+function [] = computeflow_vbs(i)
 load('video_info');
-
-i=1;
+addpath(genpath('../../outsource/flow_code_v2'));
+addpath(genpath('../../outsource/toolbox-master'));
+addpath(genpath('../../outsource/MotionBoundariesCode_v1.0'));
+%i=1;
 video_name = video_info{i}.name;
 flowpath = ['../../flow_data/flow_motion_default/vbs100/test/' video_name];
 flowfile = ['flow',video_name];
@@ -25,3 +28,4 @@ end
 cd(a);
 [motionboundaries,~] = computeflowandmotionb( img,flowpath,flowfile );
 
+end
