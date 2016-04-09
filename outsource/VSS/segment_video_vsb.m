@@ -1,6 +1,6 @@
 function segment_video (id)
 
-load('video_list_vsb.mat'); % To get variable video_info_list
+load('video_list_vsb100.mat'); % To get variable video_info_list
 
 video_info = video_info_list(id);
 dataset_name = video_info.dataset_name;
@@ -52,9 +52,11 @@ end
 function [min_id, no_frames] = findBeginningFrameIndex(video_dir, char_length, ext)
 	files = dir( fullfile(video_dir, ['*' ext]));
 	files = {files.name}';
+
 	min_id = Inf;
 	for i = 1:length(files)
 		num = str2num(files{i}(char_length + 1:end-length(ext)));
+		disp(files{i});
 		if (num < min_id)
 			min_id = num;
 		end

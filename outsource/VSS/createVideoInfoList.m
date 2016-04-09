@@ -1,18 +1,13 @@
 function createVideoInfoList()
 
 % Video info list file location
-vid_info_path = './video_list.mat';
+vid_info_path = './video_list_vsb100.mat';
 
 % Params to write to the file
-dataset_name = 'SegTrackv2';
-
-dataset_dir = '../../video/Seg/JPEGImages/';
-working_dir = '../../.VSSTemp/VSS_Segtrack/';
-res_dir = '../../results/VSS_Segtrack/';
-
-% dataset_dir = '/Users/vunh/Documents/SBU/CourseWork/CSE512 - Machine Learning/Project/code/dataset/SegTrackv2/PNG_Std';
-% working_dir = '/Users/vunh/Documents/SBU/CourseWork/CSE512 - Machine Learning/Project/code/dataset/temp_working_dir';
-% res_dir = '/Users/vunh/Documents/SBU/CourseWork/CSE512 - Machine Learning/Project/code/output';
+dataset_name = 'vsb100';
+dataset_dir = '/../../video/vsb100/Test';
+working_dir = '/../../.VSSTemp/VSS_vsb100/';
+res_dir = '/../../results/VSS_vsb100/';
 
 
 video_info_list = [];
