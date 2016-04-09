@@ -5,9 +5,9 @@ vid_info_path = './video_list_vsb100.mat';
 
 % Params to write to the file
 dataset_name = 'vsb100';
-dataset_dir = '/../../video/vsb100/Test';
-working_dir = '/../../.VSSTemp/VSS_vsb100/';
-res_dir = '/../../results/VSS_vsb100/';
+dataset_dir = './../../video/vsb100/Test';
+working_dir = './../../.VSSTemp/VSS_vsb100/';
+res_dir = './../../results/VSS_vsb100/';
 
 
 video_info_list = [];

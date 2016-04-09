@@ -1,4 +1,4 @@
-function segment_video (id)
+function segment_video_vsb100 (id)
 
 load('video_list_vsb100.mat'); % To get variable video_info_list
 
@@ -30,7 +30,7 @@ else
     dataset_setting.filenameheader = 'image';
     dataset_setting.numberformat = '%03d';
     dataset_setting.fileext = '.png';
-    dataset_setting.frame_begin_index = 'min_id';
+    dataset_setting.frame_begin_index = min_id;
     dataset_setting.noFrames = no_frames;
 end
 
