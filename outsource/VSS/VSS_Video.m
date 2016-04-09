@@ -86,7 +86,7 @@ videocorrectionparameters.deinterlace=false;
 
 
 % set the resize ratio
-videocorrectionparameters.rszratio=0; %if 0 image is not resized
+videocorrectionparameters.rszratio=0.5; %if 0 image is not resized
 videocorrectionparameters.croparea=[]; %[width,height,xjshift (+right),yishift (+down)] odd margins leave a pixel top-left
 
 % Location and file pattern of the groundtruth annotations for the video

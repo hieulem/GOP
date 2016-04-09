@@ -1,0 +1,997 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+ 
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+ 
+ 
+ 
+ 
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+To get started, type one of these: helpwin, helpdesk, or demo.
+ 
+For product information, visit www.mathworks.com.
+ 
+For product information, visit www.mathworks.com.
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmeTo get started, type
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+ 
+hesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+
+options = 
+
+        Loaded colour images
+Loaded colour images
+existing: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+Loaded colour images
+          newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+Loaded colour images
+Loaded colour images
+Loaded colour images
+Loaded colour images
+1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+Loaded colour images
+Loaded colour images
+Loaded flows
+ucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+Loaded colour images
+Loaded colour images
+Loaded flows
+Loaded flows
+Loaded colour images
+Loaded flows
+Loaded flows
+Loaded flows
+Loaded flows
+Loaded flows
+Loaded flows
+ws
+Skipping frame 1, already computed
+Skipping frame 2, already computed
+Skipping frame 3, already computed
+Skipping frame 4, already computed
+Skipping frame 5, already computed
+Skipping frame 6, already computed
+Skipping frame 7, already computed
+Skipping frame 8, already computed
+Skipping frame 9, already computed
+Skipping frame 10, already computed
+Skipping frame 11, already computed
+Skipping frame 12, already computed
+Skipping frame 13, already computed
+Skipping frame 14, already computed
+Skipping frame 15, already computed
+Skipping frame 16, already computed
+Skipping frame 17, already computed
+Skipping frame 18, already computed
+Skipping frame 19, already computed
+Skipping frame 20, already computed
+Skipping frame 21, already computed
+Skipping frame 22, already computed
+Skipping frame 23, already computed
+Skipping frame 24, already computed
+Skipping frame 25, already computed
+Skipping frame 26, already computed
+Skipping frame 27, already computed
+Skipping frame 28, already computed
+Skipping frame 29, already computed
+Loaded flows
+Skipping framLoaded flows
+ computed
+Skipping frame 31, already computed
+Skipping frame 32, already computed
+Skipping frame 33, already computed
+Skipping frame 34, already computed
+Skipping frame 35, already computed
+Skipping frame 36, already computed
+Skipping frame 37, already computed
+>> Skipping frame 1, already computed
+Skipping frame 2, already computed
+Skipping frame 3, already computed
+Skipping frame 4, already computed
+Skipping frame 5, already computed
+Skipping frame 6, already computed
+Skipping frame 7, already computed
+Skipping frame 8, already computed
+Skipping frame 9, already computed
+Skipping frame 10, already computed
+Skipping frame 11, already computed
+Skipping frame 12, already computed
+Skipping frame 13, already computed
+Skipping frame 14, already computed
+Skipping frame 15, already computed
+Skipping frame 16, already computed
+Skipping frame 17, already computed
+Skipping frame 18, already computed
+Skipping frame 19, already computed
+Skipping frame 20, already computed
+Skipping frame 21, already computed
+Skipping frame 22, already computed
+Skipping frame 23, already computed
+Skipping frame 24, already computed
+Skipping frame 25, already computed
+Skipping frame 26, already computed
+Skipping frame 27, already computed
+Skipping frame 28, already computed
+Skipping frame 29, already computed
+Skipping frame 30, already computed
+Skipping frame 31, already computed
+Skipping frame 32, already computed
+Skipping frame 33, already computed
+Skipping frame 34, already computed
+Skipping frame 35, already computed
+Skipping frame 36, already computed
+Skipping frame 37, already computed
+Skipping frame 38, already computed
+Skipping frame 39, already computed
+Skipping frame 40, already computed
+Skipping frame 41, already computed
+>> >> converting RGB to grayscale             [0.004964 sec]
+converting RGB to Lab                   [0.080245 sec]
+quantizing color channels               [0.004512 sec]
+computing filter set for textons        [0.004084 sec]
+computing textons                       converting RGB to grayscale             [0.001138 sec]
+converting RGB to Lab                   [0.047401 sec]
+quantizing color channels               [0.003007 sec]
+computing filter set for textons        [0.004072 sec]
+computing textons                       converting RGB to grayscale             [0.001455 sec]
+converting RGB to Lab                   [0.083365 sec]
+quantizing color channels               [0.005629 sec]
+computing filter set for textons        [0.005185 sec]
+computing textons                       converting RGB to grayscale             [0.001426 sec]
+converting RGB to Lab                   [0.076633 sec]
+quantizing color channels               [0.00501 sec]
+computing filter set for textons        [0.006457 sec]
+computing textons                       [12.1354 sec]
+computing bg                            r = 3 [9.03068 sec]
+computing bg                            r = 3 [12.2123 sec]
+computing bg                            r = 3 [11.5547 sec]
+computing bg                            r = 3 [3.42327 sec]
+computing bg                            r = 5 [4.54531 sec]
+computing bg                            r = 5 Skipping frame 1, already computed
+Skipping frame 2, already computed
+Skipping frame 3, already computed
+Skipping frame 4, already computed
+Skipping frame 5, already computed
+Skipping frame 6, already computed
+Skipping frame 7, already computed
+Skipping frame 8, already computed
+Skipping frame 9, already computed
+Skipping frame 10, already computed
+Skipping frame 11, already computed
+Skipping frame 12, already computed
+Skipping frame 13, already computed
+Skipping frame 14, already computed
+Skipping frame 15, already computed
+Skipping frame 16, already computed
+converting RGB to grayscale             converting RGB to grayscale             [0.002227 sec]
+converting RGB to Lab                   [0.00174 sec]
+converting RGB to Lab                   [0.061895 sec]
+quantizing color channels               [0.127273 sec]
+quantizing color channels               [0.006277 sec]
+computing filter set for textons        [0.006961 sec]
+computing filter set for textons        [0.004563 sec]
+computing textons                       [0.003954 sec]
+computing textons                       [3.75048 sec]
+computing bg                            r = 10 [4.94496 sec]
+computing bg                            r = 5 [5.62559 sec]
+computing bg                            r = 5 [5.74878 sec]
+computing bg                            r = 10 [4.01047 sec]
+computing cg_a                          r = 5 [13.7054 sec]
+computing bg                            r = 3 [5.18179 sec]
+computing bg                            r = 10 [1.53387 sec]
+computing cg_a                          r = 10 [5.04555 sec]
+computing bg                            r = 10 [19.9285 sec]
+computing bg                            r = 3 [2.02318 sec]
+computing cg_a                          r = 20 [5.4378 sec]
+computing cg_a                          r = 5 [5.42419 sec]
+computing bg                            r = 5 [3.15647 sec]
+computing cg_a                          r = 10 [6.58821 sec]
+computing cg_a                          r = 5 [4.65348 sec]
+computing cg_b                          r = 5 [6.89274 sec]
+computing cg_a                          r = 5 converting RGB to grayscale             [0.002476 sec]
+converting RGB to Lab                   [2.19941 sec]
+computing cg_a                          r = 10 [0.094192 sec]
+quantizing color channels               [0.009386 sec]
+computing filter set for textons        [0.005019 sec]
+computing textons                       [2.06035 sec]
+computing cg_b                          r = 10 [3.8824 sec]
+computing cg_a                          r = 20 [2.15003 sec]
+computing cg_a                          r = 10 [5.50642 sec]
+computing bg                            r = 10 [9.38698 sec]
+computing bg                            r = 5 [2.58645 sec]
+computing cg_b                          r = 20 [2.96264 sec]
+computing cg_a                          r = 20 [3.53453 sec]
+computing cg_a                          r = 20 [19.3309 sec]
+computing bg                            r = 3 [3.75425 sec]
+computing tg                            r = 5 [5.62979 sec]
+computing cg_a                          r = 5 [6.48892 sec]
+computing cg_b                          r = 5 converting RGB to grayscale             [0.002052 sec]
+converting RGB to Lab                   [4.55267 sec]
+computing cg_b                          r = 5 >> 102901 sec]
+quantizing color channels               [0.005238 sec]
+computing filter set for textons        [0.00459 sec]
+computing textons                       [2.08803 sec]
+computing tg                            r = 10 [4.10075 sec]
+computing cg_b                          r = 5 [2.3519 sec]
+computing cg_b                          r = 10 [2.42507 sec]
+computing cg_a                          r = 10 [2.28613 sec]
+computing cg_b                          r = 10 [7.97233 sec]
+computing bg                            r = 10 [2.21166 sec]
+computing cg_b                          r = 10 [20.0394 sec]
+computing bg                            r = 3 [2.86272 sec]
+computing tg                            r = 20 [7.44233 sec]
+computing bg                            r = 5 [3.19077 sec]
+computing cg_b                          r = 20 [2.97994 sec]
+computing cg_b                          r = 20 Skipping frame 1, already computed
+Skipping frame 2, already computed
+Skipping frame 3, already computed
+Skipping frame 4,[4.25279 sec]
+converting RGB to grayscale             [0.000408 sec]
+converting RGB to Lab                   [0.03808 sec]
+quantizing color channels               [0.00149 sec]
+computing cg_a                          r = 5 [4.7188 sec]
+computing tg                            r = 5 , already computed
+Skipping frame 13, already computed
+Skipping frame 14, already computed
+Skipping frame 15, already computed
+Skipping frame 16, already computed
+Skipping frame 17, already computed
+Skipping frame 18, already computed
+Skipping frame 19, already computed
+Skipping frame 20, already computed
+>> [4.75626 sec]
+computing tg                            r = 5 [6.18031 sec]
+computing bg                            r = 5 [5.25755 sec]
+computing cg_b                          r = 5 [8.10776 sec]
+computing cg_a                          r = 5 [4.59965 sec]
+computing tg                            r = 5 [3.67922 sec]
+computing cg_a                          r = 10 [7.18323 sec]
+computing bg                            r = 10 [2.73185 sec]
+computing tg                            r = 10 [2.86149 sec]
+computing tg                            r = 10 [2.46511 sec]
+computing cg_b                          r = 10 [3.10211 sec]
+computing cg_a                          r = 10 [2.86828 sec]
+computing tg                            r = 10 [3.38517 sec]
+computing tg                            r = 20 [3.04544 sec]
+computing cg_b                          r = 20 [4.29362 sec]
+computing cg_a                          r = 20 [3.58297 sec]
+computing tg                            r = 20 [6.80651 sec]
+computing bg                            r = 10 [3.38073 sec]
+computing tg                            r = 20 [3.96765 sec]
+computing cg_a                          r = 20 [8.17126 sec]
+computing cg_a                          r = 5 [5.281 sec]
+computing tg                            r = 5 [5.55653 sec]
+converting RGB to grayscale             [0.000833 sec]
+converting RGB to Lab                   [0.062285 sec]
+quantizing color channels               [0.001929 sec]
+computing cg_a                          r = 5 [5.84523 sec]
+converting RGB to grayscale             [0.000604 sec]
+converting RGB to Lab                   [0.063306 sec]
+quantizing color channels               [0.001928 sec]
+computing cg_a                          r = 5 [5.41134 sec]
+[6.42277 sec]
+computing cg_b                          r = 5 converting RGB to grayscale             [0.000568 sec]
+converting RGB to Lab                   [0.054324 sec]
+quantizing color channels               [0.001717 sec]
+computing cg_a                          r = 5 [7.38337 sec]
+computing cg_a                          r = 5 [3.0124 sec]
+computing tg                            r = 10 [7.33549 sec]
+computing cg_b                          r = 5 [4.78023 sec]
+computing cg_a                          r = 10 [3.35796 sec]
+computing cg_b                          r = 10 [5.40872 sec]
+computing cg_a                          r = 10 [3.34722 sec]
+computing cg_a                          r = 10 [3.71061 sec]
+computing tg                            r = 20 [5.18617 sec]
+computing cg_a                          r = 10 [5.57417 sec]
+computing cg_a                          r = 10 [3.33949 sec]
+computing cg_b                          r = 10 [4.01142 sec]
+computing cg_b                          r = 20 [5.85952 sec]
+computing cg_a                          r = 20 [4.37026 sec]
+computing cg_a                          r = 20 [4.29664 sec]
+computing cg_b                          r = 20 [6.30391 sec]
+computing cg_a                          r = 20 [6.02554 sec]
+computing cg_a                          r = 20 [6.13299 sec]
+converting RGB to grayscale             [0.000619 sec]
+converting RGB to Lab                   [0.061367 sec]
+quantizing color channels               [0.002056 sec]
+computing cg_a                          r = 5 [6.57089 sec]
+computing cg_a                          r = 20 [6.19467 sec]
+[7.69539 sec]
+computing cg_b                          r = 5 [9.17668 sec]
+computing cg_b                          r = 5 [7.59812 sec]
+computing tg                            r = 5 [6.04662 sec]
+computing cg_a                          r = 10 [9.39641 sec]
+computing cg_b                          r = 5 [9.19038 sec]
+computing cg_b                          r = 5 [4.12876 sec]
+computing cg_b                          r = 10 [9.60622 sec]
+computing cg_b                          r = 5 [4.63068 sec]
+computing tg                            r = 10 [4.77496 sec]
+computing cg_b                          r = 10 [6.97496 sec]
+computing cg_a                          r = 20 [5.12083 sec]
+computing cg_b                          r = 10 [4.74616 sec]
+computing cg_b                          r = 10 [5.04737 sec]
+computing cg_b                          r = 20 [5.12205 sec]
+computing cg_b                          r = 10 [5.56127 sec]
+computing tg                            r = 20 [5.80387 sec]
+computing cg_b                          r = 20 [5.58003 sec]
+computing cg_b                          r = 20 [5.77783 sec]
+computing cg_b                          r = 20 [6.05404 sec]
+computing cg_b                          r = 20 [10.3649 sec]
+computing cg_b                          r = 5 [9.59691 sec]
+computing tg                            r = 5 [9.24376 sec]
+[9.19606 sec]
+computing tg                            r = 5 converting RGB to grayscale             [0.001312 sec]
+converting RGB to Lab                   [0.106295 sec]
+quantizing color channels               [0.003192 sec]
+computing cg_a                          r = 5 [8.74241 sec]
+[5.29553 sec]
+computing cg_b                          r = 10 [5.76593 sec]
+computing tg                            r = 10 [9.17414 sec]
+[4.61446 sec]
+computing tg                            r = 10 [12.2668 sec]
+[6.26069 sec]
+computing cg_b                          r = 20 [9.18697 sec]
+computing cg_a                          r = 10 [5.66139 sec]
+computing tg                            r = 20 [5.63066 sec]
+computing tg                            r = 20 [9.66111 sec]
+[9.37822 sec]
+converting RGB to grayscale             [0.001158 sec]
+converting RGB to Lab                   [9.31746 sec]
+[0.103707 sec]
+quantizing color channels               [0.003202 sec]
+computing cg_a                          r = 5 converting RGB to grayscale             [0.000941 sec]
+converting RGB to Lab                   [0.106009 sec]
+quantizing color channels               [0.003824 sec]
+computing cg_a                          r = 5 [10.6114 sec]
+computing cg_a                          r = 20 [5.73025 sec]
+computing cg_a                          r = 10 [9.11808 sec]
+computing cg_a                          r = 10 [7.13608 sec]
+computing cg_a                          r = 20 [15.8329 sec]
+computing cg_b                          r = 5 [10.6637 sec]
+computing cg_a                          r = 20 [8.49358 sec]
+computing cg_b                          r = 10 [12.692 sec]
+computing cg_b                          r = 5 [5.78103 sec]
+computing cg_b                          r = 10 [10.2401 sec]
+computing cg_b                          r = 20 [15.8281 sec]
+computing cg_b                          r = 5 [7.11888 sec]
+computing cg_b                          r = 20 [8.90485 sec]
+computing cg_b                          r = 10 [15.9055 sec]
+[20.2746 sec]
+Total Time for Global Pb:99.7294 s.
+compute contours                        [0.233102 sec]
+extracting regions                      [0.334741 sec]
+returning results                       [0.024556 sec]
+compute contours                        [0.127496 sec]
+extracting regions                      [0.348487 sec]
+returning results                       [0.023145 sec]
+[14.4069 sec]
+computing cg_b                          r = 20 
+********** Processed frame 1 **********
+
+converting RGB to grayscale             [0.000838 sec]
+converting RGB to Lab                   [0.044536 sec]
+quantizing color channels               [0.00216 sec]
+computing filter set for textons        [0.003676 sec]
+computing textons                       [8.89368 sec]
+computing bg                            r = 3 [3.05354 sec]
+computing bg                            r = 5 [3.11578 sec]
+computing bg                            r = 10 [3.51694 sec]
+computing cg_a                          r = 5 [2.1445 sec]
+computing cg_a                          r = 10 [2.84345 sec]
+computing cg_a                          r = 20 
