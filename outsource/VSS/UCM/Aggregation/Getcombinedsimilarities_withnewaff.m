@@ -3,13 +3,12 @@ function [similarities,STT,LTT,ABA,ABM,STM,STA]=Getcombinedsimilarities_withnewa
     noallsuperpixels, framebelong, numberofsuperpixelsperframe, requestedaffinities, printonscreen)
 
 %HERE we plug in our feature @Hieu
-addpath(genpath('../../../../standalonecode/code'));
-%Initialization
 %@Hieu
-GeH = sparse(noallsuperpixels,noallsuperpixels);
-GeH = wrapperforVSS( labelled_level_video,cim );
-
-
+% GeH = sparse(noallsuperpixels,noallsuperpixels);
+% GeH = wrapperforVSS( labelledlevelvideo,cim );
+% %Initialization
+% 
+% 
 STT=sparse(noallsuperpixels,noallsuperpixels); LTT=sparse(noallsuperpixels,noallsuperpixels);
 ABA=sparse(noallsuperpixels,noallsuperpixels); ABM=sparse(noallsuperpixels,noallsuperpixels);
 STM=sparse(noallsuperpixels,noallsuperpixels); STA=sparse(noallsuperpixels,noallsuperpixels);
@@ -190,8 +189,19 @@ if (Isaffinityrequested(requestedaffinities,'sta'))
     [similarities,wgtsimilarities]=Getcombinedsimilaritieswithmethod(similarities,STA,mrgmth,options,wgtsimilarities,mrgwgt(6));
 end
 
-
 %@Hieu
+
+%load('girl');
+%GeH = 
+%
+%GeH = GeH/(max(max(GeH)));
+%GeH = GeH/(max(max(GeH)));
+%
+%
+save('monkey');
+GeH = GeH.*(STT);
+
+[similarities,wgtsimilarities]=Getcombinedsimilaritieswithmethod(similarities,GeH,mrgmth,options,wgtsimilarities,mrgwgt(6));
 
 
 if ( (~isfield(options,'complrqst')) || (~options.complrqst) )

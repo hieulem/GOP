@@ -1,5 +1,6 @@
 function segment_video_segtrack_withnewaff (id)
-
+addpath(genpath('../../standalonecode/code/'));
+addpath(genpath('../../standalonecode/outsource/'));
 load('video_list.mat'); % To get variable video_info_list
 
 video_info = video_info_list(id);
@@ -22,7 +23,7 @@ dataset_setting = [];
 if (strcmp(dataset_name,'SegTrackv2'))
     % Working with segtrack v2
     [min_id, no_frames] = findBeginningFrameIndex(video_dir, 0, '.png');
-    no_frames =4;
+  %  no_frames =4;
     dataset_setting.filenameheader = '';
     dataset_setting.numberformat = '%05d';
     dataset_setting.fileext = '.png';
@@ -45,7 +46,8 @@ parsave(seg_res_path, allthesegmentations);
 
 fprintf('Finishing %s \n', video_name);
 
-
+load('/home/hle/Project/GOP/.VSSTemp/VSS_Segtrack/girl/working_directory/Shared/Benchmark/VS_benchmark/Ucm2/allsegsdata');
+gen_cl_from_spmap(allthesegmentations{1},'new2');
 
 end
 
