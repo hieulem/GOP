@@ -1,4 +1,4 @@
-function segment_video (id)
+function segment_video_segtrack_withnewaff (id)
 
 load('video_list.mat'); % To get variable video_info_list
 
@@ -22,6 +22,7 @@ dataset_setting = [];
 if (strcmp(dataset_name,'SegTrackv2'))
     % Working with segtrack v2
     [min_id, no_frames] = findBeginningFrameIndex(video_dir, 0, '.png');
+    no_frames =4;
     dataset_setting.filenameheader = '';
     dataset_setting.numberformat = '%05d';
     dataset_setting.fileext = '.png';
@@ -37,12 +38,12 @@ else
     dataset_setting.noFrames = no_frames;
 end
 
-%allthesegmentations = VSS_Video(video_dir, video_working_dir, dataset_setting);
-%seg_res_path = fullfile(res_dir, [video_name '.mat']);
-%parsave(seg_res_path, allthesegmentations);
+allthesegmentations = VSS_Video_withnewaff(video_dir, video_working_dir, dataset_setting);
+seg_res_path = fullfile(res_dir, [video_name '.mat']);
+parsave(seg_res_path, allthesegmentations);
 
 
-fprintf('Finishing %s', video_name);
+fprintf('Finishing %s \n', video_name);
 
 
 
