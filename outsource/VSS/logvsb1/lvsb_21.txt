@@ -1,0 +1,3220 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+image001.png
+image002.png
+image003.png
+image004.png
+image005.png
+image006.png
+image007.png
+image008.png
+image009.png
+image010.png
+image011.png
+image012.png
+image013.png
+image014.png
+image015.png
+image016.png
+image017.png
+image018.png
+image019.png
+image020.png
+image021.png
+image022.png
+image023.png
+image024.png
+image025.png
+image026.png
+image027.png
+image028.png
+image029.png
+image030.png
+image031.png
+image032.png
+image033.png
+image034.png
+image035.png
+image036.png
+image037.png
+image038.png
+image039.png
+image040.png
+image041.png
+image042.png
+image043.png
+image044.png
+image045.png
+image046.png
+image047.png
+image048.png
+image049.png
+image050.png
+image051.png
+image052.png
+image053.png
+image054.png
+image055.png
+image056.png
+image057.png
+image058.png
+image059.png
+image060.png
+image061.png
+image062.png
+image063.png
+image064.png
+image065.png
+image066.png
+image067.png
+image068.png
+image069.png
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+Size of re-sized images is (360,640)
+Loaded colour images and saved
+Computing all flows
+Elapsed time is 16.511419 seconds.
+Elapsed time is 12.025889 seconds.
+Elapsed time is 13.919261 seconds.
+Elapsed time is 13.707373 seconds.
+Elapsed time is 13.758198 seconds.
+Elapsed time is 12.793937 seconds.
+Elapsed time is 13.154577 seconds.
+Elapsed time is 13.148035 seconds.
+Elapsed time is 13.104121 seconds.
+Elapsed time is 13.083744 seconds.
+Elapsed time is 13.556814 seconds.
+Elapsed time is 13.489803 seconds.
+Elapsed time is 13.360559 seconds.
+Elapsed time is 13.612701 seconds.
+Elapsed time is 13.184826 seconds.
+Elapsed time is 13.476603 seconds.
+Elapsed time is 13.205317 seconds.
+Elapsed time is 13.619391 seconds.
+Elapsed time is 13.244807 seconds.
+Elapsed time is 13.615831 seconds.
+Elapsed time is 13.332500 seconds.
+Elapsed time is 13.695330 seconds.
+Elapsed time is 13.342903 seconds.
+Elapsed time is 13.708995 seconds.
+Elapsed time is 13.576927 seconds.
+Elapsed time is 13.718353 seconds.
+Elapsed time is 13.348182 seconds.
+Elapsed time is 13.585238 seconds.
+Elapsed time is 13.270174 seconds.
+Elapsed time is 13.606613 seconds.
+Elapsed time is 13.302275 seconds.
+Elapsed time is 13.453704 seconds.
+Elapsed time is 13.353069 seconds.
+Elapsed time is 13.648915 seconds.
+Elapsed time is 13.547402 seconds.
+Elapsed time is 13.278691 seconds.
+Elapsed time is 13.314749 seconds.
+Elapsed time is 13.509489 seconds.
+Elapsed time is 13.243228 seconds.
+Elapsed time is 13.385672 seconds.
+Elapsed time is 13.772687 seconds.
+Elapsed time is 13.645496 seconds.
+Elapsed time is 13.465360 seconds.
+Elapsed time is 13.401620 seconds.
+Elapsed time is 13.466290 seconds.
+Elapsed time is 13.163770 seconds.
+Elapsed time is 13.296939 seconds.
+Elapsed time is 12.975893 seconds.
+Elapsed time is 13.425891 seconds.
+Elapsed time is 13.195300 seconds.
+Elapsed time is 13.400701 seconds.
+Elapsed time is 13.225728 seconds.
+Elapsed time is 13.452750 seconds.
+Elapsed time is 13.040481 seconds.
+Elapsed time is 13.410343 seconds.
+Elapsed time is 13.200901 seconds.
+Elapsed time is 13.457653 seconds.
+Elapsed time is 13.129549 seconds.
+Elapsed time is 13.284657 seconds.
+Elapsed time is 12.789709 seconds.
+Elapsed time is 13.507978 seconds.
+Elapsed time is 13.127889 seconds.
+Elapsed time is 13.387475 seconds.
+Elapsed time is 13.437829 seconds.
+Elapsed time is 13.554373 seconds.
+Elapsed time is 13.224144 seconds.
+Elapsed time is 13.511752 seconds.
+Elapsed time is 13.408242 seconds.
+Elapsed time is 13.162220 seconds.
+Elapsed time is 13.390256 seconds.
+Elapsed time is 13.574179 seconds.
+Elapsed time is 13.577653 seconds.
+Elapsed time is 13.706302 seconds.
+Elapsed time is 13.500965 seconds.
+Elapsed time is 13.634946 seconds.
+Elapsed time is 13.362064 seconds.
+Elapsed time is 13.324280 seconds.
+Elapsed time is 13.359891 seconds.
+Elapsed time is 13.350011 seconds.
+Elapsed time is 13.559922 seconds.
+Elapsed time is 13.560184 seconds.
+Elapsed time is 13.492766 seconds.
+Elapsed time is 13.713324 seconds.
+Elapsed time is 13.879707 seconds.
+Elapsed time is 12.961535 seconds.
+Elapsed time is 13.906362 seconds.
+Elapsed time is 13.452756 seconds.
+Elapsed time is 13.378771 seconds.
+Elapsed time is 13.319136 seconds.
+Elapsed time is 13.605710 seconds.
+Elapsed time is 13.501765 seconds.
+Elapsed time is 13.952799 seconds.
+Elapsed time is 13.128588 seconds.
+Elapsed time is 13.789059 seconds.
+Elapsed time is 13.505644 seconds.
+Elapsed time is 13.650932 seconds.
+Elapsed time is 13.313008 seconds.
+Elapsed time is 13.441616 seconds.
+Elapsed time is 13.416119 seconds.
+Elapsed time is 13.580925 seconds.
+Elapsed time is 13.212573 seconds.
+Elapsed time is 13.378099 seconds.
+Elapsed time is 13.359327 seconds.
+Elapsed time is 13.380964 seconds.
+Elapsed time is 13.406926 seconds.
+Elapsed time is 13.329646 seconds.
+Elapsed time is 13.648945 seconds.
+Elapsed time is 12.746290 seconds.
+Elapsed time is 13.189278 seconds.
+Elapsed time is 12.834210 seconds.
+Elapsed time is 13.510192 seconds.
+Elapsed time is 13.225108 seconds.
+Elapsed time is 13.582195 seconds.
+Elapsed time is 13.432316 seconds.
+Elapsed time is 13.890193 seconds.
+Elapsed time is 13.849881 seconds.
+Elapsed time is 13.753346 seconds.
+Elapsed time is 13.641340 seconds.
+Elapsed time is 13.435863 seconds.
+Elapsed time is 13.598362 seconds.
+Elapsed time is 13.839558 seconds.
+Elapsed time is 13.910309 seconds.
+Elapsed time is 13.352767 seconds.
+Elapsed time is 13.707360 seconds.
+Elapsed time is 13.351682 seconds.
+Elapsed time is 13.570464 seconds.
+Elapsed time is 13.483769 seconds.
+Elapsed time is 13.816345 seconds.
+Elapsed time is 13.537916 seconds.
+Elapsed time is 13.355154 seconds.
+Elapsed time is 13.911696 seconds.
+Elapsed time is 13.970831 seconds.
+Elapsed time is 13.771110 seconds.
+Elapsed time is 13.962633 seconds.
+Elapsed time is 13.784709 seconds.
+Elapsed time is 13.911068 seconds.
+Elapsed time is 39.693527 seconds.
+Flows computed and saved
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/wrpimages/imagecfn000.png
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/wrpimages/imageucm000.png
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+converting RGB to grayscale             [0.00407 sec]
+converting RGB to Lab                   [0.149011 sec]
+quantizing color channels               [0.010305 sec]
+computing filter set for textons        [0.011594 sec]
+computing textons                       [33.0812 sec]
+computing bg                            r = 3 [6.32289 sec]
+computing bg                            r = 5 [6.1425 sec]
+computing bg                            r = 10 [7.25509 sec]
+computing cg_a                          r = 5 [2.95004 sec]
+computing cg_a                          r = 10 [4.18466 sec]
+computing cg_a                          r = 20 [7.0868 sec]
+computing cg_b                          r = 5 [2.98132 sec]
+computing cg_b                          r = 10 [3.95674 sec]
+computing cg_b                          r = 20 [7.25292 sec]
+computing tg                            r = 5 [3.93682 sec]
+computing tg                            r = 10 [4.63713 sec]
+computing tg                            r = 20 [9.23266 sec]
+converting RGB to grayscale             [0.002496 sec]
+converting RGB to Lab                   [0.172061 sec]
+quantizing color channels               [0.005503 sec]
+computing cg_a                          r = 5 [9.4554 sec]
+computing cg_a                          r = 10 [10.634 sec]
+computing cg_a                          r = 20 [15.8547 sec]
+computing cg_b                          r = 5 [8.374 sec]
+computing cg_b                          r = 10 [9.93971 sec]
+computing cg_b                          r = 20 [14.5325 sec]
+computing support  [....................] done (0:00:02.16 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:296.175 s.
+compute contours                        [0.160673 sec]
+extracting regions                      [0.735606 sec]
+returning results                       [0.058765 sec]
+compute contours                        [0.157204 sec]
+extracting regions                      [0.713294 sec]
+returning results                       [0.050597 sec]
+
+********** Processed frame 1 **********
+
+converting RGB to grayscale             [0.002282 sec]
+converting RGB to Lab                   [0.082215 sec]
+quantizing color channels               [0.006938 sec]
+computing filter set for textons        [0.003501 sec]
+computing textons                       [17.8793 sec]
+computing bg                            r = 3 [5.90902 sec]
+computing bg                            r = 5 [6.22022 sec]
+computing bg                            r = 10 [8.14493 sec]
+computing cg_a                          r = 5 [3.10992 sec]
+computing cg_a                          r = 10 [3.7008 sec]
+computing cg_a                          r = 20 [7.23357 sec]
+computing cg_b                          r = 5 [3.01225 sec]
+computing cg_b                          r = 10 [4.02324 sec]
+computing cg_b                          r = 20 [7.1746 sec]
+computing tg                            r = 5 [3.4739 sec]
+computing tg                            r = 10 [4.60764 sec]
+computing tg                            r = 20 [8.25091 sec]
+converting RGB to grayscale             [0.002728 sec]
+converting RGB to Lab                   [0.079618 sec]
+quantizing color channels               [0.002959 sec]
+computing cg_a                          r = 5 [9.14612 sec]
+computing cg_a                          r = 10 [10.6216 sec]
+computing cg_a                          r = 20 [15.0477 sec]
+computing cg_b                          r = 5 [9.21457 sec]
+computing cg_b                          r = 10 [9.65741 sec]
+computing cg_b                          r = 20 [15.2513 sec]
+computing support  [....................] done (0:00:02.33 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:285.603 s.
+compute contours                        [0.155951 sec]
+extracting regions                      [0.718832 sec]
+returning results                       [0.062556 sec]
+compute contours                        [0.143593 sec]
+extracting regions                      [0.711432 sec]
+returning results                       [0.050708 sec]
+
+********** Processed frame 2 **********
+
+converting RGB to grayscale             [0.002529 sec]
+converting RGB to Lab                   [0.073363 sec]
+quantizing color channels               [0.005661 sec]
+computing filter set for textons        [0.004273 sec]
+computing textons                       [18.0722 sec]
+computing bg                            r = 3 [5.91049 sec]
+computing bg                            r = 5 [6.17509 sec]
+computing bg                            r = 10 [7.45692 sec]
+computing cg_a                          r = 5 [2.78565 sec]
+computing cg_a                          r = 10 [3.75374 sec]
+computing cg_a                          r = 20 [7.29706 sec]
+computing cg_b                          r = 5 [2.79697 sec]
+computing cg_b                          r = 10 [3.75197 sec]
+computing cg_b                          r = 20 [7.65176 sec]
+computing tg                            r = 5 [3.61087 sec]
+computing tg                            r = 10 [4.78992 sec]
+computing tg                            r = 20 [8.68048 sec]
+converting RGB to grayscale             [0.003242 sec]
+converting RGB to Lab                   [0.082507 sec]
+quantizing color channels               [0.00436 sec]
+computing cg_a                          r = 5 [9.95622 sec]
+computing cg_a                          r = 10 [11.1808 sec]
+computing cg_a                          r = 20 [16.5337 sec]
+computing cg_b                          r = 5 [8.53061 sec]
+computing cg_b                          r = 10 [12.2176 sec]
+computing cg_b                          r = 20 [14.97 sec]
+computing support  [....................] done (0:00:02.09 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:234.631 s.
+compute contours                        [0.171069 sec]
+extracting regions                      [0.827657 sec]
+returning results                       [0.061036 sec]
+compute contours                        [0.15611 sec]
+extracting regions                      [0.750977 sec]
+returning results                       [0.045626 sec]
+
+********** Processed frame 3 **********
+
+converting RGB to grayscale             [0.001827 sec]
+converting RGB to Lab                   [0.070594 sec]
+quantizing color channels               [0.004497 sec]
+computing filter set for textons        [0.003662 sec]
+computing textons                       [16.5741 sec]
+computing bg                            r = 3 [5.93353 sec]
+computing bg                            r = 5 [6.32231 sec]
+computing bg                            r = 10 [7.36787 sec]
+computing cg_a                          r = 5 [2.72701 sec]
+computing cg_a                          r = 10 [3.73463 sec]
+computing cg_a                          r = 20 [7.1791 sec]
+computing cg_b                          r = 5 [2.87292 sec]
+computing cg_b                          r = 10 [3.72445 sec]
+computing cg_b                          r = 20 [7.38521 sec]
+computing tg                            r = 5 [3.57976 sec]
+computing tg                            r = 10 [4.79487 sec]
+computing tg                            r = 20 [8.71604 sec]
+converting RGB to grayscale             [0.003006 sec]
+converting RGB to Lab                   [0.079966 sec]
+quantizing color channels               [0.003903 sec]
+computing cg_a                          r = 5 [9.2156 sec]
+computing cg_a                          r = 10 [10.8843 sec]
+computing cg_a                          r = 20 [15.7041 sec]
+computing cg_b                          r = 5 [9.28458 sec]
+computing cg_b                          r = 10 [10.499 sec]
+computing cg_b                          r = 20 [14.5592 sec]
+computing support  [....................] done (0:00:02.10 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:232.783 s.
+compute contours                        [0.211945 sec]
+extracting regions                      [1.17442 sec]
+returning results                       [0.072394 sec]
+compute contours                        [0.13514 sec]
+extracting regions                      [0.687591 sec]
+returning results                       [0.041746 sec]
+
+********** Processed frame 4 **********
+
+converting RGB to grayscale             [0.002861 sec]
+converting RGB to Lab                   [0.075087 sec]
+quantizing color channels               [0.004608 sec]
+computing filter set for textons        [0.004622 sec]
+computing textons                       [17.1463 sec]
+computing bg                            r = 3 [5.94833 sec]
+computing bg                            r = 5 [6.21794 sec]
+computing bg                            r = 10 [7.27866 sec]
+computing cg_a                          r = 5 [2.81711 sec]
+computing cg_a                          r = 10 [3.70244 sec]
+computing cg_a                          r = 20 [7.19599 sec]
+computing cg_b                          r = 5 [2.73299 sec]
+computing cg_b                          r = 10 [4.38709 sec]
+computing cg_b                          r = 20 [8.12756 sec]
+computing tg                            r = 5 [3.56455 sec]
+computing tg                            r = 10 [4.727 sec]
+computing tg                            r = 20 [8.36122 sec]
+converting RGB to grayscale             [0.003098 sec]
+converting RGB to Lab                   [0.083531 sec]
+quantizing color channels               [0.003844 sec]
+computing cg_a                          r = 5 [9.33067 sec]
+computing cg_a                          r = 10 [10.9181 sec]
+computing cg_a                          r = 20 [15.2425 sec]
+computing cg_b                          r = 5 [8.67345 sec]
+computing cg_b                          r = 10 [10.3606 sec]
+computing cg_b                          r = 20 [15.1286 sec]
+computing support  [....................] done (0:00:02.28 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:244.107 s.
+compute contours                        [0.245648 sec]
+extracting regions                      [1.06947 sec]
+returning results                       [0.072342 sec]
+compute contours                        [0.162031 sec]
+extracting regions                      [0.690421 sec]
+returning results                       [0.053368 sec]
+
+********** Processed frame 5 **********
+
+converting RGB to grayscale             [0.001905 sec]
+converting RGB to Lab                   [0.072118 sec]
+quantizing color channels               [0.005214 sec]
+computing filter set for textons        [0.002981 sec]
+computing textons                       [17.4984 sec]
+computing bg                            r = 3 [5.95952 sec]
+computing bg                            r = 5 [6.16948 sec]
+computing bg                            r = 10 [7.36111 sec]
+computing cg_a                          r = 5 [2.77208 sec]
+computing cg_a                          r = 10 [3.76016 sec]
+computing cg_a                          r = 20 [7.23392 sec]
+computing cg_b                          r = 5 [2.77945 sec]
+computing cg_b                          r = 10 [3.7882 sec]
+computing cg_b                          r = 20 [7.88376 sec]
+computing tg                            r = 5 [3.74957 sec]
+computing tg                            r = 10 [4.81746 sec]
+computing tg                            r = 20 [8.89579 sec]
+converting RGB to grayscale             [0.001376 sec]
+converting RGB to Lab                   [0.092677 sec]
+quantizing color channels               [0.003658 sec]
+computing cg_a                          r = 5 [9.50781 sec]
+computing cg_a                          r = 10 [10.5432 sec]
+computing cg_a                          r = 20 [15.9364 sec]
+computing cg_b                          r = 5 [9.18678 sec]
+computing cg_b                          r = 10 [9.90018 sec]
+computing cg_b                          r = 20 [14.4007 sec]
+computing support  [....................] done (0:00:02.12 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:251.413 s.
+compute contours                        [0.190053 sec]
+extracting regions                      [0.774329 sec]
+returning results                       [0.046931 sec]
+compute contours                        [0.161524 sec]
+extracting regions                      [0.738003 sec]
+returning results                       [0.05321 sec]
+
+********** Processed frame 6 **********
+
+converting RGB to grayscale             [0.001658 sec]
+converting RGB to Lab                   [0.070347 sec]
+quantizing color channels               [0.004416 sec]
+computing filter set for textons        [0.00373 sec]
+computing textons                       [17.0106 sec]
+computing bg                            r = 3 [6.05132 sec]
+computing bg                            r = 5 [6.21665 sec]
+computing bg                            r = 10 [7.24253 sec]
+computing cg_a                          r = 5 [2.71022 sec]
+computing cg_a                          r = 10 [3.72987 sec]
+computing cg_a                          r = 20 [7.19766 sec]
+computing cg_b                          r = 5 [2.73832 sec]
+computing cg_b                          r = 10 [3.7101 sec]
+computing cg_b                          r = 20 [7.40473 sec]
+computing tg                            r = 5 [3.45134 sec]
+computing tg                            r = 10 [4.61925 sec]
+computing tg                            r = 20 [8.46948 sec]
+converting RGB to grayscale             [0.002213 sec]
+converting RGB to Lab                   [0.088693 sec]
+quantizing color channels               [0.004311 sec]
+computing cg_a                          r = 5 [9.58185 sec]
+computing cg_a                          r = 10 [10.6225 sec]
+computing cg_a                          r = 20 [15.6258 sec]
+computing cg_b                          r = 5 [8.51271 sec]
+computing cg_b                          r = 10 [9.839 sec]
+computing cg_b                          r = 20 [14.4892 sec]
+computing support  [....................] done (0:00:02.18 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:240.9 s.
+compute contours                        [0.143289 sec]
+extracting regions                      [0.825882 sec]
+returning results                       [0.045458 sec]
+compute contours                        [0.146932 sec]
+extracting regions                      [0.800658 sec]
+returning results                       [0.051642 sec]
+
+********** Processed frame 7 **********
+
+converting RGB to grayscale             [0.00224 sec]
+converting RGB to Lab                   [0.072059 sec]
+quantizing color channels               [0.005343 sec]
+computing filter set for textons        [0.003139 sec]
+computing textons                       [17.3042 sec]
+computing bg                            r = 3 [6.16521 sec]
+computing bg                            r = 5 [6.26998 sec]
+computing bg                            r = 10 [7.23628 sec]
+computing cg_a                          r = 5 [2.76861 sec]
+computing cg_a                          r = 10 [3.6951 sec]
+computing cg_a                          r = 20 [7.37958 sec]
+computing cg_b                          r = 5 [2.78394 sec]
+computing cg_b                          r = 10 [3.86868 sec]
+computing cg_b                          r = 20 [7.53075 sec]
+computing tg                            r = 5 [3.49704 sec]
+computing tg                            r = 10 [4.98128 sec]
+computing tg                            r = 20 [8.42465 sec]
+converting RGB to grayscale             [0.002541 sec]
+converting RGB to Lab                   [0.087145 sec]
+quantizing color channels               [0.003158 sec]
+computing cg_a                          r = 5 [9.51112 sec]
+computing cg_a                          r = 10 [10.4679 sec]
+computing cg_a                          r = 20 [15.6636 sec]
+computing cg_b                          r = 5 [8.73277 sec]
+computing cg_b                          r = 10 [9.77194 sec]
+computing cg_b                          r = 20 [14.3823 sec]
+computing support  [....................] done (0:00:02.33 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:227.448 s.
+compute contours                        [0.164469 sec]
+extracting regions                      [0.709679 sec]
+returning results                       [0.041589 sec]
+compute contours                        [0.228396 sec]
+extracting regions                      [0.749846 sec]
+returning results                       [0.051993 sec]
+
+********** Processed frame 8 **********
+
+converting RGB to grayscale             [0.002346 sec]
+converting RGB to Lab                   [0.082009 sec]
+quantizing color channels               [0.006577 sec]
+computing filter set for textons        [0.00342 sec]
+computing textons                       [17.7093 sec]
+computing bg                            r = 3 [6.03727 sec]
+computing bg                            r = 5 [6.2679 sec]
+computing bg                            r = 10 [7.36739 sec]
+computing cg_a                          r = 5 [2.81576 sec]
+computing cg_a                          r = 10 [3.73184 sec]
+computing cg_a                          r = 20 [7.26837 sec]
+computing cg_b                          r = 5 [2.8212 sec]
+computing cg_b                          r = 10 [3.70347 sec]
+computing cg_b                          r = 20 [7.1039 sec]
+computing tg                            r = 5 [3.46886 sec]
+computing tg                            r = 10 [4.67492 sec]
+computing tg                            r = 20 [8.67558 sec]
+converting RGB to grayscale             [0.001697 sec]
+converting RGB to Lab                   [0.084116 sec]
+quantizing color channels               [0.002775 sec]
+computing cg_a                          r = 5 [9.20239 sec]
+computing cg_a                          r = 10 [11.1055 sec]
+computing cg_a                          r = 20 [16.0823 sec]
+computing cg_b                          r = 5 [9.11423 sec]
+computing cg_b                          r = 10 [9.85228 sec]
+computing cg_b                          r = 20 [14.9675 sec]
+computing support  [....................] done (0:00:02.18 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:210.614 s.
+compute contours                        [0.144714 sec]
+extracting regions                      [0.767504 sec]
+returning results                       [0.047431 sec]
+compute contours                        [0.149412 sec]
+extracting regions                      [0.736363 sec]
+returning results                       [0.043998 sec]
+
+********** Processed frame 9 **********
+
+converting RGB to grayscale             [0.00183 sec]
+converting RGB to Lab                   [0.07888 sec]
+quantizing color channels               [0.007743 sec]
+computing filter set for textons        [0.003527 sec]
+computing textons                       [17.5379 sec]
+computing bg                            r = 3 [6.29431 sec]
+computing bg                            r = 5 [6.23831 sec]
+computing bg                            r = 10 [8.28675 sec]
+computing cg_a                          r = 5 [2.72172 sec]
+computing cg_a                          r = 10 [3.75112 sec]
+computing cg_a                          r = 20 [7.20408 sec]
+computing cg_b                          r = 5 [3.15862 sec]
+computing cg_b                          r = 10 [4.00813 sec]
+computing cg_b                          r = 20 [7.34678 sec]
+computing tg                            r = 5 [3.48337 sec]
+computing tg                            r = 10 [4.61337 sec]
+computing tg                            r = 20 [8.48148 sec]
+converting RGB to grayscale             [0.001573 sec]
+converting RGB to Lab                   [0.080245 sec]
+quantizing color channels               [0.004948 sec]
+computing cg_a                          r = 5 [9.72607 sec]
+computing cg_a                          r = 10 [10.7416 sec]
+computing cg_a                          r = 20 [15.4829 sec]
+computing cg_b                          r = 5 [8.65481 sec]
+computing cg_b                          r = 10 [9.77762 sec]
+computing cg_b                          r = 20 [14.4649 sec]
+computing support  [....................] done (0:00:02.24 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:263.188 s.
+compute contours                        [0.15066 sec]
+extracting regions                      [0.715594 sec]
+returning results                       [0.091416 sec]
+compute contours                        [0.171747 sec]
+extracting regions                      [0.758168 sec]
+returning results                       [0.055932 sec]
+
+********** Processed frame 10 **********
+
+converting RGB to grayscale             [0.002009 sec]
+converting RGB to Lab                   [0.073824 sec]
+quantizing color channels               [0.005843 sec]
+computing filter set for textons        [0.003719 sec]
+computing textons                       [17.5956 sec]
+computing bg                            r = 3 [7.42838 sec]
+computing bg                            r = 5 [6.19997 sec]
+computing bg                            r = 10 [7.17133 sec]
+computing cg_a                          r = 5 [2.76725 sec]
+computing cg_a                          r = 10 [3.75013 sec]
+computing cg_a                          r = 20 [7.18782 sec]
+computing cg_b                          r = 5 [2.73069 sec]
+computing cg_b                          r = 10 [3.77372 sec]
+computing cg_b                          r = 20 [7.41304 sec]
+computing tg                            r = 5 [3.54079 sec]
+computing tg                            r = 10 [4.68885 sec]
+computing tg                            r = 20 [8.49316 sec]
+converting RGB to grayscale             [0.001431 sec]
+converting RGB to Lab                   [0.077784 sec]
+quantizing color channels               [0.002838 sec]
+computing cg_a                          r = 5 [9.14475 sec]
+computing cg_a                          r = 10 [10.4914 sec]
+computing cg_a                          r = 20 [15.1083 sec]
+computing cg_b                          r = 5 [8.409 sec]
+computing cg_b                          r = 10 [9.68967 sec]
+computing cg_b                          r = 20 [14.5346 sec]
+computing support  [....................] done (0:00:02.03 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:230.824 s.
+compute contours                        [0.154039 sec]
+extracting regions                      [0.686801 sec]
+returning results                       [0.044286 sec]
+compute contours                        [0.166011 sec]
+extracting regions                      [0.772517 sec]
+returning results                       [0.055531 sec]
+
+********** Processed frame 11 **********
+
+converting RGB to grayscale             [0.00196 sec]
+converting RGB to Lab                   [0.07005 sec]
+quantizing color channels               [0.004828 sec]
+computing filter set for textons        [0.004183 sec]
+computing textons                       [17.0367 sec]
+computing bg                            r = 3 [5.91355 sec]
+computing bg                            r = 5 [6.12502 sec]
+computing bg                            r = 10 [7.1301 sec]
+computing cg_a                          r = 5 [2.79884 sec]
+computing cg_a                          r = 10 [3.68051 sec]
+computing cg_a                          r = 20 [7.11377 sec]
+computing cg_b                          r = 5 [2.81288 sec]
+computing cg_b                          r = 10 [3.87685 sec]
+computing cg_b                          r = 20 [7.46795 sec]
+computing tg                            r = 5 [3.47481 sec]
+computing tg                            r = 10 [4.6476 sec]
+computing tg                            r = 20 [8.48216 sec]
+converting RGB to grayscale             [0.001877 sec]
+converting RGB to Lab                   [0.0828 sec]
+quantizing color channels               [0.004001 sec]
+computing cg_a                          r = 5 [11.2749 sec]
+computing cg_a                          r = 10 [10.6045 sec]
+computing cg_a                          r = 20 [14.9894 sec]
+computing cg_b                          r = 5 [8.70398 sec]
+computing cg_b                          r = 10 [9.87838 sec]
+computing cg_b                          r = 20 [15.4246 sec]
+computing support  [....................] done (0:00:01.93 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:249.287 s.
+compute contours                        [0.160393 sec]
+extracting regions                      [0.723158 sec]
+returning results                       [0.065953 sec]
+compute contours                        [0.163731 sec]
+extracting regions                      [0.770327 sec]
+returning results                       [0.047785 sec]
+
+********** Processed frame 12 **********
+
+converting RGB to grayscale             [0.00412 sec]
+converting RGB to Lab                   [0.134494 sec]
+quantizing color channels               [0.00803 sec]
+computing filter set for textons        [0.005228 sec]
+computing textons                       [23.2141 sec]
+computing bg                            r = 3 [6.20719 sec]
+computing bg                            r = 5 [6.24593 sec]
+computing bg                            r = 10 [7.11494 sec]
+computing cg_a                          r = 5 [3.10798 sec]
+computing cg_a                          r = 10 [3.75422 sec]
+computing cg_a                          r = 20 [7.42286 sec]
+computing cg_b                          r = 5 [3.20353 sec]
+computing cg_b                          r = 10 [4.23049 sec]
+computing cg_b                          r = 20 [7.43749 sec]
+computing tg                            r = 5 [3.96352 sec]
+computing tg                            r = 10 [4.74587 sec]
+computing tg                            r = 20 [8.79589 sec]
+converting RGB to grayscale             [0.002067 sec]
+converting RGB to Lab                   [0.08227 sec]
+quantizing color channels               [0.003015 sec]
+computing cg_a                          r = 5 [9.28987 sec]
+computing cg_a                          r = 10 [10.8096 sec]
+computing cg_a                          r = 20 [15.0319 sec]
+computing cg_b                          r = 5 [8.92229 sec]
+computing cg_b                          r = 10 [10.0135 sec]
+computing cg_b                          r = 20 [14.8409 sec]
+computing support  [....................] done (0:00:01.98 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:234.267 s.
+compute contours                        [0.214913 sec]
+extracting regions                      [0.812888 sec]
+returning results                       [0.074404 sec]
+compute contours                        [0.152147 sec]
+extracting regions                      [0.783259 sec]
+returning results                       [0.055432 sec]
+
+********** Processed frame 13 **********
+
+converting RGB to grayscale             [0.004509 sec]
+converting RGB to Lab                   [0.081168 sec]
+quantizing color channels               [0.011026 sec]
+computing filter set for textons        [0.003314 sec]
+computing textons                       [17.7451 sec]
+computing bg                            r = 3 [6.56247 sec]
+computing bg                            r = 5 [6.60271 sec]
+computing bg                            r = 10 [7.26978 sec]
+computing cg_a                          r = 5 [3.12692 sec]
+computing cg_a                          r = 10 [4.25072 sec]
+computing cg_a                          r = 20 [8.20124 sec]
+computing cg_b                          r = 5 [2.78779 sec]
+computing cg_b                          r = 10 [3.74688 sec]
+computing cg_b                          r = 20 [7.29567 sec]
+computing tg                            r = 5 [3.51487 sec]
+computing tg                            r = 10 [4.94841 sec]
+computing tg                            r = 20 [8.82667 sec]
+converting RGB to grayscale             [0.002019 sec]
+converting RGB to Lab                   [0.084602 sec]
+quantizing color channels               [0.003409 sec]
+computing cg_a                          r = 5 [9.33739 sec]
+computing cg_a                          r = 10 [10.5283 sec]
+computing cg_a                          r = 20 [15.3778 sec]
+computing cg_b                          r = 5 [8.34352 sec]
+computing cg_b                          r = 10 [9.707 sec]
+computing cg_b                          r = 20 [14.2928 sec]
+computing support  [....................] done (0:00:01.92 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:247.54 s.
+compute contours                        [0.154822 sec]
+extracting regions                      [0.792099 sec]
+returning results                       [0.042532 sec]
+compute contours                        [0.11765 sec]
+extracting regions                      [0.694323 sec]
+returning results                       [0.047167 sec]
+
+********** Processed frame 14 **********
+
+converting RGB to grayscale             [0.002078 sec]
+converting RGB to Lab                   [0.069786 sec]
+quantizing color channels               [0.005287 sec]
+computing filter set for textons        [0.004477 sec]
+computing textons                       [17.936 sec]
+computing bg                            r = 3 [5.88237 sec]
+computing bg                            r = 5 [6.22764 sec]
+computing bg                            r = 10 [7.52006 sec]
+computing cg_a                          r = 5 [2.85624 sec]
+computing cg_a                          r = 10 [3.73329 sec]
+computing cg_a                          r = 20 [7.37092 sec]
+computing cg_b                          r = 5 [2.82097 sec]
+computing cg_b                          r = 10 [4.02735 sec]
+computing cg_b                          r = 20 [7.58926 sec]
+computing tg                            r = 5 [3.5578 sec]
+computing tg                            r = 10 [4.76171 sec]
+computing tg                            r = 20 [8.48631 sec]
+converting RGB to grayscale             [0.00117 sec]
+converting RGB to Lab                   [0.166167 sec]
+quantizing color channels               [0.005085 sec]
+computing cg_a                          r = 5 [9.553 sec]
+computing cg_a                          r = 10 [10.7363 sec]
+computing cg_a                          r = 20 [15.4016 sec]
+computing cg_b                          r = 5 [8.6891 sec]
+computing cg_b                          r = 10 [9.71973 sec]
+computing cg_b                          r = 20 [14.3743 sec]
+computing support  [....................] done (0:00:02.03 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:251.845 s.
+compute contours                        [0.137451 sec]
+extracting regions                      [0.683017 sec]
+returning results                       [0.046035 sec]
+compute contours                        [0.131962 sec]
+extracting regions                      [0.691401 sec]
+returning results                       [0.058135 sec]
+
+********** Processed frame 15 **********
+
+converting RGB to grayscale             [0.003294 sec]
+converting RGB to Lab                   [0.144696 sec]
+quantizing color channels               [0.008259 sec]
+computing filter set for textons        [0.005082 sec]
+computing textons                       [21.4104 sec]
+computing bg                            r = 3 [5.9865 sec]
+computing bg                            r = 5 [6.26518 sec]
+computing bg                            r = 10 [7.3483 sec]
+computing cg_a                          r = 5 [3.03601 sec]
+computing cg_a                          r = 10 [4.09009 sec]
+computing cg_a                          r = 20 [7.7253 sec]
+computing cg_b                          r = 5 [2.76756 sec]
+computing cg_b                          r = 10 [3.77566 sec]
+computing cg_b                          r = 20 [7.45609 sec]
+computing tg                            r = 5 [3.54251 sec]
+computing tg                            r = 10 [4.75396 sec]
+computing tg                            r = 20 [8.54738 sec]
+converting RGB to grayscale             [0.000878 sec]
+converting RGB to Lab                   [0.075749 sec]
+quantizing color channels               [0.002533 sec]
+computing cg_a                          r = 5 [9.00977 sec]
+computing cg_a                          r = 10 [10.2123 sec]
+computing cg_a                          r = 20 [14.9393 sec]
+computing cg_b                          r = 5 [8.54029 sec]
+computing cg_b                          r = 10 [10.2315 sec]
+computing cg_b                          r = 20 [14.4698 sec]
+computing support  [....................] done (0:00:01.97 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:224.103 s.
+compute contours                        [0.175825 sec]
+extracting regions                      [0.73179 sec]
+returning results                       [0.055428 sec]
+compute contours                        [0.182872 sec]
+extracting regions                      [0.746683 sec]
+returning results                       [0.048572 sec]
+
+********** Processed frame 16 **********
+
+converting RGB to grayscale             [0.002724 sec]
+converting RGB to Lab                   [0.071953 sec]
+quantizing color channels               [0.006422 sec]
+computing filter set for textons        [0.005397 sec]
+computing textons                       [20.4842 sec]
+computing bg                            r = 3 [6.44009 sec]
+computing bg                            r = 5 [6.32446 sec]
+computing bg                            r = 10 [7.22044 sec]
+computing cg_a                          r = 5 [2.76484 sec]
+computing cg_a                          r = 10 [3.76149 sec]
+computing cg_a                          r = 20 [7.24039 sec]
+computing cg_b                          r = 5 [2.7539 sec]
+computing cg_b                          r = 10 [3.9011 sec]
+computing cg_b                          r = 20 [7.62827 sec]
+computing tg                            r = 5 [3.62916 sec]
+computing tg                            r = 10 [4.78375 sec]
+computing tg                            r = 20 [8.80735 sec]
+converting RGB to grayscale             [0.003572 sec]
+converting RGB to Lab                   [0.080666 sec]
+quantizing color channels               [0.00612 sec]
+computing cg_a                          r = 5 [9.37436 sec]
+computing cg_a                          r = 10 [11.2597 sec]
+computing cg_a                          r = 20 [15.9446 sec]
+computing cg_b                          r = 5 [8.66928 sec]
+computing cg_b                          r = 10 [10.0736 sec]
+computing cg_b                          r = 20 [14.954 sec]
+computing support  [....................] done (0:00:02.63 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:256.943 s.
+compute contours                        [0.156374 sec]
+extracting regions                      [0.737199 sec]
+returning results                       [0.052335 sec]
+compute contours                        [0.144526 sec]
+extracting regions                      [0.724295 sec]
+returning results                       [0.049648 sec]
+
+********** Processed frame 17 **********
+
+converting RGB to grayscale             [0.002243 sec]
+converting RGB to Lab                   [0.074674 sec]
+quantizing color channels               [0.00785 sec]
+computing filter set for textons        [0.003072 sec]
+computing textons                       [17.528 sec]
+computing bg                            r = 3 [5.95584 sec]
+computing bg                            r = 5 [6.22498 sec]
+computing bg                            r = 10 [7.20785 sec]
+computing cg_a                          r = 5 [2.75418 sec]
+computing cg_a                          r = 10 [3.8401 sec]
+computing cg_a                          r = 20 [7.13321 sec]
+computing cg_b                          r = 5 [3.02739 sec]
+computing cg_b                          r = 10 [3.85799 sec]
+computing cg_b                          r = 20 [7.53452 sec]
+computing tg                            r = 5 [3.53213 sec]
+computing tg                            r = 10 [4.87355 sec]
+computing tg                            r = 20 [8.76379 sec]
+converting RGB to grayscale             [0.002886 sec]
+converting RGB to Lab                   [0.080866 sec]
+quantizing color channels               [0.003185 sec]
+computing cg_a                          r = 5 [9.13211 sec]
+computing cg_a                          r = 10 [10.4548 sec]
+computing cg_a                          r = 20 [20.2444 sec]
+computing cg_b                          r = 5 [8.42936 sec]
+computing cg_b                          r = 10 [9.61225 sec]
+computing cg_b                          r = 20 [14.2338 sec]
+computing support  [....................] done (0:00:02.16 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:235.572 s.
+compute contours                        [0.159054 sec]
+extracting regions                      [0.712289 sec]
+returning results                       [0.045695 sec]
+compute contours                        [0.128691 sec]
+extracting regions                      [0.734421 sec]
+returning results                       [0.039798 sec]
+
+********** Processed frame 18 **********
+
+converting RGB to grayscale             [0.001635 sec]
+converting RGB to Lab                   [0.069065 sec]
+quantizing color channels               [0.005011 sec]
+computing filter set for textons        [0.00461 sec]
+computing textons                       [17.4019 sec]
+computing bg                            r = 3 [5.88858 sec]
+computing bg                            r = 5 [6.13976 sec]
+computing bg                            r = 10 [7.29091 sec]
+computing cg_a                          r = 5 [2.83422 sec]
+computing cg_a                          r = 10 [3.72689 sec]
+computing cg_a                          r = 20 [7.312 sec]
+computing cg_b                          r = 5 [2.82942 sec]
+computing cg_b                          r = 10 [4.38314 sec]
+computing cg_b                          r = 20 [7.23342 sec]
+computing tg                            r = 5 [3.48634 sec]
+computing tg                            r = 10 [4.56199 sec]
+computing tg                            r = 20 [8.31238 sec]
+converting RGB to grayscale             [0.001566 sec]
+converting RGB to Lab                   [0.081103 sec]
+quantizing color channels               [0.002874 sec]
+computing cg_a                          r = 5 [9.55152 sec]
+computing cg_a                          r = 10 [10.5128 sec]
+computing cg_a                          r = 20 [14.9728 sec]
+computing cg_b                          r = 5 [8.50087 sec]
+computing cg_b                          r = 10 [10.6108 sec]
+computing cg_b                          r = 20 [14.971 sec]
+computing support  [....................] done (0:00:02.05 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:236.834 s.
+compute contours                        [0.124109 sec]
+extracting regions                      [0.772123 sec]
+returning results                       [0.054862 sec]
+compute contours                        [0.118229 sec]
+extracting regions                      [0.725651 sec]
+returning results                       [0.04008 sec]
+
+********** Processed frame 19 **********
+
+converting RGB to grayscale             [0.001947 sec]
+converting RGB to Lab                   [0.069429 sec]
+quantizing color channels               [0.007522 sec]
+computing filter set for textons        [0.003574 sec]
+computing textons                       [17.2283 sec]
+computing bg                            r = 3 [5.87349 sec]
+computing bg                            r = 5 [6.07169 sec]
+computing bg                            r = 10 [7.12406 sec]
+computing cg_a                          r = 5 [2.90307 sec]
+computing cg_a                          r = 10 [3.8954 sec]
+computing cg_a                          r = 20 [7.48908 sec]
+computing cg_b                          r = 5 [2.71967 sec]
+computing cg_b                          r = 10 [3.66764 sec]
+computing cg_b                          r = 20 [7.21765 sec]
+computing tg                            r = 5 [3.43932 sec]
+computing tg                            r = 10 [4.56964 sec]
+computing tg                            r = 20 [8.31955 sec]
+converting RGB to grayscale             [0.000933 sec]
+converting RGB to Lab                   [0.07318 sec]
+quantizing color channels               [0.003031 sec]
+computing cg_a                          r = 5 [9.47781 sec]
+computing cg_a                          r = 10 [11.5806 sec]
+computing cg_a                          r = 20 [15.0647 sec]
+computing cg_b                          r = 5 [8.37957 sec]
+computing cg_b                          r = 10 [9.71319 sec]
+computing cg_b                          r = 20 [14.3377 sec]
+computing support  [....................] done (0:00:02.03 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:210.448 s.
+compute contours                        [0.126919 sec]
+extracting regions                      [0.691312 sec]
+returning results                       [0.045887 sec]
+compute contours                        [0.123421 sec]
+extracting regions                      [0.741184 sec]
+returning results                       [0.036606 sec]
+
+********** Processed frame 20 **********
+
+converting RGB to grayscale             [0.002818 sec]
+converting RGB to Lab                   [0.070844 sec]
+quantizing color channels               [0.005396 sec]
+computing filter set for textons        [0.003405 sec]
+computing textons                       [16.9764 sec]
+computing bg                            r = 3 [6.03555 sec]
+computing bg                            r = 5 [6.15542 sec]
+computing bg                            r = 10 [7.38211 sec]
+computing cg_a                          r = 5 [3.06884 sec]
+computing cg_a                          r = 10 [3.85332 sec]
+computing cg_a                          r = 20 [7.35407 sec]
+computing cg_b                          r = 5 [2.68779 sec]
+computing cg_b                          r = 10 [3.78419 sec]
+computing cg_b                          r = 20 [7.43562 sec]
+computing tg                            r = 5 [3.47377 sec]
+computing tg                            r = 10 [4.58999 sec]
+computing tg                            r = 20 [8.49025 sec]
+converting RGB to grayscale             [0.001474 sec]
+converting RGB to Lab                   [0.074585 sec]
+quantizing color channels               [0.002886 sec]
+computing cg_a                          r = 5 [9.14155 sec]
+computing cg_a                          r = 10 [10.54 sec]
+computing cg_a                          r = 20 [15.2499 sec]
+computing cg_b                          r = 5 [8.38384 sec]
+computing cg_b                          r = 10 [9.73565 sec]
+computing cg_b                          r = 20 [16.6202 sec]
+computing support  [....................] done (0:00:01.99 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:244.619 s.
+compute contours                        [0.146756 sec]
+extracting regions                      [0.675958 sec]
+returning results                       [0.055827 sec]
+compute contours                        [0.130613 sec]
+extracting regions                      [0.722324 sec]
+returning results                       [0.076777 sec]
+
+********** Processed frame 21 **********
+
+converting RGB to grayscale             [0.003071 sec]
+converting RGB to Lab                   [0.073319 sec]
+quantizing color channels               [0.005815 sec]
+computing filter set for textons        [0.00325 sec]
+computing textons                       [17.545 sec]
+computing bg                            r = 3 [6.13968 sec]
+computing bg                            r = 5 [6.25913 sec]
+computing bg                            r = 10 [7.38426 sec]
+computing cg_a                          r = 5 [3.06541 sec]
+computing cg_a                          r = 10 [3.97239 sec]
+computing cg_a                          r = 20 [7.5658 sec]
+computing cg_b                          r = 5 [2.88069 sec]
+computing cg_b                          r = 10 [3.69598 sec]
+computing cg_b                          r = 20 [7.36994 sec]
+computing tg                            r = 5 [3.52063 sec]
+computing tg                            r = 10 [4.83106 sec]
+computing tg                            r = 20 [8.55562 sec]
+converting RGB to grayscale             [0.002205 sec]
+converting RGB to Lab                   [0.075867 sec]
+quantizing color channels               [0.004141 sec]
+computing cg_a                          r = 5 [9.22943 sec]
+computing cg_a                          r = 10 [10.57 sec]
+computing cg_a                          r = 20 [15.4379 sec]
+computing cg_b                          r = 5 [9.16442 sec]
+computing cg_b                          r = 10 [10.496 sec]
+computing cg_b                          r = 20 [15.8769 sec]
+computing support  [....................] done (0:00:02.19 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:214.27 s.
+compute contours                        [0.146586 sec]
+extracting regions                      [0.729209 sec]
+returning results                       [0.050803 sec]
+compute contours                        [0.125871 sec]
+extracting regions                      [0.749304 sec]
+returning results                       [0.036787 sec]
+
+********** Processed frame 22 **********
+
+converting RGB to grayscale             [0.00172 sec]
+converting RGB to Lab                   [0.079728 sec]
+quantizing color channels               [0.004534 sec]
+computing filter set for textons        [0.004559 sec]
+computing textons                       [18.6127 sec]
+computing bg                            r = 3 [5.87865 sec]
+computing bg                            r = 5 [6.16253 sec]
+computing bg                            r = 10 [7.03669 sec]
+computing cg_a                          r = 5 [2.80687 sec]
+computing cg_a                          r = 10 [4.47328 sec]
+computing cg_a                          r = 20 [8.52797 sec]
+computing cg_b                          r = 5 [2.71108 sec]
+computing cg_b                          r = 10 [3.59626 sec]
+computing cg_b                          r = 20 [7.19434 sec]
+computing tg                            r = 5 [3.52906 sec]
+computing tg                            r = 10 [4.70993 sec]
+computing tg                            r = 20 [8.69559 sec]
+converting RGB to grayscale             [0.001188 sec]
+converting RGB to Lab                   [0.08949 sec]
+quantizing color channels               [0.002724 sec]
+computing cg_a                          r = 5 [9.09943 sec]
+computing cg_a                          r = 10 [10.5994 sec]
+computing cg_a                          r = 20 [19.8288 sec]
+computing cg_b                          r = 5 [8.60067 sec]
+computing cg_b                          r = 10 [9.82721 sec]
+computing cg_b                          r = 20 [14.5975 sec]
+computing support  [....................] done (0:00:01.97 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:213.52 s.
+compute contours                        [0.14316 sec]
+extracting regions                      [0.745312 sec]
+returning results                       [0.047054 sec]
+compute contours                        [0.176452 sec]
+extracting regions                      [0.710621 sec]
+returning results                       [0.06598 sec]
+
+********** Processed frame 23 **********
+
+converting RGB to grayscale             [0.002692 sec]
+converting RGB to Lab                   [0.071676 sec]
+quantizing color channels               [0.004573 sec]
+computing filter set for textons        [0.004355 sec]
+computing textons                       [17.1247 sec]
+computing bg                            r = 3 [6.01089 sec]
+computing bg                            r = 5 [6.49257 sec]
+computing bg                            r = 10 [7.27994 sec]
+computing cg_a                          r = 5 [3.17865 sec]
+computing cg_a                          r = 10 [3.87601 sec]
+computing cg_a                          r = 20 [7.36562 sec]
+computing cg_b                          r = 5 [2.71603 sec]
+computing cg_b                          r = 10 [3.68305 sec]
+computing cg_b                          r = 20 [7.81722 sec]
+computing tg                            r = 5 [3.40635 sec]
+computing tg                            r = 10 [4.90101 sec]
+computing tg                            r = 20 [8.74604 sec]
+converting RGB to grayscale             [0.003813 sec]
+converting RGB to Lab                   [0.090448 sec]
+quantizing color channels               [0.004733 sec]
+computing cg_a                          r = 5 [9.8645 sec]
+computing cg_a                          r = 10 [10.8944 sec]
+computing cg_a                          r = 20 [15.0027 sec]
+computing cg_b                          r = 5 [9.33315 sec]
+computing cg_b                          r = 10 [9.86614 sec]
+computing cg_b                          r = 20 [14.4332 sec]
+computing support  [....................] done (0:00:02.06 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:222.11 s.
+compute contours                        [0.137413 sec]
+extracting regions                      [0.732737 sec]
+returning results                       [0.046409 sec]
+compute contours                        [0.138844 sec]
+extracting regions                      [0.691433 sec]
+returning results                       [0.039419 sec]
+
+********** Processed frame 24 **********
+
+converting RGB to grayscale             [0.002477 sec]
+converting RGB to Lab                   [0.072593 sec]
+quantizing color channels               [0.005542 sec]
+computing filter set for textons        [0.003124 sec]
+computing textons                       [16.7009 sec]
+computing bg                            r = 3 [5.83985 sec]
+computing bg                            r = 5 [6.07465 sec]
+computing bg                            r = 10 [7.49374 sec]
+computing cg_a                          r = 5 [2.68912 sec]
+computing cg_a                          r = 10 [3.6372 sec]
+computing cg_a                          r = 20 [7.06424 sec]
+computing cg_b                          r = 5 [2.66296 sec]
+computing cg_b                          r = 10 [3.6474 sec]
+computing cg_b                          r = 20 [7.14003 sec]
+computing tg                            r = 5 [3.48216 sec]
+computing tg                            r = 10 [4.67049 sec]
+computing tg                            r = 20 [8.5731 sec]
+converting RGB to grayscale             [0.002177 sec]
+converting RGB to Lab                   [0.078255 sec]
+quantizing color channels               [0.00265 sec]
+computing cg_a                          r = 5 [9.43609 sec]
+computing cg_a                          r = 10 [10.5907 sec]
+computing cg_a                          r = 20 [14.987 sec]
+computing cg_b                          r = 5 [8.81475 sec]
+computing cg_b                          r = 10 [9.85398 sec]
+computing cg_b                          r = 20 [14.5434 sec]
+computing support  [....................] done (0:00:01.90 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:216.25 s.
+compute contours                        [0.192242 sec]
+extracting regions                      [0.729409 sec]
+returning results                       [0.042135 sec]
+compute contours                        [0.179744 sec]
+extracting regions                      [0.68856 sec]
+returning results                       [0.050621 sec]
+
+********** Processed frame 25 **********
+
+converting RGB to grayscale             [0.001939 sec]
+converting RGB to Lab                   [0.069496 sec]
+quantizing color channels               [0.004495 sec]
+computing filter set for textons        [0.003691 sec]
+computing textons                       [17.4813 sec]
+computing bg                            r = 3 [5.88962 sec]
+computing bg                            r = 5 [6.54163 sec]
+computing bg                            r = 10 [7.49162 sec]
+computing cg_a                          r = 5 [2.85365 sec]
+computing cg_a                          r = 10 [3.88685 sec]
+computing cg_a                          r = 20 [7.47212 sec]
+computing cg_b                          r = 5 [2.67717 sec]
+computing cg_b                          r = 10 [3.60873 sec]
+computing cg_b                          r = 20 [7.18363 sec]
+computing tg                            r = 5 [3.40999 sec]
+computing tg                            r = 10 [4.49332 sec]
+computing tg                            r = 20 [8.22519 sec]
+converting RGB to grayscale             [0.000945 sec]
+converting RGB to Lab                   [0.074161 sec]
+quantizing color channels               [0.002504 sec]
+computing cg_a                          r = 5 [9.00251 sec]
+computing cg_a                          r = 10 [10.3692 sec]
+computing cg_a                          r = 20 [15.1371 sec]
+computing cg_b                          r = 5 [8.48065 sec]
+computing cg_b                          r = 10 [9.96168 sec]
+computing cg_b                          r = 20 [16.5247 sec]
+computing support  [....................] done (0:00:02.05 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:268.811 s.
+compute contours                        [0.124894 sec]
+extracting regions                      [0.731445 sec]
+returning results                       [0.03652 sec]
+compute contours                        [0.117683 sec]
+extracting regions                      [0.720721 sec]
+returning results                       [0.040401 sec]
+
+********** Processed frame 26 **********
+
+converting RGB to grayscale             [0.002116 sec]
+converting RGB to Lab                   [0.071274 sec]
+quantizing color channels               [0.005052 sec]
+computing filter set for textons        [0.003635 sec]
+computing textons                       [16.5763 sec]
+computing bg                            r = 3 [5.77762 sec]
+computing bg                            r = 5 [6.07908 sec]
+computing bg                            r = 10 [7.05106 sec]
+computing cg_a                          r = 5 [2.69866 sec]
+computing cg_a                          r = 10 [3.68863 sec]
+computing cg_a                          r = 20 [7.05879 sec]
+computing cg_b                          r = 5 [2.64345 sec]
+computing cg_b                          r = 10 [3.59631 sec]
+computing cg_b                          r = 20 [7.11677 sec]
+computing tg                            r = 5 [3.44425 sec]
+computing tg                            r = 10 [4.57548 sec]
+computing tg                            r = 20 [8.40975 sec]
+converting RGB to grayscale             [0.000926 sec]
+converting RGB to Lab                   [0.074299 sec]
+quantizing color channels               [0.002531 sec]
+computing cg_a                          r = 5 [8.95942 sec]
+computing cg_a                          r = 10 [10.3276 sec]
+computing cg_a                          r = 20 [15.0355 sec]
+computing cg_b                          r = 5 [8.90187 sec]
+computing cg_b                          r = 10 [10.671 sec]
+computing cg_b                          r = 20 [14.5317 sec]
+computing support  [....................] done (0:00:02.55 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:223.363 s.
+compute contours                        [0.141947 sec]
+extracting regions                      [0.677697 sec]
+returning results                       [0.037947 sec]
+compute contours                        [0.124213 sec]
+extracting regions                      [0.705278 sec]
+returning results                       [0.036728 sec]
+
+********** Processed frame 27 **********
+
+converting RGB to grayscale             [0.00164 sec]
+converting RGB to Lab                   [0.069684 sec]
+quantizing color channels               [0.004438 sec]
+computing filter set for textons        [0.00376 sec]
+computing textons                       [16.7871 sec]
+computing bg                            r = 3 [5.74621 sec]
+computing bg                            r = 5 [6.03013 sec]
+computing bg                            r = 10 [7.02709 sec]
+computing cg_a                          r = 5 [2.69001 sec]
+computing cg_a                          r = 10 [3.63953 sec]
+computing cg_a                          r = 20 [7.04181 sec]
+computing cg_b                          r = 5 [2.65635 sec]
+computing cg_b                          r = 10 [3.61957 sec]
+computing cg_b                          r = 20 [7.05513 sec]
+computing tg                            r = 5 [3.45153 sec]
+computing tg                            r = 10 [4.58223 sec]
+computing tg                            r = 20 [8.34578 sec]
+converting RGB to grayscale             [0.001008 sec]
+converting RGB to Lab                   [0.077451 sec]
+quantizing color channels               [0.002687 sec]
+computing cg_a                          r = 5 [9.04163 sec]
+computing cg_a                          r = 10 [10.2624 sec]
+computing cg_a                          r = 20 [14.9968 sec]
+computing cg_b                          r = 5 [8.45353 sec]
+computing cg_b                          r = 10 [9.79758 sec]
+computing cg_b                          r = 20 [14.5395 sec]
+computing support  [....................] done (0:00:02.15 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:261.831 s.
+compute contours                        [0.143159 sec]
+extracting regions                      [0.703155 sec]
+returning results                       [0.040339 sec]
+compute contours                        [0.151979 sec]
+extracting regions                      [0.751722 sec]
+returning results                       [0.044263 sec]
+
+********** Processed frame 28 **********
+
+converting RGB to grayscale             [0.001626 sec]
+converting RGB to Lab                   [0.069119 sec]
+quantizing color channels               [0.004381 sec]
+computing filter set for textons        [0.004497 sec]
+computing textons                       [16.1917 sec]
+computing bg                            r = 3 [5.80654 sec]
+computing bg                            r = 5 [6.05193 sec]
+computing bg                            r = 10 [7.0826 sec]
+computing cg_a                          r = 5 [2.84342 sec]
+computing cg_a                          r = 10 [3.78354 sec]
+computing cg_a                          r = 20 [7.35688 sec]
+computing cg_b                          r = 5 [2.66034 sec]
+computing cg_b                          r = 10 [3.69865 sec]
+computing cg_b                          r = 20 [7.29548 sec]
+computing tg                            r = 5 [3.45529 sec]
+computing tg                            r = 10 [4.6428 sec]
+computing tg                            r = 20 [8.35877 sec]
+converting RGB to grayscale             [0.00112 sec]
+converting RGB to Lab                   [0.078941 sec]
+quantizing color channels               [0.002659 sec]
+computing cg_a                          r = 5 [9.08737 sec]
+computing cg_a                          r = 10 [10.4658 sec]
+computing cg_a                          r = 20 [15.0852 sec]
+computing cg_b                          r = 5 [8.55307 sec]
+computing cg_b                          r = 10 [9.84244 sec]
+computing cg_b                          r = 20 [14.672 sec]
+computing support  [....................] done (0:00:02.03 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:235.873 s.
+compute contours                        [0.143588 sec]
+extracting regions                      [0.713366 sec]
+returning results                       [0.044825 sec]
+compute contours                        [0.145076 sec]
+extracting regions                      [0.763013 sec]
+returning results                       [0.044492 sec]
+
+********** Processed frame 29 **********
+
+converting RGB to grayscale             [0.001679 sec]
+converting RGB to Lab                   [0.068957 sec]
+quantizing color channels               [0.004376 sec]
+computing filter set for textons        [0.00542 sec]
+computing textons                       [16.6735 sec]
+computing bg                            r = 3 [5.82253 sec]
+computing bg                            r = 5 [6.33436 sec]
+computing bg                            r = 10 [7.15811 sec]
+computing cg_a                          r = 5 [2.86612 sec]
+computing cg_a                          r = 10 [3.84219 sec]
+computing cg_a                          r = 20 [7.25614 sec]
+computing cg_b                          r = 5 [2.6572 sec]
+computing cg_b                          r = 10 [3.57582 sec]
+computing cg_b                          r = 20 [6.97678 sec]
+computing tg                            r = 5 [3.36486 sec]
+computing tg                            r = 10 [4.40824 sec]
+computing tg                            r = 20 [8.09379 sec]
+converting RGB to grayscale             [0.001088 sec]
+converting RGB to Lab                   [0.089753 sec]
+quantizing color channels               [0.002484 sec]
+computing cg_a                          r = 5 [8.94422 sec]
+computing cg_a                          r = 10 [10.1981 sec]
+computing cg_a                          r = 20 [14.6671 sec]
+computing cg_b                          r = 5 [8.50849 sec]
+computing cg_b                          r = 10 [9.6605 sec]
+computing cg_b                          r = 20 [14.1686 sec]
+computing support  [....................] done (0:00:02.27 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:269.979 s.
+compute contours                        [0.105873 sec]
+extracting regions                      [0.689999 sec]
+returning results                       [0.035284 sec]
+compute contours                        [0.105227 sec]
+extracting regions                      [0.697712 sec]
+returning results                       [0.034965 sec]
+
+********** Processed frame 30 **********
+
+converting RGB to grayscale             [0.001683 sec]
+converting RGB to Lab                   [0.070349 sec]
+quantizing color channels               [0.004219 sec]
+computing filter set for textons        [0.003604 sec]
+computing textons                       [16.4654 sec]
+computing bg                            r = 3 [5.77457 sec]
+computing bg                            r = 5 [6.03328 sec]
+computing bg                            r = 10 [7.04495 sec]
+computing cg_a                          r = 5 [2.85437 sec]
+computing cg_a                          r = 10 [3.79633 sec]
+computing cg_a                          r = 20 [7.24094 sec]
+computing cg_b                          r = 5 [2.72389 sec]
+computing cg_b                          r = 10 [3.6135 sec]
+computing cg_b                          r = 20 [7.10207 sec]
+computing tg                            r = 5 [3.45073 sec]
+computing tg                            r = 10 [4.67399 sec]
+computing tg                            r = 20 [8.40802 sec]
+converting RGB to grayscale             [0.002365 sec]
+converting RGB to Lab                   [0.089465 sec]
+quantizing color channels               [0.003355 sec]
+computing cg_a                          r = 5 [9.20285 sec]
+computing cg_a                          r = 10 [10.4446 sec]
+computing cg_a                          r = 20 [15.8687 sec]
+computing cg_b                          r = 5 [8.40934 sec]
+computing cg_b                          r = 10 [10.0649 sec]
+computing cg_b                          r = 20 [14.3348 sec]
+computing support  [....................] done (0:00:02.00 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:218.627 s.
+compute contours                        [0.118293 sec]
+extracting regions                      [0.713724 sec]
+returning results                       [0.03667 sec]
+compute contours                        [0.126578 sec]
+extracting regions                      [0.734756 sec]
+returning results                       [0.035961 sec]
+
+********** Processed frame 31 **********
+
+converting RGB to grayscale             [0.001727 sec]
+converting RGB to Lab                   [0.069425 sec]
+quantizing color channels               [0.004135 sec]
+computing filter set for textons        [0.002956 sec]
+computing textons                       [16.0707 sec]
+computing bg                            r = 3 [6.31215 sec]
+computing bg                            r = 5 [6.00878 sec]
+computing bg                            r = 10 [7.01722 sec]
+computing cg_a                          r = 5 [2.85093 sec]
+computing cg_a                          r = 10 [3.78041 sec]
+computing cg_a                          r = 20 [7.25258 sec]
+computing cg_b                          r = 5 [2.66329 sec]
+computing cg_b                          r = 10 [3.61022 sec]
+computing cg_b                          r = 20 [7.09536 sec]
+computing tg                            r = 5 [3.39346 sec]
+computing tg                            r = 10 [4.48036 sec]
+computing tg                            r = 20 [8.19073 sec]
+converting RGB to grayscale             [0.000835 sec]
+converting RGB to Lab                   [0.081409 sec]
+quantizing color channels               [0.002477 sec]
+computing cg_a                          r = 5 [9.05478 sec]
+computing cg_a                          r = 10 [10.4345 sec]
+computing cg_a                          r = 20 [15.0334 sec]
+computing cg_b                          r = 5 [8.50451 sec]
+computing cg_b                          r = 10 [9.87619 sec]
+computing cg_b                          r = 20 [14.567 sec]
+computing support  [....................] done (0:00:01.89 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:233.527 s.
+compute contours                        [0.162879 sec]
+extracting regions                      [0.769753 sec]
+returning results                       [0.064238 sec]
+compute contours                        [0.141662 sec]
+extracting regions                      [0.77246 sec]
+returning results                       [0.05371 sec]
+
+********** Processed frame 32 **********
+
+converting RGB to grayscale             [0.004356 sec]
+converting RGB to Lab                   [0.073919 sec]
+quantizing color channels               [0.007611 sec]
+computing filter set for textons        [0.004535 sec]
+computing textons                       [17.3267 sec]
+computing bg                            r = 3 [6.27662 sec]
+computing bg                            r = 5 [6.28008 sec]
+computing bg                            r = 10 [7.26981 sec]
+computing cg_a                          r = 5 [2.96311 sec]
+computing cg_a                          r = 10 [3.81464 sec]
+computing cg_a                          r = 20 [7.34531 sec]
+computing cg_b                          r = 5 [2.70858 sec]
+computing cg_b                          r = 10 [3.67858 sec]
+computing cg_b                          r = 20 [7.0779 sec]
+computing tg                            r = 5 [3.47911 sec]
+computing tg                            r = 10 [4.56608 sec]
+computing tg                            r = 20 [8.32732 sec]
+converting RGB to grayscale             [0.001806 sec]
+converting RGB to Lab                   [0.087298 sec]
+quantizing color channels               [0.003071 sec]
+computing cg_a                          r = 5 [9.18536 sec]
+computing cg_a                          r = 10 [10.425 sec]
+computing cg_a                          r = 20 [15.0459 sec]
+computing cg_b                          r = 5 [8.52494 sec]
+computing cg_b                          r = 10 [9.88138 sec]
+computing cg_b                          r = 20 [15.1882 sec]
+computing support  [....................] done (0:00:01.91 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:226.564 s.
+compute contours                        [0.157232 sec]
+extracting regions                      [0.714074 sec]
+returning results                       [0.04119 sec]
+compute contours                        [0.150421 sec]
+extracting regions                      [0.728041 sec]
+returning results                       [0.039899 sec]
+
+********** Processed frame 33 **********
+
+converting RGB to grayscale             [0.001501 sec]
+converting RGB to Lab                   [0.066754 sec]
+quantizing color channels               [0.00411 sec]
+computing filter set for textons        [0.002895 sec]
+computing textons                       [16.7646 sec]
+computing bg                            r = 3 [5.79915 sec]
+computing bg                            r = 5 [6.33128 sec]
+computing bg                            r = 10 [7.83963 sec]
+computing cg_a                          r = 5 [2.81259 sec]
+computing cg_a                          r = 10 [3.80658 sec]
+computing cg_a                          r = 20 [7.33984 sec]
+computing cg_b                          r = 5 [2.6752 sec]
+computing cg_b                          r = 10 [3.5955 sec]
+computing cg_b                          r = 20 [7.21238 sec]
+computing tg                            r = 5 [3.39288 sec]
+computing tg                            r = 10 [4.47513 sec]
+computing tg                            r = 20 [8.1462 sec]
+converting RGB to grayscale             [0.00086 sec]
+converting RGB to Lab                   [0.084859 sec]
+quantizing color channels               [0.002528 sec]
+computing cg_a                          r = 5 [9.00799 sec]
+computing cg_a                          r = 10 [10.2557 sec]
+computing cg_a                          r = 20 [14.9687 sec]
+computing cg_b                          r = 5 [8.48491 sec]
+computing cg_b                          r = 10 [10.0001 sec]
+computing cg_b                          r = 20 [14.339 sec]
+computing support  [....................] done (0:00:01.96 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:219.837 s.
+compute contours                        [0.113202 sec]
+extracting regions                      [0.74573 sec]
+returning results                       [0.038397 sec]
+compute contours                        [0.114852 sec]
+extracting regions                      [0.709073 sec]
+returning results                       [0.036561 sec]
+
+********** Processed frame 34 **********
+
+converting RGB to grayscale             [0.002348 sec]
+converting RGB to Lab                   [0.070578 sec]
+quantizing color channels               [0.005785 sec]
+computing filter set for textons        [0.003347 sec]
+computing textons                       [16.3483 sec]
+computing bg                            r = 3 [6.29106 sec]
+computing bg                            r = 5 [6.15947 sec]
+computing bg                            r = 10 [7.07757 sec]
+computing cg_a                          r = 5 [2.86069 sec]
+computing cg_a                          r = 10 [3.8711 sec]
+computing cg_a                          r = 20 [7.54152 sec]
+computing cg_b                          r = 5 [2.84257 sec]
+computing cg_b                          r = 10 [3.65056 sec]
+computing cg_b                          r = 20 [7.48275 sec]
+computing tg                            r = 5 [3.5423 sec]
+computing tg                            r = 10 [4.62992 sec]
+computing tg                            r = 20 [8.49287 sec]
+converting RGB to grayscale             [0.001236 sec]
+converting RGB to Lab                   [0.088886 sec]
+quantizing color channels               [0.004287 sec]
+computing cg_a                          r = 5 [9.47863 sec]
+computing cg_a                          r = 10 [10.4912 sec]
+computing cg_a                          r = 20 [14.8626 sec]
+computing cg_b                          r = 5 [8.39739 sec]
+computing cg_b                          r = 10 [9.91037 sec]
+computing cg_b                          r = 20 [14.2933 sec]
+computing support  [....................] done (0:00:02.06 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:224.123 s.
+compute contours                        [0.118176 sec]
+extracting regions                      [0.702982 sec]
+returning results                       [0.034557 sec]
+compute contours                        [0.13416 sec]
+extracting regions                      [0.70695 sec]
+returning results                       [0.035865 sec]
+
+********** Processed frame 35 **********
+
+converting RGB to grayscale             [0.002081 sec]
+converting RGB to Lab                   [0.069158 sec]
+quantizing color channels               [0.005353 sec]
+computing filter set for textons        [0.003747 sec]
+computing textons                       [16.4912 sec]
+computing bg                            r = 3 [5.7432 sec]
+computing bg                            r = 5 [6.02316 sec]
+computing bg                            r = 10 [7.004 sec]
+computing cg_a                          r = 5 [2.8302 sec]
+computing cg_a                          r = 10 [3.77598 sec]
+computing cg_a                          r = 20 [7.21041 sec]
+computing cg_b                          r = 5 [2.80198 sec]
+computing cg_b                          r = 10 [3.79267 sec]
+computing cg_b                          r = 20 [7.2987 sec]
+computing tg                            r = 5 [3.37288 sec]
+computing tg                            r = 10 [4.42449 sec]
+computing tg                            r = 20 [8.08284 sec]
+converting RGB to grayscale             [0.00089 sec]
+converting RGB to Lab                   [0.086922 sec]
+quantizing color channels               [0.002481 sec]
+computing cg_a                          r = 5 [9.00637 sec]
+computing cg_a                          r = 10 [10.2701 sec]
+computing cg_a                          r = 20 [14.8732 sec]
+computing cg_b                          r = 5 [8.45937 sec]
+computing cg_b                          r = 10 [10.2436 sec]
+computing cg_b                          r = 20 [14.8062 sec]
+computing support  [....................] done (0:00:02.02 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:222.819 s.
+compute contours                        [0.115781 sec]
+extracting regions                      [0.749395 sec]
+returning results                       [0.038774 sec]
+compute contours                        [0.11472 sec]
+extracting regions                      [0.722426 sec]
+returning results                       [0.041499 sec]
+
+********** Processed frame 36 **********
+
+converting RGB to grayscale             [0.001573 sec]
+converting RGB to Lab                   [0.068454 sec]
+quantizing color channels               [0.004152 sec]
+computing filter set for textons        [0.00378 sec]
+computing textons                       [16.9679 sec]
+computing bg                            r = 3 [5.87076 sec]
+computing bg                            r = 5 [6.11636 sec]
+computing bg                            r = 10 [7.0826 sec]
+computing cg_a                          r = 5 [2.6816 sec]
+computing cg_a                          r = 10 [3.71914 sec]
+computing cg_a                          r = 20 [7.2339 sec]
+computing cg_b                          r = 5 [3.28903 sec]
+computing cg_b                          r = 10 [3.77241 sec]
+computing cg_b                          r = 20 [7.29698 sec]
+computing tg                            r = 5 [3.40902 sec]
+computing tg                            r = 10 [4.50909 sec]
+computing tg                            r = 20 [8.67632 sec]
+converting RGB to grayscale             [0.00303 sec]
+converting RGB to Lab                   [0.091915 sec]
+quantizing color channels               [0.002839 sec]
+computing cg_a                          r = 5 [9.8276 sec]
+computing cg_a                          r = 10 [11.0268 sec]
+computing cg_a                          r = 20 [15.2901 sec]
+computing cg_b                          r = 5 [8.41023 sec]
+computing cg_b                          r = 10 [10.0581 sec]
+computing cg_b                          r = 20 [14.8982 sec]
+computing support  [....................] done (0:00:02.28 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:238.258 s.
+compute contours                        [0.140929 sec]
+extracting regions                      [0.789855 sec]
+returning results                       [0.045585 sec]
+compute contours                        [0.132411 sec]
+extracting regions                      [0.774725 sec]
+returning results                       [0.037027 sec]
+
+********** Processed frame 37 **********
+
+converting RGB to grayscale             [0.003472 sec]
+converting RGB to Lab                   [0.070114 sec]
+quantizing color channels               [0.006347 sec]
+computing filter set for textons        [0.002988 sec]
+computing textons                       [16.2641 sec]
+computing bg                            r = 3 [6.37442 sec]
+computing bg                            r = 5 [6.07031 sec]
+computing bg                            r = 10 [7.13076 sec]
+computing cg_a                          r = 5 [3.04619 sec]
+computing cg_a                          r = 10 [3.87034 sec]
+computing cg_a                          r = 20 [7.48385 sec]
+computing cg_b                          r = 5 [2.72306 sec]
+computing cg_b                          r = 10 [3.67074 sec]
+computing cg_b                          r = 20 [7.50999 sec]
+computing tg                            r = 5 [3.55826 sec]
+computing tg                            r = 10 [4.72057 sec]
+computing tg                            r = 20 [8.42911 sec]
+converting RGB to grayscale             [0.000992 sec]
+converting RGB to Lab                   [0.085878 sec]
+quantizing color channels               [0.002692 sec]
+computing cg_a                          r = 5 [8.98623 sec]
+computing cg_a                          r = 10 [10.2522 sec]
+computing cg_a                          r = 20 [14.8746 sec]
+computing cg_b                          r = 5 [8.77876 sec]
+computing cg_b                          r = 10 [9.95002 sec]
+computing cg_b                          r = 20 [14.7444 sec]
+computing support  [....................] done (0:00:02.07 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:224.029 s.
+compute contours                        [0.115521 sec]
+extracting regions                      [0.719314 sec]
+returning results                       [0.03385 sec]
+compute contours                        [0.120907 sec]
+extracting regions                      [0.688404 sec]
+returning results                       [0.034117 sec]
+
+********** Processed frame 38 **********
+
+converting RGB to grayscale             [0.002103 sec]
+converting RGB to Lab                   [0.069223 sec]
+quantizing color channels               [0.004353 sec]
+computing filter set for textons        [0.004214 sec]
+computing textons                       [16.4275 sec]
+computing bg                            r = 3 [5.74595 sec]
+computing bg                            r = 5 [6.05471 sec]
+computing bg                            r = 10 [7.11303 sec]
+computing cg_a                          r = 5 [2.84994 sec]
+computing cg_a                          r = 10 [3.78585 sec]
+computing cg_a                          r = 20 [7.26162 sec]
+computing cg_b                          r = 5 [2.87648 sec]
+computing cg_b                          r = 10 [3.76266 sec]
+computing cg_b                          r = 20 [7.43909 sec]
+computing tg                            r = 5 [3.37641 sec]
+computing tg                            r = 10 [4.53643 sec]
+computing tg                            r = 20 [8.40709 sec]
+converting RGB to grayscale             [0.00103 sec]
+converting RGB to Lab                   [0.085345 sec]
+quantizing color channels               [0.002588 sec]
+computing cg_a                          r = 5 [9.09696 sec]
+computing cg_a                          r = 10 [10.3395 sec]
+computing cg_a                          r = 20 [15.3617 sec]
+computing cg_b                          r = 5 [8.38167 sec]
+computing cg_b                          r = 10 [9.35753 sec]
+computing cg_b                          r = 20 [14.176 sec]
+computing support  [....................] done (0:00:02.00 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:249.933 s.
+compute contours                        [0.194333 sec]
+extracting regions                      [0.964915 sec]
+returning results                       [0.058258 sec]
+compute contours                        [0.108701 sec]
+extracting regions                      [0.736108 sec]
+returning results                       [0.03394 sec]
+
+********** Processed frame 39 **********
+
+converting RGB to grayscale             [0.00279 sec]
+converting RGB to Lab                   [0.067975 sec]
+quantizing color channels               [0.004229 sec]
+computing filter set for textons        [0.003684 sec]
+computing textons                       [16.8494 sec]
+computing bg                            r = 3 [6.15383 sec]
+computing bg                            r = 5 [6.11859 sec]
+computing bg                            r = 10 [7.12791 sec]
+computing cg_a                          r = 5 [2.89677 sec]
+computing cg_a                          r = 10 [3.85137 sec]
+computing cg_a                          r = 20 [7.39534 sec]
+computing cg_b                          r = 5 [2.80383 sec]
+computing cg_b                          r = 10 [3.96742 sec]
+computing cg_b                          r = 20 [7.24538 sec]
+computing tg                            r = 5 [3.3774 sec]
+computing tg                            r = 10 [4.44179 sec]
+computing tg                            r = 20 [8.21219 sec]
+converting RGB to grayscale             [0.002702 sec]
+converting RGB to Lab                   [0.085706 sec]
+quantizing color channels               [0.002475 sec]
+computing cg_a                          r = 5 [8.76139 sec]
+computing cg_a                          r = 10 [10.3116 sec]
+computing cg_a                          r = 20 [14.8484 sec]
+computing cg_b                          r = 5 [8.06181 sec]
+computing cg_b                          r = 10 [9.37084 sec]
+computing cg_b                          r = 20 [14.0335 sec]
+computing support  [....................] done (0:00:01.85 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:231.115 s.
+compute contours                        [0.108925 sec]
+extracting regions                      [0.67738 sec]
+returning results                       [0.039258 sec]
+compute contours                        [0.107285 sec]
+extracting regions                      [0.692371 sec]
+returning results                       [0.033888 sec]
+
+********** Processed frame 40 **********
+
+converting RGB to grayscale             [0.0019 sec]
+converting RGB to Lab                   [0.073314 sec]
+quantizing color channels               [0.005566 sec]
+computing filter set for textons        [0.003037 sec]
+computing textons                       [16.4527 sec]
+computing bg                            r = 3 [5.78909 sec]
+computing bg                            r = 5 [6.12532 sec]
+computing bg                            r = 10 [7.08112 sec]
+computing cg_a                          r = 5 [2.83025 sec]
+computing cg_a                          r = 10 [3.79657 sec]
+computing cg_a                          r = 20 [7.23362 sec]
+computing cg_b                          r = 5 [2.89305 sec]
+computing cg_b                          r = 10 [3.76291 sec]
+computing cg_b                          r = 20 [7.35751 sec]
+computing tg                            r = 5 [3.43106 sec]
+computing tg                            r = 10 [4.63917 sec]
+computing tg                            r = 20 [8.27055 sec]
+converting RGB to grayscale             [0.001276 sec]
+converting RGB to Lab                   [0.086469 sec]
+quantizing color channels               [0.003027 sec]
+computing cg_a                          r = 5 [9.49222 sec]
+computing cg_a                          r = 10 [10.0297 sec]
+computing cg_a                          r = 20 [14.8111 sec]
+computing cg_b                          r = 5 [7.71416 sec]
+computing cg_b                          r = 10 [8.633 sec]
+computing cg_b                          r = 20 [13.3292 sec]
+computing support  [....................] done (0:00:01.89 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:260.348 s.
+compute contours                        [0.145663 sec]
+extracting regions                      [0.850691 sec]
+returning results                       [0.050174 sec]
+compute contours                        [0.143325 sec]
+extracting regions                      [0.747231 sec]
+returning results                       [0.056477 sec]
+
+********** Processed frame 41 **********
+
+converting RGB to grayscale             [0.002987 sec]
+converting RGB to Lab                   [0.07054 sec]
+quantizing color channels               [0.005801 sec]
+computing filter set for textons        [0.004962 sec]
+computing textons                       [18.803 sec]
+computing bg                            r = 3 [5.93497 sec]
+computing bg                            r = 5 [6.16944 sec]
+computing bg                            r = 10 [7.16041 sec]
+computing cg_a                          r = 5 [2.87955 sec]
+computing cg_a                          r = 10 [3.87599 sec]
+computing cg_a                          r = 20 [7.40777 sec]
+computing cg_b                          r = 5 [2.92132 sec]
+computing cg_b                          r = 10 [3.84235 sec]
+computing cg_b                          r = 20 [7.65103 sec]
+computing tg                            r = 5 [3.58301 sec]
+computing tg                            r = 10 [4.50767 sec]
+computing tg                            r = 20 [8.28865 sec]
+converting RGB to grayscale             [0.001989 sec]
+converting RGB to Lab                   [0.084519 sec]
+quantizing color channels               [0.003165 sec]
+computing cg_a                          r = 5 [7.73867 sec]
+computing cg_a                          r = 10 [9.00236 sec]
+computing cg_a                          r = 20 [13.6318 sec]
+computing cg_b                          r = 5 [7.06689 sec]
+computing cg_b                          r = 10 [8.38483 sec]
+computing cg_b                          r = 20 [13.105 sec]
+computing support  [....................] done (0:00:01.92 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:230.773 s.
+compute contours                        [0.145776 sec]
+extracting regions                      [0.743673 sec]
+returning results                       [0.043673 sec]
+compute contours                        [0.13016 sec]
+extracting regions                      [0.765354 sec]
+returning results                       [0.041233 sec]
+
+********** Processed frame 42 **********
+
+converting RGB to grayscale             [0.002264 sec]
+converting RGB to Lab                   [0.069414 sec]
+quantizing color channels               [0.006217 sec]
+computing filter set for textons        [0.004218 sec]
+computing textons                       [21.0165 sec]
+computing bg                            r = 3 [6.51297 sec]
+computing bg                            r = 5 [6.35245 sec]
+computing bg                            r = 10 [7.38199 sec]
+computing cg_a                          r = 5 [2.88878 sec]
+computing cg_a                          r = 10 [4.25935 sec]
+computing cg_a                          r = 20 [7.51149 sec]
+computing cg_b                          r = 5 [2.90559 sec]
+computing cg_b                          r = 10 [3.87993 sec]
+computing cg_b                          r = 20 [7.42001 sec]
+computing tg                            r = 5 [3.4962 sec]
+computing tg                            r = 10 [4.65829 sec]
+computing tg                            r = 20 [8.56442 sec]
+converting RGB to grayscale             [0.001623 sec]
+converting RGB to Lab                   [0.082304 sec]
+quantizing color channels               [0.002779 sec]
+computing cg_a                          r = 5 [7.82786 sec]
+computing cg_a                          r = 10 [9.18143 sec]
+computing cg_a                          r = 20 [13.7164 sec]
+computing cg_b                          r = 5 [7.04205 sec]
+computing cg_b                          r = 10 [8.46997 sec]
+computing cg_b                          r = 20 [13.4879 sec]
+computing support  [....................] done (0:00:01.91 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:216.343 s.
+compute contours                        [0.14481 sec]
+extracting regions                      [0.729561 sec]
+returning results                       [0.054612 sec]
+compute contours                        [0.153742 sec]
+extracting regions                      [0.740467 sec]
+returning results                       [0.045283 sec]
+
+********** Processed frame 43 **********
+
+converting RGB to grayscale             [0.003281 sec]
+converting RGB to Lab                   [0.077122 sec]
+quantizing color channels               [0.021309 sec]
+computing filter set for textons        [0.004647 sec]
+computing textons                       [18.5433 sec]
+computing bg                            r = 3 [5.91239 sec]
+computing bg                            r = 5 [6.15263 sec]
+computing bg                            r = 10 [7.20361 sec]
+computing cg_a                          r = 5 [2.8917 sec]
+computing cg_a                          r = 10 [3.91148 sec]
+computing cg_a                          r = 20 [7.34608 sec]
+computing cg_b                          r = 5 [2.92712 sec]
+computing cg_b                          r = 10 [4.35449 sec]
+computing cg_b                          r = 20 [7.62637 sec]
+computing tg                            r = 5 [3.49032 sec]
+computing tg                            r = 10 [4.5683 sec]
+computing tg                            r = 20 [8.30009 sec]
+converting RGB to grayscale             [0.004311 sec]
+converting RGB to Lab                   [0.076044 sec]
+quantizing color channels               [0.003 sec]
+computing cg_a                          r = 5 [7.63041 sec]
+computing cg_a                          r = 10 [8.41066 sec]
+computing cg_a                          r = 20 [13.3538 sec]
+computing cg_b                          r = 5 [7.15135 sec]
+computing cg_b                          r = 10 [8.38925 sec]
+computing cg_b                          r = 20 [12.6412 sec]
+computing support  [....................] done (0:00:01.95 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:211.708 s.
+compute contours                        [0.129563 sec]
+extracting regions                      [0.778765 sec]
+returning results                       [0.043951 sec]
+compute contours                        [0.13749 sec]
+extracting regions                      [0.781337 sec]
+returning results                       [0.039363 sec]
+
+********** Processed frame 44 **********
+
+converting RGB to grayscale             [0.001684 sec]
+converting RGB to Lab                   [0.068356 sec]
+quantizing color channels               [0.004185 sec]
+computing filter set for textons        [0.003055 sec]
+computing textons                       [15.7514 sec]
+computing bg                            r = 3 [6.6663 sec]
+computing bg                            r = 5 [6.1163 sec]
+computing bg                            r = 10 [7.03038 sec]
+computing cg_a                          r = 5 [2.92235 sec]
+computing cg_a                          r = 10 [3.90191 sec]
+computing cg_a                          r = 20 [7.34867 sec]
+computing cg_b                          r = 5 [2.99701 sec]
+computing cg_b                          r = 10 [3.90113 sec]
+computing cg_b                          r = 20 [7.39886 sec]
+computing tg                            r = 5 [3.49598 sec]
+computing tg                            r = 10 [4.6143 sec]
+computing tg                            r = 20 [8.29323 sec]
+converting RGB to grayscale             [0.003188 sec]
+converting RGB to Lab                   [0.075701 sec]
+quantizing color channels               [0.005442 sec]
+computing cg_a                          r = 5 [8.47219 sec]
+computing cg_a                          r = 10 [10.2544 sec]
+computing cg_a                          r = 20 [14.7096 sec]
+computing cg_b                          r = 5 [7.03251 sec]
+computing cg_b                          r = 10 [8.35756 sec]
+computing cg_b                          r = 20 [12.7922 sec]
+computing support  [....................] done (0:00:01.85 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:202.005 s.
+compute contours                        [0.116469 sec]
+extracting regions                      [0.766963 sec]
+returning results                       [0.047803 sec]
+compute contours                        [0.110347 sec]
+extracting regions                      [0.685384 sec]
+returning results                       [0.043633 sec]
+
+********** Processed frame 45 **********
+
+converting RGB to grayscale             [0.002653 sec]
+converting RGB to Lab                   [0.074025 sec]
+quantizing color channels               [0.00552 sec]
+computing filter set for textons        [0.002976 sec]
+computing textons                       [16.2144 sec]
+computing bg                            r = 3 [6.03309 sec]
+computing bg                            r = 5 [6.11855 sec]
+computing bg                            r = 10 [7.10815 sec]
+computing cg_a                          r = 5 [2.92266 sec]
+computing cg_a                          r = 10 [3.7574 sec]
+computing cg_a                          r = 20 [7.30718 sec]
+computing cg_b                          r = 5 [2.89745 sec]
+computing cg_b                          r = 10 [3.89506 sec]
+computing cg_b                          r = 20 [7.36876 sec]
+computing tg                            r = 5 [3.47351 sec]
+computing tg                            r = 10 [4.53982 sec]
+computing tg                            r = 20 [8.19648 sec]
+converting RGB to grayscale             [0.00163 sec]
+converting RGB to Lab                   [0.074056 sec]
+quantizing color channels               [0.003577 sec]
+computing cg_a                          r = 5 [8.66437 sec]
+computing cg_a                          r = 10 [9.74674 sec]
+computing cg_a                          r = 20 [14.8008 sec]
+computing cg_b                          r = 5 [8.0525 sec]
+computing cg_b                          r = 10 [9.4328 sec]
+computing cg_b                          r = 20 [13.9448 sec]
+computing support  [....................] done (0:00:01.95 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:229.244 s.
+compute contours                        [0.137065 sec]
+extracting regions                      [0.735224 sec]
+returning results                       [0.051443 sec]
+compute contours                        [0.162251 sec]
+extracting regions                      [0.741371 sec]
+returning results                       [0.039451 sec]
+
+********** Processed frame 46 **********
+
+converting RGB to grayscale             [0.002033 sec]
+converting RGB to Lab                   [0.070465 sec]
+quantizing color channels               [0.004959 sec]
+computing filter set for textons        [0.005253 sec]
+computing textons                       [16.6414 sec]
+computing bg                            r = 3 [6.01689 sec]
+computing bg                            r = 5 [6.06802 sec]
+computing bg                            r = 10 [7.05039 sec]
+computing cg_a                          r = 5 [2.91252 sec]
+computing cg_a                          r = 10 [4.02293 sec]
+computing cg_a                          r = 20 [7.24352 sec]
+computing cg_b                          r = 5 [2.69301 sec]
+computing cg_b                          r = 10 [3.64474 sec]
+computing cg_b                          r = 20 [7.10333 sec]
+computing tg                            r = 5 [3.39516 sec]
+computing tg                            r = 10 [4.51841 sec]
+computing tg                            r = 20 [8.23769 sec]
+converting RGB to grayscale             [0.00244 sec]
+converting RGB to Lab                   [0.070332 sec]
+quantizing color channels               [0.002517 sec]
+computing cg_a                          r = 5 [8.40345 sec]
+computing cg_a                          r = 10 [9.93565 sec]
+computing cg_a                          r = 20 [14.4077 sec]
+computing cg_b                          r = 5 [8.27854 sec]
+computing cg_b                          r = 10 [9.56071 sec]
+computing cg_b                          r = 20 [14.8093 sec]
+computing support  [....................] done (0:00:01.95 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:213.54 s.
+compute contours                        [0.125043 sec]
+extracting regions                      [0.746647 sec]
+returning results                       [0.039112 sec]
+compute contours                        [0.119967 sec]
+extracting regions                      [0.768774 sec]
+returning results                       [0.035875 sec]
+
+********** Processed frame 47 **********
+
+converting RGB to grayscale             [0.001547 sec]
+converting RGB to Lab                   [0.069579 sec]
+quantizing color channels               [0.004236 sec]
+computing filter set for textons        [0.003464 sec]
+computing textons                       [16.1776 sec]
+computing bg                            r = 3 [5.72431 sec]
+computing bg                            r = 5 [6.05086 sec]
+computing bg                            r = 10 [6.96245 sec]
+computing cg_a                          r = 5 [2.8164 sec]
+computing cg_a                          r = 10 [3.84408 sec]
+computing cg_a                          r = 20 [7.47264 sec]
+computing cg_b                          r = 5 [2.88854 sec]
+computing cg_b                          r = 10 [3.86026 sec]
+computing cg_b                          r = 20 [7.28129 sec]
+computing tg                            r = 5 [3.34655 sec]
+computing tg                            r = 10 [4.48369 sec]
+computing tg                            r = 20 [8.13485 sec]
+converting RGB to grayscale             [0.001745 sec]
+converting RGB to Lab                   [0.071852 sec]
+quantizing color channels               [0.002934 sec]
+computing cg_a                          r = 5 [8.37954 sec]
+computing cg_a                          r = 10 [9.69448 sec]
+computing cg_a                          r = 20 [14.2913 sec]
+computing cg_b                          r = 5 [7.82264 sec]
+computing cg_b                          r = 10 [9.29026 sec]
+computing cg_b                          r = 20 [13.773 sec]
+computing support  [....................] done (0:00:02.18 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:233.704 s.
+compute contours                        [0.126866 sec]
+extracting regions                      [0.736191 sec]
+returning results                       [0.04713 sec]
+compute contours                        [0.124484 sec]
+extracting regions                      [0.74165 sec]
+returning results                       [0.036939 sec]
+
+********** Processed frame 48 **********
+
+converting RGB to grayscale             [0.001962 sec]
+converting RGB to Lab                   [0.070528 sec]
+quantizing color channels               [0.004305 sec]
+computing filter set for textons        [0.00299 sec]
+computing textons                       [15.7228 sec]
+computing bg                            r = 3 [5.70409 sec]
+computing bg                            r = 5 [5.99157 sec]
+computing bg                            r = 10 [7.01746 sec]
+computing cg_a                          r = 5 [3.00205 sec]
+computing cg_a                          r = 10 [3.97651 sec]
+computing cg_a                          r = 20 [7.66804 sec]
+computing cg_b                          r = 5 [2.74221 sec]
+computing cg_b                          r = 10 [3.65435 sec]
+computing cg_b                          r = 20 [7.33258 sec]
+computing tg                            r = 5 [3.37654 sec]
+computing tg                            r = 10 [4.43819 sec]
+computing tg                            r = 20 [8.186 sec]
+converting RGB to grayscale             [0.001481 sec]
+converting RGB to Lab                   [0.071667 sec]
+quantizing color channels               [0.003252 sec]
+computing cg_a                          r = 5 [8.48472 sec]
+computing cg_a                          r = 10 [9.64801 sec]
+computing cg_a                          r = 20 [14.4073 sec]
+computing cg_b                          r = 5 [7.74326 sec]
+computing cg_b                          r = 10 [9.09282 sec]
+computing cg_b                          r = 20 [13.6679 sec]
+computing support  [....................] done (0:00:01.97 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:210.415 s.
+compute contours                        [0.106706 sec]
+extracting regions                      [0.687595 sec]
+returning results                       [0.036358 sec]
+compute contours                        [0.106938 sec]
+extracting regions                      [0.713495 sec]
+returning results                       [0.036772 sec]
+
+********** Processed frame 49 **********
+
+converting RGB to grayscale             [0.001545 sec]
+converting RGB to Lab                   [0.069511 sec]
+quantizing color channels               [0.004216 sec]
+computing filter set for textons        [0.002554 sec]
+computing textons                       [16.0649 sec]
+computing bg                            r = 3 [5.72214 sec]
+computing bg                            r = 5 [6.01963 sec]
+computing bg                            r = 10 [7.03416 sec]
+computing cg_a                          r = 5 [2.8148 sec]
+computing cg_a                          r = 10 [3.8847 sec]
+computing cg_a                          r = 20 [7.36243 sec]
+computing cg_b                          r = 5 [3.08917 sec]
+computing cg_b                          r = 10 [3.88432 sec]
+computing cg_b                          r = 20 [7.02569 sec]
+computing tg                            r = 5 [3.414 sec]
+computing tg                            r = 10 [4.62721 sec]
+computing tg                            r = 20 [8.41299 sec]
+converting RGB to grayscale             [0.001623 sec]
+converting RGB to Lab                   [0.074982 sec]
+quantizing color channels               [0.003025 sec]
+computing cg_a                          r = 5 [9.35769 sec]
+computing cg_a                          r = 10 [10.3122 sec]
+computing cg_a                          r = 20 [14.9648 sec]
+computing cg_b                          r = 5 [8.42268 sec]
+computing cg_b                          r = 10 [9.79932 sec]
+computing cg_b                          r = 20 [14.4606 sec]
+computing support  [....................] done (0:00:01.94 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:237.722 s.
+compute contours                        [0.163782 sec]
+extracting regions                      [1.44165 sec]
+returning results                       [0.055954 sec]
+compute contours                        [0.152255 sec]
+extracting regions                      [0.786188 sec]
+returning results                       [0.067583 sec]
+
+********** Processed frame 50 **********
+
+converting RGB to grayscale             [0.003592 sec]
+converting RGB to Lab                   [0.071085 sec]
+quantizing color channels               [0.005121 sec]
+computing filter set for textons        [0.003672 sec]
+computing textons                       [16.5111 sec]
+computing bg                            r = 3 [5.93173 sec]
+computing bg                            r = 5 [7.00573 sec]
+computing bg                            r = 10 [7.07983 sec]
+computing cg_a                          r = 5 [2.90913 sec]
+computing cg_a                          r = 10 [3.79328 sec]
+computing cg_a                          r = 20 [7.24596 sec]
+computing cg_b                          r = 5 [2.80184 sec]
+computing cg_b                          r = 10 [3.61839 sec]
+computing cg_b                          r = 20 [7.4032 sec]
+computing tg                            r = 5 [3.45018 sec]
+computing tg                            r = 10 [4.51423 sec]
+computing tg                            r = 20 [8.37566 sec]
+converting RGB to grayscale             [0.004056 sec]
+converting RGB to Lab                   [0.082134 sec]
+quantizing color channels               [0.005526 sec]
+computing cg_a                          r = 5 [9.19724 sec]
+computing cg_a                          r = 10 [10.2335 sec]
+computing cg_a                          r = 20 [15.0131 sec]
+computing cg_b                          r = 5 [8.26816 sec]
+computing cg_b                          r = 10 [9.50826 sec]
+computing cg_b                          r = 20 [14.1106 sec]
+computing support  [....................] done (0:00:02.13 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:239.562 s.
+compute contours                        [0.133068 sec]
+extracting regions                      [0.817868 sec]
+returning results                       [0.039693 sec]
+compute contours                        [0.119039 sec]
+extracting regions                      [0.778502 sec]
+returning results                       [0.03724 sec]
+
+********** Processed frame 51 **********
+
+converting RGB to grayscale             [0.001552 sec]
+converting RGB to Lab                   [0.070738 sec]
+quantizing color channels               [0.004096 sec]
+computing filter set for textons        [0.003405 sec]
+computing textons                       [16.1072 sec]
+computing bg                            r = 3 [5.74134 sec]
+computing bg                            r = 5 [5.97165 sec]
+computing bg                            r = 10 [6.94585 sec]
+computing cg_a                          r = 5 [2.92562 sec]
+computing cg_a                          r = 10 [3.89413 sec]
+computing cg_a                          r = 20 [7.42238 sec]
+computing cg_b                          r = 5 [2.68225 sec]
+computing cg_b                          r = 10 [3.73106 sec]
+computing cg_b                          r = 20 [7.24621 sec]
+computing tg                            r = 5 [3.46222 sec]
+computing tg                            r = 10 [4.61947 sec]
+computing tg                            r = 20 [8.18053 sec]
+converting RGB to grayscale             [0.001997 sec]
+converting RGB to Lab                   [0.085717 sec]
+quantizing color channels               [0.006998 sec]
+computing cg_a                          r = 5 [9.1745 sec]
+computing cg_a                          r = 10 [10.4411 sec]
+computing cg_a                          r = 20 [14.855 sec]
+computing cg_b                          r = 5 [8.30542 sec]
+computing cg_b                          r = 10 [9.58411 sec]
+computing cg_b                          r = 20 [14.32 sec]
+computing support  [....................] done (0:00:02.05 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:225.087 s.
+compute contours                        [0.132354 sec]
+extracting regions                      [0.771339 sec]
+returning results                       [0.049536 sec]
+compute contours                        [0.147716 sec]
+extracting regions                      [0.759412 sec]
+returning results                       [0.05765 sec]
+
+********** Processed frame 52 **********
+
+converting RGB to grayscale             [0.002446 sec]
+converting RGB to Lab                   [0.082657 sec]
+quantizing color channels               [0.00622 sec]
+computing filter set for textons        [0.003892 sec]
+computing textons                       [15.9805 sec]
+computing bg                            r = 3 [5.81144 sec]
+computing bg                            r = 5 [6.10025 sec]
+computing bg                            r = 10 [7.06968 sec]
+computing cg_a                          r = 5 [2.83872 sec]
+computing cg_a                          r = 10 [3.85049 sec]
+computing cg_a                          r = 20 [7.40513 sec]
+computing cg_b                          r = 5 [2.75623 sec]
+computing cg_b                          r = 10 [3.62522 sec]
+computing cg_b                          r = 20 [7.05224 sec]
+computing tg                            r = 5 [3.34612 sec]
+computing tg                            r = 10 [4.46526 sec]
+computing tg                            r = 20 [8.59486 sec]
+converting RGB to grayscale             [0.000951 sec]
+converting RGB to Lab                   [0.073964 sec]
+quantizing color channels               [0.004977 sec]
+computing cg_a                          r = 5 [9.04217 sec]
+computing cg_a                          r = 10 [10.3267 sec]
+computing cg_a                          r = 20 [16.0785 sec]
+computing cg_b                          r = 5 [8.60947 sec]
+computing cg_b                          r = 10 [9.81466 sec]
+computing cg_b                          r = 20 [14.9238 sec]
+computing support  [....................] done (0:00:02.03 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:226.474 s.
+compute contours                        [0.116815 sec]
+extracting regions                      [0.758449 sec]
+returning results                       [0.035995 sec]
+compute contours                        [0.133659 sec]
+extracting regions                      [0.800833 sec]
+returning results                       [0.034961 sec]
+
+********** Processed frame 53 **********
+
+converting RGB to grayscale             [0.002019 sec]
+converting RGB to Lab                   [0.070588 sec]
+quantizing color channels               [0.004686 sec]
+computing filter set for textons        [0.002779 sec]
+computing textons                       [16.1514 sec]
+computing bg                            r = 3 [5.8151 sec]
+computing bg                            r = 5 [6.09663 sec]
+computing bg                            r = 10 [7.02872 sec]
+computing cg_a                          r = 5 [2.84703 sec]
+computing cg_a                          r = 10 [3.78959 sec]
+computing cg_a                          r = 20 [7.42399 sec]
+computing cg_b                          r = 5 [2.81964 sec]
+computing cg_b                          r = 10 [3.78476 sec]
+computing cg_b                          r = 20 [9.7331 sec]
+computing tg                            r = 5 [3.34918 sec]
+computing tg                            r = 10 [4.44668 sec]
+computing tg                            r = 20 [8.52423 sec]
+converting RGB to grayscale             [0.001858 sec]
+converting RGB to Lab                   [0.085228 sec]
+quantizing color channels               [0.003415 sec]
+computing cg_a                          r = 5 [9.43675 sec]
+computing cg_a                          r = 10 [10.4469 sec]
+computing cg_a                          r = 20 [15.7262 sec]
+computing cg_b                          r = 5 [8.81436 sec]
+computing cg_b                          r = 10 [9.67213 sec]
+computing cg_b                          r = 20 [14.1075 sec]
+computing support  [....................] done (0:00:02.06 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:227.599 s.
+compute contours                        [0.136211 sec]
+extracting regions                      [0.76509 sec]
+returning results                       [0.041106 sec]
+compute contours                        [0.125296 sec]
+extracting regions                      [0.78704 sec]
+returning results                       [0.038693 sec]
+
+********** Processed frame 54 **********
+
+converting RGB to grayscale             [0.001492 sec]
+converting RGB to Lab                   [0.065766 sec]
+quantizing color channels               [0.00416 sec]
+computing filter set for textons        [0.003147 sec]
+computing textons                       [16.0722 sec]
+computing bg                            r = 3 [5.74077 sec]
+computing bg                            r = 5 [6.08895 sec]
+computing bg                            r = 10 [7.05393 sec]
+computing cg_a                          r = 5 [2.88571 sec]
+computing cg_a                          r = 10 [3.73559 sec]
+computing cg_a                          r = 20 [7.40893 sec]
+computing cg_b                          r = 5 [2.76459 sec]
+computing cg_b                          r = 10 [3.60297 sec]
+computing cg_b                          r = 20 [7.12162 sec]
+computing tg                            r = 5 [3.38079 sec]
+computing tg                            r = 10 [4.57096 sec]
+computing tg                            r = 20 [8.11858 sec]
+converting RGB to grayscale             [0.001007 sec]
+converting RGB to Lab                   [0.07966 sec]
+quantizing color channels               [0.002626 sec]
+computing cg_a                          r = 5 [9.04755 sec]
+computing cg_a                          r = 10 [10.3048 sec]
+computing cg_a                          r = 20 [15.4765 sec]
+computing cg_b                          r = 5 [8.50348 sec]
+computing cg_b                          r = 10 [9.78658 sec]
+computing cg_b                          r = 20 [15.5975 sec]
+computing support  [....................] done (0:00:02.00 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:231.83 s.
+compute contours                        [0.132091 sec]
+extracting regions                      [0.79261 sec]
+returning results                       [0.037942 sec]
+compute contours                        [0.132864 sec]
+extracting regions                      [0.788144 sec]
+returning results                       [0.056067 sec]
+
+********** Processed frame 55 **********
+
+converting RGB to grayscale             [0.002714 sec]
+converting RGB to Lab                   [0.068096 sec]
+quantizing color channels               [0.005442 sec]
+computing filter set for textons        [0.003259 sec]
+computing textons                       [16.1614 sec]
+computing bg                            r = 3 [5.81681 sec]
+computing bg                            r = 5 [7.02403 sec]
+computing bg                            r = 10 [7.56524 sec]
+computing cg_a                          r = 5 [2.86434 sec]
+computing cg_a                          r = 10 [3.76195 sec]
+computing cg_a                          r = 20 [7.25152 sec]
+computing cg_b                          r = 5 [2.87675 sec]
+computing cg_b                          r = 10 [3.94369 sec]
+computing cg_b                          r = 20 [7.07526 sec]
+computing tg                            r = 5 [3.43245 sec]
+computing tg                            r = 10 [4.60459 sec]
+computing tg                            r = 20 [8.11538 sec]
+converting RGB to grayscale             [0.001256 sec]
+converting RGB to Lab                   [0.07812 sec]
+quantizing color channels               [0.003377 sec]
+computing cg_a                          r = 5 [9.17593 sec]
+computing cg_a                          r = 10 [12.4475 sec]
+computing cg_a                          r = 20 [15.1573 sec]
+computing cg_b                          r = 5 [8.41216 sec]
+computing cg_b                          r = 10 [9.73856 sec]
+computing cg_b                          r = 20 [14.3285 sec]
+computing support  [....................] done (0:00:02.19 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:213.034 s.
+compute contours                        [0.121801 sec]
+extracting regions                      [0.738665 sec]
+returning results                       [0.037176 sec]
+compute contours                        [0.132721 sec]
+extracting regions                      [0.769988 sec]
+returning results                       [0.068233 sec]
+
+********** Processed frame 56 **********
+
+converting RGB to grayscale             [0.001604 sec]
+converting RGB to Lab                   [0.066363 sec]
+quantizing color channels               [0.004353 sec]
+computing filter set for textons        [0.003609 sec]
+computing textons                       [16.4199 sec]
+computing bg                            r = 3 [5.78798 sec]
+computing bg                            r = 5 [6.05327 sec]
+computing bg                            r = 10 [7.38952 sec]
+computing cg_a                          r = 5 [2.94468 sec]
+computing cg_a                          r = 10 [3.89758 sec]
+computing cg_a                          r = 20 [7.50664 sec]
+computing cg_b                          r = 5 [2.92042 sec]
+computing cg_b                          r = 10 [4.47401 sec]
+computing cg_b                          r = 20 [7.12051 sec]
+computing tg                            r = 5 [3.36811 sec]
+computing tg                            r = 10 [4.58519 sec]
+computing tg                            r = 20 [8.31318 sec]
+converting RGB to grayscale             [0.001488 sec]
+converting RGB to Lab                   [0.079105 sec]
+quantizing color channels               [0.002784 sec]
+computing cg_a                          r = 5 [9.13547 sec]
+computing cg_a                          r = 10 [10.5964 sec]
+computing cg_a                          r = 20 [15.4117 sec]
+computing cg_b                          r = 5 [8.58199 sec]
+computing cg_b                          r = 10 [9.79518 sec]
+computing cg_b                          r = 20 [14.1425 sec]
+computing support  [....................] done (0:00:01.98 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:225.758 s.
+compute contours                        [0.149426 sec]
+extracting regions                      [0.743831 sec]
+returning results                       [0.040609 sec]
+compute contours                        [0.144031 sec]
+extracting regions                      [0.764169 sec]
+returning results                       [0.040016 sec]
+
+********** Processed frame 57 **********
+
+converting RGB to grayscale             [0.003844 sec]
+converting RGB to Lab                   [0.067891 sec]
+quantizing color channels               [0.00615 sec]
+computing filter set for textons        [0.003676 sec]
+computing textons                       [18.3439 sec]
+computing bg                            r = 3 [7.78132 sec]
+computing bg                            r = 5 [6.08118 sec]
+computing bg                            r = 10 [7.21402 sec]
+computing cg_a                          r = 5 [3.10943 sec]
+computing cg_a                          r = 10 [4.62392 sec]
+computing cg_a                          r = 20 [7.85515 sec]
+computing cg_b                          r = 5 [2.76958 sec]
+computing cg_b                          r = 10 [3.57971 sec]
+computing cg_b                          r = 20 [7.2813 sec]
+computing tg                            r = 5 [3.48231 sec]
+computing tg                            r = 10 [4.52463 sec]
+computing tg                            r = 20 [8.917 sec]
+converting RGB to grayscale             [0.001583 sec]
+converting RGB to Lab                   [0.083866 sec]
+quantizing color channels               [0.002788 sec]
+computing cg_a                          r = 5 [9.19947 sec]
+computing cg_a                          r = 10 [10.5185 sec]
+computing cg_a                          r = 20 [15.7197 sec]
+computing cg_b                          r = 5 [8.55236 sec]
+computing cg_b                          r = 10 [9.81032 sec]
+computing cg_b                          r = 20 [14.549 sec]
+computing support  [....................] done (0:00:01.96 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:217.153 s.
+compute contours                        [0.153292 sec]
+extracting regions                      [0.727702 sec]
+returning results                       [0.052342 sec]
+compute contours                        [0.11773 sec]
+extracting regions                      [0.753067 sec]
+returning results                       [0.047064 sec]
+
+********** Processed frame 58 **********
+
+converting RGB to grayscale             [0.001756 sec]
+converting RGB to Lab                   [0.068089 sec]
+quantizing color channels               [0.005392 sec]
+computing filter set for textons        [0.002745 sec]
+computing textons                       [16.5155 sec]
+computing bg                            r = 3 [5.80076 sec]
+computing bg                            r = 5 [6.12017 sec]
+computing bg                            r = 10 [7.25928 sec]
+computing cg_a                          r = 5 [2.9958 sec]
+computing cg_a                          r = 10 [3.80919 sec]
+computing cg_a                          r = 20 [7.29257 sec]
+computing cg_b                          r = 5 [2.69941 sec]
+computing cg_b                          r = 10 [3.74694 sec]
+computing cg_b                          r = 20 [7.14805 sec]
+computing tg                            r = 5 [3.40368 sec]
+computing tg                            r = 10 [4.52495 sec]
+computing tg                            r = 20 [8.20528 sec]
+converting RGB to grayscale             [0.001437 sec]
+converting RGB to Lab                   [0.086132 sec]
+quantizing color channels               [0.002724 sec]
+computing cg_a                          r = 5 [9.11601 sec]
+computing cg_a                          r = 10 [10.4468 sec]
+computing cg_a                          r = 20 [15.0972 sec]
+computing cg_b                          r = 5 [8.99259 sec]
+computing cg_b                          r = 10 [9.89644 sec]
+computing cg_b                          r = 20 [14.1545 sec]
+computing support  [....................] done (0:00:02.01 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:248.019 s.
+compute contours                        [0.113991 sec]
+extracting regions                      [0.77698 sec]
+returning results                       [0.037252 sec]
+compute contours                        [0.139046 sec]
+extracting regions                      [0.772756 sec]
+returning results                       [0.037278 sec]
+
+********** Processed frame 59 **********
+
+converting RGB to grayscale             [0.002253 sec]
+converting RGB to Lab                   [0.068153 sec]
+quantizing color channels               [0.004319 sec]
+computing filter set for textons        [0.003233 sec]
+computing textons                       [18.359 sec]
+computing bg                            r = 3 [5.77183 sec]
+computing bg                            r = 5 [6.07901 sec]
+computing bg                            r = 10 [7.09842 sec]
+computing cg_a                          r = 5 [3.00815 sec]
+computing cg_a                          r = 10 [4.03864 sec]
+computing cg_a                          r = 20 [7.50612 sec]
+computing cg_b                          r = 5 [2.73697 sec]
+computing cg_b                          r = 10 [3.76428 sec]
+computing cg_b                          r = 20 [7.25312 sec]
+computing tg                            r = 5 [3.44637 sec]
+computing tg                            r = 10 [4.58117 sec]
+computing tg                            r = 20 [8.22357 sec]
+converting RGB to grayscale             [0.000893 sec]
+converting RGB to Lab                   [0.089955 sec]
+quantizing color channels               [0.003312 sec]
+computing cg_a                          r = 5 [9.63799 sec]
+computing cg_a                          r = 10 [10.4833 sec]
+computing cg_a                          r = 20 [14.7693 sec]
+computing cg_b                          r = 5 [8.32932 sec]
+computing cg_b                          r = 10 [9.64801 sec]
+computing cg_b                          r = 20 [14.9962 sec]
+computing support  [....................] done (0:00:01.97 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:222.027 s.
+compute contours                        [0.145542 sec]
+extracting regions                      [0.832321 sec]
+returning results                       [0.041884 sec]
+compute contours                        [0.141463 sec]
+extracting regions                      [0.849885 sec]
+returning results                       [0.037554 sec]
+
+********** Processed frame 60 **********
+
+converting RGB to grayscale             [0.00172 sec]
+converting RGB to Lab                   [0.064436 sec]
+quantizing color channels               [0.004197 sec]
+computing filter set for textons        [0.004047 sec]
+computing textons                       [22.9883 sec]
+computing bg                            r = 3 [5.74819 sec]
+computing bg                            r = 5 [6.08027 sec]
+computing bg                            r = 10 [7.07832 sec]
+computing cg_a                          r = 5 [3.03022 sec]
+computing cg_a                          r = 10 [4.06801 sec]
+computing cg_a                          r = 20 [7.49077 sec]
+computing cg_b                          r = 5 [2.72428 sec]
+computing cg_b                          r = 10 [3.73258 sec]
+computing cg_b                          r = 20 [7.29523 sec]
+computing tg                            r = 5 [3.45203 sec]
+computing tg                            r = 10 [4.56382 sec]
+computing tg                            r = 20 [8.36588 sec]
+converting RGB to grayscale             [0.002037 sec]
+converting RGB to Lab                   [0.090726 sec]
+quantizing color channels               [0.00336 sec]
+computing cg_a                          r = 5 [9.17705 sec]
+computing cg_a                          r = 10 [10.5928 sec]
+computing cg_a                          r = 20 [15.3339 sec]
+computing cg_b                          r = 5 [8.35097 sec]
+computing cg_b                          r = 10 [10.2357 sec]
+computing cg_b                          r = 20 [14.5655 sec]
+computing support  [....................] done (0:00:01.88 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:237.8 s.
+compute contours                        [0.15236 sec]
+extracting regions                      [0.809837 sec]
+returning results                       [0.076566 sec]
+compute contours                        [0.165038 sec]
+extracting regions                      [0.80126 sec]
+returning results                       [0.045574 sec]
+
+********** Processed frame 61 **********
+
+converting RGB to grayscale             [0.002396 sec]
+converting RGB to Lab                   [0.068328 sec]
+quantizing color channels               [0.006017 sec]
+computing filter set for textons        [0.003906 sec]
+computing textons                       [16.2276 sec]
+computing bg                            r = 3 [5.86822 sec]
+computing bg                            r = 5 [6.18138 sec]
+computing bg                            r = 10 [7.19748 sec]
+computing cg_a                          r = 5 [2.98126 sec]
+computing cg_a                          r = 10 [4.06605 sec]
+computing cg_a                          r = 20 [7.69276 sec]
+computing cg_b                          r = 5 [2.7239 sec]
+computing cg_b                          r = 10 [3.80013 sec]
+computing cg_b                          r = 20 [7.34037 sec]
+computing tg                            r = 5 [3.51103 sec]
+computing tg                            r = 10 [4.75712 sec]
+computing tg                            r = 20 [8.41439 sec]
+converting RGB to grayscale             [0.002449 sec]
+converting RGB to Lab                   [0.092227 sec]
+quantizing color channels               [0.004781 sec]
+computing cg_a                          r = 5 [9.35199 sec]
+computing cg_a                          r = 10 [10.8014 sec]
+computing cg_a                          r = 20 [15.3672 sec]
+computing cg_b                          r = 5 [8.89411 sec]
+computing cg_b                          r = 10 [9.99334 sec]
+computing cg_b                          r = 20 [14.2072 sec]
+computing support  [....................] done (0:00:01.94 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:229.259 s.
+compute contours                        [0.118289 sec]
+extracting regions                      [0.753341 sec]
+returning results                       [0.040298 sec]
+compute contours                        [0.151882 sec]
+extracting regions                      [0.735765 sec]
+returning results                       [0.042785 sec]
+
+********** Processed frame 62 **********
+
+converting RGB to grayscale             [0.00171 sec]
+converting RGB to Lab                   [0.067728 sec]
+quantizing color channels               [0.004484 sec]
+computing filter set for textons        [0.004621 sec]
+computing textons                       [16.4523 sec]
+computing bg                            r = 3 [5.82679 sec]
+computing bg                            r = 5 [6.17957 sec]
+computing bg                            r = 10 [7.20128 sec]
+computing cg_a                          r = 5 [3.02956 sec]
+computing cg_a                          r = 10 [4.14471 sec]
+computing cg_a                          r = 20 [8.06464 sec]
+computing cg_b                          r = 5 [2.83224 sec]
+computing cg_b                          r = 10 [3.76034 sec]
+computing cg_b                          r = 20 [7.16118 sec]
+computing tg                            r = 5 [3.40962 sec]
+computing tg                            r = 10 [4.50576 sec]
+computing tg                            r = 20 [8.49704 sec]
+converting RGB to grayscale             [0.00216 sec]
+converting RGB to Lab                   [0.091249 sec]
+quantizing color channels               [0.003332 sec]
+computing cg_a                          r = 5 [9.21721 sec]
+computing cg_a                          r = 10 [10.8978 sec]
+computing cg_a                          r = 20 [15.4571 sec]
+computing cg_b                          r = 5 [8.50329 sec]
+computing cg_b                          r = 10 [9.70831 sec]
+computing cg_b                          r = 20 [14.5104 sec]
+computing support  [....................] done (0:00:01.88 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:212.025 s.
+compute contours                        [0.126151 sec]
+extracting regions                      [0.715895 sec]
+returning results                       [0.038011 sec]
+compute contours                        [0.12866 sec]
+extracting regions                      [0.744952 sec]
+returning results                       [0.037905 sec]
+
+********** Processed frame 63 **********
+
+converting RGB to grayscale             [0.002054 sec]
+converting RGB to Lab                   [0.067968 sec]
+quantizing color channels               [0.004455 sec]
+computing filter set for textons        [0.003758 sec]
+computing textons                       [15.6574 sec]
+computing bg                            r = 3 [5.76454 sec]
+computing bg                            r = 5 [6.00228 sec]
+computing bg                            r = 10 [6.98126 sec]
+computing cg_a                          r = 5 [2.99186 sec]
+computing cg_a                          r = 10 [3.92032 sec]
+computing cg_a                          r = 20 [7.4171 sec]
+computing cg_b                          r = 5 [2.76397 sec]
+computing cg_b                          r = 10 [3.6376 sec]
+computing cg_b                          r = 20 [7.19169 sec]
+computing tg                            r = 5 [3.3772 sec]
+computing tg                            r = 10 [4.41444 sec]
+computing tg                            r = 20 [8.64792 sec]
+converting RGB to grayscale             [0.001457 sec]
+converting RGB to Lab                   [0.090113 sec]
+quantizing color channels               [0.002633 sec]
+computing cg_a                          r = 5 [9.15302 sec]
+computing cg_a                          r = 10 [10.5594 sec]
+computing cg_a                          r = 20 [16.6952 sec]
+computing cg_b                          r = 5 [8.44872 sec]
+computing cg_b                          r = 10 [10.0071 sec]
+computing cg_b                          r = 20 [14.6029 sec]
+computing support  [....................] done (0:00:01.91 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:226.294 s.
+compute contours                        [0.120188 sec]
+extracting regions                      [0.764055 sec]
+returning results                       [0.036681 sec]
+compute contours                        [0.12542 sec]
+extracting regions                      [0.74042 sec]
+returning results                       [0.046419 sec]
+
+********** Processed frame 64 **********
+
+converting RGB to grayscale             [0.002083 sec]
+converting RGB to Lab                   [0.067876 sec]
+quantizing color channels               [0.004363 sec]
+computing filter set for textons        [0.003068 sec]
+computing textons                       [17.3311 sec]
+computing bg                            r = 3 [5.79753 sec]
+computing bg                            r = 5 [6.07606 sec]
+computing bg                            r = 10 [7.05073 sec]
+computing cg_a                          r = 5 [2.99251 sec]
+computing cg_a                          r = 10 [3.96612 sec]
+computing cg_a                          r = 20 [7.63852 sec]
+computing cg_b                          r = 5 [2.82737 sec]
+computing cg_b                          r = 10 [3.83035 sec]
+computing cg_b                          r = 20 [7.20937 sec]
+computing tg                            r = 5 [3.35566 sec]
+computing tg                            r = 10 [4.46039 sec]
+computing tg                            r = 20 [8.16685 sec]
+converting RGB to grayscale             [0.001766 sec]
+converting RGB to Lab                   [0.084431 sec]
+quantizing color channels               [0.00259 sec]
+computing cg_a                          r = 5 [9.02097 sec]
+computing cg_a                          r = 10 [10.3535 sec]
+computing cg_a                          r = 20 [15.2025 sec]
+computing cg_b                          r = 5 [8.88173 sec]
+computing cg_b                          r = 10 [9.89655 sec]
+computing cg_b                          r = 20 [14.574 sec]
+computing support  [....................] done (0:00:01.90 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:211.766 s.
+compute contours                        [0.166176 sec]
+extracting regions                      [0.763955 sec]
+returning results                       [0.055675 sec]
+compute contours                        [0.139824 sec]
+extracting regions                      [0.76692 sec]
+returning results                       [0.051319 sec]
+
+********** Processed frame 65 **********
+
+converting RGB to grayscale             [0.00219 sec]
+converting RGB to Lab                   [0.068354 sec]
+quantizing color channels               [0.005019 sec]
+computing filter set for textons        [0.002569 sec]
+computing textons                       [16.4796 sec]
+computing bg                            r = 3 [5.75643 sec]
+computing bg                            r = 5 [6.06373 sec]
+computing bg                            r = 10 [7.03879 sec]
+computing cg_a                          r = 5 [3.09974 sec]
+computing cg_a                          r = 10 [3.94972 sec]
+computing cg_a                          r = 20 [7.5433 sec]
+computing cg_b                          r = 5 [2.6574 sec]
+computing cg_b                          r = 10 [3.73806 sec]
+computing cg_b                          r = 20 [7.16873 sec]
+computing tg                            r = 5 [3.40624 sec]
+computing tg                            r = 10 [4.72966 sec]
+computing tg                            r = 20 [8.15582 sec]
+converting RGB to grayscale             [0.001095 sec]
+converting RGB to Lab                   [0.084271 sec]
+quantizing color channels               [0.002601 sec]
+computing cg_a                          r = 5 [9.08061 sec]
+computing cg_a                          r = 10 [10.2921 sec]
+computing cg_a                          r = 20 [14.9154 sec]
+computing cg_b                          r = 5 [8.51828 sec]
+computing cg_b                          r = 10 [9.76639 sec]
+computing cg_b                          r = 20 [14.5096 sec]
+computing support  [....................] done (0:00:01.98 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:244.313 s.
+compute contours                        [0.136224 sec]
+extracting regions                      [0.756761 sec]
+returning results                       [0.046583 sec]
+compute contours                        [0.115017 sec]
+extracting regions                      [0.738667 sec]
+returning results                       [0.04071 sec]
+
+********** Processed frame 66 **********
+
+converting RGB to grayscale             [0.003622 sec]
+converting RGB to Lab                   [0.069175 sec]
+quantizing color channels               [0.006756 sec]
+computing filter set for textons        [0.003722 sec]
+computing textons                       [16.6081 sec]
+computing bg                            r = 3 [5.79669 sec]
+computing bg                            r = 5 [6.23966 sec]
+computing bg                            r = 10 [7.07575 sec]
+computing cg_a                          r = 5 [2.96422 sec]
+computing cg_a                          r = 10 [4.05309 sec]
+computing cg_a                          r = 20 [7.65198 sec]
+computing cg_b                          r = 5 [2.68569 sec]
+computing cg_b                          r = 10 [3.60323 sec]
+computing cg_b                          r = 20 [7.07774 sec]
+computing tg                            r = 5 [3.39054 sec]
+computing tg                            r = 10 [4.48 sec]
+computing tg                            r = 20 [8.22236 sec]
+converting RGB to grayscale             [0.000847 sec]
+converting RGB to Lab                   [0.080036 sec]
+quantizing color channels               [0.002464 sec]
+computing cg_a                          r = 5 [9.02596 sec]
+computing cg_a                          r = 10 [10.3129 sec]
+computing cg_a                          r = 20 [14.9249 sec]
+computing cg_b                          r = 5 [10.1702 sec]
+computing cg_b                          r = 10 [9.70733 sec]
+computing cg_b                          r = 20 [17.7277 sec]
+computing support  [....................] done (0:00:01.94 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:229.118 s.
+compute contours                        [0.145639 sec]
+extracting regions                      [0.758405 sec]
+returning results                       [0.041346 sec]
+compute contours                        [0.162395 sec]
+extracting regions                      [0.775069 sec]
+returning results                       [0.041826 sec]
+
+********** Processed frame 67 **********
+
+converting RGB to grayscale             [0.002569 sec]
+converting RGB to Lab                   [0.068963 sec]
+quantizing color channels               [0.004198 sec]
+computing filter set for textons        [0.003499 sec]
+computing textons                       [16.1037 sec]
+computing bg                            r = 3 [5.78589 sec]
+computing bg                            r = 5 [6.01359 sec]
+computing bg                            r = 10 [7.19021 sec]
+computing cg_a                          r = 5 [2.80287 sec]
+computing cg_a                          r = 10 [3.75922 sec]
+computing cg_a                          r = 20 [7.26243 sec]
+computing cg_b                          r = 5 [2.64052 sec]
+computing cg_b                          r = 10 [3.58627 sec]
+computing cg_b                          r = 20 [7.03899 sec]
+computing tg                            r = 5 [3.36855 sec]
+computing tg                            r = 10 [4.46535 sec]
+computing tg                            r = 20 [8.08246 sec]
+converting RGB to grayscale             [0.001685 sec]
+converting RGB to Lab                   [0.076972 sec]
+quantizing color channels               [0.002484 sec]
+computing cg_a                          r = 5 [9.01164 sec]
+computing cg_a                          r = 10 [10.2622 sec]
+computing cg_a                          r = 20 [14.8556 sec]
+computing cg_b                          r = 5 [8.39557 sec]
+computing cg_b                          r = 10 [9.5863 sec]
+computing cg_b                          r = 20 [14.274 sec]
+computing support  [....................] done (0:00:02.04 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:257.864 s.
+compute contours                        [0.134855 sec]
+extracting regions                      [0.750488 sec]
+returning results                       [0.039938 sec]
+compute contours                        [0.119909 sec]
+extracting regions                      [0.745915 sec]
+returning results                       [0.036184 sec]
+
+********** Processed frame 68 **********
+
+converting RGB to grayscale             [0.002177 sec]
+converting RGB to Lab                   [0.068471 sec]
+quantizing color channels               [0.004154 sec]
+computing filter set for textons        [0.003345 sec]
+computing textons                       [15.8179 sec]
+computing bg                            r = 3 [5.81558 sec]
+computing bg                            r = 5 [6.04918 sec]
+computing bg                            r = 10 [7.05173 sec]
+computing cg_a                          r = 5 [2.99485 sec]
+computing cg_a                          r = 10 [4.00814 sec]
+computing cg_a                          r = 20 [7.47706 sec]
+computing cg_b                          r = 5 [2.74087 sec]
+computing cg_b                          r = 10 [3.76416 sec]
+computing cg_b                          r = 20 [7.81307 sec]
+computing tg                            r = 5 [3.88613 sec]
+computing tg                            r = 10 [4.64826 sec]
+computing tg                            r = 20 [8.1945 sec]
+converting RGB to grayscale             [0.001408 sec]
+converting RGB to Lab                   [0.077558 sec]
+quantizing color channels               [0.002946 sec]
+computing cg_a                          r = 5 [9.10058 sec]
+computing cg_a                          r = 10 [10.4236 sec]
+computing cg_a                          r = 20 [15.1342 sec]
+computing cg_b                          r = 5 [8.43004 sec]
+computing cg_b                          r = 10 [9.81244 sec]
+computing cg_b                          r = 20 [14.5324 sec]
+computing support  [....................] done (0:00:02.15 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+Total Time for Global Pb:220.338 s.
+compute contours                        [0.13624 sec]
+extracting regions                      [0.74507 sec]
+returning results                       [0.050181 sec]
+compute contours                        [0.136434 sec]
+extracting regions                      [0.697678 sec]
+returning results                       [0.040218 sec]
+
+********** Processed frame 69 **********
+
+Computation of colored hierarchical segments completed
+Loaded the ucm2s (valid 1)
+Flows temporally median filtered
+Flows filtered
+Filtered flows saved
+Elapsed time is 1727.181905 seconds.
+41902 labels in total at level 1
+STT ratio estimate of terms to inserted 1.396119 (523775,375165)
+NMath::householder(): matrix is singular!
+NMath::householder(): matrix is singular!
+NMath::householder(): matrix is singular!
+NMath::householder(): matrix is singular!
+10 unique labels, 11 max label
+Computing LTT elements... done, Elapsed time is 73.447776 seconds.
+abm: refv 1, lmbd 1, usepfour 0
+STM ratio estimate of terms to inserted intra 1.160688 (1089452,938626), inter 1.100217 (2451267,2227986)
+stm: refv 1, lmbd 1, avf 1
+STA ratio estimate of terms to inserted intra 1.073190 (1007324,938626), inter 1.085095 (2417577,2227986)
+sta: refv 5.000000e-03, sqv 1, lmbd 1, avf 1
+mrgmth prod
+Computing weight matrices...
+Constructing Eigenmaps...
+Lambda(dim):            0.000000(0)   0.009541(1)   0.013698(2)   0.018122(3)   0.021295(4)   0.023834(5)   0.027727(6)   0.031929(7)   0.034459(8)   0.040668(9)   0.041386(10)
+setclustermethod adhoc: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 25 30 40 50 60 70 80 100 150 200 250 300 350 400 500 600
+Clusters assigned 1
+
+1 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 2
+
+2 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 3
+
+3 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 4
+
+4 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 5
+
+5 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 6
+
+6 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 7
+
+7 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 8
+
+8 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 9
+
+9 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 10
+
+10 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 11
+
+11 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 12
+
+12 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 13
+
+13 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 14
+
+14 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 15
+
+15 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 16
+
+16 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 17
+
+17 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 18
+
+18 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 19
+
+19 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 20
+
+20 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 25
+
+25 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 30
+
+30 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 40
+
+40 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 50
+
+50 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 60
+
+60 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 70
+
+70 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 80
+
+80 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 100
+
+100 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 150
+
+150 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 200
+
+200 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 250
+
+250 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 300
+
+300 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 350
+
+350 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 400
+
+400 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 500
+
+500 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+Clusters assigned 600
+
+600 groups done
+
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required mc stats not computed
+Skipped requested mc: stats not computed
+
+
+
+Video segmentation completed
+
+
+
+
+Elapsed time is 20803.216007 seconds.
+Directory ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/Shared/Benchmark/ existing
+Directory ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/Shared/Benchmark/VS_benchmark/ created
+Directory ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/Shared/Benchmark/VS_benchmark/Images/ created
+Directory ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/Shared/Benchmark/VS_benchmark/Groundtruth/ created
+Directory ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/Shared/Benchmark/VS_benchmark/Ucm2/ created
+Missing files with format: ./../../.VSSTemp/VSS_vsb100/harley_davidson/working_directory/data/gtimages/image000.pgm
+Relative file numbers: 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022, 023, 024, 025, 026, 027, 028, 029, 030, 031, 032, 033, 034, 035, 036, 037, 038, 039, 040, 041, 042, 043, 044, 045, 046, 047, 048, 049, 050, 051, 052, 053, 054, 055, 056, 057, 058, 059, 060, 061, 062, 063, 064, 065, 066, 067, 068, 069
+GT Images missing, required benchmark not created
+Finishing harley_davidson

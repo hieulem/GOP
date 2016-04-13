@@ -1,0 +1,274 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+image084.png
+image085.png
+image086.png
+image087.png
+image088.png
+image089.png
+image090.png
+image091.png
+image092.png
+image093.png
+image094.png
+image095.png
+image096.png
+image097.png
+image098.png
+image099.png
+image100.png
+image101.png
+image102.png
+image103.png
+image104.png
+image105.png
+image106.png
+image107.png
+image108.png
+image109.png
+image110.png
+image111.png
+image112.png
+image113.png
+image114.png
+image115.png
+image116.png
+image117.png
+image118.png
+image119.png
+image120.png
+image121.png
+image122.png
+image123.png
+image124.png
+image125.png
+image126.png
+image127.png
+image128.png
+image129.png
+image130.png
+image131.png
+image132.png
+image133.png
+image134.png
+image135.png
+image136.png
+image137.png
+image138.png
+image139.png
+image140.png
+image141.png
+image142.png
+image143.png
+image144.png
+image145.png
+image146.png
+image147.png
+image148.png
+image149.png
+image150.png
+image151.png
+image152.png
+image153.png
+image154.png
+image155.png
+image156.png
+image157.png
+image158.png
+image159.png
+image160.png
+image161.png
+image162.png
+image163.png
+image164.png
+image165.png
+image166.png
+image167.png
+image168.png
+image169.png
+image170.png
+image171.png
+image172.png
+image173.png
+image174.png
+image175.png
+image176.png
+image177.png
+image178.png
+image179.png
+image180.png
+image181.png
+image182.png
+image183.png
+image184.png
+image185.png
+image186.png
+image187.png
+image188.png
+image189.png
+image190.png
+image191.png
+image192.png
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+Imread could not load the image
+Missing files with format: ./../../video/vsb100/Test/snowboarding_crashes/image000.png
+Relative file numbers: 119
+Size of re-sized images is (360,640)
+Loaded colour images and saved
+Computing all flows
+Elapsed time is 12.379479 seconds.
+Elapsed time is 11.984479 seconds.
+Elapsed time is 11.893775 seconds.
+Elapsed time is 11.545794 seconds.
+Elapsed time is 11.429276 seconds.
+Elapsed time is 7.794138 seconds.
+Elapsed time is 7.585049 seconds.
+Elapsed time is 7.463883 seconds.
+Elapsed time is 7.984530 seconds.
+Elapsed time is 8.380458 seconds.
+Elapsed time is 7.557664 seconds.
+Elapsed time is 7.689833 seconds.
+Elapsed time is 7.559739 seconds.
+Elapsed time is 7.550053 seconds.
+Elapsed time is 7.611012 seconds.
+Elapsed time is 6.957752 seconds.
+Elapsed time is 7.161173 seconds.
+Elapsed time is 7.750618 seconds.
+Elapsed time is 7.854462 seconds.
+Elapsed time is 7.925840 seconds.
+Elapsed time is 7.575801 seconds.
+Elapsed time is 7.563527 seconds.
+Elapsed time is 7.423708 seconds.
+Elapsed time is 7.535919 seconds.
+Elapsed time is 8.379320 seconds.
+Elapsed time is 7.540560 seconds.
+Elapsed time is 8.297537 seconds.
+Elapsed time is 8.652644 seconds.
+Elapsed time is 7.887311 seconds.
+Elapsed time is 9.942306 seconds.
+Elapsed time is 10.330116 seconds.
+Elapsed time is 10.745865 seconds.
+Elapsed time is 10.815369 seconds.
+Elapsed time is 10.363849 seconds.
+Elapsed time is 10.365227 seconds.
+Elapsed time is 10.467399 seconds.
+Elapsed time is 11.115578 seconds.
+Elapsed time is 10.751445 seconds.
+Elapsed time is 9.364828 seconds.
+Elapsed time is 10.647700 seconds.
+Elapsed time is 9.737179 seconds.
+Elapsed time is 12.011197 seconds.
+Elapsed time is 8.098003 seconds.
+Elapsed time is 7.814797 seconds.
+Elapsed time is 8.470974 seconds.
+Elapsed time is 9.237265 seconds.
+Elapsed time is 8.312744 seconds.
+Elapsed time is 7.797375 seconds.
+Elapsed time is 7.211758 seconds.
+Elapsed time is 7.670459 seconds.
+Elapsed time is 7.932966 seconds.
+Elapsed time is 7.899571 seconds.
+Elapsed time is 7.783911 seconds.
+Elapsed time is 8.014086 seconds.
+Elapsed time is 8.535534 seconds.
+Elapsed time is 7.500019 seconds.
+Elapsed time is 7.599678 seconds.
+Elapsed time is 7.391239 seconds.
+Elapsed time is 7.615849 seconds.
+Elapsed time is 7.736565 seconds.
+Elapsed time is 7.703059 seconds.
+Elapsed time is 7.675369 seconds.
+Elapsed time is 8.004017 seconds.
+Elapsed time is 8.034086 seconds.
+Elapsed time is 7.839159 seconds.
+Elapsed time is 7.245209 seconds.
+Elapsed time is 7.661821 seconds.
+Elapsed time is 8.138809 seconds.
+{Error using imresize
+Expected input number 1, A, to be nonempty.
+
+Error in imresize>parsePreMethodArgs (line 333)
+validateattributes(A, {'numeric', 'logical'}, {'nonsparse', 'nonempty'},
+mfilename, 'A', 1);
+
+Error in imresize>parseInputs (line 248)
+[params.A, params.map, params.scale, params.output_size] = ...
+
+Error in imresize (line 141)
+params = parseInputs(varargin{:});
+
+Error in coarse_to_fine (line 66)
+  I2_Pyramid{i} = structure_texture_decomposition(imresize(I2,
+  [height_Pyramid{i} width_Pyramid{i}], 'bilinear'), ...
+
+Error in TV (line 74)
+  [flow] = coarse_to_fine(I1, I1, I2, lambda, theta, epsilon, use_edges,
+  maxits, ...
+
+
+Error in Addflow (line 39)
+        flowPlus=TV(image,imagep);
+
+
+Error in Doallprocessing (line 87)
+            flows=Addflow(flows,cim,i,noFrames,printonscreen);
+
+Error in VSS_Video (line 105)
+[cim,ucm2,flows,allthesegmentations] =
+Doallprocessing(filenames,filename_sequence_basename_frames_or_video,ucm2filename,noFrames,options,videocorrectionparameters);
+
+Error in segment_video_vsb100 (line 37)
+allthesegmentations = VSS_Video(video_dir, video_working_dir, dataset_setting);
+} 
+

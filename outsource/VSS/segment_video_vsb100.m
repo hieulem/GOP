@@ -56,7 +56,6 @@ function [min_id, no_frames] = findBeginningFrameIndex(video_dir, char_length, e
 	min_id = Inf;
 	for i = 1:length(files)
 		num = str2num(files{i}(char_length + 1:end-length(ext)));
-		disp(files{i});
 		if (num < min_id)
 			min_id = num;
 		end
