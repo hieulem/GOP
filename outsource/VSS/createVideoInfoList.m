@@ -1,14 +1,21 @@
 function createVideoInfoList()
 
-% Video info list file location
-vid_info_path = './video_list_vsb100.mat';
+% % Video info list file location
+% vid_info_path = './video_list_vsb100.mat';
+% 
+% % Params to write to the file
+% dataset_name = 'vsb100';
+% dataset_dir = './../../video/vsb100/Test';
+% working_dir = './../../.VSSTemp/VSS_vsb100/';
+% res_dir = './../../results/VSS_vsb100/';
+
+vid_info_path = './video_list_segtrack_aff.mat';
 
 % Params to write to the file
-dataset_name = 'vsb100';
-dataset_dir = './../../video/vsb100/Test';
-working_dir = './../../.VSSTemp/VSS_vsb100/';
-res_dir = './../../results/VSS_vsb100/';
-
+dataset_name = 'SegTrackv2';
+dataset_dir = '../../video/Seg/JPEGImages';
+working_dir = '../../.VSSTemp/VSS_Segtrack/';
+res_dir = '../../results/VSS_newaff_Segtrack/';
 
 video_info_list = [];
 

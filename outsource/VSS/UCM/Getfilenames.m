@@ -50,7 +50,7 @@ filenames.shareddir=[directory,'Shared',filesep]; %includes filesep
 
 filenames.newucmtwo=[filenames.filename_directory,'newucmtwo.mat'];
 filenames.benchmark=[filenames.shareddir,'Benchmark',filesep];
-filenames.segres=[filenames.shareddir,'Benchmark',filesep];
+filenames.affinities=[filenames.filename_directory,'aff.mat'];
 
 
 

@@ -229,7 +229,7 @@ if ( (isfield(options,'testthesegmentation')) && (~isempty(options.testthesegmen
     else
         additionalmasname='MAHIS_benchmark'; fprintf('Using standard additional name %s, please confirm\n',additionalmasname); pause;
     end
-    Addcurrentimageforrpmultgt(cim,ucm2,filename_sequence_basename_frames_or_video,videocorrectionparameters,filenames,additionalmasname,printonscreen);
+    Addcurrentimageforrpmultgt_withnewaff(cim,ucm2,filename_sequence_basename_frames_or_video,videocorrectionparameters,filenames,additionalmasname,printonscreen);
     
     return;
 end
@@ -361,7 +361,7 @@ if ( (isfield(options,'newucmtwo')) && (options.newucmtwo) ) %Compute temporally
             end
             maxgtframes=Inf; %used to restrict gt frames (impose same test set)
             minframes=min([numel(cim), numel(newucm2), maxgtframes]);
-            Addcurrentimageforrpmultgt(cim(1:minframes),newucm2(1:minframes),filename_sequence_basename_frames_or_video,videocorrectionparameters,filenames,additionalmasname,printonscreen,allthesegmentations);
+            Addcurrentimageforrpmultgt_withnewaff(cim(1:minframes),newucm2(1:minframes),filename_sequence_basename_frames_or_video,videocorrectionparameters,filenames,additionalmasname,printonscreen,allthesegmentations);
         end
     end
     

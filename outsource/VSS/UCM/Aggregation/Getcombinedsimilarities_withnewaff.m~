@@ -8,7 +8,7 @@ function [similarities,STT,LTT,ABA,ABM,STM,STA]=Getcombinedsimilarities_withnewa
 %Initialization
 
 
-if ~exist(filenames.affinities)
+if ~exist(filename.affinities)
     
     STT=sparse(noallsuperpixels,noallsuperpixels); LTT=sparse(noallsuperpixels,noallsuperpixels);
     ABA=sparse(noallsuperpixels,noallsuperpixels); ABM=sparse(noallsuperpixels,noallsuperpixels);
@@ -188,11 +188,11 @@ if ~exist(filenames.affinities)
         %     [similarities,wgtsimilarities]=Getcombinedsimilaritieswithmethod(similarities,STA,'wsum',options,0.9,0.1); %#ok<NASGU>
         [similarities,wgtsimilarities]=Getcombinedsimilaritieswithmethod(similarities,STA,mrgmth,options,wgtsimilarities,mrgwgt(6));
     end
-    save(filenames.affinities,'STT','LTT','ABA','ABM','STM','STA','wgtsimilarities','similarities','mrgmth','mrgwgt');
+    save(filename.affinities,'STT','LTT','ABA','ABM','STM','STA','wgtsimilarities','similarities');
 else
     %@Hieu
     disp('Loading computed affinities');
-    load(filenames.affinities);
+    load(filename.affinities);
 end;
 GeH = sparse(noallsuperpixels,noallsuperpixels);
 GeH = wrapperforVSS( labelledlevelvideo,cim );

@@ -14,9 +14,6 @@ video_dir = video_info.video_dir;
 video_name = video_info.video_name;
 host_working_dir = video_info.host_working_dir;
 res_dir = video_info.res_dir;
-if ~exist(res_dir)
-    mkdir(res_dir);
-end;
 
 %video_dir = fullfile(dataset_dir, video_name);
 video_working_dir = fullfile(host_working_dir, video_name);
