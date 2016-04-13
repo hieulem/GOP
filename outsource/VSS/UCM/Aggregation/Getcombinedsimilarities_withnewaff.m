@@ -23,7 +23,7 @@ if ~exist(filenames.affinities)
     if ( (~exist('printonscreen','var')) || (isempty(printonscreen)) )
         printonscreen=false;
     end
-
+    
     
     computeall=false;
     
@@ -194,12 +194,17 @@ else
     disp('Loading computed affinities');
     load(filenames.affinities);
 end;
-GeH = sparse(noallsuperpixels,noallsuperpixels);
-GeH = wrapperforVSS( labelledlevelvideo,cim );
-GeH = GeH.*(STA>0);
-
-[similarities,wgtsimilarities]=Getcombinedsimilaritieswithmethod(similarities,GeH,mrgmth,options,wgtsimilarities,mrgwgt(6));
-
+if (options.usingGeH == 1)
+    if ~exist(filenames.GeHaffinities)
+        GeH = sparse(noallsuperpixels,noallsuperpixels);
+        GeH = wrapperforVSS( labelledlevelvideo,cim );
+        GeH = GeH.*(STA>0);
+        save(filenames.GeHaffinities,'GeH');
+    else
+        load(filenames.GeHaffinities);
+    end;
+    [similarities,wgtsimilarities]=Getcombinedsimilaritieswithmethod(similarities,GeH,mrgmth,options,wgtsimilarities,mrgwgt(6));
+end;
 
 if ( (~isfield(options,'complrqst')) || (~options.complrqst) )
     %If requestedaffinities has not been completed this code ensures full connectivity

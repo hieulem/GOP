@@ -1,6 +1,7 @@
 function segment_video_segtrack_withnewaff (id)
 
-if id==6 || id ==1 || id ==14
+if id==6 || id ==14
+    disp('Nope');
     return;
 end;
 
@@ -47,7 +48,7 @@ else
     dataset_setting.noFrames = no_frames;
 end
 
-allthesegmentations = VSS_Video_withnewaff(video_dir, video_working_dir, dataset_setting);
+allthesegmentations = VSS_Video(video_dir, video_working_dir, dataset_setting);
 seg_res_path = fullfile(res_dir, [video_name '.mat']);
 parsave(seg_res_path, allthesegmentations);
 
@@ -61,9 +62,6 @@ parsave(seg_res_path, allthesegmentations);
 end
 
 function parsave(filepath, allthesegmentations)
-if ~exist(filepath)
-    mkdir(filepath)
-end;
 save(filepath, 'allthesegmentations');
 end
 
