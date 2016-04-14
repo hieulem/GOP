@@ -197,7 +197,7 @@ end;
 if (options.usingGeH == 1)
     if ~exist(filenames.GeHaffinities)
         GeH = sparse(noallsuperpixels,noallsuperpixels);
-        GeH = wrapperforVSS( labelledlevelvideo,cim );
+        GeH = wrapperforVSS( labelledlevelvideo,cim,filenames.flowpath);
         GeH = GeH.*(STA>0);
         save(filenames.GeHaffinities,'GeH');
     else

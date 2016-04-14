@@ -67,6 +67,7 @@ options.usingGeH =1;
 % Location of the video working directory
 basename_variables_directory=[basedrive,'working_directory',filesep,'data',filesep];
 filenames=Getfilenames(basename_variables_directory,[],options);
+filenames.flowpath = dataset_setting.flowpath;
 
 
 % Location and file pattern of the original video frames
