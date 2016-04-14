@@ -1,0 +1,112 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+Loaded colour images
+Loaded flows
+Skipping frame 82, already computed
+Skipping frame 83, already computed
+Skipping frame 84, already computed
+Skipping frame 85, already computed
+Skipping frame 86, already computed
+Skipping frame 87, already computed
+Skipping frame 88, already computed
+Skipping frame 89, already computed
+Skipping frame 90, already computed
+Skipping frame 91, already computed
+Skipping frame 92, already computed
+Skipping frame 93, already computed
+Skipping frame 94, already computed
+Skipping frame 95, already computed
+Skipping frame 96, already computed
+Skipping frame 97, already computed
+Skipping frame 98, already computed
+Skipping frame 99, already computed
+Skipping frame 100, already computed
+Skipping frame 101, already computed
+Skipping frame 102, already computed
+Skipping frame 103, already computed
+Skipping frame 104, already computed
+Skipping frame 105, already computed
+Skipping frame 106, already computed
+Skipping frame 107, already computed
+Skipping frame 108, already computed
+Skipping frame 109, already computed
+Skipping frame 110, already computed
+Skipping frame 111, already computed
+Skipping frame 112, already computed
+Skipping frame 113, already computed
+Skipping frame 114, already computed
+Skipping frame 115, already computed
+Skipping frame 116, already computed
+Skipping frame 117, already computed
+Skipping frame 118, already computed
+Skipping frame 119, already computed
+Skipping frame 120, already computed
+Skipping frame 121, already computed
+Skipping frame 122, already computed
+Skipping frame 123, already computed
+Skipping frame 124, already computed
+Skipping frame 125, already computed
+Skipping frame 126, already computed
+Skipping frame 127, already computed
+Skipping frame 128, already computed
+Skipping frame 129, already computed
+Skipping frame 130, already computed
+Skipping frame 131, already computed
+Computation of colored hierarchical segments completed
+Loaded the ucm2s (valid 1)
+Flows temporally median filtered
+Loaded filtered flows
+Loaded newucmtwo file
+Finishing arctic_kayak

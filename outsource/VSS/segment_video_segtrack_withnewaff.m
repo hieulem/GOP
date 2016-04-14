@@ -38,6 +38,7 @@ if (strcmp(dataset_name,'SegTrackv2'))
     dataset_setting.fileext = '.png';
     dataset_setting.frame_begin_index = min_id;
     dataset_setting.noFrames = no_frames;
+    dataset_setting.rszratio = 0;
 else
     % working with VSB100
     [min_id, no_frames] = findBeginningFrameIndex(video_dir, 5, '.png');
@@ -46,6 +47,7 @@ else
     dataset_setting.fileext = '.png';
     dataset_setting.frame_begin_index = 'min_id';
     dataset_setting.noFrames = no_frames;
+    dataset_setting.rszratio = 0.5;
 end
 
 allthesegmentations = VSS_Video_withnewaff(video_dir, video_working_dir, dataset_setting);
