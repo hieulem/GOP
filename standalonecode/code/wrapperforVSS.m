@@ -1,4 +1,4 @@
-function [ affinity_matrix ] = wrapperforVSS( labelled_level_video,cim )
+function [ affinity_matrix ] = wrapperforVSS( labelled_level_video,cim,flowpath )
 %WRAPPERFORVSS Summary of this function goes here
 %%realign sp map
 sp =labelled_level_video;
@@ -41,8 +41,8 @@ end
 % [motionboundaries,~] = computeflowandmotionb( img,flowpath,flowfile );
 % tmp=toc;
 % display(['Motion boundaries extraction : ',num2str(tmp)]);
-a = load('/home/hle/Project/GOP/flow_data/flow_motion_default/segtrack/flowgirl');
-edge = sed + a.motionboundaries+ 1e-20;
+flow = load(flowpath);
+edge = sed + flow.motionboundaries+ 1e-20;
 %edge = sed + 1e-20;
 figure(1);imagesc(edge(:,:,1));
 %%aff
