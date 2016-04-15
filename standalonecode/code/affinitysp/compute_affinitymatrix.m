@@ -32,7 +32,7 @@ for ii=1:numi
     gaussiandis = pdist2(pos,pos,'euclidean');  gaussiandis = exp(-gaussiandis/10);
     for i=1:length(seeds)
       %  geo_hist{ii}(i,:)=histwc(seeds_geo{ii}(i,:),area{ii}.*gaussiandis(i,:),geo_hist_bin,max(max(seeds_geo{ii})));
-        geo_hist2d{ii}(i,:,:)=histwc2D(seeds_geo(i,:)',seeds_color(i,:)',area{ii},9,13,5,255);
+        geo_hist2d{ii}(i,:,:)=histwc2D(seeds_geo(i,:)',seeds_color(i,:)',area{ii}.*gaussiandis(i,:),9,13,5,255);
     end
 end
 a=toc;

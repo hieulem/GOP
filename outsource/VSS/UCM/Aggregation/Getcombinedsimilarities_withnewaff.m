@@ -195,14 +195,14 @@ else
     load(filenames.affinities);
 end;
 if (options.usingGeH == 1)
-    if ~exist(filenames.GeHaffinities)
+  %  if ~exist(filenames.GeHaffinities)
         GeH = sparse(noallsuperpixels,noallsuperpixels);
         GeH = wrapperforVSS( labelledlevelvideo,cim,filenames.flowpath);
         GeH = GeH.*(STA>0);
-        save(filenames.GeHaffinities,'GeH');
-    else
-        load(filenames.GeHaffinities);
-    end;
+  %      save(filenames.GeHaffinities,'GeH');
+ %   else
+  %      load(filenames.GeHaffinities);
+  %  end;
     [similarities,wgtsimilarities]=Getcombinedsimilaritieswithmethod(similarities,GeH,mrgmth,options,wgtsimilarities,mrgwgt(6));
 end;
 

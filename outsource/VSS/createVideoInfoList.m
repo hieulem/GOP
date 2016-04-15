@@ -9,13 +9,13 @@ function createVideoInfoList()
 % working_dir = './../../.VSSTemp/VSS_vsb100/';
 % res_dir = './../../results/VSS_vsb100/';
 
-vid_info_path = './video_list_segtrack_aff.mat';
+vid_info_path = './video_list_segtrack_aff_g10.mat';
 
 % Params to write to the file
 dataset_name = 'SegTrackv2';
 dataset_dir = '../../video/Seg/JPEGImages';
 working_dir = '../../.VSSTemp/VSS_Segtrack/';
-res_dir = '../../results/VSS_newaff_Segtrack/';
+res_dir = '../../results/VSS_newaff_g10_Segtrack/';
 flow_dir ='../../flow_data/flow_motion_default/segtrack/';
 
 video_info_list = [];
