@@ -7,7 +7,7 @@ end;
 
 addpath(genpath('../../standalonecode/code/'));
 addpath(genpath('../../standalonecode/outsource/'));
-load('video_list_segtrack_aff_test.mat'); % To get variable video_info_list
+load('video_list_segtrack_aff_g100.mat'); % To get variable video_info_list
 
 video_info = video_info_list(id);
 dataset_name = video_info.dataset_name;
