@@ -1,0 +1,171 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+
+files = 
+
+10x1 struct array with fields:
+
+    name
+    date
+    bytes
+    isdir
+    datenum
+
+
+dirFlags =
+
+     1     1     1     1     1     1     1     1     1     1
+
+
+subFolders = 
+
+10x1 struct array with fields:
+
+    name
+    date
+    bytes
+    isdir
+    datenum
+
+fuck Vu
+../../.VSSTemp/VSS_chen/salesman_fa
+Running VSS on salesman_fa
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/data/
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/data/Videopicsidx/
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/data/Videopicsidx/Idx/
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/data/Videopicsidx/Pics/
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/data/Videopicsidx/Videos/
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/Shared/
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/Shared/Benchmark/
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/data/ucm2images/
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/data/wrpimages/
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/data/gtimages/
+Loaded colour images and saved
+Computing all flows
+Elapsed time is 2.513865 seconds.
+Elapsed time is 1.385925 seconds.
+Elapsed time is 1.352052 seconds.
+Elapsed time is 1.507493 seconds.
+Elapsed time is 1.360211 seconds.
+Elapsed time is 1.312147 seconds.
+Elapsed time is 1.153158 seconds.
+Elapsed time is 1.270528 seconds.
+Elapsed time is 1.164359 seconds.
+Elapsed time is 1.131772 seconds.
+Elapsed time is 1.247504 seconds.
+Elapsed time is 1.156149 seconds.
+Elapsed time is 1.212947 seconds.
+Elapsed time is 1.220408 seconds.
+Elapsed time is 1.252968 seconds.
+Elapsed time is 1.247869 seconds.
+Elapsed time is 1.263739 seconds.
+Elapsed time is 1.210244 seconds.
+Elapsed time is 1.224458 seconds.
+Elapsed time is 1.261319 seconds.
+Elapsed time is 1.192632 seconds.
+Elapsed time is 1.241872 seconds.
+Elapsed time is 1.235814 seconds.
+Elapsed time is 1.179238 seconds.
+Elapsed time is 1.261554 seconds.
+Elapsed time is 1.246160 seconds.
+Elapsed time is 1.222249 seconds.
+Elapsed time is 1.225630 seconds.
+Elapsed time is 1.245817 seconds.
+Elapsed time is 1.304953 seconds.
+Elapsed time is 1.236839 seconds.
+Elapsed time is 1.333413 seconds.
+Elapsed time is 1.178332 seconds.
+Elapsed time is 1.286952 seconds.
+Elapsed time is 1.241953 seconds.
+Elapsed time is 1.200066 seconds.
+Elapsed time is 1.248756 seconds.
+Elapsed time is 1.209136 seconds.
+Elapsed time is 1.246340 seconds.
+Elapsed time is 1.224517 seconds.
+Elapsed time is 1.219325 seconds.
+Elapsed time is 1.220706 seconds.
+Elapsed time is 1.209849 seconds.
+Elapsed time is 1.187713 seconds.
+Elapsed time is 1.230892 seconds.
+Elapsed time is 1.273622 seconds.
+Elapsed time is 1.196269 seconds.
+Elapsed time is 1.229082 seconds.
+Elapsed time is 1.240280 seconds.
+Elapsed time is 1.262738 seconds.
+Elapsed time is 1.229852 seconds.
+Elapsed time is 1.263246 seconds.
+Elapsed time is 1.199173 seconds.
+Elapsed time is 1.217371 seconds.
+Elapsed time is 1.268311 seconds.
+Elapsed time is 1.203646 seconds.
+Elapsed time is 1.261753 seconds.
+Elapsed time is 1.231597 seconds.
+Elapsed time is 1.217850 seconds.
+Elapsed time is 1.229817 seconds.
+Elapsed time is 1.207479 seconds.
+Elapsed time is 1.266908 seconds.
+Elapsed time is 1.445276 seconds.
+Elapsed time is 1.180529 seconds.
+Elapsed time is 1.275011 seconds.
+Elapsed time is 1.233765 seconds.
+Elapsed time is 1.154499 seconds.
+Elapsed time is 1.219468 seconds.
+Elapsed time is 1.267792 seconds.
+Elapsed time is 1.238149 seconds.
+Elapsed time is 1.225557 seconds.
+Elapsed time is 1.221671 seconds.
+Elapsed time is 1.198139 seconds.
+Elapsed time is 1.227142 seconds.
+Elapsed time is 1.317733 seconds.

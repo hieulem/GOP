@@ -1,0 +1,132 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+
+files = 
+
+10x1 struct array with fields:
+
+    name
+    date
+    bytes
+    isdir
+    datenum
+
+
+dirFlags =
+
+     1     1     1     1     1     1     1     1     1     1
+
+
+subFolders = 
+
+10x1 struct array with fields:
+
+    name
+    date
+    bytes
+    isdir
+    datenum
+
+fuck Vu
+../../.VSSTemp/VSS_chen/stefan_fa
+Running VSS on stefan_fa
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/data/
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/data/Videopicsidx/
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/data/Videopicsidx/Idx/
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/data/Videopicsidx/Pics/
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/data/Videopicsidx/Videos/
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/Shared/
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/Shared/Benchmark/
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/data/ucm2images/
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/data/wrpimages/
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/data/gtimages/
+Loaded colour images and saved
+Computing all flows
+Elapsed time is 4.336234 seconds.
+Elapsed time is 3.256375 seconds.
+Elapsed time is 2.900246 seconds.
+Elapsed time is 3.168731 seconds.
+Elapsed time is 2.928317 seconds.
+Elapsed time is 3.237840 seconds.
+Elapsed time is 3.014464 seconds.
+Elapsed time is 2.582099 seconds.
+Elapsed time is 2.564037 seconds.
+Elapsed time is 2.650436 seconds.
+Elapsed time is 2.542663 seconds.
+Elapsed time is 2.718782 seconds.
+Elapsed time is 2.669990 seconds.
+Elapsed time is 2.541625 seconds.
+Elapsed time is 2.616334 seconds.
+Elapsed time is 2.665516 seconds.
+Elapsed time is 2.666584 seconds.
+Elapsed time is 2.764376 seconds.
+Elapsed time is 2.554165 seconds.
+Elapsed time is 2.547938 seconds.
+Elapsed time is 2.479233 seconds.
+Elapsed time is 2.576787 seconds.
+Elapsed time is 2.569980 seconds.
+Elapsed time is 2.511917 seconds.
+Elapsed time is 2.611791 seconds.
+Elapsed time is 2.677096 seconds.
+Elapsed time is 2.649999 seconds.
+Elapsed time is 2.510601 seconds.
+Elapsed time is 2.572097 seconds.
+Elapsed time is 2.578567 seconds.
+Elapsed time is 2.680888 seconds.
+Elapsed time is 2.639687 seconds.
+Elapsed time is 2.875346 seconds.
+Elapsed time is 2.600100 seconds.
+Elapsed time is 2.647841 seconds.
+Elapsed time is 2.716735 seconds.

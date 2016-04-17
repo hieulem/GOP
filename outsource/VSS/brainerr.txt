@@ -1,0 +1,25 @@
+{Out of memory. Type HELP MEMORY for your options.
+
+Error in Computelongerterm (line 37)
+donetrajs=false(noallsuperpixels,noallsuperpixels);
+
+
+Error in Getcombinedsimilarities (line 88)
+                LTT=Computelongerterm(touchingmatrix,temporalsmoothing,framebelong,
+                options, theoptiondata, filenames);
+
+Error in Getucmmetricmergingwithdistance (line 87)
+[similarities]=Getcombinedsimilarities(labelledlevelvideo,flows, ucm2, cim,
+mapped, ...
+
+Error in Doallprocessing (line 325)
+            [newucm2,allthesegmentations]=Getucmmetricmergingwithdistance(filenames,ucm2,flows,printonscreen,nofigure,dimtouse,options,...
+            
+Error in VSS_Video (line 105)
+[cim,ucm2,flows,allthesegmentations] =
+Doallprocessing(filenames,filename_sequence_basename_frames_or_video,ucm2filename,noFrames,options,videocorrectionparameters);
+
+Error in segment_video_vsb100 (line 39)
+allthesegmentations = VSS_Video(video_dir, video_working_dir, dataset_setting);
+} 
+

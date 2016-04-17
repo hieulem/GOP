@@ -1,0 +1,43 @@
+{Error using lu
+Out of memory. Type HELP MEMORY for your options.
+
+Error in eigs/checkInputs/LUfactorAminusSigmaB (line 982)
+                [L,U,pp,qq,dgAsB] = lu(AsB);
+
+Error in eigs/checkInputs (line 806)
+            [L,U,pp,qq,dgAsB] = LUfactorAminusSigmaB;
+
+Error in eigs (line 93)
+[A,Amatrix,isrealprob,issymA,n,B,classAB,k,eigs_sigma,whch, ...
+
+Error in Laplacian (line 170)
+    [mappedX, lambda] = eigs(L, nodims + 1, tol, opts);			% only
+    need bottom (nodims + 1) eigenvectors
+
+
+Error in Mapontomanifold (line 46)
+        [Y, R, E] = Laplacian(D, 'k', n_size, options);
+
+
+Error in Getmanifoldandtreestructureprogressivemerge (line 34)
+[Y, R, E] =
+Mapontomanifold(D,manifoldmethod,dimtouse,n_size,saveyre,readyre,filenames,printonscreeninsidefunction,options);
+%#ok<NASGU,ASGLU>
+
+Error in Clustermergesegment (line 40)
+[Y]=Getmanifoldandtreestructureprogressivemerge(similarities,dimtouse,n_size,...
+
+Error in Getucmmetricmergingwithdistance (line 116)
+[allthesegmentations,newucm2]=Clustermergesegment(ucm2,similarities,mapped,noFrames,options,...
+
+Error in Doallprocessing (line 325)
+            [newucm2,allthesegmentations]=Getucmmetricmergingwithdistance(filenames,ucm2,flows,printonscreen,nofigure,dimtouse,options,...
+            
+Error in VSS_Video (line 105)
+[cim,ucm2,flows,allthesegmentations] =
+Doallprocessing(filenames,filename_sequence_basename_frames_or_video,ucm2filename,noFrames,options,videocorrectionparameters);
+
+Error in segment_video_vsb100 (line 39)
+allthesegmentations = VSS_Video(video_dir, video_working_dir, dataset_setting);
+} 
+

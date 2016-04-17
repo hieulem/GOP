@@ -1,0 +1,864 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+ 
+ 
+ 
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+For product information, visit www.mathworks.com.
+ 
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+
+files = 
+
+10x1 struct array with fields:
+
+    name
+    date
+    bytes
+    isdir
+    datenum
+
+
+dirFlags =
+
+     1     1     1     1     1     1     1     1     1     1
+
+
+subFolders = 
+
+10x1 struct array with fields:
+
+    name
+    date
+files = 
+
+10x1 struct array with fields:
+
+    name
+    date
+    bytes
+    isdir
+    datenum
+
+
+    bytes
+    isdir
+    datenum
+
+
+dirFlags =
+
+     1     1     1     1     1     1     1     1     1     1
+
+
+subFolders = 
+
+10x1 struct array with fields:
+
+    name
+    date
+    bytes
+    isdir
+    datenum
+
+
+files = 
+
+10x1 struct array with fields:
+
+    name
+    date
+    bytes
+    isdir
+    datenum
+
+
+dirFlags =
+
+     1     1     1     1     1     1     1     1     1     1
+
+
+subFolders = 
+
+10x1 struct array with fields:
+
+    name
+    date
+    bytes
+    isdir
+    datenum
+
+
+files = 
+
+10x1 struct array with fields:
+
+    name
+    date
+    bytes
+    isdir
+    datenum
+
+
+dirFlags =
+
+     1     1     1     1     1     1     1     1     1     1
+
+
+subFolders = 
+
+10x1 struct array with fields:
+
+    name
+    date
+    bytes
+    isdir
+    datenum
+
+
+files = 
+
+10x1 struct array with fields:
+
+    name
+    date
+    bytes
+    isdir
+    datenum
+
+
+dirFlags =
+
+     1     1     1     1     1     1     1     1     1     1
+
+
+subFolders = 
+
+10x1 struct array with fields:
+
+    name
+    date
+    bytes
+    isdir
+    datenum
+
+fuck Vu
+../../.VSSTemp/VSS_chen/soccer_fa
+fuck Vu
+../../.VSSTemp/VSS_chen/container_fa
+fuck Vu
+../../.VSSTemp/VSS_chen/ice_fa
+Running VSS on container_fa
+Running VSS on ice_fa
+Running VSS on soccer_fa
+fuck Vu
+../../.VSSTemp/VSS_chen/paris_fa
+fuck Vu
+../../.VSSTemp/VSS_chen/stefan_fa
+Running VSS on paris_fa
+Running VSS on stefan_fa
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+Created directory ../../.VSSTemp/VSS_chen/container_fa/working_directory/data/
+Created directory ../../.VSSTemp/VSS_chen/soccer_fa/working_directory/data/
+Created directory ../../.VSSTemp/VSS_chen/container_fa/working_directory/data/Videopicsidx/
+Created directory ../../.VSSTemp/VSS_chen/soccer_fa/working_directory/data/Videopicsidx/
+Created directory ../../.VSSTemp/VSS_chen/container_fa/working_directory/data/Videopicsidx/Idx/
+Created directory ../../.VSSTemp/VSS_chen/soccer_fa/working_directory/data/Videopicsidx/Idx/
+Created directory ../../.VSSTemp/VSS_chen/container_fa/working_directory/data/Videopicsidx/Pics/
+Created directory ../../.VSSTemp/VSS_chen/ice_fa/working_directory/data/
+Created directory ../../.VSSTemp/VSS_chen/soccer_fa/working_directory/data/Videopicsidx/Pics/
+Created directory ../../.VSSTemp/VSS_chen/container_fa/working_directory/data/Videopicsidx/Videos/
+Created directory ../../.VSSTemp/VSS_chen/soccer_fa/working_directory/data/Videopicsidx/Videos/
+Created directory ../../.VSSTemp/VSS_chen/ice_fa/working_directory/data/Videopicsidx/
+Created directory ../../.VSSTemp/VSS_chen/container_fa/working_directory/Shared/
+Created directory ../../.VSSTemp/VSS_chen/soccer_fa/working_directory/Shared/
+Created directory ../../.VSSTemp/VSS_chen/ice_fa/working_directory/data/Videopicsidx/Idx/
+Created directory ../../.VSSTemp/VSS_chen/container_fa/working_directory/Shared/Benchmark/
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/data/
+Created directory ../../.VSSTemp/VSS_chen/ice_fa/working_directory/data/Videopicsidx/Pics/
+Created directory ../../.VSSTemp/VSS_chen/soccer_fa/working_directory/Shared/Benchmark/
+Created directory ../../.VSSTemp/VSS_chen/container_fa/working_directory/data/ucm2images/
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/data/Videopicsidx/
+Created directory ../../.VSSTemp/VSS_chen/ice_fa/working_directory/data/Videopicsidx/Videos/
+Created directory ../../.VSSTemp/VSS_chen/soccer_fa/working_directory/data/ucm2images/
+Created directory ../../.VSSTemp/VSS_chen/container_fa/working_directory/data/wrpimages/
+Created directory ../../.VSSTemp/VSS_chen/ice_fa/working_directory/Shared/
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/data/Videopicsidx/Idx/
+Created directory ../../.VSSTemp/VSS_chen/soccer_fa/working_directory/data/wrpimages/
+Created directory ../../.VSSTemp/VSS_chen/ice_fa/working_directory/Shared/Benchmark/
+Created directory ../../.VSSTemp/VSS_chen/container_fa/working_directory/data/gtimages/
+Created directory ../../.VSSTemp/VSS_chen/paris_fa/working_directory/data/
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/data/Videopicsidx/Pics/
+Created directory ../../.VSSTemp/VSS_chen/soccer_fa/working_directory/data/gtimages/
+Created directory ../../.VSSTemp/VSS_chen/ice_fa/working_directory/data/ucm2images/
+Created directory ../../.VSSTemp/VSS_chen/paris_fa/working_directory/data/Videopicsidx/
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/data/Videopicsidx/Videos/
+Created directory ../../.VSSTemp/VSS_chen/ice_fa/working_directory/data/wrpimages/
+Created directory ../../.VSSTemp/VSS_chen/paris_fa/working_directory/data/Videopicsidx/Idx/
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/Shared/
+Created directory ../../.VSSTemp/VSS_chen/ice_fa/working_directory/data/gtimages/
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/Shared/Benchmark/
+Created directory ../../.VSSTemp/VSS_chen/paris_fa/working_directory/data/Videopicsidx/Pics/
+Created directory ../../.VSSTemp/VSS_chen/paris_fa/working_directory/data/Videopicsidx/Videos/
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/data/ucm2images/
+Created directory ../../.VSSTemp/VSS_chen/paris_fa/working_directory/Shared/
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/data/wrpimages/
+Created directory ../../.VSSTemp/VSS_chen/paris_fa/working_directory/Shared/Benchmark/
+Created directory ../../.VSSTemp/VSS_chen/stefan_fa/working_directory/data/gtimages/
+Created directory ../../.VSSTemp/VSS_chen/paris_fa/working_directory/data/ucm2images/
+Created directory ../../.VSSTemp/VSS_chen/paris_fa/working_directory/data/wrpimages/
+Created directory ../../.VSSTemp/VSS_chen/paris_fa/working_directory/data/gtimages/
+Loaded colour images and saved
+lds:
+
+    name
+    date
+    bytes
+    isdir
+    datenum
+
+
+subFolders = 
+
+10x1 struct array with fields:
+
+    name
+    date
+    bytes
+    isdir
+    datenum
+
+
+files = 
+
+10x1 struct array with fields:
+
+    name
+    date
+    bytes
+    isdir
+    datenum
+
+
+dirFlags =
+
+     1     1     1     1     1     1     1     1     1     1
+
+
+subFolders = 
+
+10x1 struct array with fields:
+
+    name
+    date
+    bytes
+    isdir
+    datenum
+
+fuck Vu
+fuck Vu
+../../.VSSTemp/VSS_chen/bus_fa
+fuck Vu
+../../.VSSTemp/VSS_chen/garden_fa
+../../.VSSTemp/VSS_chen/salesman_fa
+Running VSS on garden_fa
+Running VSS on bus_fa
+Running VSS on salesman_fa
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/data/
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/data/Videopicsidx/
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/data/Videopicsidx/Idx/
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/data/
+Created directory ../../.VSSTemp/VSS_chen/garden_fa/working_directory/data/
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/data/Videopicsidx/Pics/
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/data/Videopicsidx/
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/data/Videopicsidx/Videos/
+Created directory ../../.VSSTemp/VSS_chen/garden_fa/working_directory/data/Videopicsidx/
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/data/Videopicsidx/Idx/
+Created directory ../../.VSSTemp/VSS_chen/garden_fa/working_directory/data/Videopicsidx/Idx/
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/Shared/
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/data/Videopicsidx/Pics/
+Created directory ../../.VSSTemp/VSS_chen/garden_fa/working_directory/data/Videopicsidx/Pics/
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/Shared/Benchmark/
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/data/Videopicsidx/Videos/
+Created directory ../../.VSSTemp/VSS_chen/garden_fa/working_directory/data/Videopicsidx/Videos/
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/data/ucm2images/
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/Shared/
+Created directory ../../.VSSTemp/VSS_chen/garden_fa/working_directory/Shared/
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/data/wrpimages/
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/Shared/Benchmark/
+Created directory ../../.VSSTemp/VSS_chen/garden_fa/working_directory/Shared/Benchmark/
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/data/ucm2images/
+Created directory ../../.VSSTemp/VSS_chen/salesman_fa/working_directory/data/gtimages/
+Created directory ../../.VSSTemp/VSS_chen/garden_fa/working_directory/data/ucm2images/
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/data/wrpimages/
+Created directory ../../.VSSTemp/VSS_chen/garden_fa/working_directory/data/wrpimages/
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/data/gtimages/
+Created directory ../../.VSSTemp/VSS_chen/garden_fa/working_directory/data/gtimages/
+Computing all flows
+Loaded colour images and saved
+Loaded colour images and saved
+Computing all flows
+Loaded colour images and saved
+Computing all flows
+Computing all flows
+Loaded colour images and saved
+Computing all flows
+s.
+Elapsed time is 1.385925 seconds.
+Elapsed time is 4.336234 seconds.
+Elapsed time is 4.971998 seconds.
+Elapsed time is 4.134336 seconds.
+Elapsed time is 1.507493 seconds.
+Elapsed time is 2.994453 seconds.
+Elapsed time is 3.256375 seconds.
+Elapsed time is 4.033586 seconds.
+Elapsed time is 1.312147 seconds.
+Elapsed time is 2.902919 seconds.
+Elapsed time is 1.153158 seconds.
+Elapsed time is 2.900246 seconds.
+Elapsed time is 3.737679 seconds.
+Elapsed time is 2.751787 seconds.
+Elapsed time is 1.164359 seconds.
+Elapsed time is 1.131772 seconds.
+Elapsed time is 1.247504 seconds.
+Elapsed time is 3.168731 seconds.
+Elapsed time is 2.928317 seconds.
+Elapsed time is 1.156149 seconds.
+Elapsed time is 1.212947 seconds.
+Elapsed time is 2.810576 seconds.
+Elapsed time is 4.296094 seconds.
+Elapsed time is 3.237840 seconds.
+Elapsed time is 1.252968 seconds.
+Elapsed time is 3.790946 seconds.
+Elapsed time is 1.247869 seconds.
+Elapsed time is 3.554167 seconds.
+Elapsed time is 3.603248 seconds.
+Elapsed time is 3.179599 seconds.
+Elapsed time is 2.969619 seconds.
+Elapsed time is 1.224458 seconds.
+Elapsed time is 3.361868 seconds.
+Elapsed time is 1.261319 seconds.
+Elapsed time is 2.979411 seconds.
+Elapsed time is 3.176683 seconds.
+Elapsed time is 1.192632 seconds.
+Elapsed time is 1.241872 seconds.
+Elapsed time is 2.842381 seconds.
+Elapsed time is 3.052217 seconds.
+Elapsed time is 3.554237 seconds.
+Elapsed time is 1.179238 seconds.
+Elapsed time is 1.261554 seconds.
+Elapsed time is 2.936162 seconds.
+Elapsed time is 1.246160 seconds.
+Elapsed time is 3.529227 seconds.
+Elapsed time is 1.222249 seconds.
+Elapsed time is 3.176926 seconds.
+Elapsed time is 2.871046 seconds.
+Elapsed time is 1.225630 seconds.
+Elapsed time is 2.718782 seconds.
+Elapsed time is 1.245817 seconds.
+Elapsed time is 2.953512 seconds.
+Elapsed time is 1.304953 seconds.
+Elapsed time is 1.236839 seconds.
+Elapsed time is 3.719734 seconds.
+Elapsed time is 3.292421 seconds.
+Elapsed time is 1.333413 seconds.
+Elapsed time is 3.021551 seconds.
+Elapsed time is 1.178332 seconds.
+Elapsed time is 1.286952 seconds.
+Elapsed time is 3.016663 seconds.
+Elapsed time is 3.172329 seconds.
+Elapsed time is 3.046909 seconds.
+Elapsed time is 3.245252 seconds.
+Elapsed time is 1.241953 seconds.
+Elapsed time is 1.200066 seconds.
+Elapsed time is 1.248756 seconds.
+Elapsed time is 2.991836 seconds.
+Elapsed time is 3.568462 seconds.
+Elapsed time is 1.209136 seconds.
+Elapsed time is 1.246340 seconds.
+Elapsed time is 2.943474 seconds.
+Elapsed time is 1.224517 seconds.
+Elapsed time is 3.492744 seconds.
+Elapsed time is 1.219325 seconds.
+Elapsed time is 2.764376 seconds.
+Elapsed time is 1.220706 seconds.
+Elapsed time is 1.209849 seconds.
+Elapsed time is 3.394631 seconds.
+Elapsed time is 3.105347 seconds.
+Elapsed time is 2.554165 seconds.
+Elapsed time is 1.187713 seconds.
+Elapsed time is 3.190684 seconds.
+Elapsed time is 1.230892 seconds.
+Elapsed time is 1.273622 seconds.
+Elapsed time is 3.549843 seconds.
+Elapsed time is 3.114071 seconds.
+Elapsed time is 1.196269 seconds.
+Elapsed time is 1.229082 seconds.
+Elapsed time is 1.240280 seconds.
+Elapsed time is 2.780646 seconds.
+Elapsed time is 3.398647 seconds.
+Elapsed time is 1.262738 seconds.
+Elapsed time is 1.229852 seconds.
+Elapsed time is 2.940182 seconds.
+Elapsed time is 3.307883 seconds.
+Elapsed time is 3.194336 seconds.
+Elapsed time is 2.569980 seconds.
+Elapsed time is 1.263246 seconds.
+Elapsed time is 1.199173 seconds.
+Elapsed time is 2.762192 seconds.
+Elapsed time is 3.170373 seconds.
+Elapsed time is 2.511917 seconds.
+Elapsed time is 3.215643 seconds.
+Elapsed time is 1.268311 seconds.
+Elapsed time is 2.782369 seconds.
+Elapsed time is 3.182172 seconds.
+Elapsed time is 3.165971 seconds.
+Elapsed time is 2.677096 seconds.
+Elapsed time is 3.521389 seconds.
+Elapsed time is 1.231597 seconds.
+Elapsed time is 3.024739 seconds.
+Elapsed time is 1.217850 seconds.
+Elapsed time is 1.229817 seconds.
+Elapsed time is 3.498439 seconds.
+Elapsed time is 2.984065 seconds.
+Elapsed time is 1.207479 seconds.
+Elapsed time is 1.266908 seconds.
+Elapsed time is 2.675826 seconds.
+Elapsed time is 3.134409 seconds.
+Elapsed time is 3.518796 seconds.
+Elapsed time is 1.180529 seconds.
+Elapsed time is 3.247491 seconds.
+Elapsed time is 1.275011 seconds.
+Elapsed time is 2.967878 seconds.
+Elapsed time is 3.445182 seconds.
+Elapsed time is 1.233765 seconds.
+Elapsed time is 1.154499 seconds.
+Elapsed time is 2.819365 seconds.
+Elapsed time is 1.219468 seconds.
+Elapsed time is 3.425160 seconds.
+Elapsed time is 3.148868 seconds.
+Elapsed time is 1.267792 seconds.
+Elapsed time is 3.277253 seconds.
+Elapsed time is 1.238149 seconds.
+Elapsed time is 1.225557 seconds.
+Elapsed time is 3.559978 seconds.
+Elapsed time is 3.183002 seconds.
+Elapsed time is 3.281428 seconds.
+Elapsed time is 1.221671 seconds.
+Elapsed time is 1.198139 seconds.
+Elapsed time is 1.227142 seconds.
+Elapsed time is 2.800895 seconds.
+Elapsed time is 3.420664 seconds.
+Elapsed time is 1.317733 seconds.
+Elapsed time is 1.277430 seconds.
+Elapsed time is 2.809644 seconds.
+Elapsed time is 1.232617 seconds.
+Elapsed time is 2.647841 seconds.
+Elapsed time is 3.304528 seconds.
+Elapsed time is 1.292405 seconds.
+Elapsed time is 2.883167 seconds.
+Elapsed time is 1.308148 seconds.
+Elapsed time is 1.218760 seconds.
+Elapsed time is 3.640846 seconds.
+Elapsed time is 2.804352 seconds.
+Elapsed time is 1.177550 seconds.
+Elapsed time is 1.235415 seconds.
+Elapsed time is 3.369593 seconds.
+Elapsed time is 1.262293 seconds.
+Elapsed time is 2.850937 seconds.
+Elapsed time is 3.182244 seconds.
+Elapsed time is 3.271667 seconds.
+Elapsed time is 3.237563 seconds.
+Elapsed time is 3.315987 seconds.

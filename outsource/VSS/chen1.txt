@@ -1,0 +1,122 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+
+files = 
+
+10x1 struct array with fields:
+
+    name
+    date
+    bytes
+    isdir
+    datenum
+
+
+dirFlags =
+
+     1     1     1     1     1     1     1     1     1     1
+
+
+subFolders = 
+
+10x1 struct array with fields:
+
+    name
+    date
+    bytes
+    isdir
+    datenum
+
+fuck Vu
+../../.VSSTemp/VSS_chen/bus_fa
+Running VSS on bus_fa
+
+options = 
+
+                  newucmtwo: 1
+            cleanifexisting: Inf
+                   origucm2: 0
+                   usebflow: 0
+            pre_filter_flow: 1
+                filter_flow: 1
+        testthesegmentation: 0
+                 segaddname: 'MAHIS_benchmark'
+     testmanifoldclustering: 1
+               clustaddname: 'VS_perpixelerror_benchmark'
+        testnewsegmentation: 1
+                 newsegname: 'VS_benchmark'
+     calibratetheparameters: 0
+    calibrateparametersname: 'RAW_parameter_setup'
+                     stpcas: 'paperoptnrm'
+        requestedaffinities: {'stt'  'ltt'  'aba'  'abm'  'stm'  'sta'}
+                    lttuexp: 0
+                   lttlambd: 1
+                     lttsqv: 0
+                    abauexp: 0
+                   abalambd: 13
+                     abasqv: 0
+                   abathmax: 1
+                    sttuexp: 0
+                   sttlambd: 1
+                     sttsqv: 0
+                    stalmbd: 1
+                     stasqv: 1
+                    starefv: 0.0050
+                     staavf: 1
+                    abmlmbd: 1
+                    abmrefv: 1
+                   abmpfour: 0
+                    stmlmbd: 1
+                    stmrefv: 1
+                     stmavf: 1
+                     mrgmth: 'prod'
+                  normalize: 0
+           normalisezeroone: 0
+                   vsmethod: 'affinities'
+
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/data/
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/data/Videopicsidx/
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/data/Videopicsidx/Idx/
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/data/Videopicsidx/Pics/
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/data/Videopicsidx/Videos/
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/Shared/
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/Shared/Benchmark/
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/data/ucm2images/
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/data/wrpimages/
+Created directory ../../.VSSTemp/VSS_chen/bus_fa/working_directory/data/gtimages/
+Loaded colour images and saved
+Computing all flows
+Elapsed time is 4.134336 seconds.
+Elapsed time is 3.913812 seconds.
+Elapsed time is 3.329530 seconds.
+Elapsed time is 3.493760 seconds.
+Elapsed time is 3.569334 seconds.
+Elapsed time is 3.603248 seconds.
+Elapsed time is 3.594219 seconds.
+Elapsed time is 3.554237 seconds.
+Elapsed time is 3.529227 seconds.
+Elapsed time is 3.554032 seconds.
+Elapsed time is 3.719734 seconds.
+Elapsed time is 3.654901 seconds.
+Elapsed time is 3.568462 seconds.
+Elapsed time is 3.492744 seconds.
+Elapsed time is 3.394631 seconds.
+Elapsed time is 3.549843 seconds.
+Elapsed time is 3.398647 seconds.
+Elapsed time is 3.546938 seconds.
+Elapsed time is 3.444206 seconds.
+Elapsed time is 3.521389 seconds.
+Elapsed time is 3.498439 seconds.
+Elapsed time is 3.518796 seconds.
+Elapsed time is 3.445182 seconds.
+Elapsed time is 3.425160 seconds.
+Elapsed time is 3.559978 seconds.
+Elapsed time is 3.420664 seconds.
