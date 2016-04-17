@@ -12,7 +12,7 @@ gehoptions.maxGeo = 5;
 gehoptions.maxInt = 255;
 gehoptions.usingflow = 1;
 
-baseline =true;
+baseline =false;
 
 %directory settings
 dataset.name = 'chen';
@@ -28,8 +28,11 @@ dataset.flow_dir ='../../flow_data/flow_motion_default/chen/';
 [video_info,dataset_settings] = getvideoinfo( dataset,id );
 
 disp(['Running VSS on ',video_info.video_name]);
-%allthesegmentations = VSS_Video_withnewaff(video_info.video_dir, video_info.video_working_dir, dataset_settings,gehoptions);
-allthesegmentations = VSS_Video(video_info.video_dir, video_info.video_working_dir, dataset_settings);
+if ~baseline
+    allthesegmentations = VSS_Video_withnewaff(video_info.video_dir, video_info.video_working_dir, dataset_settings,gehoptions);
+else
+    allthesegmentations = VSS_Video(video_info.video_dir, video_info.video_working_dir, dataset_settings);
+end;
 seg_res_path = fullfile(video_info.res_dir, [video_info.video_name '.mat']);
 save(seg_res_path, 'allthesegmentations');
 
