@@ -1,5 +1,5 @@
 function [newucm2,allthesegmentations]=Getucmmetricmergingwithdistance_withnewaff(filenames,ucm2,flows,printonscreen,...
-    nofigure,dimtouse,options,filename_sequence_basename_frames_or_video,videocorrectionparameters,cim)
+    nofigure,dimtouse,options,filename_sequence_basename_frames_or_video,videocorrectionparameters,cim,gehoptions)
 
 
 
@@ -86,7 +86,7 @@ else
 end
 [similarities]=Getcombinedsimilarities_withnewaff(labelledlevelvideo,flows, ucm2, cim, mapped, ...
     filename_sequence_basename_frames_or_video, options, theoptiondata, filenames,...
-    noallsuperpixels, framebelong, numberofsuperpixelsperframe, requestedaffinities, printonscreeninsidefunction);
+    noallsuperpixels, framebelong, numberofsuperpixelsperframe, requestedaffinities, printonscreeninsidefunction,gehoptions);
 %,STT,LTT,ABA,ABM,STM,STA
 
 % if ( (isfield(options,'saveaff')) && (options.saveaff) && (isfield(options,'affaddname')) && (~isempty(options.affaddname)))

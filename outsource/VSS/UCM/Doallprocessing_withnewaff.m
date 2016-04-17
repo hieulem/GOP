@@ -1,5 +1,5 @@
 function [cim,ucm2,flows,allthesegmentations]=...
-    Doallprocessing_withnewaff(filenames,filename_sequence_basename_frames_or_video,ucm2filename,noFrames,options,videocorrectionparameters)
+    Doallprocessing_withnewaff(filenames,filename_sequence_basename_frames_or_video,ucm2filename,noFrames,options,videocorrectionparameters,gehoptions)
 
 
 
@@ -325,7 +325,7 @@ if ( (isfield(options,'newucmtwo')) && (options.newucmtwo) ) %Compute temporally
         timetic=tic;
         if ( (~isfield(options,'faffinityv')) || (isempty(options.faffinityv)) )
             [newucm2,allthesegmentations]=Getucmmetricmergingwithdistance_withnewaff(filenames,ucm2,flows,printonscreen,nofigure,dimtouse,options,...
-                filename_sequence_basename_frames_or_video,videocorrectionparameters,cim);
+                filename_sequence_basename_frames_or_video,videocorrectionparameters,cim,gehoptions);
         else % Subsets of ucm2 and flows allow to consider only some frames
             partlength=min(options.faffinityv,numel(ucm2));
             partucm2=ucm2(1:partlength);

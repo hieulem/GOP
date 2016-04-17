@@ -1,4 +1,4 @@
-function [allthesegmentations] = VSS_Video_withnewaff(video_path, base_working_dir, dataset_setting)
+function [allthesegmentations] = VSS_Video_withnewaff(video_path, base_working_dir, dataset_setting,gehoptions)
 
 dataset_setting.filenameheader;
 dataset_setting.numberformat;
@@ -106,7 +106,7 @@ ucm2filename.closure='_ucm2.bmp';
 ucm2filename.startNumber=dataset_setting.frame_begin_index;
 
 noFrames=dataset_setting.noFrames;
-[cim,ucm2,flows,allthesegmentations] = Doallprocessing_withnewaff(filenames,filename_sequence_basename_frames_or_video,ucm2filename,noFrames,options,videocorrectionparameters);
+[cim,ucm2,flows,allthesegmentations] = Doallprocessing_withnewaff(filenames,filename_sequence_basename_frames_or_video,ucm2filename,noFrames,options,videocorrectionparameters,gehoptions);
 
     
 

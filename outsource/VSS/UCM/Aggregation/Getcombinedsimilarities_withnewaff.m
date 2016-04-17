@@ -1,6 +1,6 @@
 function [similarities,STT,LTT,ABA,ABM,STM,STA]=Getcombinedsimilarities_withnewaff(labelledlevelvideo,flows, ucm2, cim, mapped, ...
     filename_sequence_basename_frames_or_video, options, theoptiondata, filenames,...
-    noallsuperpixels, framebelong, numberofsuperpixelsperframe, requestedaffinities, printonscreen)
+    noallsuperpixels, framebelong, numberofsuperpixelsperframe, requestedaffinities, printonscreen,gehoptions)
 
 % HERE we plug in our feature @Hieu
 % @Hieu
@@ -197,7 +197,7 @@ end;
 if (options.usingGeH == 1)
   %  if ~exist(filenames.GeHaffinities)
         GeH = sparse(noallsuperpixels,noallsuperpixels);
-        GeH = wrapperforVSS( labelledlevelvideo,cim,filenames.flowpath);
+        GeH = wrapperforVSS( labelledlevelvideo,cim,filenames.flowpath,gehoptions);
         GeH = GeH.*(STA>0);
   %      save(filenames.GeHaffinities,'GeH');
  %   else

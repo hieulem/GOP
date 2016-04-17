@@ -1,4 +1,4 @@
-function segment_video_segtrack(id)
+function segment_video_chen(id)
 addpath(genpath('../../standalonecode/code/'));
 addpath(genpath('../../standalonecode/outsource/'));
 %load('video_list_segtrack_aff_g100.mat'); % To get variable video_info_list
@@ -15,15 +15,15 @@ gehoptions.usingflow = 1;
 baseline =true;
 
 %directory settings
-dataset.name = 'Segtrack';
-dataset.dir = '../../video/Seg/JPEGImages';
-dataset.working_dir = '../../.VSSTemp/VSS_Segtrack/';
+dataset.name = 'chen';
+dataset.dir = '../../video/chen/input/PNG/';
+dataset.working_dir = '../../.VSSTemp/VSS_chen/';
 dataset.res_dir = ['../../results/VSS_',dataset.name,'_',num2str(gehoptions.phi),'_' ...
     ,num2str(gehoptions.nGeobins),'_',num2str(gehoptions.nIntbins),'_',num2str(gehoptions.maxGeo),'_',num2str(gehoptions.maxInt),'/'];
 if baseline
     dataset.res_dir = ['../../results/VSS_',dataset.name];
 end
-dataset.flow_dir ='../../flow_data/flow_motion_default/segtrack/';
+dataset.flow_dir ='../../flow_data/flow_motion_default/chen/';
 
 [video_info,dataset_settings] = getvideoinfo( dataset,id );
 
