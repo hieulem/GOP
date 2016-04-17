@@ -5,6 +5,7 @@ numGT = length(t);
 numlv = size(set_of_sv_map,2);k=0;
 stat=[];
 for j=1:numGT
+j
     s = zeros(numlv,4);
     parfor i=1:numlv
 
