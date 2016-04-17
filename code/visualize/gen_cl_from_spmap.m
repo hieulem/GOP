@@ -32,7 +32,7 @@ for i = 1:doFrames
     writeNum = num2str(i);
 
     if ~isempty(video_name)
-        imwrite(uint8(colorFrame), [writePath1, 'colorImg_', writeNum, '.png'], 'BitDepth', 8);
+        imwrite(uint8(colorFrame), [ 'colorImg_', writeNum, '.png'], 'BitDepth', 8);
     end;
 end
   if ~isempty(video_name)

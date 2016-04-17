@@ -16,7 +16,7 @@ for n=2:nseeds
     new = geocompute(graph,seeds(n-1));
     current = min([current;new]);
     current(current ==inf) = 0;
-    [t,seeds(n)] = max (current); 
+    [~,seeds(n)] = max (current);
     
 end
 

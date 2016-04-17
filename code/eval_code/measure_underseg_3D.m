@@ -11,6 +11,7 @@ gt_map(gt_map>gt_idx) = 0;
 gt_map(gt_map<gt_idx) = -999999999;
 gt_map(gt_map>0) = 0;
 
+
 cover_map = sv_map + gt_map;
 cover_map(cover_map<0) = 0;
 sv_on = unique(cover_map);

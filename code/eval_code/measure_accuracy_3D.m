@@ -6,6 +6,7 @@ if size(gt_map) ~= size(sv_map)
 end
 
 gt_map = double(gt_map);
+sv_map = double(sv_map);
 
 gt_map(gt_map>gt_idx) = 0;
 gt_map(gt_map<gt_idx) = -999999999;
