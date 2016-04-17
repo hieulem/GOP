@@ -1,4 +1,4 @@
-function [ affinity_matrix ] = compute_affinitymatrix( sp,splist,edge,img)
+function [ affinity_matrix ] = compute_affinitymatrix( sp,splist,edge,img,options)
 %COMPUTE_AFFINITYMATRIX 
 % sp: sp map 1:splist(i)
 % splist=[400,420,400...]
@@ -29,11 +29,18 @@ for ii=1:numi
         seeds_color(i) = rgb_mean(grimg,sp(:,:,ii),i);
         pos(i,:) = computesppos(sp(:,:,ii),i);
     end;
-    gaussiandis = pdist2(pos,pos,'euclidean');  gaussiandis = exp(-gaussiandis/10);
+    if (options.phi > 0)
+        gaussiandis = pdist2(pos,pos,'euclidean');  gaussiandis = exp(-gaussiandis/options.phi);
+    else
+        gaussiandis = ones(length(seeds),length(seeds));
+    end;
     for i=1:length(seeds)
       %  geo_hist{ii}(i,:)=histwc(seeds_geo{ii}(i,:),area{ii}.*gaussiandis(i,:),geo_hist_bin,max(max(seeds_geo{ii})));
-        geo_hist2d{ii}(i,:,:)=histwc2D(seeds_geo(i,:)',seeds_color(i,:)',area{ii}.*gaussiandis(i,:),9,13,5,255);
+       % geo_hist2d{ii}(i,:,:)=histwc2D(seeds_geo(i,:)',seeds_color(i,:)',area{ii}.*gaussiandis(i,:),9,13,5,255);
+        geo_hist2d{ii}(i,:,:)=histwc2D(seeds_geo(i,:)',seeds_color(i,:)',area{ii}.*gaussiandis(i,:),options.nGeobins,options.nIntbins,options.maxGeo,options.maxInt);
+    
     end
+    
 end
 a=toc;
 display(['features computed in ',num2str(a)]);

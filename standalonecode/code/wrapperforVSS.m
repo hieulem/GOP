@@ -1,4 +1,4 @@
-function [ affinity_matrix ] = wrapperforVSS( labelled_level_video,cim,flowpath )
+function [ affinity_matrix ] = wrapperforVSS( labelled_level_video,cim,flowpath,gehoptions )
 %WRAPPERFORVSS Summary of this function goes here
 %%realign sp map
 sp =labelled_level_video;
@@ -41,13 +41,15 @@ end
 % [motionboundaries,~] = computeflowandmotionb( img,flowpath,flowfile );
 % tmp=toc;
 % display(['Motion boundaries extraction : ',num2str(tmp)]);
-flow = load(flowpath);
-edge = sed + flow.motionboundaries+ 1e-20;
-%edge = sed + 1e-20;
-figure(1);imagesc(edge(:,:,1));
+edge= sed + 1e-20;
+if gehoptions.usingflow == 1
+    flow = load(flowpath);
+    edge = edge + flow.motionboundaries;
+end;
+
 %%aff
 
-affinity_matrix  = compute_affinitymatrix( sp,splist,edge,img);
+affinity_matrix  = compute_affinitymatrix( sp,splist,edge,img,gehoptions);
 tmp = toc;
 display(['Affinity computation time : ',num2str(tmp)]);
 end
