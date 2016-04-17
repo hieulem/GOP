@@ -5,7 +5,7 @@ addpath(genpath('../../standalonecode/outsource/'));
 
 %GeH parameter settings
 
-gehoptions.phi = 100;
+gehoptions.phi = 100; 
 gehoptions.nGeobins = 9;
 gehoptions.nIntbins = 13;
 gehoptions.maxGeo = 5;
@@ -29,9 +29,9 @@ dataset.flow_dir ='../../flow_data/flow_motion_default/chen/';
 
 disp(['Running VSS on ',video_info.video_name]);
 if ~baseline
-    allthesegmentations = VSS_Video_withnewaff(video_info.video_dir, video_info.video_working_dir, dataset_settings,gehoptions);
+   allthesegmentations = VSS_Video_withnewaff(video_info.video_dir, video_info.video_working_dir, dataset_settings,gehoptions);
 else
-    allthesegmentations = VSS_Video(video_info.video_dir, video_info.video_working_dir, dataset_settings);
+   allthesegmentations = VSS_Video(video_info.video_dir, video_info.video_working_dir, dataset_settings);
 end;
 seg_res_path = fullfile(video_info.res_dir, [video_info.video_name '.mat']);
 save(seg_res_path, 'allthesegmentations');
