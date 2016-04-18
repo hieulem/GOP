@@ -32,6 +32,7 @@ if (strcmp(dataset_name,'Segtrack'))
     dataset_setting.noFrames = no_frames;
     dataset_setting.rszratio = 0;
     if id==6 || id ==14
+        disp('Resizing frog/worm');
         dataset_setting.rszratio = 0.5;
     end;
     dataset_setting.flowpath = video_info.flow_dir;
