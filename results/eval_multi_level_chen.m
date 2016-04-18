@@ -18,7 +18,7 @@ parfor i=1:numlv
     [br_3D, bp_3D, br_map_3D] = measure_boundaryrecall_3D(gt_map, sv_map);
     
     %stat = [sv_num; accu_2D; ue_2D; br_2D; accu_3D; ue_3D; br_3D; bp_3D];
-    s(i,:) = [accu_3D, ue_3D, br_3D, bp_3D]
+    s(i,:) = [accu_3D, ue_3D, br_3D, bp_3D];
 end;
 if isempty(stat) stat= s;
 else
