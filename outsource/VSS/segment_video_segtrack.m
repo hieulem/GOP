@@ -12,7 +12,7 @@ gehoptions.maxGeo = 5;
 gehoptions.maxInt = 255;
 gehoptions.usingflow = 1;
 
-baseline =true;
+baseline =false;
 
 %directory settings
 dataset.name = 'Segtrack';
