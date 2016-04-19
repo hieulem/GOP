@@ -1,7 +1,7 @@
-
+function []=  ftestset(id)
 addpath(genpath('../code/eval_code'));
 names ={'bird_of_paradise','birdfall','bmx','cheetah','drift','frog','girl','hummingbird','monkey','monkeydog','parachute','penguin','soldier','worm'};
-name = names{1}
+name = names{id}
 
 %baseline
 gt = ['../video/Seg/GroundTruth/', name];
@@ -27,3 +27,4 @@ s= [stat1,stat2,stat3]
 l=[l1,l2,l3];
 m=[m1,m2,m3];
 save(['seg_',name]);
+end
