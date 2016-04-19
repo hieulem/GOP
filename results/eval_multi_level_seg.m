@@ -1,5 +1,5 @@
-function [ stat ] = eval_multi_level_seg( set_of_sv_map,inputGT )
-addpath(genpath('../code/eval_code'));
+function [ stat ] = eval_multi_level( set_of_sv_map,inputGT )
+
 t = dir(inputGT);t(1:2) =[];
 numGT = length(t);
 numlv = size(set_of_sv_map,2);k=0;
