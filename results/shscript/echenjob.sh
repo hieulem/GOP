@@ -2,7 +2,7 @@
 
 SGE_TASK_NUM=$1
 cd /nfs/bigeye/hieule/GOP/GOP/results/
-matlab -nodisplay -r "ftestchen(${SGE_TASK_ID}); exit;" -logfile "eseg_${SGE_TASK_ID}.txt"
+matlab -nodisplay -r "fchen(${SGE_TASK_ID}); exit;"
 
 exit 0;
 
