@@ -1,26 +1,34 @@
-function []=  fseg(id,g,p1,p2,p3,p4,motion)
+function [s]=  fseg(g,p1,p2,p3,p4,motion)
 addpath(genpath('../code/eval_code'));
 names ={'bird_of_paradise','birdfall','bmx','cheetah','drift','frog','girl','hummingbird','monkey','monkeydog','parachute','penguin','soldier','worm'};
-name = names{id};
-gt = ['../video/Seg/GroundTruth/', name];
 %p1 = 9;
 %p2 = 13;
 %p3 = 5;
 %p4 = 255;
 %motion = 1;
 %g=100
+s= zeros(36,4);
+c = 0;
+for i=1:14
+
+name = names{i};
 if g>0
-['VSS_Segtrack_',num2str(g),'_',num2str(p1),'_',num2str(p2),'_',num2str(p3),'_',num2str(p4),'_',num2str(motion),'/',name]
-load(['VSS_Segtrack_',num2str(g),'_',num2str(p1),'_',num2str(p2),'_',num2str(p3),'_',num2str(p4),'_',num2str(motion),'/',name]);
-stat = eval_multi_level_seg(allthesegmentations(1:end-1),gt)
-[l,m]= avglensv(allthesegmentations(1:end-1));
-save(['rseg_',num2str(g),'_',num2str(p1),'_',num2str(p2),'_',num2str(p3),'_',num2str(p4),'_',num2str(motion),'_',name],'stat','l','m');
-else
-load(['VSS_Segtrack/',name]);
-stat = eval_multi_level_seg(allthesegmentations(1:end-1),gt)
-[l,m] = avglensv(allthesegmentations(1:end-1));
-save(['rseg_baseline_',name],'stat','m','l');
+load(['rseg_',num2str(g),'_',num2str(p1),'_',num2str(p2),'_',num2str(p3),'_',num2str(p4),'_',num2str(motion),'_',name],'stat','l','m');
+while ~isempty(stat)
+    c=c+1;
+    s = s+ stat(1:36,:);
+    stat(1:36,:) = [];
 end
+else
+load(['rseg_baseline_',name],'stat','m','l');
+while ~isempty(stat)
+    c=c+1;
+    s = s+ stat(1:36,:);
+    stat(1:36,:) = [];
+end
+end
+end;
+s = s/c;
 %g=50
 %load(['VSS_Segtrack_',num2str(g),'_',num2str(p1),'_',num2str(p2),'_',num2str(p3),'_',num2str(p4),'_',num2str(motion),'/',name]);
 %stat2 = eval_multi_level_seg(allthesegmentations(1:end-1),gt)
