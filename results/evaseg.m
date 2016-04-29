@@ -12,7 +12,7 @@ c = 0;
 for i=1:14
 
 name = names{i};
-if g>0
+if nargin>0
 load(['rseg_',num2str(g),'_',num2str(p1),'_',num2str(p2),'_',num2str(p3),'_',num2str(p4),'_',num2str(motion),'_',name],'stat','l','m');
 while ~isempty(stat)
     c=c+1;

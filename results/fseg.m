@@ -3,12 +3,15 @@ addpath(genpath('../code/eval_code'));
 names ={'bird_of_paradise','birdfall','bmx','cheetah','drift','frog','girl','hummingbird','monkey','monkeydog','parachute','penguin','soldier','worm'};
 name = names{id};
 gt = ['../video/Seg/GroundTruth/', name];
-%p1 = 9;
-%p2 = 13;
-%p3 = 5;
-%p4 = 255;
-%motion = 1;
-%g=100
+if nargin ==1
+    display('default');
+p1 = 9;
+p2 = 13;
+p3 = 0;
+p4 = 255;
+motion = 0;
+g=100
+end;
 if g>0
 ['VSS_Segtrack_',num2str(g),'_',num2str(p1),'_',num2str(p2),'_',num2str(p3),'_',num2str(p4),'_',num2str(motion),'/',name]
 load(['VSS_Segtrack_',num2str(g),'_',num2str(p1),'_',num2str(p2),'_',num2str(p3),'_',num2str(p4),'_',num2str(motion),'/',name]);

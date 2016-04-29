@@ -3,11 +3,15 @@ addpath(genpath('../code/eval_code'));
 names ={'bus_fa','container_fa','garden_fa','ice_fa','paris_fa','soccer_fa','salesman_fa','stefan_fa'};
 name = names{id}
 gt = ['../video/chen/input/GT/', name,'/gt_index/'];
-%p1 = 9;
-%p2 = 13;
-%p3 = 5;
-%p4 = 255;
-%g=100
+if nargin ==1
+    display('default');
+p1 = 9;
+p2 = 13;
+p3 = 0;
+p4 = 255;
+motion = 0;
+g=50;
+end;
 if g>0
 ['VSS_chen_',num2str(g),'_',num2str(p1),'_',num2str(p2),'_',num2str(p3),'_',num2str(p4),'_',num2str(motion),'/',name]
 load(['VSS_chen_',num2str(g),'_',num2str(p1),'_',num2str(p2),'_',num2str(p3),'_',num2str(p4),'_',num2str(motion),'/',name]);
