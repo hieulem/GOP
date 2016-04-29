@@ -7,7 +7,6 @@ function [similarities,STT,LTT,ABA,ABM,STM,STA]=Getcombinedsimilarities_withnewa
 
 %Initialization
 
-
 if ~exist(filenames.affinities)
     
     STT=sparse(noallsuperpixels,noallsuperpixels); LTT=sparse(noallsuperpixels,noallsuperpixels);
@@ -191,7 +190,7 @@ if ~exist(filenames.affinities)
     save(filenames.affinities,'STT','LTT','ABA','ABM','STM','STA','wgtsimilarities','similarities','mrgmth','mrgwgt');
 else
     %@Hieu
-    disp('Loading computed affinities');
+    disp('Load computed affinities');
     load(filenames.affinities);
 end;
 if (options.usingGeH == 1)

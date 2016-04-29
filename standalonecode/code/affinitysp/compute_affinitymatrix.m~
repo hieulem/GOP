@@ -60,7 +60,7 @@ switch options.type
         end
         
         a=toc;
-        display(['Features computed in ',num2str(a)]);
+        display(['features computed in ',num2str(a)]);
         affinity_matrix = sparse(zeros(numsp,numsp));
         tic
         for i=1:numi-1
@@ -81,12 +81,12 @@ switch options.type
         for ii=1:numi
             geo_hist1d{ii} = zeros(length(seeds{ii}),options.nGeobins);
             for i=1:length(seeds{ii})
-                geo_hist1d{ii}(i,:)=histwc(squeeze(seeds_geo(ii,i,1:splist(ii)))',area{ii}.*gaussiandis{ii}(i,:),options.nGeobins,options.maxGeo);
+                geo_hist1d{ii}(i,:,:)=histwc2D(squeeze(seeds_geo(ii,i,1:splist(ii)))',seeds_color{ii}',area{ii}.*gaussiandis{ii}(i,:),options.nGeobins,options.nIntbins,options.maxGeo,options.maxInt);
             end
         end
         
         a=toc;
-        display(['Features computed in ',num2str(a)]);
+        display(['features computed in ',num2str(a)]);
         affinity_matrix = sparse(zeros(numsp,numsp));
         tic
         for i=1:numi-1

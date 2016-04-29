@@ -11,6 +11,7 @@ gehoptions.nIntbins = 13;
 gehoptions.maxGeo = 5;
 gehoptions.maxInt = 255;
 gehoptions.usingflow = 1;
+gehoptions.type = '1d';
 
 baseline =false;
 
@@ -18,10 +19,16 @@ baseline =false;
 dataset.name = 'Segtrack';
 dataset.dir = '../../video/Seg/JPEGImages';
 dataset.working_dir = '../../.VSSTemp/VSS_Segtrack/';
-dataset.res_dir = ['../../results/VSS_',dataset.name,'_',num2str(gehoptions.phi),'_' ...
-    ,num2str(gehoptions.nGeobins),'_',num2str(gehoptions.nIntbins),'_',num2str(gehoptions.maxGeo),'_',num2str(gehoptions.maxInt),'/'];
+switch gehoptions.type
+    case '2d'
+        dataset.res_dir = ['../../results/VSS_',dataset.name,'_',num2str(gehoptions.phi),'_' ...
+            ,num2str(gehoptions.nGeobins),'_',num2str(gehoptions.nIntbins),'_',num2str(gehoptions.maxGeo),'_',num2str(gehoptions.maxInt),'/'];
+    case '1d'
+        dataset.res_dir = ['../../results/VSS_1d_',dataset.name,'_',num2str(gehoptions.phi),'_' ...
+            ,num2str(gehoptions.nGeobins),num2str(gehoptions.maxGeo),'/'];
+end;
 if baseline
-    dataset.res_dir = ['../../results/VSS_',dataset.name];
+    dataset.res_dir = ['../../results/VSS_',dataset.name,'_baseline'];
 end
 dataset.flow_dir ='../../flow_data/flow_motion_default/segtrack/';
 
