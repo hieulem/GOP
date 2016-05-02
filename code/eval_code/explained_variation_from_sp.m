@@ -1,22 +1,31 @@
-function stat = explained_variation(path_sv, path_ppm)
+function stat = explained_variation_from_sp(sv_map, path_ppm)
 % stat = explained_variation(path_sv, path_ppm)
 
-[sv_map, sv_list] = read_video_supervoxels(path_sv);
-sv_list
 [I_h, I_w, frame_num] = size(sv_map);
+sv_list = zeros(size(unique(sv_map),1),frame_num+1);
+sv_list(:,1) = unique(sv_map);
+for i=1:frame_num
+    sv_list(:,i+1) = ismember(sv_list(:,1),sv_map(:,:,i));
+end
 sv_num = size(sv_list,1);
 
 dir_ppm = dir(path_ppm);
 ppm = zeros(I_h,I_w,3,frame_num);
+nf =0;
 for i=3:size(dir_ppm,1)
-%     
-     img = imread([path_ppm,'/',dir_ppm(i,1).name]);
+    if isempty(strfind(dir_ppm(i,1).name,'BroxMalik'))
+        nf= nf +1;
+        img = imread([path_ppm,'/',dir_ppm(i,1).name]);
+        if size(img,1) > I_h
+            img = imresize(img,0.5);
+        end;
 %     
 %     if size(img,3) == 1
 %         img = repmat(img, [1,1,3]);
 %     end
     
-    ppm(:,:,:,i-2) = img;
+        ppm(:,:,:,nf) = img;
+    end
 end
 
 ppm = double(ppm);

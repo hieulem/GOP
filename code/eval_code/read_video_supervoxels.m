@@ -17,7 +17,7 @@ dir_input = dir(path_input);
 
 frame = 0;
 for i=3:size(dir_input,1)
-    if strfind(dir_input(i,1).name, '.p') > 0
+    if (strfind(dir_input(i,1).name, '.p') > 0 || strfind(dir_input(i,1).name,'.jpg') > 0) 
         sv_im = imread([path_input,'/',dir_input(i,1).name]);
         frame = frame + 1;
         sv_map(:,:,frame) = rgb2idx_image(sv_im);
