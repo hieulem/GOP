@@ -48,7 +48,7 @@ if options.maxGeo ==0
     options.maxGeo= iqrTruncation ;
 end
 
-if ~exist(options.metric)
+if length(options.metric) == 0
     switch options.type
     case '2d'
         options.metric = 'chisq2d';
@@ -57,6 +57,7 @@ if ~exist(options.metric)
     end;
 end;
 
+display(['Metric: ',options.metric]);
 switch options.type
     case '2d'
         display(['Feature type: geodesic-intensity']);
@@ -71,19 +72,18 @@ switch options.type
         a=toc;
         display(['Features computed in ',num2str(a)]);
         affinity_matrix = sparse(zeros(numsp,numsp));
-        tic
+        
         for i=1:numi-1
             hist_dist_o = mypdist2(geo_hist2d{i},geo_hist2d{i+1},options.metric);
             affinity_matrix((cumspn(i)+1) : cumspn(i+1),(cumspn(i+1)+1) : cumspn(i+2)) = hist_dist_o;
             affinity_matrix((cumspn(i+1)+1) : cumspn(i+2),(cumspn(i)+1) : cumspn(i+1)) = hist_dist_o';
         end
-        toc
-        tic
+
         for i=1:numi
             hist_dist_o = mypdist2(geo_hist2d{i},geo_hist2d{i},options.metric);
             affinity_matrix((cumspn(i)+1) : cumspn(i+1),(cumspn(i)+1) : cumspn(i+1)) = hist_dist_o;
         end
-        toc
+
     case '1d'
         display(['Feature type: geodesic']);
         geo_hist1d = cell(numi,1);
@@ -103,13 +103,12 @@ switch options.type
             affinity_matrix((cumspn(i)+1) : cumspn(i+1),(cumspn(i+1)+1) : cumspn(i+2)) = hist_dist_o;
             affinity_matrix((cumspn(i+1)+1) : cumspn(i+2),(cumspn(i)+1) : cumspn(i+1)) = hist_dist_o';
         end
-        toc
-        tic
+
         for i=1:numi
             hist_dist_o = mypdist2(geo_hist1d{i},geo_hist1d{i},options.metric);
             affinity_matrix((cumspn(i)+1) : cumspn(i+1),(cumspn(i)+1) : cumspn(i+1)) = hist_dist_o;
         end
-        toc
+ 
 end
 end
 

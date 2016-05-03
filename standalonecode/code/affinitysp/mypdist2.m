@@ -1,4 +1,4 @@
-function D = pdist2( X, Y, metric )
+function D = mypdist2( X, Y, metric )
 % Calculates the distance between sets of vectors.
 %
 % Let X be an m-by-p matrix representing m points in p-dimensional space
@@ -80,6 +80,8 @@ switch metric
     D = distChiSq2D( X, Y );
   case 'eucsq2d'
     D = distEucSq2D(X,Y);
+  case 'emd2d'
+    D= distEmd2d(X,Y);
   otherwise
     error(['pdist2 - unknown metric: ' metric]);
 end
@@ -113,6 +115,16 @@ for i=1:n
   D(:,i) = sum(abs(Xcdf - ycdfRep),2);
 end
 end
+
+function D = distEmd2d( X, Y )
+m = size(X,1);  n = size(Y,1);
+nc = size(X,2);
+D = zeros(m,n);
+for i=1:nc
+    D = D+ distEmd(squeeze(X(:,i,:)),squeeze(Y(:,i,:)));
+end
+end
+
 
 function D = distChiSq( X, Y )
 % note: supposedly it's possible to implement this without a loop!
@@ -148,8 +160,9 @@ D(D<0) = 0;
 end
 
 function D = distEucSq2D(X2,Y2)
-X = X2(:);
-Y = Y2(:);
+m = size(X2,1);  n = size(Y2,1);
+X = reshape(X2,m,[]);
+Y = reshape(Y2,n,[]);
 D = distEucSq(X,Y);
 end
 

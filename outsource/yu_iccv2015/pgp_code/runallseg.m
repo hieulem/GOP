@@ -1,7 +1,9 @@
-function [s ] = runall( idx )
+function [s ] = runallseg( idx )
 %directory settings
 
 option.dataset = 1;  %1:segtrack,%2:chen
+
+
 addpath('./ers_matlab_wrapper_v0.2.1');
 addpath(genpath('../../../standalonecode/code/'));
 addpath(genpath('../../../standalonecode/outsource/'));
@@ -21,38 +23,31 @@ option.subVolume = 4; %how many sub-volumes to split the video for processing.
 %into sub-volumes. recommanded is to use 4 or 8 for a
 %85-frame video, 4 for shorter videos (< 50 frames)
 %and 8 for longer.
-option.useMotion = 0; %1 or 0 for using motion feature or not. if set to 1,
-%make sure the pre-extracted motion optic flow .mat
-%follows the same format as the provided bmx.mat file.
-%we used [22] as our optic flow feature, code can be
-%found here: http://cs.brown.edu/people/dqsun/research/software.html
-%under 'matlab code for method in our cvpr 2010'.
-%without motion is preferrable, as optic flow is
-%expensive to compute, and our result did not show an
-%advantage when optic-flow feature was used.
-option.fitMethod = 2; %1 = MLE, 2 = nonlinear least square (NLS). MLE tend
-%to produce less spatio-temporal segments, while NLS
-%produces more detailed segmentation.
-option.toShow = 0; %1 or 0, set to 1 will display lots of intermediate model
-%fitting results, mostly for debugging.
+option.useMotion = 0; 
+option.fitMethod = 2; 
+option.toShow = 0; 
+
 numv = [14,8];
 
 splist = [100,200,300,400];
-geol=[1];
+geol=[1,0];
+metricl = {'emd2d','eucsq2d'};
+i = myind2sub([numv(option.dataset),1,4],idx,4);
 
-i = myind2sub([numv(option.dataset),1,4],idx,3);
-
+%unpack the idx
 id =i(1);
-option.useGeo= geol(i(2));
+option.useGeo= 0;% geol(i(2));
 option.numSP = splist(i(3)) %number of superpixels to extract per frame
-gehoptions.metric = 'eucsq2d';
+gehoptions.metric = metricl{1}; %
+
+
 gehoptions.phi = 100;
 gehoptions.nGeobins = 9;
 gehoptions.nIntbins = 13;
 gehoptions.maxGeo = 5;
 gehoptions.maxInt = 255;
 gehoptions.usingflow = 0;
-gehoptions.type = '2d';
+gehoptions.type = '2d'
 
 switch option.dataset
     case 1
@@ -74,20 +69,21 @@ switch option.dataset
         outputs = pgpMain2(option,gehoptions);
         thesegmentation = outputs{1};
         s = eval_one_level_seg(thesegmentation,gt)
+        nvx= numel(unique(thesegmentation))
        
         if option.useGeo ==0
             savename= ['bl_', num2str(option.numSP),'_',name];
-            save([savepath,savename], 'thesegmentation','s');
+            save([savepath,savename], 'thesegmentation','s','nvx');
         else
             switch gehoptions.type
                 case '1d'
-                    savename= ['eu1d_', num2str(option.numSP),'_',num2str(gehoptions.phi),'_',...
+                    savename= [gehoptions.metric,'_', num2str(option.numSP),'_',num2str(gehoptions.phi),'_',...
                         num2str(gehoptions.nGeobins),'_', num2str(gehoptions.maxGeo),'_', num2str(gehoptions.usingflow),'_',name];
-                    save([savepath,savename], 'thesegmentation','s');
+                    save([savepath,savename], 'thesegmentation','s','nvx');
                 case '2d'
-                    savename= ['eu2d_',num2str(option.numSP),'_',num2str(gehoptions.phi),'_',num2str(gehoptions.nGeobins),'_',...
+                    savename= [gehoptions.metric,'_',num2str(option.numSP),'_',num2str(gehoptions.phi),'_',num2str(gehoptions.nGeobins),'_',...
                         num2str(gehoptions.nIntbins),'_', num2str(gehoptions.maxGeo),'_',num2str(gehoptions.maxInt),'_', num2str(gehoptions.usingflow),'_',name];
-                    save([savepath,savename], 'thesegmentation','s');
+                    save([savepath,savename], 'thesegmentation','s','nvx');
             end
         end
             
@@ -109,21 +105,21 @@ switch option.dataset
 
         outputs = pgpMain2(option,gehoptions);
         thesegmentation = outputs{1};
-        s = eval_one_level_chen(thesegmentation,gt);
-        
+        s = eval_one_level_chen(thesegmentation,gt)
+        nvx= numel(unique(thesegmentation))
         if option.useGeo ==0
             savename= ['bl_', num2str(option.numSP),'_',name];
-            save([savepath,savename], 'thesegmentation','s');
+            save([savepath,savename], 'thesegmentation','s','nvx');
         else
             switch gehoptions.type
                 case '1d'
-                    savename= ['eu1d_', num2str(option.numSP),'_',num2str(gehoptions.phi),'_',...
+                    savename= [gehoptions.metric,'_', num2str(option.numSP),'_',num2str(gehoptions.phi),'_',...
                         num2str(gehoptions.nGeobins),'_', num2str(gehoptions.maxGeo),'_', num2str(gehoptions.usingflow),'_',name];
-                    save([savepath,savename], 'thesegmentation','s');
+                    save([savepath,savename], 'thesegmentation','s','nvx');
                 case '2d'
-                    savename= ['eu2d_',num2str(option.numSP),'_',num2str(gehoptions.phi),'_',num2str(gehoptions.nGeobins),'_'...
+                    savename= [gehoptions.metric,'_',num2str(option.numSP),'_',num2str(gehoptions.phi),'_',num2str(gehoptions.nGeobins),'_'...
                     num2str(gehoptions.nIntbins),'_', num2str(gehoptions.maxGeo),'_',num2str(gehoptions.maxInt),'_', num2str(gehoptions.usingflow),'_',name];
-                    save([savepath,savename], 'thesegmentation','s');
+                    save([savepath,savename], 'thesegmentation','s','nvx');
                     
             end
         end
