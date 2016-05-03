@@ -5,7 +5,7 @@
 %
 %
 
-function output = pgpMain2(option)
+function output = pgpMain2(option,gehoptions)
 
 percentile = 0.6;
 inputDIR = option.inputDIR;
@@ -339,7 +339,13 @@ for i = 1:length(inputImgG);
 end
 
 maxLabels = max(max(labels(:,:,end)));
-geoAff = rand(maxLabels, maxLabels);
+if option.useGeo ==1
+    geoAff = sparse(maxLabels,maxLabels);
+    geoAff = full(wrapperforVSS( labels,inputImg,[],gehoptions));
+else 
+    geoAff = rand(maxLabels, maxLabels);
+end
+
 if maxM > 0
     [from, to, wi, wc, wo, wl, wg] = populateAffin_old(labelsList, maxLabels, spNeighbor, spList, inputImgG, hueImg, satImg, mag, angles, labelCentroids1, uv1, uv2, geoAff);
 else
