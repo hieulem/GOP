@@ -78,6 +78,8 @@ switch metric
     D = distChiSq( X, Y );
   case 'chisq2d'
     D = distChiSq2D( X, Y );
+  case 'eucsq2d'
+    D = distEucSq2D(X,Y);
   otherwise
     error(['pdist2 - unknown metric: ' metric]);
 end
@@ -143,6 +145,12 @@ XX = sum(X.*X,2);
 YY = sum(Yt.*Yt,1);
 D = bsxfun(@plus,XX,YY)-2*X*Yt;
 D(D<0) = 0;
+end
+
+function D = distEucSq2D(X2,Y2)
+X = X2(:);
+Y = Y2(:);
+D = distEucSq(X,Y);
 end
 
 %%%% code from Charles Elkan with variables renamed

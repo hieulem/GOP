@@ -48,6 +48,15 @@ if options.maxGeo ==0
     options.maxGeo= iqrTruncation ;
 end
 
+if ~exist(options.metric)
+    switch options.type
+    case '2d'
+        options.metric = 'chisq2d';
+    case '1d'
+        options.metric = 'chisq';
+    end;
+end;
+
 switch options.type
     case '2d'
         display(['Feature type: geodesic-intensity']);
@@ -64,14 +73,14 @@ switch options.type
         affinity_matrix = sparse(zeros(numsp,numsp));
         tic
         for i=1:numi-1
-            hist_dist_o = mypdist2(geo_hist2d{i},geo_hist2d{i+1},'chisq2d');
+            hist_dist_o = mypdist2(geo_hist2d{i},geo_hist2d{i+1},options.metric);
             affinity_matrix((cumspn(i)+1) : cumspn(i+1),(cumspn(i+1)+1) : cumspn(i+2)) = hist_dist_o;
             affinity_matrix((cumspn(i+1)+1) : cumspn(i+2),(cumspn(i)+1) : cumspn(i+1)) = hist_dist_o';
         end
         toc
         tic
         for i=1:numi
-            hist_dist_o = mypdist2(geo_hist2d{i},geo_hist2d{i},'chisq2d');
+            hist_dist_o = mypdist2(geo_hist2d{i},geo_hist2d{i},options.metric);
             affinity_matrix((cumspn(i)+1) : cumspn(i+1),(cumspn(i)+1) : cumspn(i+1)) = hist_dist_o;
         end
         toc
@@ -90,14 +99,14 @@ switch options.type
         affinity_matrix = sparse(zeros(numsp,numsp));
         tic
         for i=1:numi-1
-            hist_dist_o = mypdist2(geo_hist1d{i},geo_hist1d{i+1},'chisq');
+            hist_dist_o = mypdist2(geo_hist1d{i},geo_hist1d{i+1},options.metric);
             affinity_matrix((cumspn(i)+1) : cumspn(i+1),(cumspn(i+1)+1) : cumspn(i+2)) = hist_dist_o;
             affinity_matrix((cumspn(i+1)+1) : cumspn(i+2),(cumspn(i)+1) : cumspn(i+1)) = hist_dist_o';
         end
         toc
         tic
         for i=1:numi
-            hist_dist_o = mypdist2(geo_hist1d{i},geo_hist1d{i},'chisq');
+            hist_dist_o = mypdist2(geo_hist1d{i},geo_hist1d{i},options.metric);
             affinity_matrix((cumspn(i)+1) : cumspn(i+1),(cumspn(i)+1) : cumspn(i+1)) = hist_dist_o;
         end
         toc

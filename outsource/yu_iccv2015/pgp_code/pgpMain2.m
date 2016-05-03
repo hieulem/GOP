@@ -225,20 +225,20 @@ for i = 1:numFrames
     
     %save the pixel list for every superpixel
     
-    if v < 2015
-		[B1,I1,J1] = unique(labels(:,:,i));
-    else
+%    if v < 2015
+%		[B1,I1,J1] = unique(labels(:,:,i));
+%    else
 		[B1,I1,J1] = unique(labels(:,:,i), 'legacy');
-    end
+%    end
     %%
     J1(:,2) = 1:rowSize*colSize;
     J1 = sortrows(J1,1);
     
-    if v < 2015
-		[B2,I2,J2] = unique(J1(:,1));
-    else
+%    if v < 2015
+%		[B2,I2,J2] = unique(J1(:,1));
+%    else
 		[B2,I2,J2] = unique(J1(:,1), 'legacy');
-	end
+%	end
     
     t = 0;
     t(2:length(I2),1) = I2(1:end-1);
@@ -341,7 +341,10 @@ end
 maxLabels = max(max(labels(:,:,end)));
 if option.useGeo ==1
     geoAff = sparse(maxLabels,maxLabels);
-    geoAff = full(wrapperforVSS( labels,inputImg,[],gehoptions));
+%    size(labels)
+%    size(inputImg)
+%    gehoptions
+    geoAff = full(wrapperforVSS(labels,inputImg,[],gehoptions));
 else 
     geoAff = rand(maxLabels, maxLabels);
 end

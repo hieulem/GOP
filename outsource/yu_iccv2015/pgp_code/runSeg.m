@@ -7,7 +7,7 @@ addpath('./ers_matlab_wrapper_v0.2.1');
 option.spType = 'ers'; %the superpixel algorithm. can be either 'ers' or 'other',
 %ers is the method we used, or you can use other
 %method, and implement line 158-161 in pgpMain2.m
-option.numSP = 400; %number of superpixels to extract per frame
+option.numSP = 200; %number of superpixels to extract per frame
 option.sampleRate = 0.5; %For additional run-time speed up. can be betwee
 %0.001 ~ 1 (percentage), the smaller number the
 %faster, but may be less accurate. our experiment
@@ -33,7 +33,7 @@ option.fitMethod = 2; %1 = MLE, 2 = nonlinear least square (NLS). MLE tend
 option.toShow = 0; %1 or 0, set to 1 will display lots of intermediate model
 %fitting results, mostly for debugging.
 option.useGeo= 0;
-option.dataset = 2;  %1:segtrack,%2:chen
+option.dataset = 1;  %1:segtrack,%2:chen
 
 switch option.dataset
     case 1
