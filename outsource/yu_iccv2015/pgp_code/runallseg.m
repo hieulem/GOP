@@ -8,38 +8,28 @@ addpath('./ers_matlab_wrapper_v0.2.1');
 addpath(genpath('../../../standalonecode/code/'));
 addpath(genpath('../../../standalonecode/outsource/'));
 
-%% input options, for more detailed parameter info please check the paper.
 option.spType = 'ers'; %the superpixel algorithm. can be either 'ers' or 'other',
-%ers is the method we used, or you can use other
-%method, and implement line 158-161 in pgpMain2.m
 
 option.sampleRate = 0.5; %For additional run-time speed up. can be betwee
-%0.001 ~ 1 (percentage), the smaller number the
-%faster, but may be less accurate. our experiment
-%on segTrack v2 showed that accuracy did not vary
-%when set at 0.01, with 2x additional speed-up.
 option.subVolume = 4; %how many sub-volumes to split the video for processing.
-%can be any positive integether, 1 means no splitting
-%into sub-volumes. recommanded is to use 4 or 8 for a
-%85-frame video, 4 for shorter videos (< 50 frames)
-%and 8 for longer.
 option.useMotion = 0; 
 option.fitMethod = 2; 
 option.toShow = 0; 
-
-numv = [14,8];
+option.usePCA = 0;
 
 splist = [100,200,300,400];
-geol=[1,0];
 metricl = {'emd2d','eucsq2d'};
-i = myind2sub([numv(option.dataset),1,4],idx,4);
 
+i = myind2sub([14,1,4],idx,3);
+
+
+%ii=[6,14];
 %unpack the idx
 id =i(1);
 option.useGeo= 0;% geol(i(2));
 option.numSP = splist(i(3)) %number of superpixels to extract per frame
-gehoptions.metric = metricl{1}; %
 
+gehoptions.metric = metricl{i(2)}; %
 
 gehoptions.phi = 100;
 gehoptions.nGeobins = 9;
@@ -54,8 +44,8 @@ switch option.dataset
         
         names ={'bird_of_paradise','birdfall','bmx','cheetah','drift','frog','girl','hummingbird','monkey','monkeydog','parachute','penguin','soldier','worm'};
         name = names{id}
-        gt = ['../../../video/Seg/GroundTruth/', name];
-        dataset.dir = '../../../video/Seg/JPEGImages/';
+        gt = ['../../../video/SegTrackv2/GroundTruth/', name];
+        dataset.dir = '../../../video/SegTrackv2/JPEGImages/';
         
         option.inputDIR = [dataset.dir,name,'/']; %the directory that contains the input rgb frames.
         option.motionMat = ['./data/SegTrackv2/motions/',name]; %the optic-flow file, set as [] if not using motion.
@@ -66,7 +56,7 @@ switch option.dataset
         if ~exist(savepath)
             mkdir(savepath)
         end;
-        outputs = pgpMain2(option,gehoptions);
+        outputs = pgpMain3(option,gehoptions);
         thesegmentation = outputs{1};
         s = eval_one_level_seg(thesegmentation,gt)
         nvx= numel(unique(thesegmentation))
@@ -103,7 +93,7 @@ switch option.dataset
             mkdir(savepath)
         end;
 
-        outputs = pgpMain2(option,gehoptions);
+        outputs = pgpMain3(option,gehoptions);
         thesegmentation = outputs{1};
         s = eval_one_level_chen(thesegmentation,gt)
         nvx= numel(unique(thesegmentation))

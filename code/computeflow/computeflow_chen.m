@@ -15,15 +15,15 @@ addpath(genpath('../../outsource/flow_code_v2'));
 addpath(genpath('../../outsource/toolbox-master'));
 addpath(genpath('../../outsource/MotionBoundariesCode_v1.0'));
 %i=1;
-video_name = video_info{i}.name;
-flowpath = ['../../flow_data/flow_motion_default/chen/' video_name];
+video_name = video_info{i}.name
+flowpath = ['../../flow_data/flow_motion_default/chen/'];
 flowfile = ['flow',video_name];
 video_path = video_info{i}.path;
 a=pwd;cd(video_path);imlist = dir('*.png');
-tmp = imresize(imread(imlist(1).name),0.5);
+tmp = imread(imlist(1).name);
 img = zeros(size(tmp,1),size(tmp,2),3,length(imlist));
 for j=1:length(imlist)
-    img(:,:,:,j) = imresize(imread(imlist(j).name),0.5);
+    img(:,:,:,j) = imread(imlist(j).name);
 end
 cd(a);
 [motionboundaries,~] = computeflowandmotionb( img,flowpath,flowfile );

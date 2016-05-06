@@ -10,25 +10,29 @@ s =zeros(36,4);
 sm = zeros(36,1);
 sl = zeros(36,1);
 c=0;
+prefix1 = 'matresult/chisq_rchen_';
+prefix2 = 'combined_res_';
+
 switch nargin
 case 6
     for i=1:8
         name = names{i};
-        load(['matresult/rchen_',num2str(g),'_',num2str(p1),'_',num2str(p2),'_',num2str(p3),'_',num2str(p4),'_',num2str(motion),'_',name],'stat','l','m');
+        load([prefix1,num2str(g),'_',num2str(p1),'_',num2str(p2),'_',num2str(p3),'_',num2str(p4),'_',num2str(motion),'_',name],'stat','l','m');
         s = s+ stat;
         sl = sl + l;
         sm = sm +m;
     end;
     s=s/8;sl = sl/8;
     sm = sm/8;
-    s;       
-    save(['rallchen_',num2str(g),'_',num2str(p1),'_',num2str(p2),'_',num2str(p3),'_',num2str(p4),'_',num2str(motion)],'s','sm','sl');
+    s=[s,sl] ;       
+    save([prefix2,num2str(g),'_',num2str(p1),'_',num2str(p2),'_',num2str(p3),'_',num2str(p4),'_',num2str(motion)],'s','sm','sl');
+
 case 0
 
 %baseline
     for i=1:8
         name = names{i};
-        load(['matresult/rchen_baseline_',name],'stat','l','m');
+        load([prefix1,'baseline_',name],'stat','l','m');
         s = s+stat;
         sm = sm + m;
         sl = sl+l;
@@ -36,23 +40,23 @@ case 0
     s = s/8;
     sm = sm/8;
     sl = sl/8;
-    save('rallchen_baseline','s','sm','sl');
+    s =[s,sl];
+    save([prefix2,'baseline'],'s','sm','sl');
 case 3
    for i=1:8
         name = names{i};
-        load(['matresult/rchen_1d_',num2str(g),'_',num2str(p1),'_',num2str(p2),'_',name],'stat','l','m');
+        load([prefix1,'1d_',num2str(g),'_',num2str(p1),'_',num2str(p2),'_',name],'stat','l','m');
         s = s+ stat;
         sl = sl + l;
         sm = sm +m;
     end;
     s=s/8;sl = sl/8;
     sm = sm/8;
-    s ;      
-    save(['rallchen_1d_',num2str(g),'_',num2str(p1),'_',num2str(p2)],'s','sm','sl');
+    s =[s,sl];      
+    save([prefix2,'chen_1d_',num2str(g),'_',num2str(p1),'_',num2str(p2)],'s','sm','sl');
 end
 %s= [stat1,stat2,stat3]
 %l=[l1,l2,l3];
 %m=[m1,m2,m3];
 %save(['rchen_',num2str(p1),'_',num2str(p2),'_',num2str(p3),'_',num2str(p4),'_',num2str(motion),'_',name]);
-s = [s,sm,sl];
 end

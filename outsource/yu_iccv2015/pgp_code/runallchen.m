@@ -26,22 +26,22 @@ option.subVolume = 4; %how many sub-volumes to split the video for processing.
 option.useMotion = 0; 
 option.fitMethod = 2; 
 option.toShow = 0; 
-
+option.usePCA =0;
+option.useGeo= 1;% geol(i(2));
 numv = [14,8];
 
-splist = [100,200,300,400];
-geol=[1,0];
 metricl = {'emd2d','eucsq2d'};
-i = myind2sub([numv(option.dataset),1,4],idx,4);
+%splist = [100,200,300,400];
+splist = [100,200,300,400];
+i = myind2sub([8,2,4],idx,3);
 
 %unpack the idx
 id =i(1);
-option.useGeo= 0;% geol(i(2));
 option.numSP = splist(i(3)) %number of superpixels to extract per frame
-gehoptions.metric = metricl{1}; %
+gehoptions.metric = metricl{i(2)}; %
 
 
-gehoptions.phi = 100;
+gehoptions.phi = 50;
 gehoptions.nGeobins = 9;
 gehoptions.nIntbins = 13;
 gehoptions.maxGeo = 5;
@@ -73,7 +73,10 @@ switch option.dataset
        
         if option.useGeo ==0
             savename= ['bl_', num2str(option.numSP),'_',name];
-            save([savepath,savename], 'thesegmentation','s','nvx');
+            if option.usePCA ==1
+                   savename =['PCA',savename];
+            end
+           save([savepath,savename], 'thesegmentation','s','nvx');
         else
             switch gehoptions.type
                 case '1d'
@@ -83,6 +86,9 @@ switch option.dataset
                 case '2d'
                     savename= [gehoptions.metric,'_',num2str(option.numSP),'_',num2str(gehoptions.phi),'_',num2str(gehoptions.nGeobins),'_',...
                         num2str(gehoptions.nIntbins),'_', num2str(gehoptions.maxGeo),'_',num2str(gehoptions.maxInt),'_', num2str(gehoptions.usingflow),'_',name];
+                    if option.usePCA ==1
+                        savename =['PCA',savename];
+                    end
                     save([savepath,savename], 'thesegmentation','s','nvx');
             end
         end
@@ -109,16 +115,31 @@ switch option.dataset
         nvx= numel(unique(thesegmentation))
         if option.useGeo ==0
             savename= ['bl_', num2str(option.numSP),'_',name];
+            if option.usePCA ==1
+                savename =['PCA',savename];
+            end
+
             save([savepath,savename], 'thesegmentation','s','nvx');
         else
             switch gehoptions.type
                 case '1d'
                     savename= [gehoptions.metric,'_', num2str(option.numSP),'_',num2str(gehoptions.phi),'_',...
                         num2str(gehoptions.nGeobins),'_', num2str(gehoptions.maxGeo),'_', num2str(gehoptions.usingflow),'_',name];
+                    
+                    if option.usePCA ==1
+                        savename =['PCA',savename];
+                    end
+
                     save([savepath,savename], 'thesegmentation','s','nvx');
                 case '2d'
                     savename= [gehoptions.metric,'_',num2str(option.numSP),'_',num2str(gehoptions.phi),'_',num2str(gehoptions.nGeobins),'_'...
                     num2str(gehoptions.nIntbins),'_', num2str(gehoptions.maxGeo),'_',num2str(gehoptions.maxInt),'_', num2str(gehoptions.usingflow),'_',name];
+
+                    if option.usePCA ==1
+                        savename =['PCA',savename];
+                    end
+
+
                     save([savepath,savename], 'thesegmentation','s','nvx');
                     
             end

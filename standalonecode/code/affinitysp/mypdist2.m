@@ -118,10 +118,10 @@ end
 
 function D = distEmd2d( X, Y )
 m = size(X,1);  n = size(Y,1);
-nc = size(X,2);
+nc = size(X,3);
 D = zeros(m,n);
 for i=1:nc
-    D = D+ distEmd(squeeze(X(:,i,:)),squeeze(Y(:,i,:)));
+    D = D+ distEmd(squeeze(X(:,:,i)),squeeze(Y(:,:,i)));
 end
 end
 

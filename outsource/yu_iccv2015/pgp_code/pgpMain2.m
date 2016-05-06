@@ -44,7 +44,7 @@ maxM = option.useMotion;
 maxO = 1; 
 maxGeo = option.useGeo;
 searchMode = 'mid'; 
-isPCA = 0;
+isPCA = option.usePCA;
 
 
 t0 = tic;
