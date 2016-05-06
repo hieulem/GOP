@@ -37,13 +37,13 @@ spType = option.spType;
 numSP = option.numSP;
 fitMethod = option.fitMethod;
 toShow = option.toShow;
-maxInt = 1; 
+maxInt = 1;
 maxHue = 0.5;
-maxLab = 0.5; 
-maxM = option.useMotion; 
-maxO = 1; 
+maxLab = 0.5;
+maxM = option.useMotion;
+maxO = 1;
 maxGeo = option.useGeo;
-searchMode = 'mid'; 
+searchMode = 'mid';
 isPCA = option.usePCA;
 
 
@@ -116,77 +116,71 @@ count = 1;
 tic
 
 %pre-processing step
-for i = 1:numFrames
-    [i, numFrames];
-    
-    %     system(['RollingGuidanceFilter -i ', inputDIR, inFrames(doFrames(i)).name, ' -o out.png -iter 7']);
-    
-    inputImg{i,1} = imread([inputDIR, inFrames(doFrames(i)).name]);
-    %     inputImg{i,1} = imread('out.png');
-    %figure, imshow(inputImg{i,1});
-    
-    %     if size(inputImg{i,1},1) > size(inputImg{i,1},2) & size(inputImg{i,1},1) > 400 & toResize == 1
-    %         inputImg{i,1} = imresize(inputImg{i,1}, [ 400 NaN]);
-    %     elseif size(inputImg{i,1},2) > size(inputImg{i,1},1) & size(inputImg{i,1},2) > 400 & toResize == 1
-    %         inputImg{i,1} = imresize(inputImg{i,1}, [ NaN 400]);
-    %     end
-    
-    %     inputImg{i,1} = t(1:rowSize, 1:colSize,:);
-    inputImg{i,1}=imresize(inputImg{i,1},[240,NaN]);
-    
-    inputImgG{i} = double(rgb2gray(inputImg{i,1}))./255;
-    
-    %% get the hue image
-    labImg = RGB2Lab(inputImg{i,1});
-    lImg{i} = labImg(:,:,1);
-    aImg{i} = labImg(:,:,2);
-    bImg{i} = labImg(:,:,3);
-    
-    hueImg{i} = rgb2hue(inputImg{i,1});  %hue
-    hsvImg = rgb2hsv(inputImg{i,1});
-    satImg{i} = hsvImg(:,:,2);  %saturation
-    
-    %turn into bicone
-    satImg{i} = biconeSat(satImg{i}, lImg{i}); %try using L from lab for lightness measure
-    
-    labels(:,:,i) = currCount;
-    
-    %if it is a greyscale image
-    if (size(inputImg{i,1},3) == 1)
-        inputImg{i,1}(:,:,2) = inputImg{i,1}(:,:,1);
-        inputImg{i,1}(:,:,3) = inputImg{i,1}(:,:,1);
+%check if it has been done before
+if ~isempty(options.tmpfile)
+    load(option.tmpfile)
+else
+    for i = 1:numFrames
+        [i, numFrames];
+        inputImg{i,1} = imread([inputDIR, inFrames(doFrames(i)).name]);
+        inputImg{i,1}=imresize(inputImg{i,1},[240,NaN]);
+        inputImgG{i} = double(rgb2gray(inputImg{i,1}))./255;
+        
+        %% get the hue image
+        labImg = RGB2Lab(inputImg{i,1});
+        lImg{i} = labImg(:,:,1);
+        aImg{i} = labImg(:,:,2);
+        bImg{i} = labImg(:,:,3);
+        
+        hueImg{i} = rgb2hue(inputImg{i,1});  %hue
+        hsvImg = rgb2hsv(inputImg{i,1});
+        satImg{i} = hsvImg(:,:,2);  %saturation
+        
+        %turn into bicone
+        satImg{i} = biconeSat(satImg{i}, lImg{i}); %try using L from lab for lightness measure
+        
+        labels(:,:,i) = currCount;
+        
+        %if it is a greyscale image
+        if (size(inputImg{i,1},3) == 1)
+            inputImg{i,1}(:,:,2) = inputImg{i,1}(:,:,1);
+            inputImg{i,1}(:,:,3) = inputImg{i,1}(:,:,1);
+        end
+        
+        if strcmp(spType, 'ers') == 1
+            
+            %get the superpixels using Entropy Rate Superpixel
+            tempL = mex_ers(double(inputImg{i,1}),numSP);
+            
+        else
+            
+            %** extract superpixels from other method.
+            %** make sure tempL is being set as a gray-scale label file.
+            %** INSERT YOUR CODE HERE **%
+            
+        end
+        
+        if min(min(tempL)) == 0
+            tempL = tempL + 1;
+        end
+        
+        labels(:,:,i) = labels(:,:,i) + tempL;
+        %inputImg{i,1} = double(inputImg{i,1});
+        
+        %compute gradient orientations
+        [grad_xr, grad_yu] = gradient(double(rgb2gray(inputImg{i,1})));
+        mag{i}= sqrt(grad_xr.^2 + grad_yu.^2);
+        angles{i} = atan2(grad_xr, grad_yu);
+        
+        labelsList(i) = max(max(labels(:,:,i)));
+        inputImg{i,1} = double(inputImg{i,1});
+        currCount = max(max(labels(:,:,i)));
+        count = count + 1;
     end
     
-    if strcmp(spType, 'ers') == 1
-        
-        %get the superpixels using Entropy Rate Superpixel
-        tempL = mex_ers(double(inputImg{i,1}),numSP);
-        
-    else
-        
-        %** extract superpixels from other method.
-        %** make sure tempL is being set as a gray-scale label file.
-        %** INSERT YOUR CODE HERE **%
-        
-    end
-    
-    if min(min(tempL)) == 0
-        tempL = tempL + 1;
-    end
-    
-    labels(:,:,i) = labels(:,:,i) + tempL;
-    %inputImg{i,1} = double(inputImg{i,1});
-    
-    %compute gradient orientations
-    [grad_xr, grad_yu] = gradient(double(rgb2gray(inputImg{i,1})));
-    mag{i}= sqrt(grad_xr.^2 + grad_yu.^2);
-    angles{i} = atan2(grad_xr, grad_yu);
-    
-    labelsList(i) = max(max(labels(:,:,i)));
-    inputImg{i,1} = double(inputImg{i,1});
-    currCount = max(max(labels(:,:,i)));
-    count = count + 1;
-end
+    save(option.tmpfile,'inputImg','inputImgG','labImg','lImg','aImg','bImg','hueImg','satImg',...
+            'labels
+end;
 
 
 disp(sprintf('done, %.2f sec\n', toc(tE)));
@@ -225,20 +219,20 @@ for i = 1:numFrames
     
     %save the pixel list for every superpixel
     
-%    if v < 2015
-%		[B1,I1,J1] = unique(labels(:,:,i));
-%    else
-		[B1,I1,J1] = unique(labels(:,:,i), 'legacy');
-%    end
+    %    if v < 2015
+    %		[B1,I1,J1] = unique(labels(:,:,i));
+    %    else
+    [B1,I1,J1] = unique(labels(:,:,i), 'legacy');
+    %    end
     %%
     J1(:,2) = 1:rowSize*colSize;
     J1 = sortrows(J1,1);
     
-%    if v < 2015
-%		[B2,I2,J2] = unique(J1(:,1));
-%    else
-		[B2,I2,J2] = unique(J1(:,1), 'legacy');
-%	end
+    %    if v < 2015
+    %		[B2,I2,J2] = unique(J1(:,1));
+    %    else
+    [B2,I2,J2] = unique(J1(:,1), 'legacy');
+    %	end
     
     t = 0;
     t(2:length(I2),1) = I2(1:end-1);
@@ -339,22 +333,22 @@ for i = 1:length(inputImgG);
 end
 
 maxLabels = max(max(labels(:,:,end)));
-if option.useGeo ==1
-    geoAff = sparse(maxLabels,maxLabels);
-%    size(labels)
-%    size(inputImg)
-%    gehoptions
-    geoAff = exp(-full(wrapperforVSS(labels,inputImg,[],gehoptions)));
-else 
-    geoAff = rand(maxLabels, maxLabels);
-end
 
 if maxM > 0
-    [from, to, wi, wc, wo, wl, wg] = populateAffin_old(labelsList, maxLabels, spNeighbor, spList, inputImgG, hueImg, satImg, mag, angles, labelCentroids1, uv1, uv2, geoAff);
+    [from, to, wi, wc, wo, wl] = populateAffin_old(labelsList, maxLabels, spNeighbor, spList, inputImgG, hueImg, satImg, mag, angles, labelCentroids1, uv1, uv2);
 else
-    [from, to, wi, wc, wo, wl, wg] = populateAffin_noMotion(labelsList, maxLabels, spNeighbor, spList, inputImgG, hueImg, satImg, mag, angles, labelCentroids1, geoAff);
+    [from, to, wi, wc, wo, wl] = populateAffin_noMotion(labelsList, maxLabels, spNeighbor, spList, inputImgG, hueImg, satImg, mag, angles, labelCentroids1);
 end
 %[~, ~, wcHue] = populateAffin_hue(labelsList, maxLabels, spNeighbor, spList, hueImg);
+
+if option.useGeo ==1
+    geoAff = sparse(maxLabels,maxLabels);
+    geoAff = wrapperforVSS(labels,inputImg,[],gehoptions);
+    indx = sub2ind([maxLabels,maxLabels],from,to);
+    wg = full(geoAff(indx));
+else
+    wg= rand(length(from),1);
+end
 
 if maxLab > 0
     minA = min(min(min(cell2mat(aImg))));
@@ -452,7 +446,7 @@ end
 %     [coeff, score, variances] = princomp([(wi-mean(wi))./std(wi), (wc-mean(wc))./std(wc), (wo-mean(wo))./std(wo), (wcLAB-mean(wcLAB))./std(wcLAB), (wm-mean(wm))./std(wm), (wl-mean(wl))./std(wl) ]);
 %     totalVal = (wi-mean(wi))./std(wi).*coeff(1,1) + (wc-mean(wc))./std(wc).*coeff(2,1) + (wo-mean(wo))./std(wo).*coeff(3,1) + (wcLAB-mean(wcLAB))./std(wcLAB).*coeff(4,1) + (wm-mean(wm))./std(wm).*coeff(5,1) + (wl-mean(wl))./std(wl).*coeff(6,1);
 % end
-% 
+%
 % minP = min(totalVal);
 % totalVal = (totalVal+abs(minP)+eps)';
 
@@ -583,7 +577,7 @@ else
     end
     if maxM == 0
         
-        if maxGeo == 0    
+        if maxGeo == 0
             [coeff, score, variances] = princomp([ni, nc, nlab, no, nl ]);
             DG(nzind) = (sparseI(nzind)-niMean)./niSTD.*coeff(1,1) + (sparseC(nzind)-ncMean)./ncSTD.*coeff(2,1) + (sparseCLAB(nzind)-nlabMean)./nlabSTD.*coeff(3,1) + (sparseO(nzind)-noMean)./noSTD.*coeff(4,1) + (sparseL(nzind)-nlMean)./nlSTD.*coeff(5,1);
         else

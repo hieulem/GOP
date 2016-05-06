@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <numeric>
 #include <string.h>
+
 using namespace std;
 
 //#define inputLabels(i,j) inputLabels[(i-1)+(j-1)*dimsIL[0]]
@@ -18,7 +19,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
 	
 	//9 input, 5 output
-	double *inputImg, *spNeighbor, *labelsList, *affinMatrixI, *maxLabels, *hueImg, *satImg, *angles, *mag, *tvPr, *tvPr1, *tvPr2, *lbCentroids, *geoAffinity;
+	double *inputImg, *spNeighbor, *labelsList, *affinMatrixI, *maxLabels, *hueImg, *satImg, *angles, *mag, *tvPr, *tvPr1, *tvPr2, *lbCentroids;
 	double aDiff, bDiff, nzElements, nzMax, prcnt_sparse, iMax, cMax, oMax, temp, tempH, tempS, temp2, tempA, tempM, runningM1, runningM2;
 	const mwSize *dimsIL;
 	mwSize colSize, rowSize;
@@ -47,7 +48,6 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 	labelsList = mxGetPr(prhs[0]);
 	maxLabels = mxGetPr(prhs[1]);
 	lbCentroids = mxGetPr(prhs[9]);
-	geoAffinity = mxGetPr(prhs[10]);
 	//prhs[2] is spNeighbors
 	//prhs[3] is spList
 
@@ -67,7 +67,6 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 	mxArray* wc = mxCreateDoubleMatrix(2500000,1,mxREAL);
 	mxArray* wo = mxCreateDoubleMatrix(2500000,1,mxREAL);
 	mxArray* location = mxCreateDoubleMatrix(2500000,1,mxREAL);
-	mxArray* wg = mxCreateDoubleMatrix(2500000,1,mxREAL);
 	
 	/*
 	prhsC[0] = mxCreateDoubleMatrix(1,1,mxREAL);
@@ -269,18 +268,18 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 					tempS = mxGetPr(satImg1)[(mwIndex)(mxGetPr(spList1)[k])-1];
 					
 					//x-axis
-					histC1x[(int)(round2(cos(tempH*PI/180.0)*(d/2)*tempS) + (d/2))] ++;
+					histC1x[(int)(round(cos(tempH*PI/180.0)*(d/2)*tempS) + (d/2))] ++;
 					
 					//y-axis
-					histC1y[int(d+2-(round2(sin(tempH*PI/180.0)*(d/2)*tempS) + (d/2)))] ++;
+					histC1y[int(d+2-(round(sin(tempH*PI/180.0)*(d/2)*tempS) + (d/2)))] ++;
 					
 					*/
 					//x-axis
 
-					histC1x[(mwIndex)(round2(cos(tempH*PI/180.0)*(d/2))+(d/2))] += 1.0;
+					histC1x[(mwIndex)(round(cos(tempH*PI/180.0)*(d/2))+(d/2))] += 1.0;
 					
 					//y-axis
-					histC1y[(mwIndex)(d+2-(round2(sin(tempH*PI/180.0)*(d/2))+(d/2)))] += 1.0;
+					histC1y[(mwIndex)(d+2-(round(sin(tempH*PI/180.0)*(d/2))+(d/2)))] += 1.0;
 					
 				
 				}
@@ -304,16 +303,16 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 					tempS = mxGetPr(satImg2)[(mwIndex)(mxGetPr(spList2)[k])-1];
 					
 					//x-axis
-					histC2x[(int)(round2(cos(tempH*PI/180.0)*(d/2)*tempS) + (d/2))] ++;
+					histC2x[(int)(round(cos(tempH*PI/180.0)*(d/2)*tempS) + (d/2))] ++;
 					
 					//y-axis
-					histC2y[(int)(d+2-(round2(sin(tempH*PI/180.0)*(d/2)*tempS) + (d/2)))] ++;
+					histC2y[(int)(d+2-(round(sin(tempH*PI/180.0)*(d/2)*tempS) + (d/2)))] ++;
 					*/
 					//x-axis
-					histC2x[(mwIndex)(round2(cos(tempH*PI/180.0)*(d/2))+(d/2))] += 1.0;
+					histC2x[(mwIndex)(round(cos(tempH*PI/180.0)*(d/2))+(d/2))] += 1.0;
 					
 					//y-axis
-					histC2y[(mwIndex)(d+2-(round2(sin(tempH*PI/180.0)*(d/2))+(d/2)))] += 1.0;
+					histC2y[(mwIndex)(d+2-(round(sin(tempH*PI/180.0)*(d/2))+(d/2)))] += 1.0;
 					
 				}
 				
@@ -563,9 +562,6 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 					mxGetPr(wo)[count] = 0.0;
 				}
 				
-				//get the geodesic distance value
-				mxGetPr(wg)[count] = geoAffinity[i-1 + ((int)tvPr[j]-1)*(int)maxLabels[0]];
-				
 				count ++;
 
 			}
@@ -580,14 +576,12 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 	plhs[3] = mxCreateDoubleMatrix(count, 1, mxREAL);
 	plhs[4] = mxCreateDoubleMatrix(count, 1, mxREAL);
 	plhs[5] = mxCreateDoubleMatrix(count, 1, mxREAL);
-	plhs[6] = mxCreateDoubleMatrix(count, 1, mxREAL);
 	memcpy(mxGetPr(plhs[0]), mxGetPr(from), count*sizeof(double));
 	memcpy(mxGetPr(plhs[1]), mxGetPr(to), count*sizeof(double));
 	memcpy(mxGetPr(plhs[2]), mxGetPr(wi), count*sizeof(double));
 	memcpy(mxGetPr(plhs[3]), mxGetPr(wc), count*sizeof(double));
 	memcpy(mxGetPr(plhs[4]), mxGetPr(wo), count*sizeof(double));
 	memcpy(mxGetPr(plhs[5]), mxGetPr(location), count*sizeof(double));
-	memcpy(mxGetPr(plhs[6]), mxGetPr(wg), count*sizeof(double));
 
 }
 

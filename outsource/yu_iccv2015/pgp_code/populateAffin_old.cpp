@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <numeric>
 #include <string.h>
+
 using namespace std;
 
 //#define inputLabels(i,j) inputLabels[(i-1)+(j-1)*dimsIL[0]]
@@ -18,7 +19,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
 	
 	//9 input, 5 output
-	double *inputImg, *spNeighbor, *labelsList, *affinMatrixI, *maxLabels, *hueImg, *satImg, *angles, *mag, *tvPr, *tvPr1, *tvPr2, *lbCentroids, *geoAffinity;
+	double *inputImg, *spNeighbor, *labelsList, *affinMatrixI, *maxLabels, *hueImg, *satImg, *angles, *mag, *tvPr, *tvPr1, *tvPr2, *lbCentroids;
 	double aDiff, bDiff, nzElements, nzMax, prcnt_sparse, iMax, cMax, oMax, temp, tempH, tempS, temp2, tempA, tempM, runningM1, runningM2;
 	const mwSize *dimsIL;
 	mwSize colSize, rowSize;
@@ -47,7 +48,6 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 	labelsList = mxGetPr(prhs[0]);
 	maxLabels = mxGetPr(prhs[1]);
 	lbCentroids = mxGetPr(prhs[9]);
-	geoAffinity = mxGetPr(prhs[12]);
 	//prhs[2] is spNeighbors
 	//prhs[3] is spList
 
@@ -58,7 +58,6 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 	mxArray* wi = mxCreateDoubleMatrix(2500000,1,mxREAL);
 	mxArray* wc = mxCreateDoubleMatrix(2500000,1,mxREAL);
 	mxArray* wo = mxCreateDoubleMatrix(2500000,1,mxREAL);
-	mxArray* wg = mxCreateDoubleMatrix(2500000,1,mxREAL);
 	mxArray* location = mxCreateDoubleMatrix(2500000,1,mxREAL);
 	
 	/*
@@ -574,9 +573,6 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 					//wo[count] = 0.0;
 				}
 				
-				//get the geodesic distance value
-				mxGetPr(wg)[count] = geoAffinity[i-1 + ((int)tvPr[j]-1)*(int)maxLabels[0]];
-				
 				count ++;
 
 			}
@@ -591,7 +587,6 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 	plhs[3] = mxCreateDoubleMatrix(count, 1, mxREAL);
 	plhs[4] = mxCreateDoubleMatrix(count, 1, mxREAL);
 	plhs[5] = mxCreateDoubleMatrix(count, 1, mxREAL);
-	plhs[6] = mxCreateDoubleMatrix(count, 1, mxREAL);
 	
 	/*
 	for (int i = 0; i < count; i ++){
@@ -609,7 +604,6 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 	memcpy(mxGetPr(plhs[3]), mxGetPr(wc), count*sizeof(double));
 	memcpy(mxGetPr(plhs[4]), mxGetPr(wo), count*sizeof(double));
 	memcpy(mxGetPr(plhs[5]), mxGetPr(location), count*sizeof(double));
-	memcpy(mxGetPr(plhs[6]), mxGetPr(wg), count*sizeof(double));
 	/*
 	mxFree(from);
 	mxFree(to);

@@ -332,6 +332,12 @@ if maxM > 0
 else
     [from, to, wi, wc, wo, wl, wg] = populateAffin_noMotion(labelsList, maxLabels, spNeighbor, spList, inputImgG, hueImg, satImg, mag, angles, labelCentroids1, geoAff);
 end
+
+%%%%%%populate wg here
+
+
+
+
 %[~, ~, wcHue] = populateAffin_hue(labelsList, maxLabels, spNeighbor, spList, hueImg);
 
 if maxLab > 0
@@ -453,7 +459,7 @@ sparseO = sparse(from, to, wo, max(to), max(to));
 % sparseL(temporalInd) = sparseL0(temporalInd); %only considers location if it is a temporal connection, for distribution fitting
 
 sparseL0 = sparse(from, to, wl, max(to), max(to));
-sparseL = sparse(from, to, ones(from, 1), max(to), max(to));
+sparseL = sparse(from, to, ones(length(from), 1), max(to), max(to));
 sparseL(temporalInd) = sparseL0(temporalInd);
 if maxGeo > 0
     sparseG = sparse(from, to, wg, max(to), max(to));

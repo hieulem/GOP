@@ -326,12 +326,18 @@ for i = 1:length(inputImgG);
 end
 
 maxLabels = max(max(labels(:,:,end)));
-geoAff = rand(maxLabels, maxLabels);
+
 if maxM > 0
-    [from, to, wi, wc, wo, wl, wg] = populateAffin_old(labelsList, maxLabels, spNeighbor, spList, inputImgG, hueImg, satImg, mag, angles, labelCentroids1, uv1, uv2, geoAff);
+    [from, to, wi, wc, wo, wl] = populateAffin_old(labelsList, maxLabels, spNeighbor, spList, inputImgG, hueImg, satImg, mag, angles, labelCentroids1, uv1, uv2);
 else
-    [from, to, wi, wc, wo, wl, wg] = populateAffin_noMotion(labelsList, maxLabels, spNeighbor, spList, inputImgG, hueImg, satImg, mag, angles, labelCentroids1, geoAff);
+    [from, to, wi, wc, wo, wl] = populateAffin_noMotion(labelsList, maxLabels, spNeighbor, spList, inputImgG, hueImg, satImg, mag, angles, labelCentroids1);
 end
+
+%%%%%%populate wg here
+wg = xxx
+
+
+
 %[~, ~, wcHue] = populateAffin_hue(labelsList, maxLabels, spNeighbor, spList, hueImg);
 
 if maxLab > 0

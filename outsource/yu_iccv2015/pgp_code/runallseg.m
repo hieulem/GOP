@@ -29,7 +29,7 @@ id =i(1);
 option.useGeo= 0;% geol(i(2));
 option.numSP = splist(i(3)) %number of superpixels to extract per frame
 
-gehoptions.metric = metricl{i(2)}; %
+gehoptions.metric = metricl{i(2)} ; %
 
 gehoptions.phi = 100;
 gehoptions.nGeobins = 9;
@@ -48,6 +48,11 @@ switch option.dataset
         dataset.dir = '../../../video/SegTrackv2/JPEGImages/';
         
         option.inputDIR = [dataset.dir,name,'/']; %the directory that contains the input rgb frames.
+        option.tmpdir = ['./data/SegTrackv2/tmp/',name];
+        if ~exist(option.tmpdir) 
+            mkdir(option.tmpdir) 
+        end;
+        option.tmpfile = [option.tmpdir,'/ers_',num2str(option.numSP),'.mat'];
         option.motionMat = ['./data/SegTrackv2/motions/',name]; %the optic-flow file, set as [] if not using motion.
         option.outputDIR = ['./output/Segtrack/',name,'/',num2str(option.useGeo),'_',num2str(option.numSP),'/']; %output directory that saves the segmented frames in labels.
         %if you don't want to automatically save
@@ -56,7 +61,7 @@ switch option.dataset
         if ~exist(savepath)
             mkdir(savepath)
         end;
-        outputs = pgpMain3(option,gehoptions);
+        outputs = pgpMain2(option,gehoptions);
         thesegmentation = outputs{1};
         s = eval_one_level_seg(thesegmentation,gt)
         nvx= numel(unique(thesegmentation))
@@ -82,7 +87,11 @@ switch option.dataset
         name = names{id}
         gt = ['../../../video/chen/input/GT/', name,'/gt_index/'];
         dataset.dir = '../../../video/chen/input/PNG/';
-        
+        option.tmpdir = ['./data/Chen_Xiph.org/tmp/',name];
+        if ~exist(option.tmpdir) 
+            mkdir(option.tmpdir) 
+        end;
+        option.tmpfile = [option.tmpdir,'/ers_',num2str(option.numSP),'.mat'];
         option.inputDIR = [dataset.dir,name,'/']; %the directory that contains the input rgb frames.
         option.motionMat = ['./data/Chen_Xiph.org/motions/',name]; %the optic-flow file, set as [] if not using motion.
         option.outputDIR = ['./output/chen/',name,'/',num2str(option.useGeo),'_',num2str(option.numSP),'/']; %output directory that saves the segmented frames in labels.
