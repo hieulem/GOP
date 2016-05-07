@@ -12,7 +12,7 @@ inputDIR = option.inputDIR;
 motionMat = option.motionMat;
 %spDIR = option.spDIR ;
 writePath1 = option.outputDIR;
-if ~isempty(writePath1)
+if ~exist(writePath1)
     mkdir(writePath1);
 end
 
@@ -185,7 +185,7 @@ else
 end;
 
 
-disp(sprintf('done, %.2f sec\n', toc(tE)));
+%disp(sprintf('done, %.2f sec\n', toc(tE)));
 
 %load(spDIR);
 
@@ -248,7 +248,7 @@ for i = 1:numFrames
         count = count + 1;
     end
 end
-disp(sprintf('done, %.2f sec\n', toc(tE)));
+%disp(sprintf('done, %.2f sec\n', toc(tE)));
 
 %figure, imshow(drawBoundary(labels(:,:,10), inputImg{10}));
 
@@ -308,7 +308,7 @@ for i = 1:numFrames-1
 end
 tConnections(currPos:end,:) = [];
 temporalInd = sub2ind([labelsList(end), labelsList(end)], tConnections(:,1), tConnections(:,2));
-disp(sprintf('done, %.2f sec\n', toc(tE)));
+%disp(sprintf('done, %.2f sec\n', toc(tE)));
 
 
 %% obtain edge maps
@@ -368,7 +368,7 @@ if maxLab > 0
     wcLAB = populateAffin_oldLAB(labelsList, maxLabels, spNeighbor, spList, aImg2, bImg2);
     
 end
-disp(sprintf('done, %.2f sec\n', toc(tE)));
+%disp(sprintf('done, %.2f sec\n', toc(tE)));
 
 if maxM > 0
     [a, b] = linTransform(min(min(min(cell2mat(uv)))), max(max(max(cell2mat(uv)))), 1, 50);
@@ -391,7 +391,7 @@ if maxM > 0
     
     %motion similarity for spacial neighbors only
     wm = populateAffin_oldMotion(labelsList, maxLabels, spNeighbor, spList, uv1, uv2, numFrames-1, labelCentroids1);
-    disp(sprintf('done, %.2f sec\n', toc(tE)));
+    %disp(sprintf('done, %.2f sec\n', toc(tE)));
 end
 
 %set all features to its non-zero minimum
@@ -633,7 +633,7 @@ end
 ST0 = ST0';
 clear mst;
 
-disp(sprintf('done, %.2f sec\n', toc(tE)));
+%disp(sprintf('done, %.2f sec\n', toc(tE)));
 
 
 % tic
@@ -678,11 +678,7 @@ end
 c2Penalty = 1;
 
 for i = 1:size(chunks,1)
-    
-    [i, size(chunks,1)]
-    
-    tic
-    
+    disp([num2str(i),'/',num2str(size(chunks,1))]);
     if i == 1
         beginLB = 1;
     else
@@ -1083,10 +1079,9 @@ for i = 1:size(chunks,1)
     %     subST = subST > 0;
     %
     %     [S, C] = graphconncomp(subST);
-    toc
 end
 
-disp(sprintf('fitting and labeling done, total time spent: %.2f sec\n', toc(tE)));
+%disp(sprintf('fitting and labeling done, total time spent: %.2f sec\n', toc(tE)));
 
 %ST1 = ST1 > 0;
 
@@ -1122,7 +1117,7 @@ ST2 = checkDisjoint( ST1, labelsList, S, C, spList, zeros(size(inputImgG{1})), l
 
 [S, C] = graphconncomp(ST2, 'WEAK', true);
 
-disp(sprintf('redundancy reductions done, %.2f sec\n', toc(tE)));
+%disp(sprintf('redundancy reductions done, %.2f sec\n', toc(tE)));
 
 %% produce the new merged label maps
 %doFrames = 1:numFrames;
@@ -1191,7 +1186,7 @@ if ~isempty(writePath1)
         imwrite(uint8(colorFrame), [writePath1, 'colorImg_', writeNum, '.png'], 'BitDepth', 8);
     end
 end
-disp(sprintf('done, %.2f sec\n', toc(tE)));
+%disp(sprintf('done, %.2f sec\n', toc(tE)));
 % end
 
 

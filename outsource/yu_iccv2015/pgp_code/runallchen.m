@@ -1,4 +1,4 @@
-function [s ] = runallseg( idx )
+function [ ] = runallchen( idx )
 %directory settings
 
 option.dataset = 2;  %1:segtrack,%2:chen
@@ -18,7 +18,7 @@ option.toShow = 0;
 option.usePCA = 0;
 
 splist = [100,200,300,400];
-metricl = {'emd2d','chisq'};
+metricl = {'emd2d'};
 
 i = myind2sub([8,2,4,2],idx,4);
 
@@ -26,40 +26,50 @@ i = myind2sub([8,2,4,2],idx,4);
 %ii=[6,14];
 %unpack the idx
 id =i(1);
-%id=10;
 option.useGeo= 1;% geol(i(2));
 option.numSP = splist(i(3)) %number of superpixels to extract per frame
 
-gehoptions.metric = metricl{i(2)} ; %
+gehoptions.metric = 'emd2d' ; %
 
 intl =[5,13];
-gehoptions.phi = 50;
+flowl = [0,1];
+gehoptions.phi = 100;
 gehoptions.nGeobins = 9;
-gehoptions.nIntbins = intl(i(4));
-gehoptions.maxGeo = 0;
+gehoptions.nIntbins = intl(i(2));
+gehoptions.maxGeo = 5;
 gehoptions.maxInt = 255;
-gehoptions.usingflow = 1;
-gehoptions.type = '2d'
+gehoptions.usingflow = flowl(i(4));
+gehoptions.type = '2d';
+gehoptions.useSpatialGrid = 1;
+gehoptions.Grid = [2,2]
+
+if gehoptions.useSpatialGrid == 1
+    save_flag = ['Grid',array2str(gehoptions.Grid)];
+else 
+    save_flag = [];
+end
+
+
 
 switch option.dataset
     case 1
         names ={'bird_of_paradise','birdfall','bmx','cheetah','drift','frog','girl','hummingbird','monkey','monkeydog','parachute','penguin','soldier','worm'};
-        name = names{id}
+        name = names{id};
+        disp(['Video name: ',name]);
         gehoptions.flowpath  =['../../../flow_data/flow_motion_default/segtrack/','flow',name];        
         gt = ['../../../video/Seg/GroundTruth/', name];
         dataset.dir = '../../../video/Seg/JPEGImages/';
         
-        option.inputDIR = [dataset.dir,name,'/']; %the directory that contains the input rgb frames.
+        option.inputDIR = [dataset.dir,name,'/']; 
         option.tmpdir = ['./data/SegTrackv2/tmp/',name];
         if ~exist(option.tmpdir) 
             mkdir(option.tmpdir) 
         end;
         option.tmpfile = [option.tmpdir,'/ers_',num2str(option.numSP),'.mat'];
-        option.motionMat = ['./data/SegTrackv2/motions/',name]; %the optic-flow file, set as [] if not using motion.
-        option.outputDIR = ['./output/Segtrack/',name,'/',num2str(option.useGeo),'_',num2str(option.numSP),'/']; %output directory that saves the segmented frames in labels.
-        %if you don't want to automatically save
-        %the output segmentation frames, set this
-        savepath = ['../../../ICCV2015res/Segtrack/'];
+        option.motionMat = ['./data/SegTrackv2/motions/',name]; 
+        option.outputDIR = ['./output/Segtrack/',name,'/',num2str(option.useGeo),'_',num2str(option.numSP),'/']; 
+        
+        savepath = ['../../../ICCV2015res/Segtrack_test/'];
         if ~exist(savepath)
             mkdir(savepath)
         end;
@@ -67,26 +77,27 @@ switch option.dataset
         thesegmentation = outputs{1};
         s = eval_one_level_seg(thesegmentation,gt)
         nvx= numel(unique(thesegmentation))
-       
+        avglen = avglen_one_lv(thesegmentation)
         if option.useGeo ==0
             savename= ['bl_', num2str(option.numSP),'_',name];
             save([savepath,savename], 'thesegmentation','s','nvx');
         else
             switch gehoptions.type
                 case '1d'
-                    savename= [gehoptions.metric,'_', num2str(option.numSP),'_',num2str(gehoptions.phi),'_',...
+                    savename= [save_flag,gehoptions.metric,'_', num2str(option.numSP),'_',num2str(gehoptions.phi),'_',...
                         num2str(gehoptions.nGeobins),'_', num2str(gehoptions.maxGeo),'_', num2str(gehoptions.usingflow),'_',name];
-                    save([savepath,savename], 'thesegmentation','s','nvx');
+                    save([savepath,savename], 'thesegmentation','s','nvx','avglen');
                 case '2d'
-                    savename= [gehoptions.metric,'_',num2str(option.numSP),'_',num2str(gehoptions.phi),'_',num2str(gehoptions.nGeobins),'_',...
+                    savename= [save_flag,gehoptions.metric,'_',num2str(option.numSP),'_',num2str(gehoptions.phi),'_',num2str(gehoptions.nGeobins),'_',...
                         num2str(gehoptions.nIntbins),'_', num2str(gehoptions.maxGeo),'_',num2str(gehoptions.maxInt),'_', num2str(gehoptions.usingflow),'_',name];
-                    save([savepath,savename], 'thesegmentation','s','nvx');
+                    save([savepath,savename], 'thesegmentation','s','nvx','avglen');
             end
         end
             
     case 2
         names ={'bus_fa','container_fa','garden_fa','ice_fa','paris_fa','soccer_fa','salesman_fa','stefan_fa'};
-        name = names{id}
+        name = names{id};
+        disp(['Video name: ',name]);
         gehoptions.flowpath =['../../../flow_data/flow_motion_default/chen/','flow',name];        
         gt = ['../../../video/chen/input/GT/', name,'/gt_index/'];
         dataset.dir = '../../../video/chen/input/PNG/';
@@ -95,11 +106,10 @@ switch option.dataset
             mkdir(option.tmpdir) 
         end;
         option.tmpfile = [option.tmpdir,'/ers_',num2str(option.numSP),'.mat'];
-        option.inputDIR = [dataset.dir,name,'/']; %the directory that contains the input rgb frames.
-        option.motionMat = ['./data/Chen_Xiph.org/motions/',name]; %the optic-flow file, set as [] if not using motion.
-        option.outputDIR = ['./output/chen/',name,'/',num2str(option.useGeo),'_',num2str(option.numSP),'/']; %output directory that saves the segmented frames in labels.
-        %if you don't want to automatically save
-        %the output segmentation frames, set this
+        option.inputDIR = [dataset.dir,name,'/']; 
+        option.motionMat = ['./data/Chen_Xiph.org/motions/',name]; 
+        option.outputDIR = ['./output/chen/',name,'/',num2str(option.useGeo),'_',num2str(option.numSP),'/']; 
+
         savepath = ['../../../ICCV2015res/Chen/'];
         if ~exist(savepath)
             mkdir(savepath)
@@ -109,19 +119,22 @@ switch option.dataset
         thesegmentation = outputs{1};
         s = eval_one_level_chen(thesegmentation,gt)
         nvx= numel(unique(thesegmentation))
+        avglen = avglen_one_lv(thesegmentation)
+        
+        
         if option.useGeo ==0
             savename= ['bl_', num2str(option.numSP),'_',name];
-            save([savepath,savename], 'thesegmentation','s','nvx');
+            save([savepath,savename], 'thesegmentation','s','nvx','avglen');
         else
             switch gehoptions.type
                 case '1d'
-                    savename= [gehoptions.metric,'_', num2str(option.numSP),'_',num2str(gehoptions.phi),'_',...
+                    savename= [save_flag,gehoptions.metric,'_', num2str(option.numSP),'_',num2str(gehoptions.phi),'_',...
                         num2str(gehoptions.nGeobins),'_', num2str(gehoptions.maxGeo),'_', num2str(gehoptions.usingflow),'_',name];
-                    save([savepath,savename], 'thesegmentation','s','nvx');
+                    save([savepath,savename], 'thesegmentation','s','nvx','avglen');
                 case '2d'
-                    savename= [gehoptions.metric,'_',num2str(option.numSP),'_',num2str(gehoptions.phi),'_',num2str(gehoptions.nGeobins),'_'...
+                    savename= [save_flag,gehoptions.metric,'_',num2str(option.numSP),'_',num2str(gehoptions.phi),'_',num2str(gehoptions.nGeobins),'_'...
                     num2str(gehoptions.nIntbins),'_', num2str(gehoptions.maxGeo),'_',num2str(gehoptions.maxInt),'_', num2str(gehoptions.usingflow),'_',name];
-                    save([savepath,savename], 'thesegmentation','s','nvx');
+                    save([savepath,savename], 'thesegmentation','s','nvx','avglen');
                     
             end
         end

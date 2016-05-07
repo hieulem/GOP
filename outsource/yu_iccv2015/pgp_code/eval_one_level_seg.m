@@ -4,12 +4,7 @@ addpath(genpath('../../../code/eval_code'));
 t = dir(inputGT);t(1:2) =[];
 numGT = length(t);
 stat=[];
-for j=1:numGT
-j
-    
-   
-
-        
+for j=1:numGT    
         path_gt =[inputGT,'/', num2str(j), '/'];
 
         [I_h, I_w, frame_num] = size(sv_map);

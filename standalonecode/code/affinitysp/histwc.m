@@ -25,6 +25,8 @@
 % July 2013
 
 function [histw, vinterval] = histwc(vv, ww, nbins,maxV)
+  vv(ww==0) =[];
+  ww(ww==0) =[];
   minV  = 0;%min(vv);
   %maxV  = max(vv);
   delta = (maxV-minV)/nbins;
