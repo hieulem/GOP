@@ -1,0 +1,11 @@
+cee.e
+cee.o
+re.e
+re.o
+runcpchen.sh
+runcpchen.sh~
+runcpseg.sh
+runcpseg.sh~
+segjob.sh
+segjob.sh~
+t.txt

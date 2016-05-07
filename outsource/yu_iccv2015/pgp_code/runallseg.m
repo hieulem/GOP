@@ -18,34 +18,35 @@ option.toShow = 0;
 option.usePCA = 0;
 
 splist = [100,200,300,400];
-metricl = {'emd2d','eucsq2d'};
+metricl = {'emd2d','chisq2d'};
 
-i = myind2sub([14,1,4],idx,3);
+i = myind2sub([14,2,4,2],idx,4);
 
 
 %ii=[6,14];
 %unpack the idx
 id =i(1);
-option.useGeo= 0;% geol(i(2));
+option.useGeo= 1;% geol(i(2));
 option.numSP = splist(i(3)) %number of superpixels to extract per frame
 
 gehoptions.metric = metricl{i(2)} ; %
 
-gehoptions.phi = 100;
+intl =[5,13];
+gehoptions.phi = 50;
 gehoptions.nGeobins = 9;
-gehoptions.nIntbins = 13;
+gehoptions.nIntbins = intl(i(4));
 gehoptions.maxGeo = 5;
 gehoptions.maxInt = 255;
-gehoptions.usingflow = 0;
+gehoptions.usingflow = 1;
 gehoptions.type = '2d'
 
 switch option.dataset
     case 1
-        
         names ={'bird_of_paradise','birdfall','bmx','cheetah','drift','frog','girl','hummingbird','monkey','monkeydog','parachute','penguin','soldier','worm'};
         name = names{id}
-        gt = ['../../../video/SegTrackv2/GroundTruth/', name];
-        dataset.dir = '../../../video/SegTrackv2/JPEGImages/';
+        gehoptions.flowpath  =['../../../flow_data/flow_motion_default/segtrack/','flow',name];        
+        gt = ['../../../video/Seg/GroundTruth/', name];
+        dataset.dir = '../../../video/Seg/JPEGImages/';
         
         option.inputDIR = [dataset.dir,name,'/']; %the directory that contains the input rgb frames.
         option.tmpdir = ['./data/SegTrackv2/tmp/',name];
@@ -85,6 +86,7 @@ switch option.dataset
     case 2
         names ={'bus_fa','container_fa','garden_fa','ice_fa','paris_fa','soccer_fa','salesman_fa','stefan_fa'};
         name = names{id}
+        gehoptions.flowpath =['../../../flow_data/flow_motion_default/chen/','flow',name];        
         gt = ['../../../video/chen/input/GT/', name,'/gt_index/'];
         dataset.dir = '../../../video/chen/input/PNG/';
         option.tmpdir = ['./data/Chen_Xiph.org/tmp/',name];
@@ -97,12 +99,12 @@ switch option.dataset
         option.outputDIR = ['./output/chen/',name,'/',num2str(option.useGeo),'_',num2str(option.numSP),'/']; %output directory that saves the segmented frames in labels.
         %if you don't want to automatically save
         %the output segmentation frames, set this
-        savepath = ['../../../ICCV2015res/chen/'];
+        savepath = ['../../../ICCV2015res/Chen/'];
         if ~exist(savepath)
             mkdir(savepath)
         end;
 
-        outputs = pgpMain3(option,gehoptions);
+        outputs = pgpMain2(option,gehoptions);
         thesegmentation = outputs{1};
         s = eval_one_level_chen(thesegmentation,gt)
         nvx= numel(unique(thesegmentation))

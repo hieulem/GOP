@@ -75,7 +75,7 @@ if isempty(strfind(inFrames(1).name, 'frmExtract.log'))
 end
 
 tE = tic;
-disp('Obtaining superpixels for each frame...');
+disp('Checking pre-processing step');
 
 %perform superpixel segmentation on all frames
 labelsList = zeros(numFrames,1);
@@ -117,9 +117,11 @@ tic
 
 %pre-processing step
 %check if it has been done before
-if ~isempty(options.tmpfile)
-    load(option.tmpfile)
+if exist(option.tmpfile,'file')
+    load(option.tmpfile);
+    display('Loading pre-processing file')
 else
+    display('Computing pre-processing step')
     for i = 1:numFrames
         [i, numFrames];
         inputImg{i,1} = imread([inputDIR, inFrames(doFrames(i)).name]);
@@ -179,7 +181,7 @@ else
     end
     
     save(option.tmpfile,'inputImg','inputImgG','labImg','lImg','aImg','bImg','hueImg','satImg',...
-            'labels
+            'labels','grad_xr','grad_yu','mag','angles','labelsList','currCount');
 end;
 
 

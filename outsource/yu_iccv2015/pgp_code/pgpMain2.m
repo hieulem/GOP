@@ -345,7 +345,7 @@ end
 
 if option.useGeo ==1
     geoAff = sparse(maxLabels,maxLabels);
-    geoAff = wrapperforVSS(labels,inputImg,[],gehoptions);
+    geoAff = wrapperforVSS(labels,inputImg,gehoptions);
     indx = sub2ind([maxLabels,maxLabels],from,to);
     wg = full(geoAff(indx));
 else
