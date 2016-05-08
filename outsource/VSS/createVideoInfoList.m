@@ -18,11 +18,11 @@ video_info_list = [];
 
 
 % Get a list of all files and folders in this folder.
-files = dir(dataset.dir)
+files = dir(dataset.dir);
 % Get a logical vector that tells which is a directory.
-dirFlags = [files.isdir]
+dirFlags = [files.isdir];
 % Extract only those that are directories.
-subFolders = files(dirFlags)
+subFolders = files(dirFlags);
 % Print folder names to command window.
 iVid = 1;
 for k = 1 : length(subFolders)
@@ -36,12 +36,11 @@ for k = 1 : length(subFolders)
         video_info_list(iVid).host_working_dir = dataset.working_dir;
         video_info_list(iVid).video_working_dir = fullfile(dataset.working_dir, video_name);
         video_info_list(iVid).res_dir = dataset.res_dir;
-        video_info_list(iVid).flow_dir = fullfile(dataset.flow_dir,['flow',video_name]);
         iVid = iVid + 1;
     end
 end
 
-save('here', 'video_info_list');
+%save('here', 'video_info_list');
 
 end
 

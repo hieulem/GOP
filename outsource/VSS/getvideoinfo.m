@@ -35,7 +35,7 @@ if (strcmp(dataset_name,'Segtrack'))
         disp('Resizing frog/worm');
         dataset_setting.rszratio = 0.5;
     end;
-    dataset_setting.flowpath = video_info.flow_dir;
+
 end;
 if (strcmp(dataset_name,'vsb100'))
     % working with VSB100
@@ -56,7 +56,7 @@ if (strcmp(dataset_name,'chen'))
     dataset_setting.frame_begin_index = min_id;
     dataset_setting.noFrames = no_frames;
     dataset_setting.rszratio = 0;
-    dataset_setting.flowpath = video_info.flow_dir;
+
 end
 
 end

@@ -4,9 +4,9 @@ function [ motionboundaries,flow ] = computeflowandmotionb( img,savepath,filenam
 if ~exist(savepath)
     mkdir(savepath)
 end;
-if exist(fullfile(savepath,filename))
-    load(fullfile(savepath,filename));
-else
+%if exist(fullfile(savepath,filename))
+ %   load(fullfile(savepath,filename));
+%else
     
     [h,w,~,numi] = size(img);
     img(:,:,:,numi+1) =  img(:,:,:,numi-1);

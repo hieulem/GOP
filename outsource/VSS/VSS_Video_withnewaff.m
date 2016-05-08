@@ -59,7 +59,7 @@ if ( (~isfield(options,'stpcas')) || (isempty(options.stpcas)) ) %This sets the 
     options.stpcas='paperoptnrm';
 end
 options=Applysetupcase(options);
-options %#ok<NOPRT>
+options; %#ok<NOPRT>
 
 %@Hieu
 options.usingGeH =1;
@@ -67,7 +67,7 @@ options.usingGeH =1;
 % Location of the video working directory
 basename_variables_directory=[basedrive,'working_directory',filesep,'data',filesep];
 filenames=Getfilenames(basename_variables_directory,[],options);
-filenames.flowpath = dataset_setting.flowpath;
+%filenames.flowpath = dataset_setting.flowpath;
 
 
 % Location and file pattern of the original video frames

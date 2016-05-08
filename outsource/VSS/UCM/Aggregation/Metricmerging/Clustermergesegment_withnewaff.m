@@ -74,7 +74,7 @@ framesize=floor((size(ucm2{1})-1)/2);
 allthesegmentations=Initallsegmentations(framesize,numberofclusterings,includeoversegmentation,mapped,ucm2,Level,framerange); %[,labelledvideo]
 labelsfc=1:size(similarities,1);
 for level=1:numberofclusterings
-    
+%@HIEU    
     tryonlinefirst=true; noreplicates=100; noGroups=mergesteps(level);
     [IDX,kmeansdone]=Clusterthepoints(Y,clusteringmethod,noGroups,dimtouse,noreplicates,...
         tryonlinefirst,[],[],[],options); %,offext,C
