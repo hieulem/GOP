@@ -1,7 +1,7 @@
 function segment_video_segtrack(idx)
 
 dataseti= 1;
-i = myind2sub([14,2,2],idx,3);
+i = myind2sub([14,2,2,2],idx,4);
 id = i(1);
 addpath(genpath('../../standalonecode/code/'));
 addpath(genpath('../../standalonecode/outsource/'));
@@ -17,7 +17,7 @@ gehoptions.nGeobins = 9;
 gehoptions.nIntbins = intl(i(2));
 gehoptions.maxGeo = 5;
 gehoptions.maxInt = 255;
-gehoptions.usingflow = 0;%flowl(i(4));
+gehoptions.usingflow = flowl(i(4));
 gehoptions.type = '2d';
 gehoptions.metric = metricl{i(3)}; 
 gehoptions.useSpatialGrid = 1;
@@ -47,10 +47,10 @@ end;
 switch gehoptions.type
     case '2d'
         dataset.res_dir = [dataset.resdir,pre_flag,dataset.name,'_',num2str(gehoptions.phi),'_' ...
-            ,num2str(gehoptions.nGeobins),'_',num2str(gehoptions.nIntbins),'_',num2str(gehoptions.maxGeo),'_',num2str(gehoptions.maxInt),'/'];
+            ,num2str(gehoptions.nGeobins),'_',num2str(gehoptions.nIntbins),'_',num2str(gehoptions.maxGeo),'_',num2str(gehoptions.maxInt),'_',int2str(gehoptions.usingflow),'/'];
     case '1d'
         dataset.res_dir = [dataset.resdir,pre_flag,dataset.name,'_',num2str(gehoptions.phi),'_' ...
-            ,num2str(gehoptions.nGeobins),'_',num2str(gehoptions.maxGeo),'/'];
+            ,num2str(gehoptions.nGeobins),'_',num2str(gehoptions.maxGeo),'_',int2str(gehoptions.usingflow),'/'];
 end;
 if baseline
     dataset.res_dir = [dataset.resdir,dataset.name,'_baseline'];
@@ -62,7 +62,7 @@ switch dataseti
     case 1
         gehoptions.flowpath =['../../flow_data/flow_motion_default/segtrack/','flow',video_info.video_name];
     case 2
-        gehoptions.flowpath =['../../flow_data/flow_motion_default/chen/',video_info.video_name,'/flow',video_info.video_name];
+        gehoptions.flowpath =['../../flow_data/flow_motion_default/chen/','flow',video_info.video_name];
 end;
     
 

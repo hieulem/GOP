@@ -20,7 +20,7 @@ option.usePCA = 0;
 splist = [100,200,300,400];
 metricl = {'emd2d'};
 
-i = myind2sub([8,2,4,2],idx,4);
+i = myind2sub([8,2,4,1,2],idx,5);
 
 
 %ii=[6,14];
@@ -30,10 +30,10 @@ option.useGeo= 1;% geol(i(2));
 option.numSP = splist(i(3)) %number of superpixels to extract per frame
 
 gehoptions.metric = 'emd2d' ; %
-
+phil =[50,100];
 intl =[5,13];
-flowl = [0,1];
-gehoptions.phi = 100;
+flowl = [1];
+gehoptions.phi = phil(i(5));
 gehoptions.nGeobins = 9;
 gehoptions.nIntbins = intl(i(2));
 gehoptions.maxGeo = 5;
@@ -41,7 +41,7 @@ gehoptions.maxInt = 255;
 gehoptions.usingflow = flowl(i(4));
 gehoptions.type = '2d';
 gehoptions.useSpatialGrid = 1;
-gehoptions.Grid = [2,2]
+gehoptions.Grid = [3,3]
 
 if gehoptions.useSpatialGrid == 1
     save_flag = ['Grid',array2str(gehoptions.Grid)];

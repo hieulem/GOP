@@ -41,7 +41,7 @@ gehoptions.maxInt = 255;
 gehoptions.usingflow = flowl(i(4));
 gehoptions.type = '2d';
 gehoptions.useSpatialGrid = 1;
-gehoptions.Grid = [2,2]
+gehoptions.Grid = [3,3]
 
 if gehoptions.useSpatialGrid == 1
     save_flag = ['Grid',array2str(gehoptions.Grid)];

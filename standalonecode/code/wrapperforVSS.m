@@ -45,8 +45,8 @@ edge= sed + 1e-20;
 if gehoptions.usingflow == 1
 
     flow = load(gehoptions.flowpath);
-    [h,w,f] = size(flow.motionboundaries);
-    if h~= size(edge,1) || w~=size(edge,2)
+    [h,w,f] = size(edge);
+    if h~= size(flow.motionboundaries,1) || w~=size(flow.motionboundaries,2)
         tmp = edge*0;
         disp('resizing motion boundaries file');
         for i=1:f

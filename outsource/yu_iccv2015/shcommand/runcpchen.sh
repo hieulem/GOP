@@ -1,6 +1,6 @@
 #!/bin/sh
 JOB_NUM=128
-JOB_PARALLEL=8
+JOB_PARALLEL=16
 JOB_MEM=30G
 echo "Co len cac anh em oi"
 rm cee.o
