@@ -1,0 +1,8 @@
+@inproceedings{liu2011entropy,
+  title={Entropy rate superpixel segmentation},
+  author={Liu, Ming-Yu and Tuzel, Oncel and Ramalingam, Srikumar and Chellappa, Rama},
+  booktitle={Computer Vision and Pattern Recognition (CVPR), 2011 IEEE Conference on},
+  pages={2097--2104},
+  year={2011},
+  organization={IEEE}
+}

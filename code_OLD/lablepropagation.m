@@ -1,0 +1,21 @@
+siz = size(sp(:,:,1));
+colormap('bone');
+offset = 5;
+a= squeeze(hist{1}(:,:));%,squeeze(seeds_color{2}(:,:))];
+b= squeeze(hist{2}(:,:));%,squeeze(seeds_color{2}(:,:))];
+%b = squeeze(hist{2}(:,:));
+tic;
+geo_graph=[];
+ww =[];
+D = pdist2( a, b, 'chisq' );
+D3 = pdist2( pos{1}(:,:), pos{2}(:,:), 'euclidean' );
+mu =mean(mean(pos{1}(:,:)));
+mu =mean(mean(D3));
+eD = exp(-D3.^2/(mu^2));
+D4 = pdist2(rgbhistogram{1}, rgbhistogram{2},'chisq');
+D=D.*D3.*D4;
+D = D/max(max(D));
+D=1-D;
+
+p{1} = diag(ones(1,nsp));
+pp = p{1}*D';
