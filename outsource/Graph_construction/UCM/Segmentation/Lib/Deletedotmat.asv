@@ -1,0 +1,7 @@
+function thestring=Deletedotmat(thestring)
+wheredot=findstr(thestring,'.');
+if (~(numel(wheredot)<=1)) %if there is at least a dot
+    casedir=directory(wheredot(end-1)+1:wheredot(end)-1); %excludes filesep
+    directory=directory(1:wheredot(end-1)); %includes filesep
+    filenames.filename_directory=[directory,casedir,filesep];
+end

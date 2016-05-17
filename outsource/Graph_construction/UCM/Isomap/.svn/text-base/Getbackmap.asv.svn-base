@@ -1,0 +1,65 @@
+function [backmap,foundempty,foundmultiple]=Getbackmap(Y,maxvalue)
+
+foundempty=false;
+foundmultiple=false;
+if (~isfield(Y,'missing'))
+    if numel(unique(Y.index))~=numel(Y.index)
+        if ( numel(unique(Y.index))<numel(Y.index) )
+            foundmultiple=true;
+        else
+            foundempty=true;
+        end
+    end
+else
+    if numel(unique([Y.index,Y.missing]))~=numel([Y.index,Y.missing])
+        if ( numel(unique([Y.index,Y.missing]))<numel([Y.index,Y.missing]) )
+            foundmultiple=true;
+        else
+            foundempty=true;
+        end
+    end
+end
+
+if (~isfield(Y,'missing'))
+    allthevalues=1:numel(Y.index);
+else
+    allthevalues=1:(numel(Y.index)+numel(Y.missing));
+end
+backmap(1:numel(Y.index))=allthevalues(Y.index);
+if (isfield(Y,'missing'))
+    backmap( (numel(Y.index)+1) : (numel(Y.index)+numel(Y.missing)) )=allthevalues(Y.missing);
+end
+
+
+
+function [backmap,foundempty,foundmultiple]=Getbackmap(map,maxvalue)
+
+if ( (~exist('maxvalue','var')) || (isempty(maxvalue)) )
+    maxvalue=max(map);
+end
+
+backmap=zeros(1,maxvalue);
+
+foundempty=false;
+foundmultiple=false;
+
+for k=1:maxvalue
+    backvalue=find(map==k);
+    if isempty(backvalue)
+        backmap(k)=0;
+        foundempty=true;
+    elseif numel(backvalue)>1
+        backmap(k)=backvalue(1);
+        foundmultiple=true;
+    else
+        backmap(k)=backvalue;
+    end
+end
+
+
+
+% dd=[1,2,3,4,5]
+% ind=[3,1,2,5,4]
+% newdd=dd(ind)
+% [backmap,foundempty,foundmultiple]=Getbackmap(ind)
+% newdd(backmap)

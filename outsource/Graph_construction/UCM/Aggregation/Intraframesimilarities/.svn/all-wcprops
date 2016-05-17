@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Intraframesimilarities
+END
+Computeintraframe.m
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Intraframesimilarities/Computeintraframe.m
+END
+Computeflowvariance.m
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Intraframesimilarities/Computeflowvariance.m
+END
+Getabmfromindexedrawvalues.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Intraframesimilarities/Getabmfromindexedrawvalues.m
+END
+Computeflowdifference.m
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Intraframesimilarities/Computeflowdifference.m
+END
+Getneighborlabels.m
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Intraframesimilarities/Getneighborlabels.m
+END
+Getabafromindexedrawvalues.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Intraframesimilarities/Getabafromindexedrawvalues.m
+END

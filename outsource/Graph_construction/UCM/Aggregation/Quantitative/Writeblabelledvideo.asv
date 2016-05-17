@@ -1,0 +1,37 @@
+function Writeblabelledvideo(labelledvideo,outputfilename)
+%Writeblabelledvideo(labelledvideo,outputfilename);
+%The written trajectories (minimum label 1) get labels minus 1
+
+noFrames=size(labelledvideo
+if (~exist('outputfilename','var') || (isempty(outputfilename)) )
+    outputfilename=[filenames.filename_directory,'Tracks',num2str(noFrames,'%d'),'generated.dat'];
+end
+
+%Write labelledvideo to file using the format of BroxMalikECCV10
+%zero values in labelledvideo are considered unlabelled
+notraj=sum(sum(sum(labelledvideo~=0)));
+videosize=size(labelledvideo);
+noFrames=videosize(3);
+dimIx=videosize(2);
+dimIy=videosize(1);
+
+fid=fopen(outputfilename,'wt');
+fprintf(fid,'%d\n%d\n',noFrames,notraj);
+% fprintf(fid,'%d\n%013d\n',noFrames,notraj);
+
+fprintf('Writing to disk, processed frames:');
+for i=1:noFrames
+    for xx=1:dimIx
+        for yy=1:dimIy
+            if (labelledvideo(yy,xx,i)~=0)
+                fprintf(fid,'%d %d\n%d %d %d\n',labelledvideo(yy,xx,i)-1,1,xx-1,yy-1,i-1);
+            end
+        end
+    end
+    fprintf(' %d',i);
+end
+fprintf('\n');
+
+fclose(fid);
+
+fprintf('%d trajectories discovered, %d labels identified\n',notraj, numel(unique(labelledvideo)));

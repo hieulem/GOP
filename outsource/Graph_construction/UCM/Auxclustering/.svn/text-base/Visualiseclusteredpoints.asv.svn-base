@@ -1,0 +1,59 @@
+function Visualiseclusteredpoints(Y,IDX,dimtouse,distributecolours, includenumbers)
+
+if ( (~exist('dimtouse','var')) || (isempty(dimtouse)) )
+    dimtouse=3;
+end
+if ( (~exist('distributecolours','var')) || (isempty(distributecolours)) )
+    distributecolours=false;
+end
+if ( (~exist('includenumbers','var')) || (isempty(includenumbers)) )
+    includenumbers=false;
+end
+
+if (distributecolours)
+    themaxidx=max(IDX);
+    repratio = 2*(themaxidx+1)/themaxidx;
+else
+    repratio=[];
+end
+
+if (dimtouse==2)
+    twod=Getchosend(Y,2);
+    Init_figure_no(20);
+    title('Two-dimensional Isomap embedding');
+    hold on
+    for i=unique(IDX(Y.index))' %so as to not consider added indexes (not embedded)
+        col=GiveDifferentColours(i,repratio);
+    %     plot(Y.coords{twod}(1,(IDX==i)), Y.coords{twod}(2,(IDX==i)), ['.',GiveAColour(i)]);
+        plot(Y.coords{twod}(1,(IDX(Y.index)==i)), Y.coords{twod}(2,(IDX(Y.index)==i)), '.','Color',col,'LineWidth',3);
+        
+        if (includenumbers)
+            whichones=find(IDX(Y.index)==i);
+            for j=whichones
+                text(Y.coords{twod}(1,j), Y.coords{twod}(2,j), num2str(j), 'FontSize',17); %Y.index(j) instead of j in num2str
+            end
+        end
+    end
+    hold off
+elseif (dimtouse==3) %so as to not consider added indexes
+    threed=Getchosend(Y,3);
+    Init_figure_no(21);
+    title('Three-dimensional Isomap embedding');
+    hold on
+    for i=unique(IDX(Y.index))' %so as to not consider added indexes (not embedded)
+        col=GiveDifferentColours(i,repratio);
+        scatter3(Y.coords{threed}(1,(IDX(Y.index)==i)), Y.coords{threed}(2,(IDX(Y.index)==i)), Y.coords{threed}(3,(IDX(Y.index)==i)),3,col);
+    end
+    hold off
+end
+
+
+figure(21), clf, set(gcf, 'color', 'white');
+% plot(Y.coords{twod}(1,:), Y.coords{twod}(2,:), 'ro');
+hold on
+for i=unique(IDX(Y.index))' %so as to not consider added indexes (not embedded)
+    col=GiveDifferentColours(i);
+    plot(Y.coords{twod}(1,(IDX(Y.index)==i)), Y.coords{twod}(2,(IDX(Y.index)==i)), '.','Color',col,'LineWidth',3);
+end
+gplot(E(Y.index, Y.index), [Y.coords{twod}(1,:); Y.coords{twod}(2,:)]');
+hold off

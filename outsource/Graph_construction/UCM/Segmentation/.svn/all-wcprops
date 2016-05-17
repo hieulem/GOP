@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/D2/VSG/!svn/ver/3/UCM/Segmentation
+END
+Getthesegments.m
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Getthesegments.m
+END
+Getchosensegmentationwithcolor.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Getchosensegmentationwithcolor.m
+END
+Nameucmfiles.m
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Nameucmfiles.m
+END
+DOI.m
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/D2/VSG/!svn/ver/1/UCM/Segmentation/DOI.m
+END
+Getsegmentswithquickshift.m
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Getsegmentswithquickshift.m
+END
+Origsegmented.m
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Origsegmented.m
+END
+Getchosensegmentation.m
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Getchosensegmentation.m
+END
+Getthesegmentswithcolor.m
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Getthesegmentswithcolor.m
+END

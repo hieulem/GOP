@@ -1,0 +1,22 @@
+function [selectedids,selectedpoints]=Findidattreelevel(treestructure, firstbelonging, level)
+
+nopoints=numel(firstbelonging);
+selectedpoints=false(1,nopoints);
+selectedids=false(1,numel(treestructure));
+
+[selectedids,selectedpoints]=Findidattreelevelhelper(selectedids,selectedpoints,treestructure, firstbelonging, id, level);
+
+selectedpoints=find(selectedpoints);
+selectedids=find(selectedids);
+
+
+
+function [selectedids,selectedpoints]=Findidattreelevelhelper(selectedids,selectedpoints,treestructure, firstbelonging, id, level)
+
+if (level==0)
+    selected(firstbelonging==id)=true;
+    r=find(treestructure==id);
+
+for i=1:numel(r)
+    selected=Findpointsinsubnodehelper(selected,treestructure, firstbelonging, r(i));
+end

@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib
+END
+write_array.m
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/write_array.m
+END
+nonmax_oriented.m
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/nonmax_oriented.m
+END
+fit_contour.m
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/fit_contour.m
+END
+applyFilter.m
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/applyFilter.m
+END
+spectralPb.asv
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/spectralPb.asv
+END
+buildW.mexa64
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/buildW.mexa64
+END
+spectralPb.m
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/spectralPb.m
+END
+Normalise_gpb_orient.m
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/Normalise_gpb_orient.m
+END
+mex_pb_parts_final_selected_motion.mexa64
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/mex_pb_parts_final_selected_motion.mexa64
+END
+Deletedotmat.asv
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/Deletedotmat.asv
+END
+Version.txt
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/Version.txt
+END
+oeFilter.m
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/oeFilter.m
+END
+padReflect.m
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/padReflect.m
+END
+read_array.m
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/read_array.m
+END
+mex_nonmax_oriented.mexa64
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/mex_nonmax_oriented.mexa64
+END
+mex_pb_parts_final_selected.cc.color
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/mex_pb_parts_final_selected.cc.color
+END
+det_mPb.m
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/det_mPb.m
+END
+Deletedotmat.m
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/Deletedotmat.m
+END
+nonmax_channels.m
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/nonmax_channels.m
+END
+mex_pb_parts_final_selected.mexa64
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/mex_pb_parts_final_selected.mexa64
+END
+isum.m
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/isum.m
+END
+globalPb.asv
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/globalPb.asv
+END
+Globalpbcolor.m
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/Globalpbcolor.m
+END
+globalPb.m
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/globalPb.m
+END
+Multiscalepbcolor.m
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/Multiscalepbcolor.m
+END
+multiscalePb.m
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/multiscalePb.m
+END
+fitparab.m
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/fitparab.m
+END
+savgol.m
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/savgol.m
+END
+det_mPb_motion.m
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/det_mPb_motion.m
+END
+mex_contour_sides.mexa64
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/mex_contour_sides.mexa64
+END
+contours2ucm.m
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/contours2ucm.m
+END
+Globalpbcolornadd.m
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/Globalpbcolornadd.m
+END
+Multiscalepbcolornadd.m
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/Multiscalepbcolornadd.m
+END
+fbRun.m
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/fbRun.m
+END
+ucm_mean_pb.mexa64
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Lib/ucm_mean_pb.mexa64
+END

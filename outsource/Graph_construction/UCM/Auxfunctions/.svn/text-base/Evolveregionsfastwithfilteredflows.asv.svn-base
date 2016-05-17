@@ -1,0 +1,113 @@
+function predictedMask=Evolveregionsfastwithfilteredflows(mask,flowatframe,printonscreen)
+
+if ( (~exist('printonscreen','var')) || (isempty(printonscreen)) )
+    printonscreen=true; %The function displays images by default
+end
+
+dimIi=size(mask,1);
+dimIj=size(mask,2);
+
+if (printonscreen)
+    figure(10)
+    set(gcf, 'color', 'white');
+    imagesc(mask);
+    title ('Mask of selected area');
+end
+
+
+predictedMask=zeros(dimIi,dimIj);
+
+
+avgxs=flowatframe.Up(mask);
+avgys=flowatframe.Vp(mask);
+[avgxs,xminus,xplus]=Adjustthematrix(avgxs,1,dimIj);
+[avgys,yminus,yplus]=Adjustthematrix(avgys,1,dimIi);
+
+
+for k=1:numel(avgxs)
+    predictedMask(yplus(k),xplus(k))= predictedMask(yplus(k),xplus(k))+...
+        (avgxs(k)-xminus(k))*(avgys(k)-yminus(k));
+    predictedMask(yminus(k),xminus(k))= predictedMask(yminus(k),xminus(k))+...
+        (xplus(k)-avgxs(k))*(yplus(k)-avgys(k));
+    predictedMask(yplus(k),xminus(k))= predictedMask(yplus(k),xminus(k))+...
+        (xplus(k)-avgxs(k))*(avgys(k)-yminus(k));
+    predictedMask(yminus(k),xplus(k))= predictedMask(yminus(k),xplus(k))+...
+        (avgxs(k)-xminus(k))*(yplus(k)-avgys(k));
+end
+
+ind=sub2ind([dimIi,dimIj],yplus,xplus);
+predictedMask(ind)= predictedMask(ind)+...
+    (avgxs-xminus).*(avgys-yminus);
+ind=sub2ind([dimIi,dimIj],yminus,xminus);
+predictedMask(ind)= predictedMask(ind)+...
+    (xplus-avgxs).*(yplus-avgys);
+ind=sub2ind([dimIi,dimIj],yplus,xminus);
+predictedMask(ind)= predictedMask(ind)+...
+    (xplus-avgxs).*(avgys-yminus);
+ind=sub2ind([dimIi,dimIj],yminus,xplus);
+predictedMask(ind)= predictedMask(ind)+...
+    (avgxs-xminus).*(yplus-avgys);
+
+
+if (printonscreen)
+    figure(117)
+    set(gcf, 'color', 'white');
+    imagesc(predictedMask);
+    title ('Mask of predicted area');
+end
+
+
+
+function [matrix,vminus,vplus]=Adjustthematrix(matrix,minlimit,maxlimit)
+
+vminus=zeros(size(matrix));
+vplus=zeros(size(matrix));
+
+whichbiggermin=(matrix>=minlimit);
+whichsmallermax=(matrix<=maxlimit);
+
+whichboth=whichbiggermin&whichsmallermax;
+vminus(whichboth)=floor(matrix(whichboth));
+vplus(whichboth)=ceil(matrix(whichboth));
+
+whichonlysmaller=(~whichboth)&whichsmallermax;
+whichonlybigger=(~whichboth)&whichbiggermin;
+
+matrix(whichonlysmaller)=minlimit;
+vminus(whichonlysmaller)=minlimit;
+vplus(whichonlysmaller)=vminus(whichonlysmaller)+1;
+
+matrix(whichonlybigger)=maxlimit;
+vplus(whichonlybigger)=maxlimit;
+vminus(whichonlybigger)=vplus(whichonlybigger)-1;
+
+whichareequal=(vplus==vplus);
+[indareequal]=find(whichareequal);
+equalandsmaller=(vplus(indareequal)<maxlimit);
+vplus(indareequal(equalandsmaller))=vminus(indareequal(equalandsmaller))+1;
+vminus(indareequal(~equalandsmaller))=vplus(indareequal(~equalandsmaller))-1;
+
+
+
+%for debugging
+% m=[0   0   0   0   0   0   0   0
+% 0   0   1   1   1   0   0   0
+% 0   0   0   1   0   0   0   0
+% 0   0   0   1   0   0   0   0
+% 0   0   0   0   0   0   0   0
+% ];
+% mm=[0   0   0   0   0   0   0   0
+% 0   0   0   1   1   1   1   0
+% 0   0   0   0   1   0   0   0
+% 0   0   0   0   1   0   0   0
+% 0   0   0   0   1   0   0   0
+% ];
+% mask=m;
+% flowatframe=flows.flows{1};
+% printonscreen=true;
+% predictedMask=EvolveRegionFastforfiltered(mask,flowatframe,printonscreen);
+% predictedMask=EvolveRegionFast(mask,flowatframe,[],[],[],printonscreen);
+% similarity=Measuresimilarity(mm,predictedMask)
+% velUp=repmat(1.5,size(mask));
+% velVp=repmat(0,size(mask));
+% velUm=velUp;

@@ -1,0 +1,47 @@
+function ExportAllFramesToBoujou(min_track_length,frames_to_print,trajectories,noFrames,filenames,firstTrajectory)
+
+
+if ( (~exist('firstTrajectory','var')) || (isempty(firstTrajectory)) )
+    firstTrajectory=[]; %default=1
+end
+if ( (~exist('filenames','var')) || (isempty(filenames)) )
+    filenames=[]; %default='D:\trajectories.txt'
+end
+
+%setting of the parametres
+% frames_to_print=2;
+% min_track_length=3;
+% noFrames=70;
+
+% for f=1:(noFrames-frames_to_print+1)
+%     ExportToBoujou(min_track_length,frames_to_print,trajectories,f,filena
+%     mes,firstTrajectory);
+% end
+
+%all the points in a single file
+range=1:(noFrames-frames_to_print+1);
+ExportToBoujou(min_track_length,frames_to_print,trajectories,range,filenames,firstTrajectory);
+
+% filenames.toboujou_filename_base=[filenames.filename_directory,'boujou\toboujou_'];
+% filenames.fromboujou_filename_base=[filenames.filename_directory,'boujou\fromboujou_'];
+
+
+
+verify();
+
+function verify()
+
+% justcount=1;
+% firtframe=51;
+% lastframe=69;
+% count=0;
+% for f=firtframe:lastframe
+%     noTracks=ExportToBoujou(min_track_length,frames_to_print,trajectories,f,filenames,firstTrajectory,justcount);
+%     count=count+noTracks;
+% end
+% fprintf('Counted %d\n',count);
+
+justcount=1;
+range=1:70;
+noTracks=ExportToBoujou(min_track_length,frames_to_print,trajectories,range,filenames,firstTrajectory,justcount);
+fprintf('Counted %d\n',noTracks);

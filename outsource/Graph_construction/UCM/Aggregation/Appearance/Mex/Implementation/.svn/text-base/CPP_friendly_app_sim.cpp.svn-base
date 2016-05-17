@@ -1,0 +1,217 @@
+/*
+ * Integrated program in mex for "computeappearencesimilaritycppfriendly.m" 
+ * 
+ * Command to compile
+ *    mex -largeArrayDims  CPP_friendly_app_sim.cpp -I. getneigh_preallocated.cpp find_double_preallocated.cpp initarrytozero.cpp initbooltozero.cpp initintarrytozero.cpp
+ * Command to execute
+ *    [sy_cpp,sx_cpp,sv_cpp]=CPP_friendly_app_sim(labelsatframe,constcc,constrr,framebelong,noallsuperpixels,noFrames,temporaldepth,concc,conrr,thedepth,allmedianl,allmediana,allmedianb,maxnumberofsuperpixelsperframe);
+*/
+
+/* INCLUDES: */
+#include "mex.h"
+#include "getneigh.h"  // This header has the implementation of GETNEIGHBORLABELS.M
+#include "auxfun.h"
+
+#include "matrix.h"
+#include "limits.h"
+#include "math.h"
+#include "float.h"
+#include "stdlib.h"                                    
+#include <iostream> //cout
+#include "map" //map
+#include <utility> //pair
+
+using namespace std;
+
+int linearindex_k( int rowindex, int colindex, int no_rows) // THIS FUNCTION IS USED BY FIRSTMEX
+ {
+    int linearind;
+    linearind =0;
+    linearind = ((colindex-1)* no_rows) + (rowindex-1);  
+    return linearind;
+ }
+
+
+
+void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) 
+{
+   /* DECLARATIONS: */
+    double  *labelsatframe, *constcc, *constrr, *framebelong, *maxsuperpixels, *noframes, *temporaldepth;
+    double  *concc, *conrr, *thedepth,*maxsuperpixelsperframe ;   /* input arguments  */
+   
+    double * allmedianl,*allmediana, *allmedianb;
+    double *usecomplement,*mapped, *sxf, *svf, *syf,*sxo, *svo, *syo;
+    
+    double *test;  //output variable
+
+    labelsatframe                 = mxGetPr(prhs[0]);
+    constcc                       = mxGetPr(prhs[1]);
+    constrr                       = mxGetPr(prhs[2]);
+    framebelong                   = mxGetPr(prhs[3]);
+    maxsuperpixels                = mxGetPr(prhs[4]);
+    noframes                      = mxGetPr(prhs[5]);
+    temporaldepth                 = mxGetPr(prhs[6]);
+    concc                         = mxGetPr(prhs[7]);
+    conrr                         = mxGetPr(prhs[8]);
+    thedepth                      = mxGetPr(prhs[9]);
+    allmedianl                    = mxGetPr(prhs[10]);
+    allmediana                    = mxGetPr(prhs[11]);
+    allmedianb                    = mxGetPr(prhs[12]);
+    maxsuperpixelsperframe        = mxGetPr(prhs[13]);
+    
+    
+    int f,i,j,p,volumelabelidx,nl; // iterator variables
+    int asp,touchedlabels,volumelabel,volumelabel_local,neighframe,neighlabel,neighlabel_local; //other integers
+    int num_framebelong,num_spatf,numberofsuperpixels,num_constrr,num_tempneighlabels,num_neighlabels;
+    int num_concc,num_conrr,num_touchedlabels, dimrow_median, dimcol_median;// count variables
+    int *spatf,*tempneighframes,*tempneighlabels,*neighlabels; //integer pointers
+    int maskid1,maskid2,maskid3; // sub2ind variables
+    bool *bool_tempneighlabels,*bool_all_spx,*bool_newneighlabels,*bool_prevlabel; //bool pointers
+
+    num_constrr         = mxGetNumberOfElements(prhs[2]);
+    num_framebelong     = mxGetNumberOfElements(prhs[3]);
+    num_concc           = mxGetNumberOfElements(prhs[7]);   
+    num_conrr           = mxGetNumberOfElements(prhs[8]);
+    dimrow_median       = mxGetM(prhs[10]);
+    dimcol_median       = mxGetM(prhs[10]);
+    numberofsuperpixels = (int) *maxsuperpixels; 
+// Memory allocations
+   bool_tempneighlabels             = new bool[numberofsuperpixels];
+   spatf                            = new int[(int)*maxsuperpixelsperframe];
+   tempneighlabels                  = new int[(int)*maxsuperpixelsperframe];
+   tempneighframes                  = new int[(int)*maxsuperpixelsperframe];
+   neighlabels                      = new int[(int)*maxsuperpixelsperframe];
+   bool_all_spx                     = new bool[(int)*maxsuperpixels];
+   bool_newneighlabels              = new bool[(int)*maxsuperpixels];
+   bool_prevlabel                   = new bool[(int)*maxsuperpixels];
+   
+   
+ 
+    //Similarity Matrix
+    map < pair <int,int>, double> similarity ;
+    pair<int,int> ins_pos;
+    
+    
+    for(f =1; f <= (int) *noframes; f++)
+    {
+        initintarrytozero( spatf, (int)*maxsuperpixelsperframe);
+        num_spatf=find_double_preallocated(spatf,f, framebelong, num_framebelong,(int)*maxsuperpixelsperframe);
+        for(i=0; i< num_spatf; i++)
+        {
+//             ------Generating the tempneighlabels-----------------
+           initbooltozero( bool_tempneighlabels, numberofsuperpixels);
+//            initbooltozero( bool_tempneighframes, (int) *noframes); no need of this since we need all the instances of the frames
+           num_tempneighlabels =0;
+           asp = spatf[i];
+           for(j=0; j< num_constrr; j++)
+            {
+                if(constrr[j] == asp)
+                {
+                    if ((framebelong[(int) constcc[j]-1] >= (f- (int) *temporaldepth))&&(framebelong[(int)constcc[j]-1] <=(f+ (int)*temporaldepth))) // notconsidering outof bound frames
+                    {
+                        bool_tempneighlabels[(int) constcc[j]-1] = true;
+                        num_tempneighlabels++;
+                    }                          
+                }
+
+                if(constcc[j] == asp)
+                {
+                  if ((framebelong[(int)constrr[j]-1] >= (f- (int) *temporaldepth))&&(framebelong[(int)constrr[j]-1] <=(f+ (int)*temporaldepth))) // notconsidering outof bound frames
+                    {
+                        bool_tempneighlabels[(int) constrr[j]-1] = true;
+                        num_tempneighlabels++;
+                    }
+                }
+            }
+               
+//            adding asp into the list of tempneighlabels
+           bool_tempneighlabels[asp-1] = true;
+           num_tempneighlabels++;
+//            --------------------------------------
+           initintarrytozero(tempneighframes,(int) *maxsuperpixelsperframe);
+           initintarrytozero(tempneighlabels,(int) *maxsuperpixelsperframe);
+       
+           p =0;
+           for(j=0; j< numberofsuperpixels; j++)    
+           {
+                if(bool_tempneighlabels[j])
+                    {              
+                        tempneighlabels[p] = j+1;
+                        tempneighframes[p] = (int) framebelong[j];
+                        p++;
+                    }
+            }
+//   ------Tempneighlabels have been generated---------------------------     
+           touchedlabels = asp;
+           initintarrytozero( neighlabels, (int)*maxsuperpixelsperframe);               
+           initbooltozero   (bool_all_spx,(int)*maxsuperpixels);
+           initbooltozero   (bool_newneighlabels,(int)*maxsuperpixels);
+           initbooltozero   (bool_prevlabel,(int)*maxsuperpixels);
+           num_neighlabels = getneigh_preallocated(neighlabels, & touchedlabels, concc, conrr, thedepth, maxsuperpixels, 1, num_concc, num_conrr,bool_all_spx,bool_newneighlabels,bool_prevlabel);
+           
+           
+           for(volumelabelidx =0;volumelabelidx < num_tempneighlabels; volumelabelidx++)
+           {
+               volumelabel = tempneighlabels[volumelabelidx];
+               volumelabel_local = labelsatframe[(tempneighlabels[volumelabelidx])-1];// labelsatframe: matlab array now starts from 0 index
+               neighframe = tempneighframes[volumelabelidx];
+               
+               for(nl =0; nl < num_neighlabels;nl++)
+               {
+                   neighlabel = neighlabels[nl]; 
+//                    neighlabel_local = labelsatframe[(neighlabels[nl])-1]; // labelsatframe begins at 0
+                   neighlabel_local = labelsatframe[neighlabel-1];
+                   pair<int,int> ins_pos(neighlabel,volumelabel);  //(vol label,neighlabel)
+                   pair<int,int> ins_pos_trans(volumelabel,neighlabel);
+                   if(similarity[ins_pos] !=0)
+                   {
+                         continue;                                             
+                   }
+                   if (volumelabel == neighlabel)
+                   {
+                       continue;
+                   }
+                 
+//                   -------------------------generating the masks---------------------------
+                   maskid1 =linearindex_k(f, neighlabel_local, dimrow_median);;
+                   maskid2 =linearindex_k(neighframe, volumelabel_local, dimrow_median);;                       
+                   similarity[ins_pos] = pow((allmedianl[maskid1]-allmedianl[maskid2]),2) +
+                                                pow((allmediana[maskid1]-allmediana[maskid2]),2) +
+                                                pow((allmedianb[maskid1]-allmedianb[maskid2]),2);
+                   similarity[ins_pos_trans] = similarity[ins_pos];
+               } 
+           }           
+        }  // end of for(i=0; i< num_spatf; i++)
+    }// end of for(f =1; f <= (int) *noframes; f++)
+    
+    
+    
+// //     Now the similarity matrix is available tand the 3 vectors sx sv and sy have to be generated
+    int nnz= (int) similarity.size();
+//     cout<<"Number of nonzero entries "<<nnz<<endl;
+    plhs[0] = mxCreateDoubleMatrix(nnz,1,mxREAL);
+    plhs[1] = mxCreateDoubleMatrix(nnz,1,mxREAL);
+    plhs[2] = mxCreateDoubleMatrix(nnz,1,mxREAL);
+    double* sx_cpp = mxGetPr(plhs[0]); //sx
+    double* sy_cpp = mxGetPr(plhs[1]); //sy
+    double* sv_cpp = mxGetPr(plhs[2]); //sv
+    int ct = 0;
+    for(std::map<std::pair<int,int>, double>::iterator ii=similarity.begin();ii!=similarity.end(); ii++)
+    {
+      std::pair<int,int> pos=(*ii).first;
+      sx_cpp[ct]=static_cast<double>(pos.first);
+      sy_cpp[ct]=static_cast<double>(pos.second);
+      sv_cpp[ct]=(*ii).second;
+      ct++;
+    }
+//     cout<<"Number of nonzero entries processed "<<ct<<endl;
+   similarity.clear(); 
+   delete []bool_tempneighlabels;
+   delete []tempneighframes;
+   delete []tempneighlabels;
+   delete []spatf;
+   delete []neighlabels;
+   delete []bool_all_spx;          
+   delete []bool_newneighlabels;   
+   delete []bool_prevlabel;
+}

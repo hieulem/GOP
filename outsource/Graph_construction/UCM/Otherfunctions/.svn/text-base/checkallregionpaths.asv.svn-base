@@ -1,0 +1,26 @@
+function checkallregionpaths(allregionpaths,nallregionpaths)
+
+%requires: path(path,'UCM\otherFunctions');
+
+fprintf('Checking nopath..');
+for i=1:70
+    if any(allregionpaths.nopath{i}~=nallregionpaths.nopath{i})
+        i
+    end
+end
+fprintf(' Done\n');
+fprintf('Checking summedSimilarity..');
+if any(abs(allregionpaths.summedSimilarity-nallregionpaths.summedSimilarity)>10^(-7))
+    2
+end
+fprintf(' Done\n');
+fprintf('Checking totalLength..');
+if any(allregionpaths.totalLength~=nallregionpaths.totalLength)
+    3
+end
+fprintf(' Done\n');
+fprintf('Checking startPath..');
+if any(allregionpaths.startPath~=nallregionpaths.startPath)
+    4
+end
+fprintf(' Done\n');

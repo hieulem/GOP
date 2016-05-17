@@ -1,0 +1,106 @@
+function [dist_track_mask,mapTracToTrajectories,all_the_lengths]=Get_track_masks_all_lengths(firstTrajectory,image,trajectories,...
+    frame,trackLength,allregionpaths,ucm2,allregionsframes,printonscreen)
+%The function obtains the region masks corresponding to the trajectories
+%for use: image=cim{frame}
+
+
+if (  (~exist('printonscreen','var'))  ||  (isempty(printonscreen))  )
+    printonscreen=false;
+end
+
+noFrames=numel(allregionsframes);
+
+dim=size(Getthemask(ucm2{frame},allregionsframes{frame}{1}.ll(1,1),allregionsframes{frame}{1}.ll(1,2)));
+dimIi=dim(1);
+dimIj=dim(2);
+
+if (printonscreen)
+    figure(16)
+    imshow(image)
+    set(gcf, 'color', 'white');
+
+    %initialisation of necessary parts (strel and frameEdge)
+    SE=Getstrel();
+    frameEdge=Getframeedge(dimIi,dimIj);
+end
+
+%This part counts the trajectories, for initialising the memory
+noTracks=0;
+for k=firstTrajectory:size(trajectories,2)
+    if (isempty(trajectories{k}))
+        continue;
+    end
+    if ( (trajectories{k}.startFrame>frame)||(trajectories{k}.endFrame<(frame+trackLength-1)) )
+        continue;
+    end
+    noTracks=noTracks+1;
+end
+
+count=0;
+dist_track_mask=cell(noFrames,noTracks);
+for i=1:noFrames
+    for j=1:noTracks
+        dist_track_mask{i,j}=false(dimIi,dimIj);
+    end
+end
+mapTracToTrajectories=zeros(1,noTracks);
+all_the_lengths.start=zeros(1,noTracks);
+all_the_lengths.end=zeros(1,noTracks);
+for k=firstTrajectory:size(trajectories,2)
+    if (isempty(trajectories{k}))
+        continue;
+    end
+    if ( (trajectories{k}.startFrame>frame)||(trajectories{k}.endFrame<(frame+trackLength-1)) )
+        continue;
+    end
+    count=count+1;
+    nopath=trajectories{k}.nopath;
+    
+    range=trajectories{k}.startFrame:trajectories{k}.endFrame;
+    for f=range
+        region=find(allregionpaths.nopath{f}==nopath);
+        dist_track_mask{f,count}=Getthemask(ucm2{f},allregionsframes{f}{region}.ll(1,1),allregionsframes{f}{region}.ll(1,2));
+    end
+    all_the_lengths.start(count)=range(1);
+    all_the_lengths.end(count)=range(end);
+    
+    mapTracToTrajectories(count)=k;
+    
+    if (printonscreen)
+        if (~all(all(dist_track_mask{range(1),count}))) %so we exclude the whole frame
+            mask=uint8(dist_track_mask{range(1),count});
+%             image(:,:,1)=image(:,:,1)-image(:,:,1).*mask;
+%             image(:,:,2)=image(:,:,2)-image(:,:,2).*mask;
+            image(:,:,3)=image(:,:,3)-image(:,:,3).*mask; %subtracting only blue makes the marked regions yellow
+        end
+
+        edge=uint8(dist_track_mask{range(1),count}-(imerode(dist_track_mask{range(1),count}, SE).*frameEdge));
+        noEdge=(1-edge);
+        
+        %this makes the contours of regions red
+        image(:,:,1)=image(:,:,1).*noEdge+image(:,:,1).*edge*255;
+        image(:,:,2)=image(:,:,2).*noEdge;
+        image(:,:,3)=image(:,:,3).*noEdge;
+    end
+end
+
+
+if (printonscreen)
+    figure(16)
+    imshow(image)
+    set(gcf, 'color', 'white');
+    title('First frame with regions and region edges marked, whole frame excluded from the picture, if any');
+end
+
+% figure(17)
+% imshow(dist_track_mask{1,5})
+% set(gcf, 'color', 'white');
+% figure(18)
+% imshow(dist_track_mask{1,6})
+% set(gcf, 'color', 'white');
+% figure(18)
+% imshow(dist_track_mask{1,6}+dist_track_mask{1,5})
+% set(gcf, 'color', 'white');
+
+
+

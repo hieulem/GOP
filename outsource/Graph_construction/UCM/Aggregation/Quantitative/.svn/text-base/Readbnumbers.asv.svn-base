@@ -1,0 +1,90 @@
+function thenumbers=Readbnumbers(bmetricsfile,filenames)
+%defdatfile=filename_sequence_basename_frames_or_video.bdeffile;
+%Background has region number 1
+%mColor2Region(colour +1)=region number +1
+
+thenumbers=zeros(1,8);
+
+fid = fopen(defdatfile);
+
+dummy = fgetl(fid); %#ok<NASGU>
+dummy = fgetl(fid); %#ok<NASGU>
+dummy = fgetl(fid); %#ok<NASGU>
+dummy = fgetl(fid); %#ok<NASGU>
+dummy = fgetl(fid); %#ok<NASGU>
+dummy = fgetl(fid); %#ok<NASGU>
+dummy = fgetl(fid); %#ok<NASGU>
+dummy = fgetl(fid); %#ok<NASGU>
+dummy = fgetl(fid); %#ok<NASGU>
+
+tline = fgetl(fid);
+thenumbers(1)=str2double(tline); %density in percent
+
+dummy = fgetl(fid); %#ok<NASGU>
+dummy = fgetl(fid); %#ok<NASGU>
+
+tline = fgetl(fid);
+thenumbers(2)=str2double(tline); %overall (per pixel) clustering error (in percent)
+
+%Here it is also possible to scan according to the number of regions
+%defined in the Def.dat file
+%We scan for the corresponding preceding string instead
+while (true)
+    tline = fgetl(fid); %#ok<NASGU>
+    if ( (numel(tline)==1) && (tline==-1) )
+        fprintf('End of file reached prematurely\n');
+        return;
+    end
+    if ( strcmp(tline,'Average (per region) clustering error (in percent)') )
+        break;
+    end
+end
+
+tline = fgetl(fid);
+thenumbers(3)=str2double(tline); %Average (per region) clustering error (in percent)
+
+dummy = fgetl(fid); %#ok<NASGU>
+dummy = fgetl(fid); %#ok<NASGU>
+
+tline = fgetl(fid);
+thenumbers(4)=str2double(tline); %Number of clusters merged
+
+dummy = fgetl(fid); %#ok<NASGU>
+dummy = fgetl(fid); %#ok<NASGU>
+
+tline = fgetl(fid);
+thenumbers(4)=str2double(tline); %Number of clusters merged
+
+
+
+%mColor2Region(colour of the region +1) = index of region with 1 background
+mColor2Region=zeros(256,1);
+for i=1:mRegionNo
+    dummy = fgetl(fid); %#ok<NASGU>
+    tline = fgetl(fid);
+    newnumber=str2double( tline );
+    mColor2Region(newnumber+1) = i; %map of colours shifted of 1
+end
+
+dummy = fgetl(fid); %#ok<NASGU>
+dummy = fgetl(fid); %#ok<NASGU>
+
+%Confusion penalty matrix
+aPenalty=zeros(mRegionNo);
+for j=1:mRegionNo
+    tline = fgetl(fid);
+    startpos=1;
+    for i=1:mRegionNo
+        [anumber,startpos]=Findnextnumber(tline,startpos,' ');
+        aPenalty(i,j)=anumber;
+    end
+end
+        
+dummy = fgetl(fid); %#ok<NASGU>
+dummy = fgetl(fid); %#ok<NASGU>
+
+tline = fgetl(fid);
+nobframes=str2double(tline); %total number of frames
+
+fclose(fid);
+

@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark
+END
+Collectevalaluatestat.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Collectevalaluatestat.m
+END
+Evaluatesegmregion.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Evaluatesegmregion.m
+END
+Collectevalaluatereg.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Collectevalaluatereg.m
+END
+Variationofinformation.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Variationofinformation.m
+END
+Benchmarkcreatedirsimvid.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Benchmarkcreatedirsimvid.m
+END
+Getprivi.m
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Getprivi.m
+END
+Compactthelabelsatframes.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Compactthelabelsatframes.m
+END
+Detectvideo.m
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Detectvideo.m
+END
+Benchmarkcreateoutimvid.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Benchmarkcreateoutimvid.m
+END
+READMEB.m
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/READMEB.m
+END
+Plotisofiglengthstats.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Plotisofiglengthstats.m
+END
+Removebenchmarkdirimvid.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Removebenchmarkdirimvid.m
+END
+Getnamepos.m
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Getnamepos.m
+END
+Plotsegmeval.m
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Plotsegmeval.m
+END
+Evaluatesegmbdry.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Evaluatesegmbdry.m
+END
+Gettheaccuracies.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Gettheaccuracies.m
+END
+correspondPixels.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/correspondPixels.m
+END
+Computerpimvid.m
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Computerpimvid.m
+END
+Removetheoutputimvid.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Removetheoutputimvid.m
+END
+Offsetthesegs.m
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Offsetthesegs.m
+END
+Collectevalaluatebdry.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Collectevalaluatebdry.m
+END
+correspondPixels.mexa64
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/correspondPixels.mexa64
+END
+Randindex.m
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Randindex.m
+END
+Evaluatesegmstat.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Evaluatesegmstat.m
+END
+Benchmarksegmeval.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Benchmarksegmeval.m
+END
+Plotisofig.m
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Plotisofig.m
+END
+Plotisofigregpr.m
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Plotisofigregpr.m
+END
+Getconfcounts.m
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Getconfcounts.m
+END
+Benchmarkevalstats.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/Benchmarkevalstats.m
+END
+seg2bdry.m
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Benchmark/seg2bdry.m
+END

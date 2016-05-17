@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/D2/VSG/!svn/ver/3/UCM/Segmentation/Addtobenchmark
+END
+Addtoucm2wmex.mexa64
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Addtobenchmark/Addtoucm2wmex.mexa64
+END
+Getsimpleucmfromlabelledvideo.m
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Addtobenchmark/Getsimpleucmfromlabelledvideo.m
+END
+Getallgroundtruthcellsmultgt.m
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/D2/VSG/!svn/ver/3/UCM/Segmentation/Addtobenchmark/Getallgroundtruthcellsmultgt.m
+END
+Getgtvideo.m
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Addtobenchmark/Getgtvideo.m
+END
+Getallgroundtruthcells.m
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Addtobenchmark/Getallgroundtruthcells.m
+END
+Addcurrentimageforrpmultgt.m
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Addtobenchmark/Addcurrentimageforrpmultgt.m
+END
+Writetobenchmarkmultgt.m
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Addtobenchmark/Writetobenchmarkmultgt.m
+END
+Loadmultgtimagevideo.m
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Addtobenchmark/Loadmultgtimagevideo.m
+END
+Addcurrentimageforrp.m
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Addtobenchmark/Addcurrentimageforrp.m
+END
+Addtoucm2wmex.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Addtobenchmark/Addtoucm2wmex.cpp
+END
+Writeforbenchmark.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Addtobenchmark/Writeforbenchmark.m
+END
+Retrievevideosegmentations.m
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Addtobenchmark/Retrievevideosegmentations.m
+END
+Addtoucm2wmex.asv
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Addtobenchmark/Addtoucm2wmex.asv
+END
+Addtoucm2wmex.mexw64
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Addtobenchmark/Addtoucm2wmex.mexw64
+END
+Getmultgtlabvideo.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Addtobenchmark/Getmultgtlabvideo.m
+END
+Addtoucm2.m
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/D2/VSG/!svn/ver/1/UCM/Segmentation/Addtobenchmark/Addtoucm2.m
+END

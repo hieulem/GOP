@@ -1,0 +1,150 @@
+function [trackal,mapTracToTrajectoriesal,dist_track_maskal,allDsal]=...
+    Prepare_region_tracks_and_allds_alllengths(image,trajectories,frame,trackLength,allregionpaths,ucm2,allregionsframes,flows,filenames,firstTrajectory,cim)
+%cim is only added to not generate the warning
+%requires: path(path,'UCM\auxClustering');
+
+%to see the part worth having a look
+%to clean the directory
+
+
+if ( (~exist('frame','var')) || (isempty(frame)) )
+    frame=1;
+end
+if ( (~exist('image','var')) || (isempty(image)) )
+    image=cim{frame};
+end
+if ( (~exist('trackLength','var')) || (isempty(trackLength)) )
+    %trackLength is here considered a starting length
+    %selected tracks must exist between the current frame and the next
+    %trackLength-1 frames
+    trackLength=3;
+%     trackLength=10;
+end
+
+
+%%%to set up according to which one is the first trajectory to use, so as
+%%%to exclude the full frame
+if ( (~exist('firstTrajectory','var')) || (isempty(firstTrajectory)) )
+    firstTrajectory=1;
+end
+%%%
+
+noFrames=numel(allregionsframes);
+
+print=1;
+%temp: print should be zero
+
+
+%%%extraction of tracks of innest points and regions
+path(path,'UCM\auxClustering');
+
+[trackal,mapTracToTrajectoriesal,all_the_lengths]=Prepare_tracks_alllengths(image,trajectories,frame,trackLength,noFrames,filenames,firstTrajectory,print,cim);
+    %trackal = [ which frame , x or y , which trajectory ]
+    % all_the_lengths.start= first frame of dist_track_maskal
+    % all_the_lengths.end= last frame of dist_track_maskal
+    % noTracks=size(trackal,3);
+
+[dist_track_maskal,mapTracToTrajectoriesal,all_the_lengths]=...
+    Prepare_regions_alllengths(image,trajectories,frame,trackLength,allregionpaths,ucm2,allregionsframes,filenames,firstTrajectory,print,cim);
+    % dist_track_maskal{which frame,which trajectory}=mask
+    % all_the_lengths.start= first frame of dist_track_maskal
+    % all_the_lengths.end= last frame of dist_track_maskal
+    % noTracks=size(dist_track_maskal,2);
+
+
+
+%%%Computation of distance matrix
+
+path(path,'UCM\DistanceMatrixComputation');
+
+if (exist(distance_matrices_filenameal,'file'))
+    load(distance_matrices_filenameal);
+    fprintf('Loaded D matrices\n');
+else
+    %standard values
+    excludePartInnerThan=1; %+excludePartInnerThan is in (1 for eliminating just the average, 0 component)
+    excludePartOuterThan=10; %+excludePartOuterThan is in
+    
+    
+    commonlengths=Get_common_lengths(all_the_lengths);
+    % commonlengths=[first_traj, second_traj, 1_start/2_end/3_commonlength]
+
+    allDsal=struct;
+    
+    someDs=Getdistance_position_tracksal(trackal,commonlengths);
+    allDsal=AddSomeAll(allDsal,someDs);
+
+    clear someDs;
+    someDs=Getdistance_position_regionsal(dist_track_maskal,commonlengths,frame,noFrames,flows,trackal);
+    allDsal=AddSomeAll(allDsal,someDs);
+    
+    
+    
+    allDsal.D_gait_track=getDistance_gait(trackal,mapTracToTrajectoriesal,trajectories,excludePartInnerThan,excludePartOuterThan);
+    %gait frequencies using trackal coordinates
+    %%%%%The function uses trackal and mapTracToTrajectory to retrieve the
+        %trajectories from trajectories, so as to use the common length (at
+        %least trackLength long), if mapTracToTrajectoriesal and trajectories
+        %are passed to it
+        
+    [allDsal.D_gait_trackvelocity,allDsal.D_gait_trackvelocitymodulus,allDsal.D_gait_trackvelocityphase]=...
+        getDistance_gait_velocity(trackal,mapTracToTrajectoriesal,trajectories,excludePartInnerThan,excludePartOuterThan); %gait frequencies using trackal valocities
+    %%%%%The function uses trackal and mapTracToTrajectory to retrieve the
+        %trajectories from trajectories, so as to use the common length (at
+        %least trackLength long), if mapTracToTrajectoriesal and trajectories
+        %are passed to it
+
+    [allDsal.D_motion_coherence,allDsal.D_std_on_track_length,allDsal.D_max_distance,allDsal.D_euclidian_distance,allDsal.D_euclidian_distance_on_track_length]=...
+        getDistance_motioncoherence_regions(dist_track_maskal);
+    %The distance between regions is computed by using the minimum distance
+    %between the points in the regions (belonging to the contour)
+    %D_motion_coherence = variance of distance between region trajectories (usually called motion coherence)
+    %D_max_distance = maximum distance between region trajectories
+    %D_euclidian_distance = euclidian distance between region trajectories
+
+    [allDsal.D_velocitycoherence_region,allDsal.D_maxvelocity_region,allDsal.D_euclidianvelocity_region]=getDistance_motionvelocity_regions(dist_track_maskal,flows,frame);
+    %The function uses the median velocity of a region, alternatively it
+    %would be possible to use the mean or to use the most similar between
+    %regions for the comparison
+    %D_velocitycoherence_region = variance of distance between region trajectory velocities
+    %D_maxvelocity_region = maximum distance between region trajectory velocities
+    %D_euclidianvelocity_region = euclidian distance between region trajectory velocities
+    
+    [allDsal.D_velocitycoherence_track,allDsal.D_maxvelocity_track,allDsal.D_euclidianvelocity_track]=...
+        getDistance_motionvelocity_tracks(trackal,mapTracToTrajectoriesal,trajectories);
+    %%%%%The function uses trackal and mapTracToTrajectory to retrieve the
+        %trajectories from trajectories, so as to use the common length (at
+        %least trackLength long), if mapTracToTrajectoriesal and trajectories
+        %are passed to it
+    %D_velocitycoherence_track = variance of distance between region trajectory velocities
+    %D_maxvelocity_track = maximum distance between region trajectory velocities
+    %D_euclidianvelocity_track = euclidian distance between region trajectory velocities
+
+    [allDsal.D_gait_medianvelocity,allDsal.D_gait_medianvelocitymodulus,allDsal.D_gait_medianvelocityphase]=...
+        getDistance_gait_regions(dist_track_maskal,flows,frame,excludePartInnerThan,excludePartOuterThan);
+    %The function uses the median velocities of the regions, computes their
+    %spectrum and measures the distance between spectra
+
+    %test values
+    excludePartInnerThan=3; %+excludePartInnerThan is in (1 for eliminating just the average, 0 component)
+    excludePartOuterThan=10; %+excludePartOuterThan is in
+    allDsal.D_gait_track_3_10=getDistance_gait(trackal,mapTracToTrajectoriesal,trajectories,excludePartInnerThan,excludePartOuterThan);
+    [allDsal.D_gait_trackvelocity_3_10,allDsal.D_gait_trackvelocitymodulus_3_10,allDsal.D_gait_trackvelocityphase_3_10]=...
+        getDistance_gait_velocity(trackal,mapTracToTrajectoriesal,trajectories,excludePartInnerThan,excludePartOuterThan); %gait frequencies using trackal valocities
+    [allDsal.D_gait_medianvelocity_3_10,allDsal.D_gait_medianvelocitymodulus_3_10,allDsal.D_gait_medianvelocityphase_3_10]=...
+        getDistance_gait_regions(dist_track_maskal,flows,frame,excludePartInnerThan,excludePartOuterThan);
+
+    %test values
+    excludePartInnerThan=1; %+excludePartInnerThan is in (1 for eliminating just the average, 0 component)
+    excludePartOuterThan=5; %+excludePartOuterThan is in
+    allDsal.D_gait_track_1_5=getDistance_gait(trackal,mapTracToTrajectoriesal,trajectories,excludePartInnerThan,excludePartOuterThan);
+    [allDsal.D_gait_trackvelocity_1_5,allDsal.D_gait_trackvelocitymodulus_1_5,allDsal.D_gait_trackvelocityphase_1_5]=...
+        getDistance_gait_velocity(trackal,mapTracToTrajectoriesal,trajectories,excludePartInnerThan,excludePartOuterThan); %gait frequencies using trackal valocities
+    [allDsal.D_gait_medianvelocity_1_5,allDsal.D_gait_medianvelocitymodulus_1_5,allDsal.D_gait_medianvelocityphase_1_5]=...
+        getDistance_gait_regions(dist_track_maskal,flows,frame,excludePartInnerThan,excludePartOuterThan);
+
+    
+    save(distance_matrices_filenameal, 'allDsal','-v7.3');
+    fprintf('All D matrices computed and saved\n');
+end
+

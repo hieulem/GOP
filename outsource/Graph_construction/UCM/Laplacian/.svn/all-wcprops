@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/D2/VSG/!svn/ver/1/UCM/Laplacian
+END
+Laplacian.m
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/D2/VSG/!svn/ver/1/UCM/Laplacian/Laplacian.m
+END
+components.m
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/D2/VSG/!svn/ver/1/UCM/Laplacian/components.m
+END
+Selectneighbornodes.m
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/D2/VSG/!svn/ver/1/UCM/Laplacian/Selectneighbornodes.m
+END
+jdqz.m
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/D2/VSG/!svn/ver/1/UCM/Laplacian/jdqz.m
+END
+Selectkglobal.m
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/D2/VSG/!svn/ver/1/UCM/Laplacian/Selectkglobal.m
+END
+Selectkneighboursnodiagonal.m
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/D2/VSG/!svn/ver/1/UCM/Laplacian/Selectkneighboursnodiagonal.m
+END
+Getnewlaplacian.m
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/D2/VSG/!svn/ver/1/UCM/Laplacian/Getnewlaplacian.m
+END
+Newlaplacian.m
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/D2/VSG/!svn/ver/1/UCM/Laplacian/Newlaplacian.m
+END
+Selectkneighbours.m
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/D2/VSG/!svn/ver/1/UCM/Laplacian/Selectkneighbours.m
+END
+Laplacian.asv
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/D2/VSG/!svn/ver/1/UCM/Laplacian/Laplacian.asv
+END
+Projecttomanifold.m
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/D2/VSG/!svn/ver/1/UCM/Laplacian/Projecttomanifold.m
+END

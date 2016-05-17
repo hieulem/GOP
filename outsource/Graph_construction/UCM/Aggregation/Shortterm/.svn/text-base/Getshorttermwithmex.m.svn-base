@@ -1,0 +1,139 @@
+function STT=Getshorttermwithmex(labelledlevelvideo, mapped, flows, graphdepth, multcount, options, theoptiondata, filenames)
+%for inverse mapping
+%[frame,label]=find(mapped==indexx);
+
+
+
+if ( (~exist('graphdepth','var')) || (isempty(graphdepth)) )
+    graphdepth=2;
+end
+if ( (~exist('multcount','var')) || (isempty(multcount)) )
+    multcount=1.5; %or 2, meaning a more central frame is counted multcount time the adjacent
+                    %1 means that all adjacent frames are given the same
+                    %importance, no matter how close they are to the
+                    %central frame
+end
+
+
+
+printonscreen=false;
+
+noFrames=size(labelledlevelvideo,3);
+maxnumberofsuperpixelsperframe=max(labelledlevelvideo(:));
+
+
+
+noallsuperpixels=max(mapped(:));
+
+
+averageconnectionthrough=5; estimateofterms=floor(noallsuperpixels*(averageconnectionthrough^graphdepth)/2);
+sxo=zeros(estimateofterms,1);
+syo=zeros(estimateofterms,1);
+svo=zeros(estimateofterms,1);
+
+USECPPIMPLEMENTATION=true;
+if (USECPPIMPLEMENTATION)
+    
+    % -------------------CPP IMPLEMENTATION-------------------
+    noofinserted = STT_innerloops_mex(graphdepth,noFrames,labelledlevelvideo,multcount,maxnumberofsuperpixelsperframe,flows,mapped,sxo,syo,svo);
+    % ------------------- ------------------- -------------------
+    
+else
+
+    % -------------------------Matlab Implementation----------------------
+    % ******************************************************************
+    
+    noofinserted=0;
+    for frame=1:(noFrames-1)
+        
+        similarityatone=zeros(maxnumberofsuperpixelsperframe,maxnumberofsuperpixelsperframe,graphdepth); %similarity between frame and those at other frames
+        similaritydoneone=false(maxnumberofsuperpixelsperframe,maxnumberofsuperpixelsperframe,graphdepth); %used to extract data
+        
+        labelsonone = labelledlevelvideo(:,:,frame);
+        nolabelsone=max(max(labelsonone));
+        
+        masksonframe=false(size(labelsonone,1),size(labelsonone,2),nolabelsone);
+        for label=1:nolabelsone
+            masksonframe(:,:,label)=(labelsonone==label);
+        end
+        
+        importanceforprobability=1; %value is decreased by multcount in successive graphdepths
+        firstframe=true;
+        
+        for frameup=(frame+1):  (min( (frame+graphdepth) , noFrames )  )
+            atdepth=frameup-frame;
+            
+            labelsontwo = labelledlevelvideo(:,:,frameup);
+    
+            if (firstframe)
+                firstframe=false;
+            else
+                importanceforprobability=importanceforprobability/multcount;
+            end
+    
+            for label=1:nolabelsone
+                themask=masksonframe(:,:,label);
+        %         Init_figure_no(2), imagesc(themask);
+                predictedMask=Evolveregionsfastwithfilteredflows(themask,flows.flows{frame},printonscreen);
+                if (graphdepth>1)
+                    masksonframe(:,:,label)=(predictedMask>0.5); %update masksonframe for next graph depth
+                end
+        %         Init_figure_no(3), imagesc(predictedMask);
+                interestedpixels=(predictedMask>0);
+    
+                interestedlabels=unique(labelsontwo(interestedpixels));
+    
+                for il=interestedlabels'
+    
+                    maskontwo=(labelsontwo==il);
+    
+                    similarity=Measuresimilaritymex(maskontwo,predictedMask,false);
+                    
+                    similarityatone(label,il,atdepth)=similarity*importanceforprobability;
+                    similaritydoneone(label,il,atdepth)=true;
+                end
+            end
+        end
+        
+        
+        for ff=1:graphdepth
+            stsimilaritiesframesff=similarityatone(:,:,ff);
+            stsimilaritiesdoneframesff=similaritydoneone(:,:,ff);
+            [r,c]=find(stsimilaritiesdoneframesff);
+            toinserthere=numel(r);
+            if (toinserthere>0)
+                sxo(noofinserted+1:noofinserted+toinserthere)=mapped(frame,r)';
+                syo(noofinserted+1:noofinserted+toinserthere)=mapped(ff+frame,c)';
+                svo(noofinserted+1:noofinserted+toinserthere)=stsimilaritiesframesff(sub2ind(size(stsimilaritiesframesff),r,c));
+            end
+            noofinserted=noofinserted+toinserthere;
+        end
+    end
+    % -------------------------Matlab Implementation ENDS----------------------
+    % ******************************************************************
+
+end
+
+sxo(noofinserted+1:end)=[];
+syo(noofinserted+1:end)=[];
+svo(noofinserted+1:end)=[];
+fprintf('STT ratio estimate of terms to inserted %f (%d,%d)\n',estimateofterms/noofinserted,estimateofterms,noofinserted);
+
+
+
+STT=Getsttfromindexedrawvalues([sxo;syo], [syo;sxo], [svo;svo], noallsuperpixels, options);
+% figure(5), imagesc(STT)
+
+
+
+%Add data to paramter calibration directory
+if ( (isfield(options,'calibratetheparameters')) && (~isempty(options.calibratetheparameters)) && (options.calibratetheparameters) )
+    thiscase='stt';
+    printonscreenincalibration=false;
+    Addthisdataforparametercalibration([sxo;syo],[syo;sxo],[svo;svo],thiscase,theoptiondata,filenames,noallsuperpixels,printonscreenincalibration);
+end
+
+
+
+
+

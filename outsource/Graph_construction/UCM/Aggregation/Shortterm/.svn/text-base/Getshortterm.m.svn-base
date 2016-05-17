@@ -1,0 +1,161 @@
+function STT=Getshortterm(labelledlevelvideo, mapped, flows, graphdepth, multcount, options, theoptiondata, filenames)
+%for inverse mapping
+%[frame,label]=find(mapped==indexx);
+
+%paper options:
+% options.sttuexp=false; options.sttlambd=1; options.sttsqv=false;
+
+%optimized options (default):
+% options.sttuexp=false; options.sttlambd=1; options.sttsqv=false;
+
+
+
+if ( (~exist('graphdepth','var')) || (isempty(graphdepth)) )
+    graphdepth=2;
+end
+if ( (~exist('multcount','var')) || (isempty(multcount)) )
+    multcount=1.5; %or 2, meaning a more central frame is counted multcount time the adjacent
+                    %1 means that all adjacent frames are given the same
+                    %importance, no matter how close they are to the
+                    %central frame
+end
+
+
+
+printonscreen=false;
+
+noFrames=size(labelledlevelvideo,3);
+maxnumberofsuperpixelsperframe=max(labelledlevelvideo(:));
+
+% dim = size(ucm2{1}(2:2:end, 2:2:end));
+% dimIi=dim(1);
+% dimIj=dim(2);
+
+% [X,Y]=meshgrid(1:dimIj,1:dimIi);
+
+
+
+noallsuperpixels=max(mapped(:));
+
+
+
+averageconnectionthrough=5; estimateofterms=floor(noallsuperpixels*(averageconnectionthrough^graphdepth)/2);
+sxo=zeros(estimateofterms,1);
+syo=zeros(estimateofterms,1);
+svo=zeros(estimateofterms,1);
+noofinserted=0;
+for frame=1:(noFrames-1)
+    
+    similarityatone=zeros(maxnumberofsuperpixelsperframe,maxnumberofsuperpixelsperframe,graphdepth); %similarity between frame and those at other frames
+    similaritydoneone=false(maxnumberofsuperpixelsperframe,maxnumberofsuperpixelsperframe,graphdepth); %used to extract data
+    
+    labelsonone = labelledlevelvideo(:,:,frame);
+%     labels2 = bwlabel(ucm2{frame} < Level);
+%     labelsonone = labels2(2:2:end, 2:2:end);
+    nolabelsone=max(max(labelsonone));
+    
+    masksonframe=false(size(labelsonone,1),size(labelsonone,2),nolabelsone);
+    for label=1:nolabelsone
+        masksonframe(:,:,label)=(labelsonone==label);
+    end
+    
+    importanceforprobability=1; %value is decreased by multcount in successive graphdepths
+    firstframe=true;
+    
+    for frameup=(frame+1):  (  min( (frame+graphdepth) , noFrames )  )
+        atdepth=frameup-frame;
+        
+        labelsontwo = labelledlevelvideo(:,:,frameup);
+%         labels2 = bwlabel(ucm2{frameup} < Level);
+%         labelsontwo = labels2(2:2:end, 2:2:end);
+%         nolabelstwo=max(max(labelsontwo));
+
+        if (firstframe)
+            firstframe=false;
+        else
+            importanceforprobability=importanceforprobability/multcount;
+        end
+
+        for label=1:nolabelsone
+            
+            themask=masksonframe(:,:,label);
+    %         Init_figure_no(2), imagesc(themask);
+            predictedMask=Evolveregionsfastwithfilteredflows(themask,flows.flows{frame},printonscreen);
+            if (graphdepth>1)
+                masksonframe(:,:,label)=(predictedMask>0.5); %update masksonframe for next graph depth
+            end
+    %         Init_figure_no(3), imagesc(predictedMask);
+            interestedpixels=(predictedMask>0);
+
+            interestedlabels=unique(labelsontwo(interestedpixels));
+
+            for il=interestedlabels'
+
+                maskontwo=(labelsontwo==il);
+
+%                 similarity=Measuremaxsimilaritywmex(maskontwo,predictedMask,false);
+                similarity=Measuresimilaritymex(maskontwo,predictedMask,false);
+    %             similarity=Measuresimilarity(maskontwo,predictedMask,0);
+                %similarity_out_pixels=Measureoutpixelswithmex(mask2,predictedMask,false); _number of pixels outside
+                %similarity_out_pixels=Measureoutpixels(mask2,predictedMask,0); _number of pixels outside
+                
+                similarityatone(label,il,atdepth)=similarity*importanceforprobability;
+                similaritydoneone(label,il,atdepth)=true;
+            end
+        end
+    end
+    
+%     newtoinsert=sum(similaritydoneone(:));
+%     sxo=[sxo;zeros(newtoinsert,1)]; %#ok<AGROW>
+%     syo=[syo;zeros(newtoinsert,1)]; %#ok<AGROW>
+%     svo=[svo;zeros(newtoinsert,1)]; %#ok<AGROW>
+    
+    for ff=1:graphdepth
+        stsimilaritiesframesff=similarityatone(:,:,ff);
+        stsimilaritiesdoneframesff=similaritydoneone(:,:,ff);
+        [r,c]=find(stsimilaritiesdoneframesff);
+        toinserthere=numel(r);
+        if (toinserthere>0)
+            sxo(noofinserted+1:noofinserted+toinserthere)=mapped(frame,r)';
+            syo(noofinserted+1:noofinserted+toinserthere)=mapped(ff+frame,c)';
+            svo(noofinserted+1:noofinserted+toinserthere)=stsimilaritiesframesff(sub2ind(size(stsimilaritiesframesff),r,c));
+        end
+        noofinserted=noofinserted+toinserthere;
+    end
+end
+sxo(noofinserted+1:end)=[];
+syo(noofinserted+1:end)=[];
+svo(noofinserted+1:end)=[];
+fprintf('STT ratio estimate of terms to inserted %f (%d,%d)\n',estimateofterms/noofinserted,estimateofterms,noofinserted);
+
+
+
+STT=Getsttfromindexedrawvalues([sxo;syo], [syo;sxo], [svo;svo], noallsuperpixels, options);
+% figure(5), imagesc(STT)
+
+
+
+%Add data to paramter calibration directory
+if ( (isfield(options,'calibratetheparameters')) && (~isempty(options.calibratetheparameters)) && (options.calibratetheparameters) )
+    thiscase='stt';
+    printonscreenincalibration=false;
+    Addthisdataforparametercalibration([sxo;syo],[syo;sxo],[svo;svo],thiscase,theoptiondata,filenames,noallsuperpixels,printonscreenincalibration);
+end
+
+
+%To test that in flow U and V are actually X and Y
+% [X,Y]=meshgrid(1:dimIj,1:dimIi);
+% thefl.Up=ones(dimIi,dimIj)*3+X;
+% thefl.Vp=ones(dimIi,dimIj)*1.5+Y;
+% thefl.Vm=ones(dimIi,dimIj)*(-1.5)+Y;
+% thefl.Um=ones(dimIi,dimIj)*(-3)+X;
+% maskk=false(dimIi,dimIj);
+% maskk(4:40,5:50)=true;
+% maskk(41:60,5:20)=true;
+% Init_figure_no(1), imagesc(maskk);
+% predictedMask=Evolveregionsfastwithfilteredflows(maskk,thefl,false);
+% Init_figure_no(2), imagesc(predictedMask);
+
+
+
+

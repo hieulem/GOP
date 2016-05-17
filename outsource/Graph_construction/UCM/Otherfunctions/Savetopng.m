@@ -1,0 +1,17 @@
+function Savetoeps(filename,nofigure)
+
+if ( (exist('nofigure','var')) && (~isempty(nofigure)) )
+    figure(nofigure);
+end
+
+% set(gca,'FontSize',17);
+% set(gca,'xtick',[],'ytick',[]);
+% set(gca,'xtick',[],'ytick',[],'ztick',[]);
+
+title('');
+% set(gcf,'Renderer','painters');
+print('-dpdf',filename);
+% print -dpdf -painters
+%,'-painters','-r300'
+% print('-depsc',filename); %,'-painters'
+

@@ -1,0 +1,440 @@
+function output=Plotsegmeval(outDir,plotsuperpose,col)
+% plot evaluation results
+% Pablo Arbelaez <arbelaez@eecs.berkeley.edu>
+%
+% modified by Fabio Galasso
+% February 2014
+
+output=struct();
+
+if ( (~exist('plotsuperpose','var')) || (isempty(plotsuperpose)) )
+    plotsuperpose=false;
+end
+if ( (~exist('col','var')) || (isempty(col)) )
+    col='r';
+end
+
+%Determine case dir for printing hline
+wherefilesep=strfind(outDir(1:end-1),filesep); %one character (t from Output) is truncated or filesep is removed)
+if (numel(wherefilesep)>=2)
+    casebenchdir=outDir(wherefilesep(end-1)+1:wherefilesep(end)-1);
+else
+    casebenchdir='CASEDIR';
+end
+
+fprintf('%s\n',casebenchdir);
+
+%prepare hline
+hlineout=struct(); hlineout.bdryglob=''; hlineout.bdryavg=''; hlineout.regglob=''; hlineout.regavg=''; hlineout.sc=''; hlineout.pri=''; hlineout.vi='';hlineout.MLen_G_ODS='';hlineout.StdLen_G_ODS='';hlineout.MLen_A_ODS='';hlineout.StdLen_A_ODS='';hlineout.NCl_G_ODS=''; hlineout.MstdLen_G_ODS=''; hlineout.MstdLen_A_ODS='';
+
+
+
+%Boundary metrics
+if (exist(fullfile(outDir,'eval_bdry_globalthr.txt'),'file'))
+    
+    %%% Average statistics %%%
+    prvals = dlmread(fullfile(outDir,'eval_bdry_avgthr.txt')); % thresh,r,p,f global values across all image for each threshold
+    prvals = prvals( (prvals(:,2)>=0.01) ,:); %only those threshold numbers for recall > 0.01
+
+    evalRes = dlmread(fullfile(outDir,'eval_bdry_avgodsoss.txt')); %avg_ods_T,avg_ods_R,avg_ods_P,avg_ods_F,avg_oss_r,avg_oss_p,avg_oss_f,avg_area_PR
+    
+    if (plotsuperpose)
+        figure(3);
+    else
+        Init_figure_no(3), Plotisofigregpr(); %Plotisofig
+    end
+    hold on
+    if (size(prvals,1)>1) %if only one hierarchical level is present, the figures correspond to ODS
+        plot(prvals(1:end,2),prvals(1:end,3),col,'LineWidth',3);
+        title('Bourndary Average PR Curve');
+    else
+        plot(evalRes(2),evalRes(3),'o','MarkerFaceColor',col,'MarkerEdgeColor',col,'MarkerSize',8);
+        title('Bourndary Average PR Curve'); %Just the value corresponding to the maxmimum F is plotted, i.e. A-ODS
+    end
+    hold off
+    
+    fprintf('Boundary PR average\n');
+    fprintf('   A-ODS: F( R %1.2f, P %1.2f ) = %1.2f   [th = %1.2f]\n',evalRes(2:4),evalRes(1));
+    fprintf('   A-OSS: F( R %1.2f, P %1.2f ) = %1.2f\n',evalRes(5:7));
+    fprintf('   A-Area_PR = %1.2f\n',evalRes(8));
+
+    output.B_A_ODS=evalRes(4); output.B_A_OSS=evalRes(7); output.B_A_area=evalRes(8);
+
+    hlineout.bdryavg=[ ' & ', num2str(evalRes(4),'%.2f'), ' & ', num2str(evalRes(7),'%.2f'), ' & ', num2str(evalRes(8),'%.2f') ];
+    
+    
+    
+    %%% Global statistics %%%
+    prvals = dlmread(fullfile(outDir,'eval_bdry_globalthr.txt')); % thresh,r,p,f global values across all image for each threshold
+    prvals = prvals( (prvals(:,2)>=0.01) ,:); %only those threshold numbers for recall > 0.01
+
+    evalRes = dlmread(fullfile(outDir,'eval_bdry_globossods.txt')); %bestT,bestR,bestP,bestF,R_max,P_max,F_max,Area_PR
+    
+    if (plotsuperpose)
+        figure(1);
+    else
+        Init_figure_no(1), Plotisofigregpr(); %Plotisofig
+    end
+    hold on
+    if (size(prvals,1)>1) %if only one hierarchical level is present, the figures correspond to ODS
+        plot(prvals(1:end,2),prvals(1:end,3),col,'LineWidth',3);
+        title('Bourndary Global PR Curve');
+    else
+        plot(evalRes(2),evalRes(3),'o','MarkerFaceColor',col,'MarkerEdgeColor',col,'MarkerSize',8);
+        title('Bourndary Global PR Curve'); %Just the value corresponding to the maxmimum F is plotted, i.e. G-ODS
+    end
+    hold off
+    
+    fprintf('Boundary PR global\n');
+    fprintf('   G-ODS: F( R %1.2f, P %1.2f ) = %1.2f   [th = %1.2f]\n',evalRes(2:4),evalRes(1));
+    fprintf('   G-OIS: F( R %1.2f, P %1.2f ) = %1.2f\n',evalRes(5:7));
+    fprintf('   Area_PR = %1.2f\n',evalRes(8));
+    output.B_G_ODS=evalRes(4); output.B_G_OSS=evalRes(7); output.B_G_area=evalRes(8);
+
+    hlineout.bdryglob=[ ' & ', num2str(evalRes(4),'%.2f'), ' & ', num2str(evalRes(7),'%.2f'), ' & ', num2str(evalRes(8),'%.2f') ];
+    
+
+
+    %statistics based on best average R
+    if (exist(fullfile(outDir,'eval_bdryavgodsoss_rmax.txt'),'file'))
+        evalResjr = dlmread(fullfile(outDir,'eval_bdryavgodsoss_rmax.txt'));
+        fprintf('Boundary average (best R cases)\n');
+        fprintf('   A-ODS: F( R %1.2f, P %1.2f ) = %1.2f   [th = %1.2f]\n',evalResjr(2:4),evalResjr(1));
+        fprintf('   A-OSS: F( R %1.2f, P %1.2f ) = %1.2f\n',evalResjr(5:7));
+    end
+    %statistics based on best global R
+    if (exist(fullfile(outDir,'eval_bdryglobodsoss_rmax.txt'),'file'))
+        evalResjr = dlmread(fullfile(outDir,'eval_bdryglobodsoss_rmax.txt'));
+        fprintf('Boundary global (best R cases)\n');
+        fprintf('   G-ODS: F( R %1.2f, P %1.2f ) = %1.2f   [th = %1.2f]\n',evalResjr(2:4),evalResjr(1));
+        fprintf('   G-OIS: F( R %1.2f, P %1.2f ) = %1.2f\n',evalResjr(5:7));
+    end
+end
+
+%Volume metrics: precision recall
+if (exist(fullfile(outDir,'eval_regpr_globalthr.txt'),'file'))
+    
+    %%% Average statistics %%%
+    prvals = dlmread(fullfile(outDir,'eval_regpr_avgthr.txt')); % thresh,r,p,f global values across all image for each threshold
+%     prvals = prvals( (prvals(:,3)>=0.01) ,:); %only those threshold numbers for precision > 0.01
+
+    evalRes = dlmread(fullfile(outDir,'eval_regpr_avgodsoss.txt')); %avg_ods_T,avg_ods_R,avg_ods_P,avg_ods_F,avg_oss_r,avg_oss_p,avg_oss_f,avg_area_PR
+    
+    if (plotsuperpose)
+        figure(8);
+    else
+        Init_figure_no(8), Plotisofigregpr();
+    end
+    hold on
+    if (size(prvals,1)>1) %if only one hierarchical level is present, the figures correspond to ODS
+        plot(prvals(1:end,2),prvals(1:end,3),col,'LineWidth',3);
+        title('Volume Average PR Curve');
+    else
+        plot(evalRes(2),evalRes(3),'o','MarkerFaceColor',col,'MarkerEdgeColor',col,'MarkerSize',8);
+        title('Volume Average PR Curve'); %Just the value corresponding to the maxmimum F is plotted, i.e. A-ODS
+    end
+    hold off
+    
+    fprintf('Volume PR average\n');
+    fprintf('   A-ODS: F( R %1.2f, P %1.2f ) = %1.2f   [th = %1.2f]\n',evalRes(2:4),evalRes(1));
+    fprintf('   A-OSS: F( R %1.2f, P %1.2f ) = %1.2f\n',evalRes(5:7));
+    fprintf('   A-Area_PR = %1.2f\n',evalRes(8));
+    output.R_A_ODS=evalRes(4); output.R_A_OSS=evalRes(7); output.R_A_area=evalRes(8);
+
+    hlineout.regavg=[ ' & ', num2str(evalRes(4),'%.2f'), ' & ', num2str(evalRes(7),'%.2f'), ' & ', num2str(evalRes(8),'%.2f') ];
+
+    
+    
+    %%% Global statistics %%%
+    prvals = dlmread(fullfile(outDir,'eval_regpr_globalthr.txt')); % thresh,r,p,f global values across all image for each threshold
+%     prvals = prvals( (prvals(:,3)>=0.01) ,:); %only those threshold numbers for precision > 0.01
+
+    evalRes = dlmread(fullfile(outDir,'eval_regpr_globossods.txt')); %bestT,bestR,bestP,bestF,R_max,P_max,F_max,Area_PR
+    
+    if (plotsuperpose)
+        figure(6);
+    else
+        Init_figure_no(6), Plotisofigregpr();
+    end
+    hold on
+    if (size(prvals,1)>1) %if only one hierarchical level is present, the figures correspond to ODS
+        plot(prvals(1:end,2),prvals(1:end,3),col,'LineWidth',3);
+        title('Volume Global PR Curve');
+    else
+        plot(evalRes(2),evalRes(3),'o','MarkerFaceColor',col,'MarkerEdgeColor',col,'MarkerSize',8);
+        title('Volume Global PR Curve'); %Just the value corresponding to the maxmimum F is plotted, i.e. G-ODS
+    end
+    hold off
+    
+    fprintf('Volume PR global\n');
+    fprintf('   G-ODS: F( R %1.2f, P %1.2f ) = %1.2f   [th = %1.2f]\n',evalRes(2:4),evalRes(1));
+    fprintf('   G-OSS: F( R %1.2f, P %1.2f ) = %1.2f\n',evalRes(5:7));
+    fprintf('   G-Area_PR = %1.2f\n',evalRes(8));
+    output.R_G_ODS=evalRes(4); output.R_G_OSS=evalRes(7); output.R_G_area=evalRes(8);
+
+    hlineout.regglob=[ ' & ', num2str(evalRes(4),'%.2f'), ' & ', num2str(evalRes(7),'%.2f'), ' & ', num2str(evalRes(8),'%.2f') ];
+    
+
+
+    %statistics based on best average P
+    if (exist(fullfile(outDir,'eval_regpravgodsoss_pmax.txt'),'file'))
+        evalResjr = dlmread(fullfile(outDir,'eval_regpravgodsoss_pmax.txt'));
+        fprintf('Volume average (best P cases)\n');
+        fprintf('   A-ODS: F( R %1.2f, P %1.2f ) = %1.2f   [th = %1.2f]\n',evalResjr(2:4),evalResjr(1));
+        fprintf('   A-OSS: F( R %1.2f, P %1.2f ) = %1.2f\n',evalResjr(5:7));
+    end
+    %statistics based on best global P
+    if (exist(fullfile(outDir,'eval_regprglobodsoss_pmax.txt'),'file'))
+        evalResjr = dlmread(fullfile(outDir,'eval_regprglobodsoss_pmax.txt'));
+        fprintf('Volume global (best P cases)\n');
+        fprintf('   G-ODS: F( R %1.2f, P %1.2f ) = %1.2f   [th = %1.2f]\n',evalResjr(2:4),evalResjr(1));
+        fprintf('   G-OSS: F( R %1.2f, P %1.2f ) = %1.2f\n',evalResjr(5:7));
+    end
+end
+
+%Segmentation covering
+if (exist(fullfile(outDir,'eval_cover.txt'),'file'))
+    evalRes = dlmread(fullfile(outDir,'eval_cover.txt')); %bestT, bestR, R_best, R_best_total
+    fprintf('Region\n');
+    fprintf('   GT covering: ODS = %1.2f [th = %1.2f]. OSS = %1.2f. Best = %1.2f\n',evalRes(2),evalRes(1),evalRes(3:4));
+    output.SC_ODS=evalRes(2); output.SC_OSS=evalRes(3); output.SC_Best=evalRes(4);
+    
+    hlineout.sc=[ ' & ', num2str(evalRes(2),'%.2f'), ' & ', num2str(evalRes(3),'%.2f'), ' & ', num2str(evalRes(4),'%.2f') ];
+end
+
+%PRI and VI
+if (exist(fullfile(outDir,'eval_RI_VOI.txt'),'file'))
+    evalRes = dlmread(fullfile(outDir,'eval_RI_VOI.txt'));
+    fprintf('Region\n');
+    fprintf('   Rand Index: ODS = %1.2f [th = %1.2f]. OSS = %1.2f.\n',evalRes(2),evalRes(1),evalRes(3));
+    fprintf('   Var. Info.: ODS = %1.2f [th = %1.2f]. OSS = %1.2f.\n',evalRes(5),evalRes(4),evalRes(6));
+    output.PRI_ODS=evalRes(2); output.PRI_OSS=evalRes(3); output.VI_ODS=evalRes(5); output.VI_OSS=evalRes(6);
+
+    hlineout.pri=[ ' & ', num2str(evalRes(2),'%.2f'), ' & ', num2str(evalRes(3),'%.2f') ];
+    hlineout.vi=[ ' & ', num2str(evalRes(5),'%.2f'), ' & ', num2str(evalRes(6),'%.2f') ];
+end
+
+
+
+%Length and n cluster statistics
+if ( (exist(fullfile(outDir,'eval_regpr_avgthr.txt'),'file')) && (exist(fullfile(outDir,'eval_nclustersstats_thr.txt'),'file')) && (true) )
+% filenames:
+% 'eval_nclustersstats_thr.txt' thresh nclusters_avg
+% 'eval_lengthglobstats_thr.txt' thresh meanlengths_glob stdlengths_glob
+% 'eval_lengthavgstats_thr.txt' thresh meanlengths_avg stdlengths_avg
+    
+    %%%Average length statistics
+    if (false)
+        %Load relevant average volume metrics
+        prvals = dlmread(fullfile(outDir,'eval_regpr_avgthr.txt')); % thresh,r,p,f global values across all image for each threshold
+        evalRes = dlmread(fullfile(outDir,'eval_regpr_avgodsoss.txt'));
+
+        %Load the relevant average length statistics
+        lengthvals = dlmread(fullfile(outDir,'eval_lengthavgstats_thr.txt')); % thresh meanlengths_avg stdlengths_avg
+
+        %Length and Precision
+        if (plotsuperpose)
+            figure(13);
+        else
+            Init_figure_no(13,[],false); Plotisofiglengthstats(false);
+        end
+        hold on
+        if (size(prvals,1)>1)
+            plot(lengthvals(1:end,2),prvals(1:end,3),col,'LineWidth',3);
+            xlabel('Avg Length');
+            title('Length Precision Curve Average');
+        else
+            plot(lengthvals(2),evalRes(3),'o','MarkerFaceColor',col,'MarkerEdgeColor',col,'MarkerSize',8);
+            xlabel('Avg Length');
+            title('Length Precision Curve Average');
+        end
+        hold off
+
+        %Recall and Length
+        if (plotsuperpose)
+            figure(14);
+        else
+            Init_figure_no(14,[],false); Plotisofiglengthstats(true);
+        end
+        hold on
+        if (size(prvals,1)>1)
+    %         errorbar(prvals(1:end,2),lengthvals(1:end,2),lengthvals(1:end,3),col,'LineWidth',3);
+            plot(prvals(1:end,2),lengthvals(1:end,2),col,'LineWidth',3);
+            ylabel('Avg Length');
+            title('Recall Length Curve Average');
+        else
+    %         errorbar(evalRes(2),lengthvals(2),lengthvals(3),'o','MarkerFaceColor',col,'MarkerEdgeColor',col,'MarkerSize',8);
+            plot(evalRes(2),lengthvals(2),'o','MarkerFaceColor',col,'MarkerEdgeColor',col,'MarkerSize',8);
+            ylabel('Avg Length');
+            title('Recall Length Curve Average');
+        end
+        hold off
+
+        [val,idx]=sort( abs( lengthvals(:,1)-repmat(evalRes(1),size(lengthvals,1),1) ) , 'ascend'); %#ok<ASGLU>
+        fprintf('Length stats with Volume PR average\n');
+        fprintf('   Length best F [th = %1.2f] A-ODS: mean %1.2f, std %1.2f \n',evalRes(1), lengthvals(idx(1),2), lengthvals(idx(1),3) );
+        output.MLen_A_ODS=lengthvals(idx(1),2); output.StdLen_A_ODS=lengthvals(idx(1),3);
+
+        hlineout.MstdLen_A_ODS=[ ' & ', num2str(lengthvals(idx(1),2),'%.2f'), '(', num2str(lengthvals(idx(1),3),'%.2f'), ')' ];
+        hlineout.MLen_A_ODS=[ ' & ', num2str(lengthvals(idx(1),2),'%.2f') ];
+        hlineout.StdLen_A_ODS=[ ' & ', num2str(lengthvals(idx(1),3),'%.2f') ];
+    end
+    
+    
+    
+    %%%Global length statistics
+    if (true)
+        %Load relevant average volume metrics
+        prvals = dlmread(fullfile(outDir,'eval_regpr_globalthr.txt')); % thresh,r,p,f global values across all image for each threshold
+        evalRes = dlmread(fullfile(outDir,'eval_regpr_globossods.txt'));
+
+        %Load the relevant average length statistics
+        lengthvals = dlmread(fullfile(outDir,'eval_lengthglobstats_thr.txt')); % thresh meanlengths_avg stdlengths_avg
+
+        %Length and Precision
+            if (plotsuperpose)
+                figure(9);
+            else
+                Init_figure_no(9,[],false); Plotisofiglengthstats(false);
+            end
+            hold on
+            if (size(prvals,1)>1)
+                plot(lengthvals(1:end,2),prvals(1:end,3),col,'LineWidth',3);
+                xlabel('Avg Length');
+                title('Length Precision Curve Global');
+            else
+                plot(lengthvals(2),evalRes(3),'o','MarkerFaceColor',col,'MarkerEdgeColor',col,'MarkerSize',8);
+                xlabel('Avg Length');
+                title('Length Precision Curve Global');
+            end
+            hold off
+        
+        %Recall and Length
+        if (false)
+            if (plotsuperpose)
+                figure(10);
+            else
+                Init_figure_no(10,[],false); Plotisofiglengthstats(true);
+            end
+            hold on
+            if (size(prvals,1)>1)
+        %         errorbar(prvals(1:end,2),lengthvals(1:end,2),lengthvals(1:end,3),col,'LineWidth',3);
+                plot(prvals(1:end,2),lengthvals(1:end,2),col,'LineWidth',3);
+                ylabel('Avg Length');
+                title('Recall Length Curve Global');
+            else
+        %         errorbar(evalRes(2),lengthvals(2),lengthvals(3),'o','MarkerFaceColor',col,'MarkerEdgeColor',col,'MarkerSize',8);
+                plot(evalRes(2),lengthvals(2),'o','MarkerFaceColor',col,'MarkerEdgeColor',col,'MarkerSize',8);
+                ylabel('Avg Length');
+                title('Recall Length Curve Global');
+            end
+            hold off
+        end
+
+        [val,idx]=sort( abs( lengthvals(:,1)-repmat(evalRes(1),size(lengthvals,1),1) ) , 'ascend'); %#ok<ASGLU>
+        fprintf('Length stats with Volume PR global\n');
+        fprintf('   Length best F [th = %1.2f] G-ODS: mean %1.2f, std %1.2f \n',evalRes(1), lengthvals(idx(1),2), lengthvals(idx(1),3) );
+        output.MLen_G_ODS=lengthvals(idx(1),2); output.StdLen_G_ODS=lengthvals(idx(1),3);
+
+        hlineout.MstdLen_G_ODS=[ ' & ', num2str(lengthvals(idx(1),2),'%.2f'), '(', num2str(lengthvals(idx(1),3),'%.2f'), ')' ];
+        hlineout.MLen_G_ODS=[ ' & ', num2str(lengthvals(idx(1),2),'%.2f') ];
+        hlineout.StdLen_G_ODS=[ ' & ', num2str(lengthvals(idx(1),3),'%.2f') ];
+    end
+    
+    
+    %%%Global cluster statistics
+    if (true)
+        %Load relevant average volume metrics
+        prvals = dlmread(fullfile(outDir,'eval_regpr_globalthr.txt')); % thresh,r,p,f global values across all image for each threshold
+        evalRes = dlmread(fullfile(outDir,'eval_regpr_globossods.txt'));
+
+        %Load the relevant average number of cluster statistics
+        nclustervals = dlmread(fullfile(outDir,'eval_nclustersstats_thr.txt')); % thresh meanlengths_avg stdlengths_avg
+
+        %Length and Precision
+            if (plotsuperpose)
+                figure(11);
+            else
+                Init_figure_no(11,[],false); Plotisofiglengthstats(false);
+            end
+            hold on
+            if (size(prvals,1)>1)
+                plot(log10(nclustervals(1:end,2)),prvals(1:end,3),col,'LineWidth',3);
+                xlabel('Avg N Clusters (log10)');
+                title('Ncluster Precision Curve Global');
+            else
+                plot(log10(nclustervals(2)),evalRes(3),'o','MarkerFaceColor',col,'MarkerEdgeColor',col,'MarkerSize',8);
+                xlabel('Avg N Clusters (log10)');
+                title('Ncluster Precision Curve Global');
+            end
+            hold off
+
+        %Recall and Length
+        if (false)
+            if (plotsuperpose)
+                figure(12);
+            else
+                Init_figure_no(12,[],false); Plotisofiglengthstats(true);
+            end
+            hold on
+            if (size(prvals,1)>1)
+                plot(prvals(1:end,2),log10(nclustervals(1:end,2)),col,'LineWidth',3);
+                ylabel('Avg N Clusters (log10)');
+                title('Recall Ncluster Curve Global');
+            else
+                plot(evalRes(2),log10(nclustervals(2)),'o','MarkerFaceColor',col,'MarkerEdgeColor',col,'MarkerSize',8);
+                ylabel('Avg N Clusters (log10)');
+                title('Recall Ncluster Curve Global');
+            end
+            hold off
+        end
+
+        [val,idx]=sort( abs( nclustervals(:,1)-repmat(evalRes(1),size(nclustervals,1),1) ) , 'ascend'); %#ok<ASGLU>
+        fprintf('Ncluster stats with Volume PR global\n');
+        fprintf('   Ncluster best F [th = %1.2f] G-ODS: avg ncluster %1.2f \n',evalRes(1), nclustervals(idx(1),2) );
+        output.Ncl_G_ODS=nclustervals(idx(1),2);
+
+        hlineout.NCl_G_ODS=[ ' & ', num2str(nclustervals(idx(1),2),'%.2f') ];
+    end
+end
+
+
+
+%Output hline for tex documents
+% tablelineresults=[hlineout.bdryglob,hlineout.regglob];
+%Output hline for tex documets with length stats
+% tablelineresults=[hlineout.bdryglob,hlineout.regglob,hlineout.MstdLen_G_ODS,hlineout.NCl_G_ODS];
+tablelineresults=[hlineout.bdryglob,hlineout.regglob,hlineout.MstdLen_G_ODS,hlineout.NCl_G_ODS,'\\ %',hlineout.bdryavg,hlineout.regavg];
+% tablelineresults=[hlineout.bdryglob,hlineout.bdryavg,hlineout.regglob,hlineout.regavg,hlineout.MstdLen_G_ODS,hlineout.NCl_G_ODS,'\\ %',hlineout.sc,hlineout.pri,hlineout.vi,hlineout.StdLen_G_ODS];
+%hlineout.MLen_G_ODS
+tablelinetext=['\hline ',sprintf('%23s',casebenchdir),tablelineresults];
+fprintf('%s\n',tablelinetext);
+
+
+
+%Include into output also the R and P at ODS
+if (exist(fullfile(outDir,'eval_bdry_avgodsoss.txt'),'file')) %B A
+    evalRes = dlmread(fullfile(outDir,'eval_bdry_avgodsoss.txt')); %avg_ods_T,avg_ods_R,avg_ods_P,avg_ods_F,avg_oss_r,avg_oss_p,avg_oss_f,avg_area_PR
+    output.B_ODSA_R=evalRes(2); output.B_ODSA_P=evalRes(3);
+end
+if (exist(fullfile(outDir,'eval_bdry_globossods.txt'),'file')) %B G
+    evalRes = dlmread(fullfile(outDir,'eval_bdry_globossods.txt')); %bestT,bestR,bestP,bestF,R_max,P_max,F_max,Area_PR
+    output.B_ODSG_R=evalRes(2); output.B_ODSG_P=evalRes(3);
+end
+if (exist(fullfile(outDir,'eval_regpr_avgodsoss.txt'),'file')) %R A
+    evalRes = dlmread(fullfile(outDir,'eval_regpr_avgodsoss.txt')); %avg_ods_T,avg_ods_R,avg_ods_P,avg_ods_F,avg_oss_r,avg_oss_p,avg_oss_f,avg_area_PR
+    output.R_ODSA_R=evalRes(2); output.R_ODSA_P=evalRes(3);
+end
+if (exist(fullfile(outDir,'eval_regpr_globossods.txt'),'file')) %R G
+    evalRes = dlmread(fullfile(outDir,'eval_regpr_globossods.txt')); %bestT,bestR,bestP,bestF,R_max,P_max,F_max,Area_PR
+    output.R_ODSG_R=evalRes(2); output.R_ODSG_P=evalRes(3);
+end
+
+
+
+
+            
+            
+            
+            
+            

@@ -1,0 +1,66 @@
+function [track,mapTracToTrajectories,all_the_lengths]=Get_tracks_innest_points_all_lengths(image,trajectories,frame,trackLength,noFrames,firstTrajectory,print)
+
+%requires: path(path,'UCM\auxClustering');
+
+if (  (~exist('print','var'))  ||  (isempty(print))  )
+    print=0;
+end
+
+if (print)
+    figure(15)
+    imshow(image)
+    set(gcf, 'color', 'white');
+end
+
+%This part counts the trajectories, for initialising the memory
+noTracks=0;
+for k=firstTrajectory:size(trajectories,2)
+    if (isempty(trajectories{k}))
+        continue;
+    end
+    if ( (trajectories{k}.startFrame>frame)||(trajectories{k}.endFrame<(frame+trackLength-1)) )
+        continue;
+    end
+    noTracks=noTracks+1;
+end
+
+count=0;
+track=zeros(noFrames,2,noTracks);
+mapTracToTrajectories=zeros(1,noTracks);
+all_the_lengths.start=zeros(1,noTracks);
+all_the_lengths.end=zeros(1,noTracks);
+for k=firstTrajectory:size(trajectories,2)
+    if (isempty(trajectories{k}))
+        continue;
+    end
+    if ( (trajectories{k}.startFrame>frame)||(trajectories{k}.endFrame<(frame+trackLength-1)) )
+        continue;
+    end
+    count=count+1;
+    range=trajectories{k}.startFrame:trajectories{k}.endFrame;
+    for i=range
+        posInarray=i-trajectories{k}.startFrame+1;
+        track(i,1,count)=trajectories{k}.Xs(posInarray);
+        track(i,2,count)=trajectories{k}.Ys(posInarray);
+    end
+    all_the_lengths.start(count)=range(1);
+    all_the_lengths.end(count)=range(end);
+    
+    mapTracToTrajectories(count)=k;
+end
+
+if (print)
+    hold on
+    for k=1:noTracks
+        range=all_the_lengths.start(k):all_the_lengths.end(k);
+        line(track(range,1,k),track(range,2,k),'Color','y');
+        plot(track(range,1,k),track(range,2,k),'+g');
+        plot(track(frame,1,k),track(frame,2,k),'+r');
+    end
+    hold off
+end
+
+%It must be verified the following
+if ( noTracks~=count)
+    fprintf('Please check the extraction of innest point trajectories at frame %d\n',frame);
+end

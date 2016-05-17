@@ -1,0 +1,179 @@
+function GetHomogeneousColours(trajs,noGroups,frame,minLength,trackLength,filenames,allGis,cim,trajectories,allregionpaths,ucm2,allregionsframes,...
+    selectedtreetrajectories,Gif)
+
+
+trajs=[3390,3529,2960,3010,7,1970,3871,2416,3750,3707,3905,3022];
+% trajs=[3222,5278];
+
+noGroups=[90,150,180,300,360,380]; %first is taken as reference
+% noGroups=[90,100,110,120,130,140,150,160,170,180,190,200,240,250,280,300,310,320,330,340,350,360,370,380,390,400,410,420,430,450,480,500]; _first is taken as reference
+% noGroups=[6,10,20,30,40,50,60,70,100,160,200,300,400,500,600,700,800,900]; _first is taken as reference
+%noGroups=[40,50,60,70,100,160,200,300,400,500]; _first is taken as reference
+
+
+frame=34;
+% frame=39;
+
+
+
+if ( (~exist('trackLength','var')) || (isempty(trackLength)) )
+    trackLength=17;
+end
+if ( (~exist('minLength','var')) || (isempty(minLength)) )
+    minLength=5;
+end
+
+if (~(mod(trackLength,2))) %if trackLength is not a odd number
+    trackLength=trackLength-1;
+end
+if (~(mod(minLength,2))) %if trackLength is not a odd number
+    minLength=minLength-1;
+end
+sizeL=round( (trackLength-1)/2 );
+minsizeL=round( (minLength-1)/2 );
+% noLevels=sizeL-minsizeL+1;
+
+
+
+noTrajectories=numel(trajs);
+
+%Mapontomanifold is used to read the pre-computed Y
+readyre=true;
+[Y] = Mapontomanifold([],[],[],[],[],readyre,filenames); %, R, E
+if (isempty(Y))
+    fprintf('Yre need to be precomputed\n');
+    return;
+end
+% if (exist(filenames.the_isomap_yre,'file'))
+%     load(filenames.the_isomap_yre);
+%     fprintf('Yre loaded\n');
+% else
+%     fprintf('Yre need to be precomputed\n');
+%     return
+% end
+
+
+agroupnumber=noGroups(1);
+readidxcs=true;
+[IDX,kmeansdone,offext]=Clusterthepoints([],[],agroupnumber,[],[],...
+    [],readidxcs,[],filenames); %,C
+if (~kmeansdone)
+    fprintf('%d groups, could not load idx\n',agroupnumber);
+    return;
+end
+
+
+
+[labelsfc,Tm]=Gettmandlabelsfcfromidx(IDX,Y,allGis.T,maintaintleveloneconnections,tlevelone); %,valid
+
+
+
+
+% computation of track, mapTracToTrajectories, dist_track_mask, all_the_lengths
+fc=frame+sizeL; %position of central frame in the sequence
+%     fcin=sizeL+1;
+    %position of the central frame in the longest vector (trackLength long)
+%for the computation of the lowest level spanning tree (reference for region selection)
+ntrackLength=minLength;
+nframe=fc-minsizeL; %analysed frames are [nframe:nframe+ntrackLength-1]
+image=cim{nframe}; %should only be necessary if printonscreen == true
+imagefc=cim{fc}; %should only be necessary if printonscreen == true
+
+%The following is to be used, then allDs are computed on request
+saveworkfiles=false;
+printonscreeninsidefunction=false;
+[track,mapTracToTrajectories,dist_track_mask]=... %,all_the_lengths
+    Prepareregiontracksonrequest(trajectories,nframe,ntrackLength,allregionpaths,ucm2,allregionsframes,...
+    filenames,selectedtreetrajectories,saveworkfiles,printonscreeninsidefunction,image);
+% noTracks=size(track,3);
+    %=size(dist_track_mask,2)
+
+
+%Represent computed clustering at frame
+labelsfc=Turntmtolabels(Tm); %labels according to the spanning tree allGis.T (as if fully connected)
+[labels,labelsv]=Getlabelsatframei(allGis,labelsfc,Gif,frame);
+
+Representcomputedlabelsatcentre(imagefc,track,labelsv);
+th=1; Representlabeledregionsatcentre(imagefc,dist_track_mask,labelsv,th,labelsfc); %TODO: threshold no regions
+indexframe=find(Gif.frame==frame,1); allowchanget=1;
+Tmi=Turnlabelstotm(labels,Gif.Gis{indexframe}.T{1},allowchanget);
+Representspanningtreeatcentre(Tmi,track,dist_track_mask,imagefc);
+
+
+filenamepicorvideobasename=[filenames.idxpicsandvideobasedir,'Pics',filesep];
+
+figure(13), title(['Frame ',num2str(fc)]);
+print('-depsc',[filenamepicorvideobasename,'l_',num2str(agroupnumber),'_',num2str(dimtouse),offext,'.eps']);
+figure(16), title(['Frame ',num2str(fc)]);
+print('-depsc',[filenamepicorvideobasename,'t_',num2str(agroupnumber),'_',num2str(dimtouse),offext,'.eps']);
+figure(17), title(['Frame ',num2str(fc)]);
+print('-depsc',[filenamepicorvideobasename,'r_',num2str(agroupnumber),'_',num2str(dimtouse),offext,'.eps']);
+
+fprintf('No groups = %d, computed and saved\n',agroupnumber);
+
+colourtogive=zeros(1,noTrajectories);
+for i=1:noTrajectories
+    trajinmap=find(mapTracToTrajectories==trajs(i));
+    colourtogive(i)=labelsv(trajinmap);
+end
+
+%here the repratio in GiveDifferentColours may be changed, then 
+% colourtogive=colourtogive*prevrepratio/newrepratio;
+colourtogive=colourtogive*22*72/(37*105);
+% colourtogive=colourtogive*36*103/(26*105);
+
+for agroupnumber=noGroups(2:end)
+
+    filenameidxbasename=[filenames.idxpicsandvideobasedir,'Idx',filesep,'Idx_',num2str(agroupnumber),'_',num2str(dimtouse)];
+        %filename is [filenameidxbasename,offext,'.mat'] where offext is '' or 'off'
+    %loading of IDX and C 's
+    if (exist([filenameidxbasename,'.mat'],'file'))
+        load([filenameidxbasename,'.mat']);
+        offext='';
+        fprintf('%d groups, idx loaded\n',agroupnumber);
+    elseif (exist([filenameidxbasename,'off','.mat'],'file'))
+        load([filenameidxbasename,'off','.mat']);
+        offext='off';
+        fprintf('%d groups, idx (off) loaded\n',agroupnumber);
+    else
+        fprintf('%d groups, could not load idx\n',agroupnumber);
+        return;
+    end
+
+    
+    [labelsfc,Tm]=Gettmandlabelsfcfromidx(IDX,Y,allGis.T,maintaintleveloneconnections,tlevelone); %,valid
+    
+    
+    %Represent computed clustering at frame
+    labelsfc=Turntmtolabels(Tm); %labels according to the spanning tree allGis.T (as if fully connected)
+    [labels,labelsv]=Getlabelsatframei(allGis,labelsfc,Gif,frame);
+    
+    
+    for i=1:noTrajectories
+    
+        trajinmap=find(mapTracToTrajectories==trajs(i));
+        prevcolour=labelsv(trajinmap);
+
+        labelsv(labelsv==prevcolour)=colourtogive(i);
+        
+    end
+        
+        
+        
+    Representcomputedlabelsatcentre(imagefc,track,labelsv);
+    th=1; Representlabeledregionsatcentre(imagefc,dist_track_mask,labelsv,th,labelsfc); %TODO: threshold no regions
+    indexframe=find(Gif.frame==frame,1); allowchanget=1;
+    Tmi=Turnlabelstotm(labels,Gif.Gis{indexframe}.T{1},allowchanget);
+    Representspanningtreeatcentre(Tmi,track,dist_track_mask,imagefc);
+
+    filenamepicorvideobasename=[filenames.idxpicsandvideobasedir,'Pics',filesep];
+
+    figure(13), title(['Frame ',num2str(fc)]);
+    print('-depsc',[filenamepicorvideobasename,'l_',num2str(agroupnumber),'_',num2str(dimtouse),offext,'.eps']);
+    figure(16), title(['Frame ',num2str(fc)]);
+    print('-depsc',[filenamepicorvideobasename,'t_',num2str(agroupnumber),'_',num2str(dimtouse),offext,'.eps']);
+    figure(17), title(['Frame ',num2str(fc)]);
+    print('-depsc',[filenamepicorvideobasename,'r_',num2str(agroupnumber),'_',num2str(dimtouse),offext,'.eps']);
+    
+end
+

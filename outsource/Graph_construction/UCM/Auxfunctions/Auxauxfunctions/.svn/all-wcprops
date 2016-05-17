@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions
+END
+Adjustimagesize.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Adjustimagesize.m
+END
+Getstrel.m
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Getstrel.m
+END
+Croptheimages.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Croptheimages.m
+END
+Printthevideoonscreensuperposed.m
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Printthevideoonscreensuperposed.m
+END
+Colourapart.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Colourapart.m
+END
+Mapitback.m
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Mapitback.m
+END
+Representgraphconnections.m
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Representgraphconnections.m
+END
+GetHomogeneousColours.asv
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/GetHomogeneousColours.asv
+END
+Seeregionpath.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Seeregionpath.m
+END
+Getlabelledvideofromtrajectories.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Getlabelledvideofromtrajectories.m
+END
+GetHomogeneousColours.m
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/GetHomogeneousColours.m
+END
+Getclosesttrack.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Getclosesttrack.m
+END
+Submeandivbyvar.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Submeandivbyvar.m
+END
+Writepictureseries.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Writepictureseries.m
+END
+Deinterlaceimages.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Deinterlaceimages.m
+END
+Seelengthofregionpaths.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Seelengthofregionpaths.m
+END
+Gettrajectorygraph.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Gettrajectorygraph.m
+END
+Visualisealltrajectories.m
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Visualisealltrajectories.m
+END
+Getframeedge.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Getframeedge.m
+END
+Placegraphcross.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Placegraphcross.m
+END
+Printthevideoonscreen.m
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Printthevideoonscreen.m
+END
+Getclosesttrajectory.m
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Getclosesttrajectory.m
+END
+Colourallregions.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Auxauxfunctions/Colourallregions.m
+END

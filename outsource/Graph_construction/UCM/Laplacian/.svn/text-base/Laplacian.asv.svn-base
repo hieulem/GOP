@@ -1,0 +1,278 @@
+function [Y,R,E]=Laplacian(D,n_fcn,n_size,options)
+%D is the distance matrix
+
+%required files: components.m, jdqz.m
+
+
+
+if ( (~exist('options','var')) || (~isstruct(options)) )
+    options=struct();
+end
+if (~isfield(options,'useoneminus'))
+    useoneminus=true;
+else
+    useoneminus=options.useoneminus;
+end
+if (~isfield(options,'dims'))
+    no_dims=3;
+else
+    no_dims=options.dims;
+end
+if (~isfield(options,'display'))
+    printonscreen=false;
+else
+    printonscreen=options.display;
+end
+if (~isfield(options,'verbose'))
+    printthetext=false;
+else
+    printthetext=options.verbose;
+end
+if (~isfield(options,'overlay'))
+    overlay=true;
+else
+    overlay=options.overlay;
+end
+if (~isfield(options,'sigma'))
+%     sigma=1; _value in original function
+    sigma=sqrt(0.5*0.1); %a value (0.22361)
+%     sigma=sqrt(1/(2*0.1)); _value used by Brox (2.2361)
+else
+    sigma=options.sigma;
+end
+% x=[0:0.01:1];
+% plot(x,exp(-0.5*x.^2/(2^2)))
+% plot(x,exp(-0.5*x.^2/(0.1^2)))
+% plot(x,exp(-0.5*x.^2/(0.3^2)))
+% plot(x,exp(-0.5*x.^2/(0.22361^2))) _looks like the best (distances bigger than 0.7 are flattened to 0 similarity)
+% plot(x,exp(-0.5*x.^2/(0.5^2))) _0.5 and 0.43 put the nearly linear part around 0.5
+% plot(x,exp(-0.5*x.^2/(0.43^2))) _keeps 0.5 on 0.5086
+if (~isfield(options,'eig_impl'))
+    eig_impl='matlab'; %'JDQR'
+else
+    eig_impl=options.eig_impl;
+end
+
+if ( (~exist('n_size','var')) || (isempty(n_size)) )
+    n_size=0; %keep n_size neighbours at maximum or threshold for 'epsilon'
+end
+if ( (~exist('n_fcn','var')) || (isempty(n_fcn)) )
+    n_fcn='k'; %comparing function 'k' or 'epsilon'
+end
+
+
+G = double(D);
+
+
+N = size(D,1); 
+minimum_conn=min(full(sum(G'>0)));
+if ( (strcmp(n_fcn,'k')) && (minimum_conn<n_size) )
+    fprintf('Minimum connectivity %d, n_size %d\n',minimum_conn,n_size);
+end
+if issparse(G)
+     if (strcmp(n_fcn,'k'))
+         if (n_size~=0)
+             fprintf('n_size %d specified for connectivity (this includes self-connectivity)\n',n_size);
+             Di = zeros(N*n_size,1);      Dj = zeros(N*n_size,1);       Ds = zeros(N*n_size,1); %upper bound for the required memory
+             counter = 0; 
+             [a,b,c] = find(G); 
+             tic; 
+             for i=1:N
+                 l = find(a==i); 
+                 [g,f] = sort(c(l),'ascend');
+                 if (n_size<numel(l))
+                     Di(counter+(1:n_size)) = i; 
+                     Dj(counter+(1:n_size)) = b(l(f(1:n_size))); 
+                     Ds(counter+(1:n_size)) = g(1:n_size); 
+                     counter = counter+n_size; 
+                 else
+                     Ki=numel(l);
+                     Di(counter+(1:Ki),1) = i; 
+                     Dj(counter+(1:Ki),1) = b(l(f(1:Ki))); 
+                     Ds(counter+(1:Ki),1) = g(1:Ki); 
+                     counter = counter+Ki;
+                 end
+                 if ((printthetext) && (rem(i,50) == 0)) 
+                      disp([' Iteration: ' num2str(i) '     Estimated time to completion: ' num2str((N-i)*toc/60/50) ' minutes']); tic; 
+                 end
+             end
+             G = sparse(Di(1:counter), Dj(1:counter), Ds(1:counter));
+             if (counter<numel(a))
+                 fprintf('%d elements entered into the sparse matrix instead of %d\n',counter,numel(a));
+             end
+             clear Di Dj Ds counter; 
+         end %when n_size==0 G does not have to be changed
+     elseif (strcmp(n_fcn,'epsilon'))
+         G =  G.*(G<=n_size); 
+     end
+     G = max(G,G');    %% Make sure distance matrix is symmetric
+else
+     if (strcmp(n_fcn,'k'))
+         [tmp, ind] = sort(G,'ascend'); 
+         tic; 
+         for i=1:N
+             G(i,ind((2+n_size):end,i)) = Inf; 
+             if ((printthetext == 1) && (rem(i,50) == 0)) 
+                 disp([' Iteration: ' num2str(i) '     Estimated time to completion: ' num2str((N-i)*toc/60/50) ' minutes']); tic; 
+             end
+         end
+     elseif (strcmp(n_fcn,'epsilon'))
+         warning off    %% Next line causes an unnecessary warning, so turn it off
+         G =  G./(G<=n_size); 
+         G = min(G,Inf); 
+         warning on
+     end
+     G = min(G,G');    %% Make sure distance matrix is symmetric
+end    
+
+
+
+if (~useoneminus)
+    G = G .^ 2;
+    G = G ./ max(max(G));
+end
+
+
+
+blocks = components(G)';
+count = zeros(1, max(blocks));
+for i=1:max(blocks)
+    count(i) = length(find(blocks == i));
+end
+[count, block_no] = max(count);
+conn_comp = find(blocks == block_no);
+%conn_comp contains the indexes of the embedded components
+Y.index=conn_comp;
+G = G(conn_comp, conn_comp);
+
+% Compute weights (W = G)
+disp('Computing weight matrices...');
+
+
+
+if (~useoneminus)
+    % Compute Gaussian kernel (heat kernel-based weights)
+    G(G ~= 0) = exp(-G(G ~= 0) / (2 * sigma ^ 2));
+else
+    DDD=G;
+    r=find(DDD);
+    DDD(r)=1-DDD(r);
+    DDD(G==1)=0.0000001;
+
+    forcezerodiagonal=true;
+    DDD=Forcezerodiagonal(DDD,[],forcezerodiagonal);
+    
+    G=DDD;
+    clear DDD;
+end
+
+
+
+% Construct diagonal weight matrix
+DD = diag(sum(G, 2));
+
+% Compute Laplacian
+L = DD - G;
+% DDtohalf=sqrt(DD^(-1));
+% L=speye(size(G,1))-DDtohalf*G*DDtohalf;
+L(isnan(L)) = 0; DD(isnan(DD)) = 0;
+L(isinf(L)) = 0; DD(isinf(DD)) = 0;
+
+
+% Construct eigenmaps (solve Ly = lambda*Dy)
+disp('Constructing Eigenmaps...');
+
+Y.coords=cell(1,numel(no_dims));
+for idim=1:numel(no_dims)
+    nodims=no_dims(idim);
+    
+	tol = 0;
+    if strcmp(eig_impl, 'JDQR')
+        opts.Disp = 0;
+        opts.LSolver = 'bicgstab';
+        [mappedX, lambda] = jdqz(L, DD, nodims + 1, tol, opts);			% only need bottom (nodims + 1) eigenvectors
+    else
+        opts.disp = 0;
+        opts.isreal = 1;
+        opts.issym = 1;
+        [mappedX, lambda] = eigs(L, DD, nodims + 1, tol, opts);			% only need bottom (nodims + 1) eigenvectors
+        %mappedX is no_data_points x (nodims+1)
+    end
+    
+    % Sort eigenvectors in ascending order
+    lambda = diag(lambda);
+    [lambda, ind] = sort(lambda, 'ascend');
+%     lambda = lambda(2:nodims + 1);
+    
+    % Final embedding
+	mappedX = mappedX(:,ind(2:nodims + 1));
+    
+    %normalization to [0,1] of all eigenvectors
+%     disp(max(mappedX,[],1))
+%     disp(min(mappedX,[],1))
+    % The vector norms are already normalised
+%     mappedX= ( mappedX-repmat(min(mappedX,[],1),size(mappedX,1),1) ) ./...
+%         repmat(max(mappedX,[],1)-min(mappedX,[],1),size(mappedX,1),1) ;
+
+    Y.coords{no_dims==nodims}=mappedX';
+    
+    if (printthetext)
+        fprintf('Embedded to %d-dimensional manifold\n',nodims);
+    end
+end
+
+
+if issparse(D)
+    [a,b,c] = find(D); 
+    E = sparse(a,b,ones(size(a)));
+else
+    E = (~isinf(D));
+end
+
+%TODO: compute the residual
+R=zeros(1,numel(no_dims));
+
+
+if (printonscreen)
+     %%%%% Plot fall-off of residual variance with dimensionality %%%%%
+     figure(19), clf, set(gcf, 'color', 'white');
+     hold on
+     plot(no_dims, R, 'bo'); 
+     plot(no_dims, R, 'b-'); 
+     hold off
+     ylabel('Residual variance'); 
+     xlabel('Isomap dimensionality'); 
+
+     %%%%% Plot two-dimensional configuration %%%%%
+     twod = find(no_dims==2,1,'first'); 
+     if ~isempty(twod)
+         figure(20), clf, set(gcf, 'color', 'white');
+         hold on;
+         plot(Y.coords{twod}(1,:), Y.coords{twod}(2,:), 'ro'); 
+         if (overlay)
+             gplot(E(Y.index, Y.index), [Y.coords{twod}(1,:); Y.coords{twod}(2,:)]'); 
+             title('Two-dimensional Isomap embedding (with neighborhood graph).'); 
+         else
+             title('Two-dimensional Isomap.'); 
+         end
+         hold off;
+     end
+     
+     %%%%% Plot two-dimensional configuration %%%%%
+     threed = find(no_dims==3,1,'first'); 
+     if ~isempty(threed)
+         figure(21), clf, set(gcf, 'color', 'white');
+         hold on;
+         scatter3(Y.coords{threed}(1,:), Y.coords{threed}(2,:), Y.coords{threed}(3,:), 'ro');
+         title('Three-dimensional Isomap.'); 
+         hold off;
+     end
+
+end
+
+
+
+
+
+
+

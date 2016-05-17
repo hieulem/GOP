@@ -1,0 +1,53 @@
+function Printtrackmasks(dist_track_mask,image)
+
+
+fc=round( (size(dist_track_mask,1)-1)/2 ) + 1;
+
+if ( (~exist('nofigure','var')) || (isempty(nofigure)) )
+    nofigure=16;
+end
+if ( (~exist('colourratio','var')) || (isempty(colourratio)) )
+    colourratio=1/2;
+end
+if ( (~exist('colourforimage','var')) || (isempty(colourforimage)) )
+    colourforimage=[1,1,0];
+end
+if ( (~exist('colourforedges','var')) || (isempty(colourforedges)) )
+    colourforedges=[1,0,0];
+end
+thickeredges=false;
+
+Colourtheimage(imagefc,dist_track_mask(fc,:),nofigure,colourratio,colourforimage,colourforedges,thickeredges);
+
+
+
+
+% dist_track_mask{which frame,which trajectory}=mask
+noTracks=size(dist_track_mask,2);
+
+%initialisation of necessary parts (strel and frameEdge)
+SE=Getstrel();
+frameEdge=Getframeedge(size(image,1),size(image,2));
+
+for count=1:noTracks
+    if (~all(all(dist_track_mask{1,count}))) %so we exclude the whole frame
+        mask=uint8(dist_track_mask{1,count});
+        % image(:,:,1)=image(:,:,1)-image(:,:,1).*mask;
+        % image(:,:,2)=image(:,:,2)-image(:,:,2).*mask;
+        image(:,:,3)=image(:,:,3)-image(:,:,3).*mask; %subtracting only blue makes the marked regions yellow
+    end
+
+    edge=uint8(dist_track_mask{1,count}-(imerode(dist_track_mask{1,count}, SE).*frameEdge));
+    noEdge=(1-edge);
+
+    %this makes the contours of regions red
+    image(:,:,1)=image(:,:,1).*noEdge+image(:,:,1).*edge*255;
+    image(:,:,2)=image(:,:,2).*noEdge;
+    image(:,:,3)=image(:,:,3).*noEdge;
+end
+    
+figure(16)
+imshow(image)
+set(gcf, 'color', 'white');
+title('First frame with regions and region edges marked, whole frame excluded from the picture, if any');
+

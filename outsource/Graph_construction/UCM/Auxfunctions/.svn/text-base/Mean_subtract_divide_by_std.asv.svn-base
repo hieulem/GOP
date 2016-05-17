@@ -1,0 +1,13 @@
+function vect=Mean_subtract_divide_by_std(vect)
+%vect is nxnoFrames, stds and means are computed over the noFrames
+
+std_vect=repmat(std(vect,0,2),[1 size(vect,2)]);
+vect=(vect-repmat(mean(vect,2),[1 size(vect,2)])); %subtracts the mean of x and y
+for i=1:size(vect,1)
+    if ( std_vect(i,1) ~= 0 )
+        vect(i,:)=vect(i,:)./std_vect(i,:); % and divides by their std for x
+    end
+end
+if ( std_vect(2,1) ~= 0 )
+    vect(2,:)=vect(2,:)./std_vect(2,:); % and divides by their std for y
+end

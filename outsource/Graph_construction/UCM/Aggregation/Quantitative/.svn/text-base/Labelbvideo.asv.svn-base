@@ -1,0 +1,30 @@
+function blabelledvideo=Labelbvideo(btrajectories,videosize,printonscreen)
+
+if (~exist('printonscreen','var') || (isempty(printonscreen)) )
+    inputfilename=[filenames.filename_directory,'gtimages',filesep,'Tracks',num2str(noFrames,'%d'),'.dat'];
+%     inputfilename=[filenames.filename_directory,'Tracks',num2str(noFrames,'%d'),'generated.dat'];
+end
+
+touchedpixels=false(videosize);
+blabelledvideo=zeros(videosize);
+
+notraj=numel(btrajectories);
+
+for i=1:notraj
+    
+    count=0;
+    for j=btrajectories{i}.startFrame:btrajectories{i}.endFrame
+        count=count+1;
+        xx=round(btrajectories{i}.Xs(count));
+        yy=round(btrajectories{i}.Ys(count));
+        
+        if ((xx<1)||(xx>videosize(2))||(yy<1)||(yy>videosize(1)))
+            continue;
+        end
+        if (~touchedpixels(yy,xx,j))
+            blabelledvideo(yy,xx,j)=btrajectories{i}.nopath;
+            touchedpixels(yy,xx,j)=true;
+        end
+    end
+    
+end

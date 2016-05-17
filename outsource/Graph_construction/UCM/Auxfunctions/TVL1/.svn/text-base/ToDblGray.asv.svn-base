@@ -1,0 +1,17 @@
+function newImages=ToDblGray(outImages)
+%converts colour and BW images and cell array of images into BW images and cell
+%arrays of images
+
+if iscell(outImages)
+    for i=1:size(outImages,2)
+        if 
+     newImages{i} = double(rgb2gray(outImages{i}))/255;
+    end
+    for i=1:size(outImages,2)
+        figure(149+i),imshow(newImages{i});
+        set(gcf, 'color', 'white');
+        %axis ij
+    end
+else
+    newImages=double(rgb2gray(outImages))/255;
+end

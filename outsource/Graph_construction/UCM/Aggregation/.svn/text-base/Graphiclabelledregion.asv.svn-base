@@ -1,0 +1,76 @@
+function Graphiclabelledregion(notrajectory,labelledvideo,trajectories,cim)
+%if cim is passed, the function shows the region on the image, otherwise
+%the mask of the region is shown
+
+%TODO: handle case of non active frames
+
+%Initialisation of necessary part
+if (exist('cim','var') && (~isempty(cim)) )
+    thicker=false;
+    SE=Getstrel(thicker);
+    usecim=true;
+else
+    usecim=false;
+end
+
+label=trajectories{notrajectory}.label;
+rangetodisplay=trajectories{notrajectory}.startFrame:trajectories{notrajectory}.endFrame;
+
+dimIi=size(labelledvideo,1);
+dimIj=size(labelledvideo,2);
+mask=false(dimIi,dimIj);
+
+for f=rangetodisplay
+    
+    posinarray=f-trajectories{notrajectory}.startFrame+1;
+    if ( (trajectories{notrajectory}.Xs(posinarray)~=-1) && (trajectories{notrajectory}.Ys(posinarray)~=-1) )
+        
+        mask=(labelledvideo(:,:,f)==label);
+
+        Init_figure_no(20)
+        if (~usecim)
+            %imagesc(mask);
+            imshow(mask,[]);colormap(jet);
+            title (['Mask of region (frame=',int2str(f),')']);
+        else
+            edge = uint8(imdilate(mask, SE)-mask);
+            noEdge=(1-edge);
+
+            img=cim{f};
+            img(:,:,1)=img(:,:,1).*noEdge+img(:,:,1).*edge*255;
+            img(:,:,2)=img(:,:,2).*noEdge;
+            img(:,:,3)=img(:,:,3).*noEdge;
+
+            imshow(img)
+            title (['Highlighted region (frame=',int2str(f),')']);
+
+            %for writing the image (no centroids)
+            % imwrite(img,['C:\Epsimages\regionatframe',num2str(f),'.png'],'png'); %or ppm
+        end
+
+        posInarray=f-trajectories{notrajectory}.startFrame+1;
+        if ( (trajectories{notrajectory}.startFrame<=f) && (trajectories{notrajectory}.endFrame>=f) )
+            hold on;
+            plot(trajectories{notrajectory}.Xs(posInarray),trajectories{notrajectory}.Ys(posInarray),'+r','MarkerSize',13,'LineWidth',1);
+            hold off;
+
+            %for writing the image with the centroid
+    %         if any(f==[16,31,46,60])
+    %             print('-depsc',['C:\Epsimages\regionwithcentroidatframe',num2str(f),'.eps']);
+    %         end
+
+            %for acquiring the video of the region trajectory
+    %         regiontrajectory(count)=getframe;
+        end
+    end
+
+    pause(0.05)
+end
+fprintf('The trajectory has occurred through %d frames ( from %d to %d)\n',...
+    trajectories{notrajectory}.totalLength,trajectories{notrajectory}.startFrame,trajectories{notrajectory}.endFrame);
+
+%for acquiring the video of the region trajectory
+% movie2avi(regiontrajectory,'D:\Regiontrajectoryexample.avi','compression','None','fps',7);
+
+
+

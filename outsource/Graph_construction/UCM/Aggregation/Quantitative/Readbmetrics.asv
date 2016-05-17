@@ -1,0 +1,184 @@
+function [result,averages]=Readbmetrics(basedrive)
+% Readsvs();
+
+%filename_sequence_basename_frames_or_video:
+%bdeffileorig, bdeffile, bdeffilenb, bdeffilenbf, btracksfile
+
+bmetricsname='bvotingNumbers.txt'; %'borig.dat'
+ucmfilename='UCMal.m';
+
+fid = fopen(ucmfilename);
+
+result=struct;
+nocases=0;
+currentcase=''; %this should never be used
+while (true)
+    
+    tline = fgetl(fid);
+    
+    if ( (numel(tline)==1) && (tline==-1) )
+%         fprintf('End of file reached\n');
+        break;
+    end
+    
+    %Only read non-empty lines
+    if (numel(tline)<=0)
+        continue;
+    end
+    
+    if ( (numel(tline)>=3) && (strcmp(tline(1:3),'%%%')) ) %three % denote a new case name
+        currentcase=tline(4:end);
+        addbnamescasefound=false;
+%         fprintf('%s ',currentcase);
+        continue;
+    end
+    
+    addbnamesfuncstr='filename_sequence_basename_frames_or_video=Addbnames';
+    if ( (numel(tline)>53) && (strcmp(tline(1:52),addbnamesfuncstr)) ) %Addbnames function denotes a bmetric applicable
+        if (addbnamescasefound)
+            fprintf('addbnamescasefound is already true\n');
+        else
+            addbnamescasefound=true;
+        end
+    end
+    
+    %TODO: continue coding here
+    bmetricsfile=[basedrive,'VideoProcessingTemp',filesep,currentcase,filesep,bmetricsname];
+
+    thenumbers=Readbnumbers(bmetricsfile);
+    
+    nocases=nocases+1;
+    result.case{nocases}=currentcase;
+    for i=1:numel(thenumbers)
+        result.numbers(nocases,i)=thenumbers(i);
+    end
+    
+end
+fclose(fid);
+
+
+for i=1:nocases
+    fprintf('%s:\n',result.case{i});
+    fprintf(' %f',result.numbers(i,:));
+    fprintf('\n');
+
+
+averages=mean(result.numbers,1);
+
+disp(averages)
+
+
+
+
+%precision   recall   averageprecision(precision per object is averaged) averagerecall(precision per object is averaged)
+
+
+%Panasonic dataset (15 seqs, only people)
+%
+% Case wmergeDfd3, no cases found 15
+%     0.8984    0.7337    0.8565    0.7708
+%
+% Case h, no cases found 15
+%     0.9019    0.7569    0.8614    0.7510
+
+
+%BVDS dataset (26 seqs, people and objects)
+%
+% Case wmergeDfd3al, no cases found 26
+%     0.9665    0.7260    0.9129    0.6422
+%
+% Case hal, no cases found 26
+%     0.9685    0.6331    0.9242    0.5534
+
+
+%BVDS dataset (16 seqs, just people)
+% 
+% Case wmergeDfd3, no cases found 16
+%     0.9507    0.7610    0.9506    0.7526
+% 
+% Case h, no cases found 16
+%     0.9601    0.6583    0.9597    0.6500
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%all iccv (marple+tennis+people+panasonic just people, background neglected)
+% [result,averages]=Readsvs();
+% 
+% Case mergeDfd3, no cases found 31
+%     0.9265    0.7272    0.9079    0.7416
+% 
+% Case mergeDfd3gd3, no cases found 31
+%     0.9272    0.7229    0.9083    0.7371
+% 
+% Case mergeMfd3, no cases found 31
+%     0.9143    0.7120    0.9024    0.7193
+% 
+% Case h, no cases found 31
+%     0.9319    0.7060    0.9121    0.6989
+% 
+% Case w, no cases found 31
+%     0.9312    0.7371    0.9119    0.7330
+%
+% Case wmergeDfd3, no cases found 31
+%     0.9254    0.7478    0.9051    0.7614
+
+
+
+%all iccv(marple+tennis+people+panasonic just people) + carsfour(review which objects) (background neglected)
+%
+% [result,averages]=Readsvs();
+% 
+% Case mergeDfd3, no cases found 32
+%     0.9253    0.7304    0.9072    0.7442
+% 
+% Case mergeDfd3gd3, no cases found 32
+%     0.9278    0.7211    0.9088    0.7357
+% 
+% Case h, no cases found 32
+%     0.9315    0.7055    0.9129    0.7001
+% 
+% Case mergeMfd3, no cases found 32
+%     0.9158    0.7024    0.9043    0.7095
+% 
+% Case w, no cases found 32
+%     0.9303    0.7349    0.9118    0.7342
+%
+% Case wmergeDfd3, no cases found 32
+%     0.9253    0.7486    0.9056    0.7618
+
+
+
+%Marple 1 to 13 (just people, background neglected)
+% Case w, no cases found 13
+%     0.9576    0.7164    0.9575    0.7155
+% 
+% Case mergeDfd3gd3, no cases found 13
+%     0.9489    0.7514    0.9489    0.7512
+% 
+% Case h, no cases found 13
+%     0.9583    0.6497    0.9582    0.6487
+% 
+% Case mergeMfd3, no cases found 13
+%     0.9463    0.7353    0.9463    0.7342
+% 
+% Case mergeDfd3, no cases found 13
+%     0.9484    0.7565    0.9483    0.7562
+% 
+% Case wmergeDfd3, no cases found 13
+%     0.9478    0.7782    0.9478    0.7777

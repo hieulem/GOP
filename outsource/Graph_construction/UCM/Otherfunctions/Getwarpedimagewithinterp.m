@@ -1,0 +1,77 @@
+function [Ccp,validtop]=Getwarpedimagewithinterp(fpr,flows,imagep,istoup,validtoppp)
+
+rows=size(imagep,1);
+cols=size(imagep,2);
+
+Ccp=zeros(rows,cols,3);
+flowtop=flows.flows{fpr};
+
+if (istoup)
+    U=flowtop.Up;
+    V=flowtop.Vp;
+else
+    U=flowtop.Um;
+    V=flowtop.Vm;
+end
+
+
+validtop=true(rows,cols);
+
+if ( (exist('validtoppp','var')) && (~isempty(validtoppp)) )
+    validtop=Warpvalidwith(validtoppp,ceil(U),ceil(V))&validtop;
+    validtop=Warpvalidwith(validtoppp,ceil(U),floor(V))&validtop;
+    validtop=Warpvalidwith(validtoppp,floor(U),ceil(V))&validtop;
+    validtop=Warpvalidwith(validtoppp,floor(U),floor(V))&validtop;
+end
+
+validtop= validtop & ( (V<=rows)&(U<=cols)&(V>=1)&(U>=1) ) ;
+
+[X,Y]=meshgrid(1:cols,1:rows);
+
+for c=1:3
+    imagepc=double(imagep(:,:,c));
+    Cp=zeros(rows,cols);
+    
+%     Cp(validtop)=griddata(X(validtop),Y(validtop),imagepc(validtop),U(validtop),V(validtop));
+    Cp(validtop)=interp2(X,Y,imagepc,U(validtop),V(validtop));
+    
+    Ccp(:,:,c)=Cp(:,:);
+end
+
+
+
+
+% figure(52), imshow(uint8(imagep))
+% set(gcf, 'color', 'white');
+% title( ['Image at frame ',num2str(frame)] );
+% figure(53), imshow(uint8(Ccp))
+% set(gcf, 'color', 'white');
+% title( ['Image at frame ',num2str(frame)] );
+% figure(54), imshow(validtop)
+% set(gcf, 'color', 'white');
+% title( 'Valid area' );
+% figure(55), imshow(cim{fp-1})
+% set(gcf, 'color', 'white');
+% title( ['Image at frame ',num2str(frame)] );
+
+
+
+
+% Ccp=zeros(rows,cols,3);
+% Ccm=zeros(rows,cols,3);
+% flowtop=flows.flows{fp-1};
+% flowtom=flows.flows{fm+1};
+% Cp=zeros(rows,cols);
+% Cm=zeros(rows,cols);
+% for c=1:3
+%     imagep=double(cim{fp}(:,:,c));
+%     Cp(:)=imagep( sub2ind(size(imagep),max(1,min(rows,round(flowtop.Vp(:)))),max(1,min(cols,round(flowtop.Up(:))))) );
+%     Ccp(:,:,c)=Cp(:,:);
+% 
+%     imagem=double(cim{fm}(:,:,c));
+%     Cm(:)=imagem( sub2ind(size(imagem),max(1,min(rows,round(flowtom.Vm(:)))),max(1,min(cols,round(flowtom.Um(:))))) );
+%     Ccm(:,:,c)=Cm(:,:);
+% end
+% 
+% validtop= (flowtop.Vp<=rows)&(flowtop.Up<=cols)&(flowtop.Vp>=1)&(flowtop.Up>=1);
+% validtom= (flowtom.Vm<=rows)&(flowtom.Um<=cols)&(flowtom.Vm>=1)&(flowtom.Um>=1);

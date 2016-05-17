@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration
+END
+Computeparametercalibration.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Computeparametercalibration.m
+END
+Plotparametercalibration.m
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Plotparametercalibration.m
+END
+Parametercalibrationbench.m
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Parametercalibrationbench.m
+END
+Removecalibrationparametertheoutput.m
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Removecalibrationparametertheoutput.m
+END
+Plotaffinityplots.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Plotaffinityplots.m
+END
+Findthecaseandaffinity.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Findthecaseandaffinity.m
+END
+Addthisdataforparametercalibration.m
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Addthisdataforparametercalibration.m
+END
+Inittheparametercalibrationhistogram.m
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Inittheparametercalibrationhistogram.m
+END
+Findaddcheckvideoandcase.m
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Findaddcheckvideoandcase.m
+END
+Comparisonstatcurves.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Comparisonstatcurves.m
+END
+Getsimilarityaggregated.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Getsimilarityaggregated.m
+END
+Plotparametercalibrationandtransformation.m
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Plotparametercalibrationandtransformation.m
+END
+Scanallnames.m
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Scanallnames.m
+END
+Groundtruthbinningaffinityvalues.m
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Groundtruthbinningaffinityvalues.m
+END
+Getaffstatistics.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Getaffstatistics.m
+END
+Benchmarkcreateparametercalibrationdirs.m
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Benchmarkcreateparametercalibrationdirs.m
+END
+Writenotcomputed.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Writenotcomputed.m
+END
+Transformtheaffinities.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Transformtheaffinities.m
+END
+Benchmarkcreatecalibrationparameterout.m
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Benchmarkcreatecalibrationparameterout.m
+END
+Plotaffinitybars.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Plotaffinitybars.m
+END
+Removebenchmarkcalibrationparameterdir.m
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Removebenchmarkcalibrationparameterdir.m
+END
+Getvolumestatistics.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Getvolumestatistics.m
+END
+Addtocalibrationparameterhistogram.m
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/D2/VSG/!svn/ver/1/UCM/Aggregation/Calibration/Addtocalibrationparameterhistogram.m
+END

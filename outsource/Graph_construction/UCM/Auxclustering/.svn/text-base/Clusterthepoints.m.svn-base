@@ -1,0 +1,411 @@
+function [IDX,kmeansdone,offext,C]=Clusterthepoints(Y,clusteringmethod,noGroups,dimtouse,noreplicates,tryonlinefirst,readidxcs,saveidxcs,filenames,options,plmultiplicity,newlabelcount,plseed,seeds)
+%The function clusters the points in Y (ISOMAP-like format) according to
+%the specified clusteringmethod
+%The function takes into account the points missing in Y (Y.missing)
+%The function output is remapped and corresponds to original data (Y.index)
+%C is not remapped, it only applies to points with a manifold position
+
+%Debug assignments:
+% clusteringmethod=manifoldclustermethod;
+
+
+%Input preparation
+if (~exist('options','var'))
+    options=[];
+end
+if ( (~exist('dimtouse','var')) || (isempty(dimtouse)) )
+    dimtouse=6;
+end
+if ( (~exist('noreplicates','var')) || (isempty(noreplicates)) )
+    noreplicates=600;
+end
+if ( (~exist('tryonlinefirst','var')) || (isempty(tryonlinefirst)) )
+    tryonlinefirst=true;
+end
+if ( (~exist('saveidxcs','var')) || (isempty(saveidxcs)) || (~exist('filenames','var')) || ...
+        (~isstruct(filenames)) || (~isfield(filenames,'idxpicsandvideobasedir')) )
+    saveidxcs=false;
+end
+if ( (~exist('readidxcs','var')) || (isempty(readidxcs)) || (~exist('filenames','var')) || ...
+        (~isstruct(filenames)) || (~isfield(filenames,'idxpicsandvideobasedir')) )
+    readidxcs=false;
+end
+
+if ( (~exist('plmultiplicity','var')) || (isempty(plmultiplicity)) )
+    plmultiplicity=false; %plmultiplicity false (default) implies equal weights to data points in k-means, independently from the multiplicity
+end
+if ( (~exist('plseed','var')) || (isempty(plseed)) )
+    plseed=false; %plseed false (default) implies random initialization for k-means
+end
+if ( (~exist('newlabelcount','var')) || (isempty(newlabelcount)) )
+    newlabelcount=[];
+end
+if ( (~exist('seeds','var')) || (isempty(seeds)) )
+    seeds=[];
+end
+if ( (plmultiplicity) && (isempty(newlabelcount)) )
+    fprintf('Requested plmultiplicity but newlabelcount not defined\n');
+    plmultiplicity=false;
+end
+if ( (plseed) && (isempty(seeds)) )
+    fprintf('Requested seed but seed not defined\n');
+    plseed=false;
+end
+if (~plseed), seeds=[]; end
+if (~plmultiplicity), newlabelcount=[]; end
+
+
+
+
+%This check is introduced because this same function is also used for
+%loading the pre-computed idx's
+if ( (isempty(Y)) || (~isstruct(Y)) || (isempty(clusteringmethod)) )
+    justforreading=true;
+else
+    justforreading=false;
+end
+
+
+
+%%%needed inputs: Y, dimtouse, noGroups%%%
+IDX=[]; offext=''; kmeansdone=false; C=[]; %Empty values initialised
+warning('off','stats:kmeans:EmptyCluster'); %so as to not display output of Kmeans
+warning('off','stats:kmeans:FailedToConverge'); %so as to not display output of Kmeans
+if (~justforreading)
+    chosend=Getchosend(Y,dimtouse);
+end
+% chosend= find(options.dims==dimtouse,1,'first');
+for agroupnumber=noGroups
+    
+    if ( readidxcs || saveidxcs)
+        filenameidxbasename=[filenames.idxpicsandvideobasedir,'Idx',filesep,'Idx_',num2str(agroupnumber),'_',num2str(dimtouse)];
+            %filename is [filenameidxbasename,offext,'.mat'] where offext is '' or 'off'
+    end
+    
+    if (readidxcs)
+        if ( (exist([filenameidxbasename,'.mat'],'file')) || (exist([filenameidxbasename,'off','.mat'],'file')) )
+            if (exist([filenameidxbasename,'.mat'],'file'))
+                load([filenameidxbasename,'.mat']);
+                offext='';
+                fprintf('%d groups, idx already computed (loaded)\n',agroupnumber);
+            else %(exist([filenameidxbasename,'off','.mat'],'file')) )
+                load([filenameidxbasename,'off','.mat']);
+                offext='off';
+                fprintf('%d groups, idx (off) already computed (loaded)\n',agroupnumber);
+            end
+            kmeansdone=true;
+            continue;
+        end
+    end
+    
+    if (justforreading)
+        fprintf('Y or clusteringmethod not defined and idx not precomputed\n');
+        continue;
+    end
+    
+    kmeansdone=false;
+    if (tryonlinefirst)
+        try
+            % Y.coords{chosend}=[no_dims x no_points]
+            % clusteringmethod='km','km2','km3','litekm','yaelkm','meanshift'
+            if (strcmp(clusteringmethod,'km'))
+                [IDX,C] = kmeans((Y.coords{chosend})',agroupnumber,'Replicates',noreplicates,'emptyaction','drop'); %online phase on
+            elseif (strcmp(clusteringmethod,'km2'))
+                prm.nTrial=noreplicates; % [1] number random restarts
+                prm.maxIter=100; % [100] max number of iterations
+                [IDX,C] = kmeans2((Y.coords{chosend})',agroupnumber,prm); %Piotr kmeans
+            elseif (strcmp(clusteringmethod,'optics'))
+                if ( (~isstruct(options)) || (~isfield(options,'thecorrtable')) || (isempty(options.thecorrtable)) )
+                    error('Optics requires computation of order, RD and correspondence table\n');
+                end
+                
+                nogroupspos=find(options.thecorrtable(:,1)==agroupnumber,1,'first');
+                if (isempty(nogroupspos)), error('Correspondence in table\n'); end
+                
+                rdvalue=options.thecorrtable(nogroupspos,3);
+                [bestclass]=Labelwiththreshold(options.order,options.RD,rdvalue); %,bestnclusters (clusters really assigned)
+                    %amargin is subtracted before comparison in the function
+                bestclass(bestclass==(-1))=(-10);
+                IDX=bestclass'; %outliers are labelled (-10) in IDX
+                numberofclusters=numel(unique(IDX))-any(IDX==(-10)); C=(1:numberofclusters)'; %clusters centers are just the ids
+%                 fprintf('Labelwiththreshold: number of clusters %d (%d outliers present)\n',numberofclusters,sum(IDX==(-10)));
+                
+            elseif (strcmp(clusteringmethod,'dbscan'))
+                if ( (isstruct(options)) && (isfield(options,'kdbscan')) && (~isempty(options.kdbscan)) ), k=options.kdbscan; else k=10; end
+                eps=agroupnumber; [bestclass] = Dbscan((Y.coords{chosend})',k,eps); %,type
+                % type expresses the type of node (core: 1, border: 0, outlier: (-1) )
+                bestclass(bestclass==(-1))=(-10); IDX=bestclass'; %outliers are labelled (-10) in IDX
+                numberofclusters=numel(unique(IDX))-any(IDX==(-10)); C=(1:numberofclusters)'; %clusters centers are just the ids
+%                 fprintf('Dbscan: number of clusters %d (%d outliers present)\n',numberofclusters,sum(IDX==(-10)));
+                agroupnumber=numberofclusters; %#ok<FXSET> %This considers leaving outliers -10 as outliers
+%                 agroupnumber=numel(unique(IDX))+max(sum(IDX==(-10))-1,0); %This considers replacing the outliers with single point clusters
+                    %agroupnumber is changed in the loop to account for the fact that dbscan uses eps, not number of clusters
+                    
+                    
+                    
+            elseif (strcmp(clusteringmethod,'km3'))
+                % size(Y.coords{chosend}) = [ndims , n points]; size(IDX) = [npoints , 1]; size(C) = [n centers , ndims];
+                
+                if (size(Y.coords{chosend},2)>agroupnumber)
+                    if (plmultiplicity)
+                        ndims=size(single(Y.coords{chosend}),1);
+                        npoints=sum(newlabelcount);
+                        nuniquepoints=size(Y.coords{chosend},2);
+                        
+                        X=zeros(ndims,npoints);
+                        X(:,1:nuniquepoints)=Y.coords{chosend}; %[ d dimensions x n number of points to cluster ]
+                        if (plseed)
+                            expandedseeds=zeros(1,npoints);
+                            expandedseeds(1:nuniquepoints)=seeds; %[ 1 x n number of points to cluster ]
+                        end
+                        
+                        count=nuniquepoints;
+                        for jj=1:numel(newlabelcount)
+                            if (newlabelcount(jj)>1)
+                                countrep=newlabelcount(jj)-1;
+                                X(:,count+1:count+countrep)=repmat(Y.coords{chosend}(:,jj),1,countrep);
+                                if (plseed), expandedseeds(count+1:count+countrep)=repmat(seeds(jj),1,countrep); end
+                                count=count+countrep;
+                            end
+                        end
+                    else
+                        X=Y.coords{chosend};
+                        if (plseed), expandedseeds=seeds; end
+                    end
+                    X=single(X);
+                    if (~plseed), expandedseeds=0; end
+
+                    [Ctmp,IDXtmp] = vl_kmeans(X,agroupnumber,'NumRepetitions',noreplicates,...
+                        'Initialization','randsel','Algorithm','elkan'); %,Energy
+                            %,'Algorithm','elkan','lloyd'
+                            %,'Initialization','randsel','plusplus'
+                    % seed initial assignment to clusters with expandedseeds = [ 1 x n of points ]
+                    
+                    IDX=IDXtmp(1:size(Y.coords{chosend},2))';
+                    C=Ctmp';
+                else %No need to run k-means if the number of requested clusters is larger then the number of data points
+                    IDX= (1:size(Y.coords{chosend},2))';
+                    C= (Y.coords{chosend})';
+                end
+                
+                
+                
+            elseif (strcmp(clusteringmethod,'litekm'))
+                % size(Y.coords{chosend}) = [ndims , n points]; size(IDX) = [npoints , 1]; size(C) = [n centers , ndims];
+                if (size(Y.coords{chosend},2)>agroupnumber)
+                
+                    [IDXtmp,Ctmp] = Litekmeans((Y.coords{chosend}),agroupnumber,noreplicates,newlabelcount,seeds);
+                    % multiplicity weight of each point in the assignment, generally an integer set to 1 for the case of standard k-means = [ n of points x 1 ]
+                    % seed initial assignment to clusters = [ 1 x n of points ]
+                    
+                    IDX=IDXtmp; % numel(unique(IDXtmp))
+                    C=Ctmp';
+                else %No need to run k-means if the number of requested clusters is larger then the number of data points
+                    IDX= (1:size(Y.coords{chosend},2))';
+                    C= (Y.coords{chosend})';
+                end
+                
+                
+                
+            elseif (strcmp(clusteringmethod,'km3new'))
+                % size(Y.coords{chosend}) = [ndims , n points]; size(IDX) = [npoints , 1]; size(C) = [n centers , ndims];
+                
+                
+                if (size(Y.coords{chosend},2)>agroupnumber)
+                    if (plseed && plmultiplicity) 
+                        [Ctmp,IDXtmp] = vl_kmeans_new((Y.coords{chosend}),agroupnumber,'NumRepetitions',noreplicates,...
+                            'Initialization','randsel','Algorithm','elkan','Multiplicity',newlabelcount,'Seeds',seeds);
+                    elseif (plseed)
+                        [Ctmp,IDXtmp] = vl_kmeans_new((Y.coords{chosend}),agroupnumber,'NumRepetitions',noreplicates,...
+                            'Initialization','randsel','Algorithm','elkan','Seeds',seeds);
+                    elseif (plmultiplicity)
+                        [Ctmp,IDXtmp] = vl_kmeans_new((Y.coords{chosend}),agroupnumber,'NumRepetitions',noreplicates,...
+                            'Initialization','randsel','Algorithm','elkan','Multiplicity',newlabelcount);
+                    else
+                        [Ctmp,IDXtmp] = vl_kmeans_new((Y.coords{chosend}),agroupnumber,'NumRepetitions',noreplicates,...
+                            'Initialization','randsel','Algorithm','elkan');
+                    end
+                            %,Energy
+                            %,'Algorithm','elkan','lloyd'
+                            %,'Initialization','randsel','plusplus'
+                    % multiplicity weight of each point in the assignment, generally an integer set to 1 for the case of standard k-means = [ n of points x 1 ]
+                    % seed initial assignment to clusters = [ 1 x n of points ]
+                    
+                    IDX=IDXtmp';
+                    C=Ctmp';
+                else %No need to run k-means if the number of requested clusters is larger then the number of data points
+                    IDX= (1:size(Y.coords{chosend},2))';
+                    C= (Y.coords{chosend})';
+                end
+                
+                
+                
+            elseif (strcmp(clusteringmethod,'yaelkm'))
+                % size(Y.coords{chosend}) = [ndims , n points]; size(IDX) = [npoints , 1]; size(C) = [n centers , ndims];
+                
+                if (size(Y.coords{chosend},2)>agroupnumber)
+                    if (plmultiplicity)
+                        ndims=size(single(Y.coords{chosend}),1);
+                        npoints=sum(newlabelcount);
+                        nuniquepoints=size(Y.coords{chosend},2);
+                        
+                        X=zeros(ndims,npoints);
+                        X(:,1:nuniquepoints)=Y.coords{chosend}; %[ d dimensions x n number of points to cluster ]
+                        if (plseed)
+                            expandedseeds=zeros(1,npoints);
+                            expandedseeds(1:nuniquepoints)=seeds; %[ 1 x n number of points to cluster ]
+                        end
+                        
+                        count=nuniquepoints;
+                        for jj=1:numel(newlabelcount)
+                            if (newlabelcount(jj)>1)
+                                countrep=newlabelcount(jj)-1;
+                                X(:,count+1:count+countrep)=repmat(Y.coords{chosend}(:,jj),1,countrep);
+                                if (plseed), expandedseeds(count+1:count+countrep)=repmat(seeds(jj),1,countrep); end
+                                count=count+countrep;
+                            end
+                        end
+                    else
+                        X=Y.coords{chosend};
+                        if (plseed), expandedseeds=seeds; end
+                    end
+                    X=single(X);
+                    if (~plseed), expandedseeds=0; end
+                    
+                    %therandseed=randi(1000); %Get rand seed for the initial seed generation in k-means
+                    [Ctmp,IDXtmp] = Yael_kmeans(X,agroupnumber,'redo', noreplicates, 'verbose', 0 , 'seed', 0, 'niter', 50);
+                    % seed initial assignment to clusters with expandedseeds = [ 1 x n of points ]
+                    
+                    IDX=IDXtmp(1:size(Y.coords{chosend},2)); % numel(unique(IDXtmp)), size(IDXtmp), size(IDX), size(Ctmp), size(C)
+                    C=Ctmp';
+                else %No need to run k-means if the number of requested clusters is larger then the number of data points
+                    IDX= (1:size(Y.coords{chosend},2))';
+                    C= (Y.coords{chosend})';
+                end
+                
+                
+                
+            elseif (strcmp(clusteringmethod,'meanshift'))
+                msprm.printonscreen=true;
+                msprm.printonscreensubfunctions=false;
+                msprm.doGaussian=true;
+                % msprm.importances equal by default
+                msprm.radius = 0.78; %0.78
+                msprm.nbSteps = 24; %18 also proposed 24
+                msprm.factor = 1.25; %1.25
+                msprm.initNbClusters = 1000;
+                % msprm.useminnumberofclusters false by default
+                % msprm.minNbClusters 10 by default ( used if (useminnumberofclusters) )
+
+                [IDX, C] = Meanshiftclustering((Y.coords{chosend})', msprm); %_, dataFlags
+                %further outputs _, closeVectIndexList, ranges
+                % clusterColors = findClusterColors3D2(rgb3D, closeVectIndexList);
+                %colours are computed by taking the colour of the vector closest to the centers
+            else
+                error('Clustering method not recognised\n');
+            end
+            IDX=Adjusttheoutliers(IDX); %outliers (-1) are incorporated as single points, outliers (-10) are preserved
+            offext='';
+            kmeansdone=true;
+        catch MEf %#ok<NASGU>
+            fprintf('%d groups, online phase on could  not find a solution\n',agroupnumber);
+            try
+                [IDX,C] = kmeans((Y.coords{chosend})',agroupnumber,'Replicates',noreplicates,'emptyaction','drop','onlinephase','off');
+                kmeansdone=true;
+                offext='off';
+            catch MEs %#ok<NASGU>
+                fprintf('%d groups, online phase off could  not find a solution\n',agroupnumber);
+            end
+        end
+    else
+        try
+            [IDX,C] = kmeans((Y.coords{chosend})',agroupnumber,'Replicates',noreplicates,'emptyaction','drop','onlinephase','off');
+            kmeansdone=true;
+            offext='off';
+        catch MEs %#ok<NASGU>
+            fprintf('%d groups, online phase off could  not find a solution\n',agroupnumber);
+        end
+    end
+    if (~kmeansdone)
+        fprintf('%d groups: kmeans did not converge\n',agroupnumber);
+        continue;
+    end
+    
+    %Print dropped IDX's and compact them
+    Printdroppedcenters(C,agroupnumber);
+    IDX=Compactidxnew(IDX,agroupnumber);
+    
+    %remap IDX so that it corresponds to original points in D
+    %check that Y has embedded all elements
+    if (isfield(Y,'missing') && (~isempty(Y.missing)))
+        remappedIDX=zeros(numel(Y.index)+numel(Y.missing),1);
+        totalassigned=max(IDX);
+        remappedIDX(Y.index)=IDX;
+        remappedIDX(Y.missing)=(totalassigned+1):(totalassigned+numel(Y.missing));
+            %reshape((totalassigned+1):(totalassigned+numel(Y.missing)),[],1);
+        fprintf('%d new clusters assigned to non-embedded elements\n',numel(Y.missing));
+    else
+        remappedIDX=zeros(numel(Y.index),1);
+        remappedIDX(Y.index)=IDX;
+    end
+    IDX=remappedIDX;
+%     clear remappedIDX;
+    
+    if (saveidxcs)
+        save([filenameidxbasename,offext,'.mat'], 'IDX','C','-v7.3');
+    end
+    fprintf('\n%d groups done\n\n',agroupnumber);
+end
+%%%%%%
+
+
+
+
+
+
+function Compatibilitypart(D,Y) %#ok<DEFNU>
+%This compatibility part is removed as we assume that new Y's are to be
+%computed
+
+if ( (exist('D','var')) && (size(D,1)>numel(IDX)) )  ||  (isfield(Y,'missing') && (~isempty(Y.missing)))
+    if ( (~isfield(Y,'missing')) || (isempty(Y.missing)) )
+        fprintf('%d elements embedded on a total of %d\n',numel(Y.index),size(D,1));
+        alltheelements=true(1,size(D,1));
+        alltheelements(Y.index)=false;
+        Y.missing=reshape(find(alltheelements),[],1);
+    end
+    remappedIDX=zeros(numel(Y.index)+numel(Y.missing),1);
+    totalassigned=max(IDX);
+    remappedIDX(Y.index)=IDX;
+    remappedIDX(Y.missing)=(totalassigned+1):(totalassigned+numel(Y.missing)); %#ok<NASGU>
+        %reshape((totalassigned+1):(totalassigned+numel(Y.missing)),[],1);
+    fprintf('%d new clusters assigned to non-embedded elements\n',numel(Y.missing));
+else
+    remappedIDX=zeros(numel(Y.index),1);
+    remappedIDX(Y.index)=IDX; %#ok<NASGU>
+end
+
+
+
+function Test_this_code()
+
+ndims=size(single(Y.coords{chosend}),1);
+npoints=sum(newlabelcount);
+nuniquepoints=size(Y.coords{chosend},2);
+
+count=nuniquepoints;
+for jj=1:numel(newlabelcount)
+    if (newlabelcount(jj)>1)
+        countrep=newlabelcount(jj)-1;
+        
+        if (  any( IDXtmp(count+1:count+countrep) ~= repmat(IDXtmp(jj),countrep,1) )  )
+            fprintf('Spotted difference in cluster assignment, jj=%d\n',jj);
+        end
+        
+        count=count+countrep;
+    end
+end
+
+numel(IDXtmp)
+size(IDXtmp)
+

@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/TVL1
+END
+ToDblGray.asv
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/TVL1/ToDblGray.asv
+END
+ToDblGray.m
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/TVL1/ToDblGray.m
+END
+run_of.m
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/TVL1/run_of.m
+END
+dxm.m
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/TVL1/dxm.m
+END
+dym.m
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/TVL1/dym.m
+END
+TV.m
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/TVL1/TV.m
+END
+dxp.m
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/TVL1/dxp.m
+END
+dyp.m
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/TVL1/dyp.m
+END
+warping.m
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/TVL1/warping.m
+END
+compute_edge_weight.m
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/TVL1/compute_edge_weight.m
+END
+tv_l1_of_dual_pgd.m
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/TVL1/tv_l1_of_dual_pgd.m
+END
+flowToColor.m
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/TVL1/flowToColor.m
+END
+computeColor.m
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/TVL1/computeColor.m
+END
+structure_texture_decomposition.m
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/TVL1/structure_texture_decomposition.m
+END
+coarse_to_fine.m
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/TVL1/coarse_to_fine.m
+END

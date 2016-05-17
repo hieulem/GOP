@@ -1,0 +1,193 @@
+function [IDX,kmeansdone,offext,C]=Clusterthepoints(Y,clusteringmethod,noGroups,dimtouse,noreplicates,...
+    tryonlinefirst,readidxcs,saveidxcs,filenames)
+%The function clusters the points in Y (ISOMAP-like format) according to
+%the specified clusteringmethod
+%The function takes into account the points missing in Y (Y.missing)
+%The function output is remapped and corresponds to original data (Y.index)
+%C is not remapped, it only applies to points with a manifold position
+
+
+
+%Input preparation
+if ( (~exist('dimtouse','var')) || (isempty(dimtouse)) )
+    dimtouse=6;
+end
+if ( (~exist('noreplicates','var')) || (isempty(noreplicates)) )
+    noreplicates=600;
+end
+if ( (~exist('tryonlinefirst','var')) || (isempty(tryonlinefirst)) )
+    tryonlinefirst=true;
+end
+if ( (~exist('saveidxcs','var')) || (isempty(saveidxcs)) || (~exist('filenames','var')) || ...
+        (~isstruct(filenames)) || (~isfield(filenames,'idxpicsandvideobasedir')) )
+    saveidxcs=false;
+end
+if ( (~exist('readidxcs','var')) || (isempty(readidxcs)) || (~exist('filenames','var')) || ...
+        (~isstruct(filenames)) || (~isfield(filenames,'idxpicsandvideobasedir')) )
+    readidxcs=false;
+end
+
+
+
+
+%%%needed inputs: Y, dimtouse, noGroups%%%
+IDX=[]; offext=''; kmeansdone=false; C=[]; %Empty values initialised
+warning('off','stats:kmeans:EmptyCluster'); %so as to not display output of Kmeans
+warning('off','stats:kmeans:FailedToConverge'); %so as to not display output of Kmeans
+chosend=Getchosend(Y,dimtouse);
+% chosend= find(options.dims==dimtouse,1,'first');
+for agroupnumber=noGroups
+    
+    if ( readidxcs || saveidxcs)
+        filenameidxbasename=[filenames.idxpicsandvideobasedir,'Idx',filesep,'Idx_',num2str(agroupnumber),'_',num2str(dimtouse)];
+            %filename is [filenameidxbasename,offext,'.mat'] where offext is '' or 'off'
+    end
+    
+    if (readidxcs)
+        if ( (exist([filenameidxbasename,'.mat'],'file')) || (exist([filenameidxbasename,'off','.mat'],'file')) )
+            if (exist([filenameidxbasename,'.mat'],'file'))
+                load([filenameidxbasename,'.mat']);
+                offext='';
+                fprintf('%d groups, idx already computed (loaded)\n',agroupnumber);
+            else %(exist([filenameidxbasename,'off','.mat'],'file')) )
+                load([filenameidxbasename,'off','.mat']);
+                offext='off';
+                fprintf('%d groups, idx (off) already computed (loaded)\n',agroupnumber);
+            end
+            kmeansdone=true;
+            continue;
+        end
+    end
+    
+    if (isempty(Y)
+    kmeansdone=false;
+    if (tryonlinefirst)
+        try
+            % Y.coords{chosend}=[no_dims x no_points]
+            % clusteringmethod='km','km2','km3','meanshift'
+            if (strcmp(clusteringmethod,'km'))
+                [IDX,C] = kmeans((Y.coords{chosend})',agroupnumber,'Replicates',noreplicates,'emptyaction','drop'); %online phase on
+            elseif (strcmp(clusteringmethod,'km2'))
+                prm.nTrial=noreplicates; % [1] number random restarts
+                prm.maxIter=100; % [100] max number of iterations
+                [IDX,C] = kmeans2((Y.coords{chosend})',agroupnumber,prm); %Piotr kmeans
+            elseif (strcmp(clusteringmethod,'km3'))
+                [Ctmp,IDXtmp] = vl_kmeans((Y.coords{chosend}),agroupnumber,'NumRepetitions',noreplicates,...
+                    'Initialization','randsel','Algorithm','elkan'); %,Energy
+                        %,'Algorithm','elkan','lloyd'
+                        %,'Initialization','randsel','plusplus'
+                IDX=IDXtmp';
+                C=Ctmp';
+            elseif (strcmp(clusteringmethod,'meanshift'))
+                msprm.printonscreen=true;
+                msprm.printonscreensubfunctions=false;
+                msprm.doGaussian=true;
+                % msprm.importances equal by default
+                msprm.radius = 0.78;
+                msprm.nbSteps = 18;
+                msprm.factor = 1.25;
+                msprm.initNbClusters = 1000;
+                % msprm.useminnumberofclusters false by default
+                % msprm.minNbClusters 10 by default ( used if (useminnumberofclusters) )
+
+                [IDX, C] = Meanshiftclustering((Y.coords{chosend})', msprm); %_, dataFlags
+                %further outputs _, closeVectIndexList, ranges
+                % clusterColors = findClusterColors3D2(rgb3D, closeVectIndexList);
+                %colours are computed by taking the colour of the vector closest to the centers
+            else
+                error('Clustering method not recognised\n');
+            end
+            IDX=Adjusttheoutliers(IDX); %outliers are (-1) values
+            offext='';
+            kmeansdone=true;
+        catch MEf %#ok<NASGU>
+            fprintf('%d groups, online phase on could  not find a solution\n',agroupnumber);
+            try
+                [IDX,C] = kmeans((Y.coords{chosend})',agroupnumber,'Replicates',noreplicates,'emptyaction','drop','onlinephase','off');
+                kmeansdone=true;
+                offext='off';
+            catch MEs %#ok<NASGU>
+                fprintf('%d groups, online phase off could  not find a solution\n',agroupnumber);
+            end
+        end
+    else
+        try
+            [IDX,C] = kmeans((Y.coords{chosend})',agroupnumber,'Replicates',noreplicates,'emptyaction','drop','onlinephase','off');
+            kmeansdone=true;
+            offext='off';
+        catch MEs %#ok<NASGU>
+            fprintf('%d groups, online phase off could  not find a solution\n',agroupnumber);
+        end
+    end
+    if (~kmeansdone)
+        fprintf('%d groups: kmeans did not converge\n',agroupnumber);
+        continue;
+    end
+    
+    %Print dropped centres
+    droppedcentres=isnan(C(:,1));
+    if (any(droppedcentres))
+        nodropped=sum(droppedcentres);
+        whichdropped=find(droppedcentres);
+        fprintf('%d groups: dropped %d clusters ( ',agroupnumber,nodropped); fprintf('%d ',whichdropped); fprintf(')\n');
+    end
+    %Print dropped IDX's and compact them
+    assignedidxs=unique(IDX);
+    numberassignedidxs=numel(assignedidxs);
+    if (numberassignedidxs~=agroupnumber)
+        missingidx=true(1,agroupnumber);
+        missingidx(assignedidxs)=false;
+        whichmissingidxs=find(missingidx);
+        fprintf('Missing idxs ( '); fprintf('%d ',whichmissingidxs); fprintf(')\n');
+        missingidxsordered=sort(whichmissingidxs,'descend');
+        for idxord=1:numel(missingidxsordered)
+            IDX(IDX>missingidxsordered(idxord))=IDX(IDX>missingidxsordered(idxord))-1; %#ok<AGROW>
+        end
+        fprintf('IDX''s compacted\n');
+    end
+    
+    %remap IDX so that it corresponds to original points in D
+    %check that Y has embedded all elements
+    if (isfield(Y,'missing') && (~isempty(Y.missing)))
+        remappedIDX=zeros(numel(Y.index)+numel(Y.missing),1);
+        totalassigned=max(IDX);
+        remappedIDX(Y.index)=IDX;
+        remappedIDX(Y.missing)=(totalassigned+1):(totalassigned+numel(Y.missing));
+            %reshape((totalassigned+1):(totalassigned+numel(Y.missing)),[],1);
+        fprintf('%d new clusters assigned to non-embedded elements\n',numel(Y.missing));
+    else
+        remappedIDX=zeros(numel(Y.index),1);
+        remappedIDX(Y.index)=IDX;
+    end
+    IDX=remappedIDX;
+%     clear remappedIDX;
+    
+    if (saveidxcs)
+        save([filenameidxbasename,offext,'.mat'], 'IDX','C','-v7.3');
+    end
+    fprintf('\n%d groups done\n\n',agroupnumber);
+end
+%%%%%%
+
+
+function Compatibilitypart(D,Y) %#ok<DEFNU>
+%This compatibility part is removed as we assume that new Y's are to be
+%computed
+
+if ( (exist('D','var')) && (size(D,1)>numel(IDX)) )  ||  (isfield(Y,'missing') && (~isempty(Y.missing)))
+    if ( (~isfield(Y,'missing')) || (isempty(Y.missing)) )
+        fprintf('%d elements embedded on a total of %d\n',numel(Y.index),size(D,1));
+        alltheelements=true(1,size(D,1));
+        alltheelements(Y.index)=false;
+        Y.missing=reshape(find(alltheelements),[],1);
+    end
+    remappedIDX=zeros(numel(Y.index)+numel(Y.missing),1);
+    totalassigned=max(IDX);
+    remappedIDX(Y.index)=IDX;
+    remappedIDX(Y.missing)=(totalassigned+1):(totalassigned+numel(Y.missing)); %#ok<NASGU>
+        %reshape((totalassigned+1):(totalassigned+numel(Y.missing)),[],1);
+    fprintf('%d new clusters assigned to non-embedded elements\n',numel(Y.missing));
+else
+    remappedIDX=zeros(numel(Y.index),1);
+    remappedIDX(Y.index)=IDX; %#ok<NASGU>
+end

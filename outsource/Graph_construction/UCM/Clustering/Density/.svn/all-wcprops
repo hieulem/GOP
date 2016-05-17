@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/D2/VSG/!svn/ver/1/UCM/Clustering/Density
+END
+Clustertoreachability.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/D2/VSG/!svn/ver/1/UCM/Clustering/Density/Clustertoreachability.m
+END
+Determinetheepsilon.m
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/D2/VSG/!svn/ver/1/UCM/Clustering/Density/Determinetheepsilon.m
+END
+Labelwiththreshold.m
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/D2/VSG/!svn/ver/1/UCM/Clustering/Density/Labelwiththreshold.m
+END
+Dbscan.m
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/D2/VSG/!svn/ver/1/UCM/Clustering/Density/Dbscan.m
+END
+Determineclassthandbias.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/D2/VSG/!svn/ver/1/UCM/Clustering/Density/Determineclassthandbias.m
+END
+Optics.m
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/D2/VSG/!svn/ver/1/UCM/Clustering/Density/Optics.m
+END

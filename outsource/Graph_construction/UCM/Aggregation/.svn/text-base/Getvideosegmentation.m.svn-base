@@ -1,0 +1,402 @@
+function allthesegmentations=Getvideosegmentation(filenames,ucm2,flows,printonscreen,dimtouse,options,filename_sequence_basename_frames_or_video,videocorrectionparameters,cim)
+%Function shares code with Affinityfromsuperpixels
+
+
+
+%% Set up input and compute similarities
+
+if (~exist('options','var'))
+    options=[];
+end
+if (~exist('theoptiondata','var'))
+    theoptiondata=[];
+end
+%prepare calibration parameters options
+if ( (isfield(options,'calibratetheparameters')) && (~isempty(options.calibratetheparameters)) && (options.calibratetheparameters) )
+    if ( (isfield(options,'calibrateparametersname')) && (~isempty(options.calibrateparametersname)) )
+        paramcalibname=options.calibrateparametersname;
+    else
+        paramcalibname='Paramcstltifefff'; fprintf('Using standard additional name %s for parameter calibration, please confirm\n',paramcalibname); pause;
+    end
+else
+    options.calibratetheparameters=false;
+end
+if ( (~exist('dimtouse','var')) || (isempty(dimtouse)) )
+    dimtouse=6;
+end
+if ( (~exist('printonscreen','var')) || (isempty(printonscreen)) )
+    printonscreen=false;
+end
+printonscreeninsidefunction=false;
+
+%Level at which to threshold the UCM2 to get the superpixels
+if ( (isfield(options,'ucm2level')) && (~isempty(options.ucm2level)) )
+    Level=options.ucm2level;
+else
+    Level=1;
+end
+
+noFrames=numel(ucm2);
+
+
+
+%Prapares a labelledlevelvideo for the requested Level (bwlabel and pixel sample)
+[labelledlevelvideo,numberofsuperpixelsperframe]=Labellevelframes(ucm2,Level,noFrames,printonscreen);
+% [labelledlevelcell,numberofsuperpixelsperframe]=Getalllabels(ucm2,Level,noFrames,printonscreen);
+
+
+
+[mapped,framebelong,noallsuperpixels]=Mappedfromlabels(labelledlevelvideo); %,maxnumberofsuperpixelsperframe
+fprintf('%d number of superpixels in total at level %d (%d frames)\n',noallsuperpixels, Level, noFrames);
+%mapped provides the index transformation from (frame,label) to similarities
+%for inverse mapping
+%[frame,label]=find(mapped==indexx);
+%or
+%[framebelong,labelsatframe,numberofelements]=Getmappedframes(mapped);
+sizeofsprpix = Sizeofsuperpixels(labelledlevelvideo,numberofsuperpixelsperframe, noallsuperpixels);
+
+
+%Prepare the parameter calibration ground truth
+if (options.calibratetheparameters)
+    theoptiondata.labelsgt=Labelsfromgt(filename_sequence_basename_frames_or_video,mapped,ucm2,...
+        videocorrectionparameters,printonscreen);
+    theoptiondata.paramcalibname=paramcalibname;
+end
+
+
+
+%Computation of all affinities and combination in similarities
+if ( (isfield(options,'requestedaffinities')) && (iscell(options.requestedaffinities)) )
+    requestedaffinities=options.requestedaffinities;
+else
+    if (isfield(options,'requestedaffinities'))
+        fprintf('Field in place but not cell\n');
+    end
+    requestedaffinities={'stt','ltt','aba','abm','stm','sta'};
+end
+
+if ( (isfield(options,'rawfeatures')) && (iscell(options.rawfeatures)) )
+    rawfeatures=options.rawfeatures;
+else
+    rawfeatures=false;%true;%
+end
+
+if ( (isfield(options,'softdecision')) && (iscell(options.softdecision)) )
+    softdecision=options.softdecision;
+else
+    softdecision=false;%false;%true;%;
+end
+
+if ~(isfield(options,'manifoldcl')) 
+   options.manifoldcl='km3new';
+end
+
+if  (isfield(options,'plmultiplicity')) 
+    plmultiplicity=options.plmultiplicity;
+else
+    plmultiplicity=false;%false;%true;%;
+end
+
+if ( (isfield(options,'size1spx')))
+    size1spx=options.size1spx;
+else
+    size1spx=false;%false;%true;%;
+end
+
+
+%%
+% [labelcount]=Getlabelcount(labelledlevelvideo,options,ucm2,printonscreen);
+% [Xspx] = getFeatures_lc(labelcount,filename_sequence_basename_frames_or_video,filenames,noFrames,noallsuperpixels,numberofsuperpixelsperframe,labelledlevelvideo);
+% error('done');
+
+%%
+[similarities,STT,LTT,ABA,ABM,STM,STA,VLTTI,CTR,APM_rgb,APM_lab,FLM,STD, LAB1, LAB2, LAB3, MMMu, MMMv, LX, LY,LF] =Getcombinedsimilarities_new(labelledlevelvideo,flows, ucm2, cim, mapped, ...
+    filename_sequence_basename_frames_or_video, options, theoptiondata, filenames,...
+    noallsuperpixels, framebelong, numberofsuperpixelsperframe, requestedaffinities, printonscreeninsidefunction,rawfeatures);
+%,STT,LTT,ABA,ABM,STM,STA,VLTTI
+
+% if ( (isfield(options,'saveaff')) && (options.saveaff) && (isfield(options,'affaddname')) && (~isempty(options.affaddname)))
+%     filename_to_assign='';
+%     save(filename_to_assign,'similarities','mapped');
+% end
+
+
+
+%Reweight similarities if requested
+if ( (isfield(options,'uselevelfrw')) && (~isempty(options.uselevelfrw)) && (options.uselevelfrw) )
+    [similarities,labelcount]=Reweightwithhypercliquecardinality(similarities,labelledlevelvideo,options,ucm2,printonscreen); %TODO: remove
+%     options.newmethodfrw=false;
+%     [similarities2,labelcount]=Reweightwithhypercliquecardinality(similarities,labelledlevelvideo,options,ucm2,printonscreen);
+%     options.newmethodfrw=true;
+end
+
+
+
+%% Manifold representation and ground truth
+if (false) %Function to represent ground truth onto manifold
+    %Parameter setup
+    n_size=0; %default is 7, 0 when neighbours have already been selected, (includes self-connectivity)
+    saveyre=false; %The option also controls the loading
+    %Define the clustering and number of cluster method:
+    % - 'manifoldcl'
+    %   - 'numberofclusters','logclusternumber','adhoc', [1,2,3,...] referring to k-means,
+    %       [1,2,3,...] used to determine the divisive coefficients for dbscan or the requested clusters for optics
+    % - 'distances'
+    %   - 'linear','log','distlinear','distlog' refer to the merging based on the distances or manifold distances
+    setclustermethod='manifoldcl'; %'manifoldcl', 'distances'
+    manifoldmethod='laplacian'; %'iso','isoii','laplacian'
+    dimtouse=6;
+    manifolddistancemethod='euclidian'; %[option for setclustermethod='distances'] 'origd','euclidian'(default),'spectraldiffusion'
+
+    [Y,alldistances, mapping]=Getmanifoldandprogressivedistances(similarities,setclustermethod,dimtouse,n_size,manifoldmethod,[],saveyre,manifolddistancemethod);
+    
+    
+    
+    labelsgt=Labelsfromgt(filename_sequence_basename_frames_or_video,mapped,ucm2,...
+        videocorrectionparameters,printonscreen);
+%     labelledvideo=Labelclusteredvideointerestframes(mapped,labelsgt,ucm2,Level,[],true);
+
+    
+    
+    %Visualization
+    distributecolours=true;
+    includenumbers=false;
+    %labelsgt(labelsgt==0)=(-10); prints the unlabelled data black (restore it with labelsgt(labelsgt==-10)=(0); )
+    Visualiseclusteredpoints(Y,labelsgt,2,21,distributecolours,includenumbers);
+    Visualiseclusteredpoints(Y,labelsgt,3,23,distributecolours,includenumbers);
+%     includegraph=true;
+%     Visualiseclusteredpoints(Y,labelsgt,2,21,distributecolours,[],E,includegraph);
+
+    %Visualization of higher dimensions
+    dimtoshow=[4,5,6];
+    Visualiseclusteredpoints(Y,labelsgt,[],23,distributecolours,[],[],[],dimtoshow);
+    
+    %Visualization and interactivity
+    distributecolours=true;
+    dimtoshow=[1,2]; %[3,4],[5,6]
+    nofigman=21;
+    Visualiseclusteredpoints(Y,labelsgt,[],nofigman,distributecolours,[],[],[],dimtoshow);
+    Getiterativeselection(Y,labelsgt,mapped,nofigman,ucm2,Level,dimtoshow,[]);
+    
+%     Savetoeps('2D_12f_stltifefff.eps');
+end
+
+
+
+%% Label propagation
+if (false)
+    
+    labelsgt=Labelsfromgt(filename_sequence_basename_frames_or_video,mapped,ucm2,...
+        videocorrectionparameters,printonscreen); %#ok<UNRCH>
+    Labelprop(similarities,mapped,labelsgt,ucm2,Level,numberofsuperpixelsperframe);
+    
+end
+
+%% Must-links
+
+
+%  [Xstt,Xltt,Xstm,Xsta,Xctr,Xaba,Xabm,Xtd,Xspx,Y] = getFeatures_bm(STT,LTT,ABA,ABM,STM,STA,CTR,labelcount,filename_sequence_basename_frames_or_video,filenames,noFrames,noallsuperpixels,numberofsuperpixelsperframe,labelledlevelvideo,ucm2,framebelong);
+%  error('done');
+
+if (rawfeatures)
+    
+[Xlab1i,Xlab1j,Xlab2i,Xlab2j,Xlab3i,Xlab3j,Xmmmui,Xmmmuj,Xmmmvi,Xmmmvj,Xlxi,Xlxj,Xlyi,Xlyj,Xlfi,Xlfj] = getFeatures_rawraw_test(LAB1, LAB2, LAB3, MMMu, MMMv, LX, LY,LF,noallsuperpixels,similarities);
+clear STT LTT ABA ABM STM STA CTR APM_rgb APM_lab FLM STD LAB1 LAB2 LAB3 MMMu MMMv LX LY LF
+
+RF=true;%false;  
+sim = getconstraints_raw(Xlab1i,Xlab1j,Xlab2i,Xlab2j,Xlab3i,Xlab3j,Xmmmui,Xmmmuj,Xmmmvi,Xmmmvj,Xlxi,Xlxj,Xlyi,Xlyj,Xlfi,Xlfj,noallsuperpixels,RF,0,softdecision);
+clear Xlab1i Xlab1j Xlab2i Xlab2j Xlab3i Xlab3j Xmmmui Xmmmuj Xmmmvi Xmmmvj Xlxi Xlxj Xlyi Xlyj Xlfi Xlfj
+
+else     
+[Xstt,Xltt,Xstm,Xsta,Xctr,Xaba,Xabm,Xtd] = getFeatures_test(STT,LTT,ABA,ABM,STM,STA,CTR,noFrames,noallsuperpixels,numberofsuperpixelsperframe,framebelong);
+clear STT LTT ABA ABM STM STA CTR
+
+sim = sparse(noallsuperpixels,noallsuperpixels);
+RF=true;%false;
+
+if options.within   
+type = 'within';
+% Tw = getconstraints2(Xstt,Xltt,Xstm,Xsta,Xctr,Xaba,Xabm,Xtd,Xapm_rgb,Xapm_lab,Xflm,Xstd,type,noallsuperpixels,RF,softdecision);
+Tw = getconstraints(Xstt,Xltt,Xstm,Xsta,Xctr,Xaba,Xabm,Xtd,type,noallsuperpixels,RF,softdecision,options.dw,options.da1,options.da2,options.da_2);
+if softdecision
+    sim = sim+Tw;
+else
+   sim = sim|Tw;
+end
+clear Tw
+end
+
+if options.across_2    
+type = 'across_>2';
+Ta_2 = getconstraints(Xstt,Xltt,Xstm,Xsta,Xctr,Xaba,Xabm,Xtd,type,noallsuperpixels,RF,softdecision,options.dw,options.da1,options.da2,options.da_2);%getconstraints2(Xstt,Xltt,Xstm,Xsta,Xctr,Xaba,Xabm,Xtd,Xapm_rgb,Xapm_lab,Xflm,Xstd,type,noallsuperpixels,RF,softdecision);
+if softdecision
+    sim = sim+Ta_2;
+else
+sim = sim|Ta_2;
+end
+clear Ta_2
+end
+
+if options.across_n    
+type = 'across_>n';
+Ta_n = getconstraints(Xstt,Xltt,Xstm,Xsta,Xctr,Xaba,Xabm,Xtd,type,noallsuperpixels,RF,softdecision,options.dw,options.da1,options.da2,options.da_2);%getconstraints2(Xstt,Xltt,Xstm,Xsta,Xctr,Xaba,Xabm,Xtd,Xapm_rgb,Xapm_lab,Xflm,Xstd,type,noallsuperpixels,RF,softdecision);
+if softdecision
+    sim = sim+Ta_n;
+else
+sim = sim|Ta_n;
+end
+clear Ta_n
+end
+
+if options.across2  
+type = 'across_2';
+Ta2 = getconstraints(Xstt,Xltt,Xstm,Xsta,Xctr,Xaba,Xabm,Xtd,type,noallsuperpixels,RF,softdecision,options.dw,options.da1,options.da2,options.da_2);%getconstraints2(Xstt,Xltt,Xstm,Xsta,Xctr,Xaba,Xabm,Xtd,Xapm_rgb,Xapm_lab,Xflm,Xstd,type,noallsuperpixels,RF,softdecision);
+if softdecision
+    sim = sim+Ta2;
+else
+sim = sim|Ta2;
+end
+clear Ta2
+end
+
+if options.across1  
+type = 'across_1'; 
+Ta1 = getconstraints(Xstt,Xltt,Xstm,Xsta,Xctr,Xaba,Xabm,Xtd,type,noallsuperpixels,RF,softdecision,options.dw,options.da1,options.da2,options.da_2);%getconstraints2(Xstt,Xltt,Xstm,Xsta,Xctr,Xaba,Xabm,Xtd,Xapm_rgb,Xapm_lab,Xflm,Xstd,type,noallsuperpixels,RF,softdecision);
+
+if softdecision
+    sim = sim+Ta1;
+else
+sim = sim|Ta1;
+end
+clear Ta1
+end
+clear Xstt Xltt Xstm Xsta Xctr Xaba Xabm Xtd
+end
+
+if softdecision
+    sim = sim + sim';
+    similarities=sparse(sim);
+    mat = (similarities<options.threshold).*(similarities>0);  similarities(mat>0) = 0.0001;%.*
+    similarities=sparse(similarities);
+    must_link = sparse(noallsuperpixels,noallsuperpixels);
+else
+
+%% ML+HO
+
+% labelledlevelvideo20=Labellevelframes(ucm2,20,noFrames,printonscreen);
+% ML_matrix=sparse(Getmustlinksfromucm(labelledlevelvideo20,options,ucm2));
+% clear labelledlevelvideo20
+% sim = sparse(double(sim|ML_matrix));
+% clear ML_matrix
+must_link = sparse(triu(sim,1)); clear sim
+
+%% mustlinklabels to form reduced graph
+[ind1, ind2] = find(must_link);
+mustlinklabels=Getmustlinklabel_new(noallsuperpixels,ind1,ind2,1:noallsuperpixels);
+mustlinklabels=Getmustlinklabelsunique_new(noallsuperpixels,mustlinklabels,max(mustlinklabels));
+end
+
+
+  [ii,jj,vv]=find(similarities); 
+  [ii,jj,vv]=Reduceaffinityequivalentgraphmex(ii,jj,vv,mustlinklabels); 
+% 
+% %  [ii,jj,vv,newlabelcount]=Reduceaffinityequivalentgraphcountmex(ii,jj,vv,mustlinklabels,labelcount); %printthetext(bool), Reduceaffinityequivalentgraphcountmex.cpp
+%  [ii,jj,vv]=Reducenewquivwithhein(ii,jj,vv,newlabelcount);
+
+ newsize=max(mustlinklabels(:))
+ reducedsimilarities=sparse(ii,jj,vv,newsize,newsize); 
+ 
+%  labelcount = ones(1,noallsuperpixels);%sizeofsprpix;
+%    [reducedsimilarities]=Propagatelabelsreduction_new(similarities,mustlinklabels,1:numel(mustlinklabels),labelcount,true);
+% 
+%  
+ 
+reducedsizeofsprpix = zeros(newsize,1);
+reducednumberofsprpix = zeros(newsize,1);
+newlabelcount = zeros(newsize,1);
+
+for i=1:newsize    
+reducedsizeofsprpix(i) = sum(sizeofsprpix(mustlinklabels' == i));
+reducednumberofsprpix(i) = sum(mustlinklabels' == i);
+end
+
+if size1spx
+    newlabelcount = reducedsizeofsprpix;
+else
+    
+  for i=1:newsize    
+  newlabelcount(i) = sum(mustlinklabels' == i);
+  end  
+    
+end    
+    
+    
+if softdecision||strcmp(options.scmethod,'1spectclust')
+  reducedsimilarities = similarities;
+  reducedsizeofsprpix = sizeofsprpix;
+  reducednumberofsprpix = numberofsuperpixelsperframe;
+end
+
+
+
+%% Computate clustering from matrix of similarities
+
+
+
+%Assign unique labels to superpixels (used in computing the correspondence matrix)
+labelledlevelunique=labelledlevelvideo;
+count=0;
+for f=2:size(labelledlevelunique,3)
+    count=count+max(max(labelledlevelvideo(:,:,(f-1))));
+    labelledlevelunique(:,:,f)=labelledlevelunique(:,:,f)+count;
+end
+noallsuperpixels=count+max(max(labelledlevelvideo(:,:,size(labelledlevelunique,3))));
+% Printthevideoonscreen(labelledlevelunique, true, 1, true, [], [], true);
+
+
+
+%Parameter setup
+mergesegmoptions.n_size=0; %default is 7, 0 when neighbours have already been selected, (includes self-connectivity)
+mergesegmoptions.saveyre=false; %The option also controls the loading
+%Define the clustering and number of cluster method:
+% - 'manifoldcl'
+%   - 'numberofclusters','logclusternumber','adhoc', [1,2,3,...] referring to k-means,
+%       [1,2,3,...] used to determine the divisive coefficients for dbscan or the requested clusters for optics
+% - 'distances'
+%   - 'linear','log','distlinear','distlog' refer to the merging based on the distances or manifold distances
+mergesegmoptions.setclustermethod='manifoldcl'; %'manifoldcl', 'distances'
+mergesegmoptions.clusternumbermethod=options.scmethod;%'adhoc';%'1spectclust'; %'linear','log','distlinear','distlog','numberofclusters','logclusternumber','adhoc',[1,2,3,...]
+%mergesegmoptions.clusternumbermethod='adhoc'; %'linear','log','distlinear','distlog','numberofclusters','logclusternumber','adhoc', [1,2,3,...]
+mergesegmoptions.numberofclusterings=10; %Desired number of hierarchical levels, not used if 'adhoc' or actual cluster numbers are defined
+mergesegmoptions.includethesuperpixels=true; %include oversegmented video into allthesegmentations and newucm2
+mergesegmoptions.manifoldmethod='laplacian'; %'iso','isoii','laplacian'
+mergesegmoptions.dimtouse=dimtouse;
+mergesegmoptions.manifoldclustermethod=options.manifoldcl;%;'km3'; %'km','km3','dbscan','optics', used in combination with 'manifoldcl'
+mergesegmoptions.manifolddistancemethod='euclidian'; %[option for setclustermethod='distances'] 'origd','euclidian'(default),'spectraldiffusion'
+
+if (   (isfield(options,'clustcompnumbers'))   &&   (~isempty(options.clustcompnumbers))   )
+    mergesegmoptions.clusternumbermethod=options.clustcompnumbers;
+end
+
+% mergesegmoptions.clusternumbermethod= [2,3,5,10,20];
+% for '1spectclust' (1-Spectral Clustering)
+mergesegmoptions.setcutcriterion='ncut'; %The multipartition criterion to be optimized. 
+                                        %Available choices are
+                                        %                      'ncut' - Normalized Cut,
+                                        %                      'ncc' - Normalized Cheeger Cut,
+                                        %                      'rcut' - Ratio Cut,
+                                        %                      'rcc' - Ratio Cheeger Cut                                        
+mergesegmoptions.numOuter = 3; %numOuter: number of additional times the multipartitioning scheme is performed (default is 0); 
+mergesegmoptions.numInner = 1000; %numInner: for the additional runs of the multipartitioning scheme: number of random initializations at each level (default is 0).                                      
+
+
+
+% allthesegmentations=Clustervideosegmentation(similarities,labelledlevelunique,options,filenames,mergesegmoptions,true,normpertrack); %TODO: remove
+%allthesegmentations=Clustervideosegmentation(similarities,labelledlevelunique,options,filenames,mergesegmoptions);
+allthesegmentations=Clustervideosegmentation(reducedsimilarities,labelledlevelunique,mustlinklabels,noallsuperpixels,reducedsizeofsprpix,reducednumberofsprpix,must_link,options,filenames,mergesegmoptions, plmultiplicity, newlabelcount);
+
+
+fprintf('\n\n\nVideo segmentation completed\n\n\n\n\n');
+
+
+

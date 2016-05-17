@@ -1,0 +1,43 @@
+function Tmi=Gettatframei(allGis,Tm,Gif,frame)
+
+g=find(Gif.frame==frame);
+l=1;
+
+%find all correspondences
+mapTracToTrajectories=allGis.mapTracToTrajectories;
+correspondences=zeros(1,numel(mapTracToTrajectories));
+for k=1:numel(correspondences)
+    correspondences(k)=Translatefromfirsttosecond(mapTracToTrajectories,k,Gif.Gis{g}.mapTracToTrajectories{l});
+end
+
+
+%find all correspondences
+mapTracToTrajectories=Gif.Gis{g}.mapTracToTrajectories{l};
+correspondences=zeros(1,numel(mapTracToTrajectories));
+for k=1:numel(correspondences)
+    correspondences(k)=Translatefromfirsttosecond(mapTracToTrajectories,k,allGis.mapTracToTrajectories);
+end
+
+%find all true elements in Gif.Gis{g}.T{l}
+[r,c]=find(Gif.Gis{g}.T{l});
+
+%for all those with c>=r *
+for k=1:numel(r)
+    if (r(k)>c(k))
+        continue;
+    end
+
+    %update T
+    allGis.T(correspondences(r(k)),correspondences(c(k)))=true;
+
+    %update P
+    Pone=allGis.P(correspondences(r(k)),correspondences(c(k)));
+    Ptwo=Gif.Gis{g}.P{l}(r(k),c(k));
+    allGis.P(correspondences(r(k)),correspondences(c(k)))=1./(  1 +  ( (1-Pone).*(1-Ptwo)./ (Pone .* Ptwo) )  );
+
+    %* do the same for the symmetric value
+    if r(k)~=c(k)
+        allGis.T(correspondences(c(k)),correspondences(r(k)))=allGis.T(correspondences(r(k)),correspondences(c(k)));
+        allGis.P(correspondences(c(k)),correspondences(r(k)))=allGis.P(correspondences(r(k)),correspondences(c(k)));
+    end
+end

@@ -1,0 +1,20 @@
+function col=GiveDifferentColours(no,repratio)
+%if repratio is (x+1)/x then 2x different colours maximally spaced are
+%produced if x+1 is odd, otherwise half of the colours are produced 
+%if repratio == 2*(x+1)/x then exactly x colours are produced
+
+if ( (~exist('repratio','var')) || (isempty(repratio)) )
+    repratio=22/25; % 46/45 39/38 46/45 86/85 70/69 14/15 26/25
+end
+
+angle=no*pi*repratio;
+img = computeColor(cos(angle),sin(angle));
+
+col=zeros(1,3);
+col(1)=img(1,1,1);
+col(2)=img(1,1,2);
+col(3)=img(1,1,3);
+
+col=double(col)/255;
+
+

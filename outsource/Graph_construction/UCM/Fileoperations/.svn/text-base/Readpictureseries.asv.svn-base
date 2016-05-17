@@ -1,0 +1,36 @@
+function [picturecell,valid]=Readpictureseries(basename,numberformat,nameclosure,startnumber,noFrames,printonscreen)
+%The function sets valid to false if some frames are missing
+
+if ( (~exist('printonscreen','var')) || (isempty(printonscreen)) )
+    printonscreen=false;
+end
+
+valid=true;
+picturecell=cell(1,noFrames);
+count=0;
+numberofmissing=[];
+for i=startnumber:(noFrames+startnumber-1)
+    count=count+1;
+    picture_each_filename=[basename,num2str(i,numberformat),nameclosure];
+    
+    if (~exist(picture_each_filename,'file'))
+%         fprintf('File %s missing\n',picture_each_filename);
+        numberofmissing=[numberofmissing,', ',num2str(i,numberformat)];
+        valid=false;
+        continue;
+    end
+
+    picturecell{count}=imread(picture_each_filename);
+    if (printonscreen)
+        figure(10), imshow(picturecell{count})
+        set(gcf, 'color', 'white');
+        title( ['Image at frame ',num2str(count)] );
+    end
+end
+
+if (~isempty(numberofmissing))
+    picture_each_filename=[basename,num2str(0,numberformat),nameclosure];
+    fprintf('Missing files with format %s\n',picture_each_filename);
+    
+
+

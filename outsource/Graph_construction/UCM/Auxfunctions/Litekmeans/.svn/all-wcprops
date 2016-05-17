@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Litekmeans
+END
+data_lite_kmeans.mat
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Litekmeans/data_lite_kmeans.mat
+END
+spread_lite_kmeans.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Litekmeans/spread_lite_kmeans.m
+END
+Litekmeans_one_iteration.m
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Litekmeans/Litekmeans_one_iteration.m
+END
+Litekmeans.m
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Litekmeans/Litekmeans.m
+END
+license_lite_kmeans.txt
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/D2/VSG/!svn/ver/1/UCM/Auxfunctions/Litekmeans/license_lite_kmeans.txt
+END

@@ -1,0 +1,82 @@
+function labels=Turntmtolabels(Tm)
+
+noregions=size(Tm,1);
+
+labels=1:noregions;
+
+nolabels=max(labels);
+
+[r,c]=find(Tm&(~logical(eye(noregions))));
+
+for i=1:numel(r)
+    if (r(i)>c(i))
+        continue;
+    end
+    
+    if (Tm(r(i),c(i)))
+        if (labels(r(i))~=labels(c(i)))
+            lmin=min(labels(r(i)),labels(c(i)));
+            lmax=max(labels(r(i)),labels(c(i)));
+            labels(
+        
+        Tm(r(i),c(i))=false;
+        Tm(c(i),r(i))=false;
+    end
+    
+end
+
+            if (isitdifferent)
+                labels(r)=chosen;
+                if ( (~any(labels==originallabel)) && (originallabel<nolabels) )
+                    labels( labels>originallabel ) = labels( labels>originallabel )-1;
+                end
+                nolabels=nolabels-1;
+            else
+                if (~chosen)
+                    nolabels=nolabels+1;
+                    labels(r)=nolabels;
+                else
+                    labels(r)=chosen;
+                end
+                
+                %check connectivity of graph relative to originallabel
+                [labels,nolabels]=Checkconnectivity(r,originallabel,T,labels,nolabels);
+
+
+        r=mod(rk+startregion-2,noregions)+1;
+        
+        originallabel=labels(r);
+
+        neighbours=find(T(r,:));
+        
+        if (isempty(neighbours))
+            continue;
+        end
+
+        neighbouringlabels=unique(labels(neighbours));
+
+        if all(neighbouringlabels~=labels(r))
+            isitdifferent=true;
+        else
+            isitdifferent=false;
+        end
+
+        chosen=0;
+        bestlikelihood=prod(1-P(r,neighbours));
+        for label=neighbouringlabels
+            newlikelihood=prod(1-P(r,neighbours( labels(neighbours)~=label )))*...
+                prod(P(r,neighbours( labels(neighbours)==label )));
+            if (newlikelihood>bestlikelihood)
+                bestlikelihood=newlikelihood;
+                chosen=label;
+            end
+        end
+
+%         disp(labels)
+%         fprintf('iter=%d, r=%d, isitdifferent=%d, chosen=%d\n',iter,r,isitdifferent,chosen);
+%         pause;
+        
+        if (  ( (chosen)&&(isitdifferent) )  ||  ( (~isitdifferent) && (chosen~=originallabel) )  )
+            changed=true;
+
+ 

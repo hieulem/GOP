@@ -1,0 +1,42 @@
+function Getwarpedsequence(flows,cim,noFrames,useinterp,destbasename,numberformat,nameclosure)
+
+%requires: path(path,['UCM',filesep,'Otherfunctions']);
+path(path,['UCM',filesep,'Otherfunctions']);
+
+if ( (~exist('noFrames','var')) || (isempty(noFrames)) )
+    noFrames=numel(flows.whichDone);
+end
+if ( (~exist('useinterp','var')) || (isempty(useinterp)) )
+    useinterp=false;
+end
+if ( (~exist('destbasename','var')) || (isempty(destbasename)) )
+    destbasename='D:\temp\EWCmovwrp';
+end
+if ( (~exist('numberformat','var')) || (isempty(numberformat)) )
+    numberformat='%03d';
+end
+if ( (~exist('nameclosure','var')) || (isempty(nameclosure)) )
+    nameclosure='.png';
+end
+
+
+howmany=2;
+print=true;
+
+newcim=cell(1,noFrames);
+for frame=1:noFrames
+    newcim{frame}=Getwarpedframe(flows,cim,frame,howmany,useinterp,noFrames,print);
+    tmpfilename=[destbasename,num2str(frame-1,numberformat),nameclosure];
+    imwrite(newcim{frame},tmpfilename,'png')
+end
+
+
+
+
+filename_sequence_basename_frames_or_video.wrpbasename=['D:',filesep,'Data',filesep,'CrowdVideo',filesep,'Frames_EWCwrp_1715to1800tot86',filesep,'EWCmovwrp'];
+filename_sequence_basename_frames_or_video.wrpnumber_format='%03d';
+filename_sequence_basename_frames_or_video.wrpclosure='.png';
+filename_sequence_basename_frames_or_video.wrpstartNumber=0;
+
+
+

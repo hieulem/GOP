@@ -1,0 +1,94 @@
+function [track,mapTracToTrajectories,dist_track_mask,allDs]=...
+    Prepareregiontracksandallds(image,trajectories,frame,trackLength,allregionpaths,ucm2,allregionsframes,flows,filenames,firstTrajectory,cim,printtodisplay)
+%cim is only added to not generate the warning
+%requires: path(path,['UCM',filesep,'Auxclustering']);
+
+%to see the part worth having a look
+%to clean the directory
+
+
+if ( (~exist('printtodisplay','var')) || (isempty(printtodisplay)) )
+    printtodisplay=1;
+end
+if ( (~exist('frame','var')) || (isempty(frame)) )
+    frame=1;
+end
+if ( (~exist('image','var')) || (isempty(image)) )
+    image=cim{frame};
+end
+if ( (~exist('trackLength','var')) || (isempty(trackLength)) )
+    %trackLength means here an exact length
+    trackLength=10;
+%     trackLength=3;
+end
+
+
+%%%to set up according to which one is the first trajectory to use, so as
+%%%to exclude the full frame
+if ( (~exist('firstTrajectory','var')) || (isempty(firstTrajectory)) )
+    firstTrajectory=1;
+end
+%%%
+
+track_region_filename=[filenames.filename_trackregiontrackbase,'f',num2str(frame,'%03d'),'tl',num2str(trackLength,'%03d'),'.mat'];
+distance_matrices_filename=[filenames.filename_distancematricesbase,'f',num2str(frame,'%03d'),'tl',num2str(trackLength,'%03d'),'.mat'];
+
+
+%%%extraction of tracks of innest points and regions
+
+path(path,['UCM',filesep,'Auxclustering']);
+
+if (exist(track_region_filename,'file'))
+    load(track_region_filename);
+    fprintf('Loaded tracks and region tracks\n');
+else
+    printin=0; %because a print will be done for both computed and loaded
+    
+    %extraction of relevant trajectories of the innest points (exactly trackLength long)
+    [track,mapTracToTrajectories]=get_tracks_at_frame_innest_points(image,trajectories,frame,trackLength,firstTrajectory,printin);
+    %track = [ which frame , x or y , which trajectory ]
+    noTracks=size(track,3);
+
+    %extraction of masks corresponding to the trajectories (exactly trackLength long)
+    [dist_track_mask,mapTracToTrajectories]=get_track_masks(firstTrajectory,image,trajectories,frame,trackLength,allregionpaths,ucm2,allregionsframes,printin);
+    % dist_track_mask{which frame,which trajectory}=mask
+
+    if (size(dist_track_mask,2)~=noTracks)
+        fprintf('Please check the length of the point and region tracks generated\n');
+        return;
+    end
+    save(track_region_filename, 'track', 'mapTracToTrajectories', 'dist_track_mask','-v7.3');
+    fprintf('Tracks and region tracks computed and saved\n');
+end
+if (print)
+    path(path,['UCM',filesep,'Otherfunctions']);
+    Printtracks(track,image);
+    Printtrackmasks(dist_track_mask,image);
+end
+
+
+
+%%%Computation of distance matrix
+
+path(path,['UCM',filesep,'Distancematrixcomputation']);
+
+if (exist(distance_matrices_filename,'file'))
+    load(distance_matrices_filename);
+    fprintf('Loaded D matrices\n');
+else
+    
+    allDs=Initallds();
+    
+    %1 to 60
+    someDs=Getdistance_position_tracks(track);
+    allDs=AddSomeAll(allDs,someDs);
+    
+    clear someDs;
+    someDs=Getdistance_position_regions(dist_track_mask,frame,flows,track);
+    allDs=AddSomeAll(allDs,someDs);
+    
+    
+    save(distance_matrices_filename, 'allDs','-v7.3');
+    fprintf('All D matrices computed and saved\n');
+end
+
