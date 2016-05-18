@@ -1,4 +1,4 @@
-function [ filenames,filename_sequence_basename_frames_or_video,noFrames,ucm2filename,videocorrectionparameters ] = get_filenames(options,id )
+function [filenames,filename_sequence_basename_frames_or_video,noFrames,ucm2filename,videocorrectionparameters,options ] = get_filenames(options,id )
 
 switch options.dataset
     case 'vsb_100'
@@ -6,6 +6,7 @@ switch options.dataset
         dataset_dir = '../../video/vsb100/Test/';
         dataset_info = dir(dataset_dir); dataset_info(1:2) =[];
         video_name = dataset_info(id).name;
+        options.videoname = video_name;
         video_path = fullfile(dataset_dir,video_name);
         filenameheader = 'image';
         

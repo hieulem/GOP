@@ -1,0 +1,262 @@
+computing support  [....................] done (0:00:01.24 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.49 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.17 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.69 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.63 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.63 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.81 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.76 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.77 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.82 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.88 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.61 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.91 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.97 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.05 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.73 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.12 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.80 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.90 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.82 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.90 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.53 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.63 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.59 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.83 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.45 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.62 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.55 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.87 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.82 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.45 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.59 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.76 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.62 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.98 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.52 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.60 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.67 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.44 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.64 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.62 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.15 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.44 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.66 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.68 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.66 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.30 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.66 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.93 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:02.04 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.46 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.89 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.67 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.54 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.61 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.54 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.56 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.69 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.06 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.86 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.18 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.76 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.68 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.85 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.73 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.92 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.85 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.56 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.77 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.56 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.08 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.65 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.90 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.44 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.57 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.65 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.56 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.50 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.71 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.49 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.73 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.55 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.63 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.67 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.72 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.75 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.11 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.87 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.62 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.95 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.70 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.61 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.47 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.69 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.63 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.56 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.29 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.28 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.70 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.78 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.84 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.61 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.55 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.47 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.50 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.37 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.61 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.44 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.41 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.35 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.34 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.21 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.12 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.27 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.48 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.16 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.89 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.45 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.63 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.31 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+computing support  [....................] done (0:00:01.26 elapsed) 
+creating sparse matrix with 18488736 nonzero entries
+{Error using Blongtracks (line 70)
+File ./VideoProcessingTemp/vsb_100/fisheye/Tracksnoframes.dat not existent
+
+Error in Getcombinedsimilarities (line 69)
+            filename_sequence_basename_frames_or_video=Blongtracks(filename_sequence_basename_frames_or_video,noFrames,filenames,cim);
+            
+Error in Getvideosegmentation (line 104)
+    [similarities,STT,LTT,ABA,ABM,STM,STA,CTR,STA3,STM3,SD,STT_max,STT_mean,Dspx]
+    =Getcombinedsimilarities(labelledlevelvideo,flows, ucm2, cim, mapped, ...
+
+Error in Processvideosegandbenchmark (line 13)
+allthesegmentations=Getvideosegmentation(filenames,ucm2,flows,printonscreen,dimtouse,options,filename_sequence_basename_frames_or_video,videocorrectionparameters,cim);
+
+Error in Doallprocessing (line 477)
+            Processvideosegandbenchmark(cim,flows,ucm2,filenames,options,...
+
+
+Error in segment_video_vsb100 (line 16)
+    Doallprocessing(filenames,filename_sequence_basename_frames_or_video,ucm2filename,noFrames,options,videocorrectionparameters);} 
+
